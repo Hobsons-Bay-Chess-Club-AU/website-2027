@@ -4,7 +4,7 @@ import CmsLink from './CmsLink.astro';
 import ContentCard from './ContentCard.astro';
 import NewsCards from './NewsCards.astro';
 import ResultsEvents from './ResultsEvents.astro';
-import {safeUrl} from '../lib/sanitize.mjs';
+import {siteUrl as safeUrl} from '../lib/site-url.mjs';
 import {approvedEmbed} from '../lib/render-rich-text.mjs';
 const {sections=[],settings,posts=[]}=Astro.props;
 ---

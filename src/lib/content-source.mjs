@@ -59,7 +59,7 @@ export function normalizeContent(items){
  const pageEntries=items.filter(e=>e.type==='page'&&e.enabled!==false),postEntries=items.filter(e=>e.type==='post'&&e.enabled!==false);
  const slugs=new Set();
  for(const p of [...pageEntries,...postEntries]){
-  if(!p.title||!p.slug||!/^[a-z0-9-]+(?:\/[a-z0-9-]+)*$/.test(p.slug)||slugs.has(p.slug)||['news','404','sitemap.xml','robots.txt','wp-admin'].includes(p.slug))throw new Error(`Invalid, duplicate or reserved Contentful page/article slug ${p.slug||'(empty)'}.`);
+  if(!p.title||!p.slug||!/^[a-z0-9-]+(?:\/[a-z0-9-]+)*$/.test(p.slug)||slugs.has(p.slug)||['news','404','sitemap.xml','robots.txt','wp-admin','blog','author/boldthemes','category/hbcc-chess','about/club-history'].includes(p.slug))throw new Error(`Invalid, duplicate or reserved Contentful page/article slug ${p.slug||'(empty)'}.`);
   slugs.add(p.slug);
  }
  const expandPage=p=>({...p,sections:refs(p.sections,'section').map(s=>section(s)),heroActions:refs(p.heroActions,'navigationItem').map(n=>navigation(n)).filter(Boolean),featureCards:refs(p.featureCards,'contentCard').map(card),partnerLink:action(p.partnerLink)});

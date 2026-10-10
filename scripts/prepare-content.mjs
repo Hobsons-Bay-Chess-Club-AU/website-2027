@@ -155,5 +155,5 @@ for(const name of await readdir('reference/styles')) if(name.includes('css2')){
 }
 const solid=manifest.assets.find(a=>a.path.endsWith('FontAwesome5Solid.woff'));
 if(solid)fonts+=`@font-face{font-family:HBCCIcons;src:url(${solid.localUrl}) format('woff');font-display:block;font-weight:900;}\n`;
-await writeFile('public/fonts/hbcc-fonts.css',fonts);
+await writeFile('public/fonts/hbcc-fonts.css',fonts.replaceAll('url(/fonts/','url(./').replaceAll('url(/wp-assets/','url(../wp-assets/'));
 console.log(JSON.stringify({clubPages:pages.length,posts:posts.length,events:events.length,sponsors:sponsors.length,seedEntries:entries.length,referencedAssets:usedAssets.length,fontsLocal:fonts.includes('/wp-assets/')},null,2));

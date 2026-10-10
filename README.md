@@ -40,7 +40,13 @@ npm run build:production
 npm run verify
 ```
 
-Production builds refuse Preview drafts and require the published CMS. Configure a Contentful publish/unpublish deploy hook when hosting is selected; none is configured yet.
+Production builds refuse Preview drafts and require the published CMS.
+
+## GitHub hosting
+
+[The frontend repository](https://github.com/Hobsons-Bay-Chess-Club-AU/website-2027) now has a GitHub Actions workflow, repository-path support and Contentful Delivery build secrets. The GitHub preview can use the saved reference while the CMS import is pending; custom-domain builds require published Contentful content.
+
+The repository is private and the organization uses GitHub Free. Pages hosting needs a public repository or a paid organization plan. Hosting is gated by `PAGES_ENABLED` until that choice is resolved. See [the deployment guide](docs/GITHUB-PAGES.md) for setup, preview builds, Contentful updates and the later domain move.
 
 ## Tournament service
 
@@ -57,9 +63,9 @@ npm run build
 npm run verify
 ```
 
-Eleven tests cover actual CMS field changes, menu hierarchy/hiding/cycles, new/renamed pages, missing references, safe rich text, preview authentication/pagination, 2026 scoring, outages and native package integrity. Conversion checks preserve all first-version wording on 13 pages; calendar content is deliberately replaced with the existing-service link.
+Thirteen tests cover actual CMS field changes, menu hierarchy/hiding/cycles, new/renamed pages, missing references, safe rich text, preview authentication/pagination, 2026 scoring, outages, native package integrity, repository paths and custom-domain publication guards. Conversion checks preserve all first-version wording on 13 pages; calendar content is deliberately replaced with the existing-service link.
 
-The build generates 22 HTML pages plus the sitemap. The verifier checks local links/assets, headings, WordPress media dependence and credential leakage. Browser checks cover desktop, 390 px mobile, nested menus and membership FAQs. See [the pre-change homepage audit](docs/HOMEPAGE-AUDIT.md).
+The build generates 22 content pages, four legacy HTML redirects, robots.txt and the sitemap. The verifier checks links/assets (including fonts, backgrounds and scripts), headings, repository paths, WordPress media dependence and credential leakage. Browser checks cover desktop, 390 px mobile, nested menus and membership FAQs. Pages checks also verify navigation under the repository path. See [the pre-change homepage audit](docs/HOMEPAGE-AUDIT.md).
 
 ## Files
 

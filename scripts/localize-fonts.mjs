@@ -17,7 +17,7 @@ for(const url of urls){
  css=css.replaceAll(url,localUrl);
  manifest.assets.push({url,path:`reference/fonts/${name}`,localUrl,contentType:'font/woff2',bytes:bytes.length,sha256:createHash('sha256').update(bytes).digest('hex')});
 }
-await writeFile(path,css);
+await writeFile(path,css.replaceAll('url(/fonts/','url(./').replaceAll('url(/wp-assets/','url(../wp-assets/'));
 await writeFile('reference/manifest.json',JSON.stringify(manifest,null,2));
 await writeFile('reference/asset-map.json',JSON.stringify(Object.fromEntries(manifest.assets.filter(a=>a.localUrl).map(a=>[a.url,a.localUrl])),null,2));
 console.log(`Self-hosted ${urls.length} additional font files. No remote font requests remain.`);

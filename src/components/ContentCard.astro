@@ -1,7 +1,7 @@
 ---
 import CmsLink from './CmsLink.astro';
 import Icon from './Icon.astro';
-import {safeUrl} from '../lib/sanitize.mjs';
+import {siteUrl as safeUrl} from '../lib/site-url.mjs';
 const {card}=Astro.props;
 ---
 {card.presentation==='faq'?<details class="club-faq"><summary>{card.title}</summary><div set:html={card.bodyHtml}/></details>:<article class:list={['cms-card',{'cms-timeline':card.presentation==='timeline'}]}>{card.eyebrow&&<p class="eyebrow">{card.eyebrow}</p>}{card.image&&<img src={safeUrl(card.image)} alt={card.imageAlt||''} loading="lazy" decoding="async"/>}{card.icon&&card.icon!=='none'&&<Icon name={card.icon} class="card-icon"/>}<h3>{card.title}</h3>{card.description&&<p>{card.description}</p>}<div set:html={card.bodyHtml}/><CmsLink item={card.link} class="text-link"/></article>}

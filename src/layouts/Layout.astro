@@ -2,14 +2,15 @@
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import { getContent } from '../lib/content.mjs';
-import { safeUrl } from '../lib/sanitize.mjs';
+import { siteUrl as safeUrl } from '../lib/site-url.mjs';
 import '../styles/global.css';
 const { settings } = await getContent();
 const { title = settings.title, seoTitle, description = settings.defaultDescription, image = settings.heroImage, home = false, noindex = false } = Astro.props;
-const canonical = new URL(Astro.url.pathname, Astro.site);
+const staging = import.meta.env.SITE_STAGING === 'true';
+const canonical = new URL(Astro.url.pathname === safeUrl('/404/') ? safeUrl('/404.html') : Astro.url.pathname, Astro.site);
 const pageTitle = seoTitle || (home ? `${settings.shortName} | ${settings.title}` : `${title} | ${settings.title}`);
 const absoluteImage = new URL(safeUrl(image || settings.heroImage), Astro.site).href;
-const structured = { '@context':'https://schema.org', '@type':'SportsClub', name:settings.title, url:Astro.site.href, email:settings.email, address:settings.address, image:absoluteImage };
+const structured = { '@context':'https://schema.org', '@type':'SportsClub', name:settings.title, url:new URL(safeUrl('/'),Astro.site).href, email:settings.email, address:settings.address, image:absoluteImage };
 ---
 <!doctype html>
 <html lang="en-AU">
@@ -21,13 +22,13 @@ const structured = { '@context':'https://schema.org', '@type':'SportsClub', name
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
     <link rel="icon" type="image/png" href={safeUrl(settings.favicon || settings.logo)} />
-    <link rel="stylesheet" href="/fonts/hbcc-fonts.css" />
+    <link rel="stylesheet" href={safeUrl('/fonts/hbcc-fonts.css')} />
     {home && <link rel="preload" as="image" href={safeUrl(settings.heroImage)} />}
     <meta property="og:type" content="website" /><meta property="og:site_name" content={settings.title} />
     <meta property="og:title" content={pageTitle} /><meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} /><meta property="og:image" content={absoluteImage} />
     <meta name="twitter:card" content="summary_large_image" />
-    {noindex && <meta name="robots" content="noindex, nofollow" />}
+    {(noindex || staging) && <meta name="robots" content="noindex, nofollow" />}
     <script type="application/ld+json" set:html={JSON.stringify(structured).replace(/</g,'\\u003c')} />
   </head>
   <body class:list={{ 'home-page': home }}>

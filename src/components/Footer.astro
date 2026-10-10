@@ -2,14 +2,14 @@
 import Icon from './Icon.astro';
 import CmsLink from './CmsLink.astro';
 import Sections from './Sections.astro';
-import {safeUrl} from '../lib/sanitize.mjs';
+import {siteUrl as safeUrl} from '../lib/site-url.mjs';
 const {settings}=Astro.props;
 const instagram=settings.socialLinks.find(item=>item.icon==='instagram');
 ---
 {settings.joinBanner&&<Sections sections={[settings.joinBanner]} settings={settings}/>}
 <footer class="site-footer">
  <div class="container footer-grid">
-  <a class="footer-brand" href="/" aria-label={settings.shortName+' home'}><img src={safeUrl(settings.logo)} alt={settings.title} width="94" height="94"/><span>{settings.footerBrandLabel}</span></a>
+  <a class="footer-brand" href={safeUrl('/')} aria-label={settings.shortName+' home'}><img src={safeUrl(settings.logo)} alt={settings.title} width="94" height="94"/><span>{settings.footerBrandLabel}</span></a>
   {settings.footerMenus.map(menu=><div><h2>{menu.title}</h2>{menu.items.map(item=><CmsLink item={item}/>)}</div>)}
   <div><h2>{settings.contactHeading}</h2><a href={'mailto:'+settings.email}>{settings.email}</a><p>{settings.address}</p><h2 class="footer-connect-heading">{settings.connectHeading}</h2><div class="footer-social">{settings.socialLinks.map(item=><CmsLink item={item} aria-label={item.label}><Icon name={item.icon}/></CmsLink>)}</div><CmsLink item={instagram} class="footer-instagram-link">{settings.instagramLabel}</CmsLink></div>
  </div>

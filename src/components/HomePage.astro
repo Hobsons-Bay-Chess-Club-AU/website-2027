@@ -4,7 +4,7 @@ import Sections from './Sections.astro';
 import CmsLink from './CmsLink.astro';
 import Icon from './Icon.astro';
 import {getContent} from '../lib/content.mjs';
-import {safeUrl} from '../lib/sanitize.mjs';
+import {siteUrl as safeUrl} from '../lib/site-url.mjs';
 const {settings,home,posts}=await getContent();
 ---
 <Layout home title={home.title} seoTitle={home.seoTitle} description={home.description} image={home.heroImage} noindex={home.noindex}>

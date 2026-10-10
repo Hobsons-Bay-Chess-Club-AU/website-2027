@@ -37,7 +37,7 @@ Sections cover formatted content, columns, cards/FAQs, galleries/embeds, statist
 | Validate imported graph | Run `contentful:verify`, open draft preview at port 4328 and exercise real CMS edits |
 | Review club content | Replace/hide sports demo news; review historical counts, fees, sponsor tiers, committee, policies and downloads |
 | Publish reviewed records | Publish linked entries/assets; verify Delivery API and strict production build |
-| Connect hosting | Select project, configure Delivery credentials, strict build/output and publish/unpublish deploy hook |
+| Connect hosting | GitHub repository, workflow and Delivery secrets prepared; private repository on Free requires a visibility/plan choice before Pages can deploy |
 | Optional contact form | Choose a sending destination if email contact is insufficient and test real delivery |
 | Accept staging | Check retained routes, layouts, downloads, keyboard use, SEO, redirects and publish/rebuild |
 | Domain cutover | Deploy accepted release, configure certificate/DNS and rollback; preserve email/service subdomains |
@@ -62,7 +62,7 @@ Page references follow slug edits, but inbound paths still need redirects. Prese
 
 Eleven tests cover CMS edits, menu hierarchy/cycles, new/renamed pages, dependencies, rich text safety, preview routing/pagination, real 2026 scoring, outages and package integrity. The conversion audit checks retained wording. Build validation checks local links/assets, headings, WordPress media dependence and secrets.
 
-Desktop/390 px checks cover homepage, live refresh, nested menus and FAQs. A real Contentful draft/published edit cycle still requires import. Hosting hooks, optional form sending, DNS and club acceptance are launch work.
+Desktop/390 px checks cover homepage, live refresh, nested menus and FAQs. The Pages build supports the repository preview path and later custom domain. Thirteen tests and 1,326 link/asset checks pass. The workflow, Delivery secrets, manual rebuild and opt-in hourly CMS rebuild are prepared. Pages activation, real CMS import/publication, optional authenticated webhooks, optional form sending, DNS and club acceptance remain launch work. See [GITHUB-PAGES.md](GITHUB-PAGES.md).
 
 ## Primary documentation
 

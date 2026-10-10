@@ -1,4 +1,5 @@
 import {safeUrl} from './sanitize.mjs';
+import {siteUrl} from './site-url.mjs';
 export const escapeHtml=value=>String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 export const assetUrl=value=>safeUrl(typeof value==='string'?value:value?.url,'');
 export const approvedEmbed=value=>{
@@ -17,7 +18,7 @@ export function renderRichText(document,entries={},trail=[]){
   return entry;
  };
  const media=(image,alt='',title='')=>{
-  const url=assetUrl(image);if(!url)return '';
+  const url=siteUrl(assetUrl(image),'');if(!url)return '';
   if(image?.contentType&&!image.contentType.startsWith('image/'))return `<p><a href="${escapeHtml(url)}">${escapeHtml(title||'Download document')}</a></p>`;
   return `<figure class="cms-image"><img src="${escapeHtml(url)}" alt="${escapeHtml(alt)}" loading="lazy" decoding="async"></figure>`;
  };
@@ -29,7 +30,7 @@ export function renderRichText(document,entries={},trail=[]){
  };
  const linked=(html,ref)=>{
   const item=linkTarget(ref);if(!item)return html;
-  return '<a href="'+escapeHtml(safeUrl(item.url))+'"'+(item.newTab?' target="_blank" rel="noopener noreferrer"':'')+'>'+html+'</a>';
+  return '<a href="'+escapeHtml(siteUrl(item.url))+'"'+(item.newTab?' target="_blank" rel="noopener noreferrer"':'')+'>'+html+'</a>';
  };
  const next=nodes=>(nodes||[]).map(render).join('');
  const render=n=>{
@@ -48,7 +49,7 @@ export function renderRichText(document,entries={},trail=[]){
    let url=n.data?.uri;
    if(n.nodeType==='entry-hyperlink'){const target=get(n.data?.target);if(target.enabled===false)return inner();url=target.template==='home'?'/':`/${target.slug}/`;}
    if(n.nodeType==='asset-hyperlink')url=assetUrl(n.data?.target);
-   return `<a href="${escapeHtml(safeUrl(url))}">${inner()}</a>`;
+   return `<a href="${escapeHtml(siteUrl(url))}">${inner()}</a>`;
   }
   if(n.nodeType==='embedded-asset-block'){
    const a=n.data?.target;return media(a,a?.description||a?.title||'',a?.title);

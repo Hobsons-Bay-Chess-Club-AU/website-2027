@@ -108,7 +108,9 @@ Production uses published Delivery content and refuses an empty/incomplete CMS. 
 
 The main site is static Astro. A Contentful publish updates the CMS immediately; page copy, new routes, menus and media reach the site after rebuilding/deploying. Reload local CMS preview to see saved drafts.
 
-When the host is selected, connect Contentful entry/asset publish and unpublish webhooks to its deploy hook. Use `npm run build:production`, output `dist` and server-only Delivery credentials. Publish linked records as well as the page. Keep the last successful deployment when a build fails. The hook cannot be connected until the host's deploy-hook URL exists.
+GitHub Pages is prepared in the [frontend repository](https://github.com/Hobsons-Bay-Chess-Club-AU/website-2027). The repository's private visibility on GitHub Free currently prevents Pages hosting. Once resolved, Actions builds from the published Delivery API and deploys `dist`. Publish linked records as well as the page; a failed build preserves the previous deployment.
+
+After initial Contentful import/publication, enable `CONTENTFUL_REBUILD_ENABLED` for hourly rebuilds, or use **Actions → Build and deploy HBCC → Run workflow** for immediate updates. An authenticated publish/unpublish webhook bridge can be added later. See [GITHUB-PAGES.md](GITHUB-PAGES.md) for setup and the difference between a reference preview and the actual CMS deployment.
 
 Tournament scores and upcoming cards refresh directly from the existing public service, so they do not require a CMS publication or main-site rebuild.
 

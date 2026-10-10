@@ -1,7 +1,11 @@
 {
-  "checkedAt": "2026-10-10T01:31:46.292Z",
-  "htmlPages": 22,
-  "checkedLocalLinksAndAssets": 1213,
+  "checkedAt": "2026-10-10T04:23:45.317Z",
+  "site": "https://hobsonsbaychess.com",
+  "basePath": "/",
+  "htmlPages": 26,
+  "contentPages": 22,
+  "redirectPages": 4,
+  "checkedLocalLinksAndAssets": 1326,
   "missing": [],
   "wordpressAssets": [],
   "unsafe": []
