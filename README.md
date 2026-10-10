@@ -2,7 +2,7 @@
 
 An Astro reconstruction of HBCC's WordPress site with a structured Contentful CMS: homepage, 14 club information pages, preserved news routes, nested menus, native rich text/sections, archived media and the 2026 tournament integration.
 
-**Current state:** the local implementation and migration package are ready. Delivery/Preview keys are valid, but the Contentful space is empty. Creating the model/content requires `CONTENTFUL_MANAGEMENT_TOKEN` in local `.env`; nothing has yet been imported into the account.
+**Current state:** [the GitHub Pages preview is deployed](https://hobsons-bay-chess-club-au.github.io/website-2027/) using the structured reference snapshot. Delivery/Preview keys are valid, but the Contentful space is empty. Creating the model/content requires `CONTENTFUL_MANAGEMENT_TOKEN` in local `.env`; nothing has yet been imported into the account.
 
 ## Run locally
 
@@ -46,7 +46,7 @@ Production builds refuse Preview drafts and require the published CMS.
 
 [The frontend repository](https://github.com/Hobsons-Bay-Chess-Club-AU/website-2027) now has a GitHub Actions workflow, repository-path support and Contentful Delivery build secrets. The GitHub preview can use the saved reference while the CMS import is pending; custom-domain builds require published Contentful content.
 
-The repository is private and the organization uses GitHub Free. Pages hosting needs a public repository or a paid organization plan. Hosting is gated by `PAGES_ENABLED` until that choice is resolved. See [the deployment guide](docs/GITHUB-PAGES.md) for setup, preview builds, Contentful updates and the later domain move.
+The repository is public, Pages is enabled and deployment has succeeded. Repository variable `CONTENT_SOURCE=reference` explicitly selects the preview snapshot until Contentful is imported and published. Custom-domain builds refuse the reference snapshot. See [the deployment guide](docs/GITHUB-PAGES.md) for Contentful updates and the later domain move.
 
 ## Tournament service
 
@@ -85,6 +85,6 @@ The build generates 22 content pages, four legacy HTML redirects, robots.txt and
 
 The unchanged WordPress export has 545 records, with a separately repaired UTF-8 audit copy. It contains content/metadata and media references rather than a full filesystem/database backup. Original public downloads are retained separately; runtime media/fonts use about 13 MB.
 
-No deployment or DNS cutover was performed. Imported news is sports demo material flagged for review. Historical fees, sponsorship and policies remain captured content. Contact uses a real email link; the missing schedule download is replaced by the tournament calendar.
+The reference preview is deployed on GitHub Pages; no production domain or DNS cutover was performed. Imported news is sports demo material flagged for review. Historical fees, sponsorship and policies remain captured content. Contact uses a real email link; the missing schedule download is replaced by the tournament calendar.
 
 See [the migration plan](docs/MIGRATION-PLAN.md) for recovery and launch work.
