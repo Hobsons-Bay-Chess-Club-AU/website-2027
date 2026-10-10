@@ -63,7 +63,7 @@ Future Facebook imports save drafts and protect manual editorial changes. The un
 
 The native [Calendar page](https://hobsons-bay-chess-club-au.github.io/website-2027/calendar/) replaces the spreadsheet embed. Its **Club calendar** links **150 visible events**, with month/agenda views, filters and an iCalendar download. Mobile opens in agenda view.
 
-1. Open **Club calendar ` HBCC Calendar 2026** and its **Calendar events** list.
+1. Open **Club calendar**, choose **[2026 club calendar](https://app.contentful.com/spaces/7r7s5slcmer0/entries/hbcc-calendar-2026)** and its **Calendar events** list.
 2. Open an event to edit its title, first day, last day, category or details. The last day is inclusive; single-day events use the same date in both fields.
 3. For a new event, create a **Calendar event**, choose Show, then add its reference to the Club calendar.
 4. Publish the event and the calendar if its references changed. Publish the page/section only if you changed them.
@@ -87,7 +87,7 @@ The feed checks its year and displays its generation date. Results and upcoming 
 
 A Contentful publish updates the CMS immediately. Page copy, routes, menus, news, calendar and media reach the static website after a rebuild.
 
-The [public GitHub repository](https://github.com/Hobsons-Bay-Chess-Club-AU/website-2027) builds the **published Delivery API**, with hourly rebuilds enabled. For an immediate update use **Actions ` Build and deploy HBCC ` Run workflow ` contentful**. Publish dependencies as well as the page; a failed build preserves the previous deployment. [GITHUB-PAGES.md](GITHUB-PAGES.md) covers hosting.
+The [public GitHub repository](https://github.com/Hobsons-Bay-Chess-Club-AU/website-2027) builds the **published Delivery API**, with hourly rebuilds enabled. For an immediate update use **Actions → Build and deploy HBCC → Run workflow → contentful**. Publish dependencies as well as the page; a failed build preserves the previous deployment. [GITHUB-PAGES.md](GITHUB-PAGES.md) covers hosting.
 
 Tournament standings/upcoming cards refresh directly from their service, independently of CMS publication.
 

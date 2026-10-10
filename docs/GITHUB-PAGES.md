@@ -19,7 +19,7 @@ Build secrets `CONTENTFUL_SPACE_ID` and `CONTENTFUL_DELIVERY_TOKEN` are configur
 ## Publish an editorial change
 
 1. Save and publish the changed Contentful entry, its linked entries and media.
-2. Allow the hourly rebuild, or open **Actions ` Build and deploy HBCC ` Run workflow** and select `contentful`.
+2. Allow the hourly rebuild, or open **Actions → Build and deploy HBCC → Run workflow** and select `contentful`.
 3. Confirm validation, build **and deploy** succeed before checking the live site. A failed build preserves the previous deployment.
 
 Main pushes also deploy. Pull requests validate tests/reference output without deploying. The scheduled rebuild runs at minute 17 each UTC hour, subject to GitHub scheduling delays. Tournament results and upcoming cards refresh directly from their service when visitors open the homepage.

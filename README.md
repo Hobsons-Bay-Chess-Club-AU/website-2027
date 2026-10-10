@@ -1,4 +1,4 @@
-# Hobsons Bay Chess Club ` website 2027
+# Hobsons Bay Chess Club — website 2027
 
 Astro rebuild of HBCC's WordPress website, with Contentful managing pages, menus, sections, news, calendar events and media. GitHub Actions builds published content for [GitHub Pages](https://hobsons-bay-chess-club-au.github.io/website-2027/).
 
@@ -38,7 +38,7 @@ Future imports save **drafts**, deduplicate and protect editor changes. Unattend
 
 ## Hosting and existing services
 
-[The public repository](https://github.com/Hobsons-Bay-Chess-Club-AU/website-2027) has Pages enabled, Delivery build secrets and `CONTENT_SOURCE=contentful`. Pushes to main deploy published content. Hourly CMS rebuilds are enabled; editors can run **Actions ` Build and deploy HBCC ` Run workflow** for an immediate rebuild. See [the deployment guide](docs/GITHUB-PAGES.md).
+[The public repository](https://github.com/Hobsons-Bay-Chess-Club-AU/website-2027) has Pages enabled, Delivery build secrets and `CONTENT_SOURCE=contentful`. Pushes to main deploy published content. Hourly CMS rebuilds are enabled; editors can run **Actions → Build and deploy HBCC → Run workflow** for an immediate rebuild. See [the deployment guide](docs/GITHUB-PAGES.md).
 
 Standings and upcoming cards use the [existing tournament application](https://github.com/Hobsons-Bay-Chess-Club-AU/tournaments), with 2026 standard/classical points, checked year, stable ties and a dated fallback. Results, registration and the tournament website's own calendar remain there. The main club calendar is now separately editable.
 

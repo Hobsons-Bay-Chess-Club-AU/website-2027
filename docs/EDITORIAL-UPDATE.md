@@ -1,4 +1,4 @@
-# News and calendar update ` 10 October 2026
+# News and calendar update — 10 October 2026
 
 The authorized Contentful import is complete. Fifteen native types/editor interfaces, 447 entries and 99 assets are present in the actual account; 439 entries and all 99 assets are published.
 
@@ -33,7 +33,7 @@ If the public feed becomes usable, configure a club-controlled Management secret
 
 ## Spreadsheet calendar
 
-Source: the original Calendar page's [published Schedule 2026.xlsx sheet](https://docs.google.com/spreadsheets/d/e/2PACX-1vRIr-eFPQCMvn-TbOfLNzHheAVduNUKX2wOTsYjJOM8zf_uhqe3B3H8Z01bofnCPg/pubhtml`widget=true&headers=false).
+Source: the original Calendar page's [published Schedule 2026.xlsx sheet](https://docs.google.com/spreadsheets/d/e/2PACX-1vRIr-eFPQCMvn-TbOfLNzHheAVduNUKX2wOTsYjJOM8zf_uhqe3B3H8Z01bofnCPg/pubhtml?widget=true&headers=false).
 
 The CSV has 119 rows. The parser uses MM/DD/YYYY for single dates and DD/MM/YYYY for explicit ranges, validating weekdays and years. It creates separate senior/junior/coaching events, merges duplicate shared events, and retains source rows, date text, school schedule, event type and arbiter. No session times were supplied or invented.
 
@@ -41,9 +41,9 @@ There are 153 event entries: **150 published** and **three hidden drafts**. The 
 
 | Sheet row | Original date / weekday | Why it needs club confirmation |
 | --- | --- | --- |
-| 56 | `5/8/2026- 8/06/2026`, Fri`Mon | Parsed range ends before it starts; weekdays also disagree |
-| 63 | `27/6/2026-30/6/2026`, Thurs`Sunday | The written dates are Saturday`Tuesday |
-| 83 | `29/8/2025- 30/8/2025`, Sat`Sun; Best in the West 2026 | Written year is 2025 and weekdays disagree with those dates |
+| 56 | `5/8/2026- 8/06/2026`, Fri–Mon | Parsed range ends before it starts; weekdays also disagree |
+| 63 | `27/6/2026-30/6/2026`, Thurs–Sunday | The written dates are Saturday–Tuesday |
+| 83 | `29/8/2025- 30/8/2025`, Sat–Sun; Best in the West 2026 | Written year is 2025 and weekdays disagree with those dates |
 
 These events retain their original source text, have **Date needs confirmation** enabled and are absent from the published calendar's references. Confirm dates, correct them, turn off review, choose Show, add the event reference and publish.
 
