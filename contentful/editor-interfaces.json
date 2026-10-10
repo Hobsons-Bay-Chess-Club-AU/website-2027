@@ -1,0 +1,1189 @@
+{
+  "editorInterfaces": [
+    {
+      "contentTypeId": "siteSettings",
+      "controls": [
+        {
+          "fieldId": "title",
+          "widgetNamespace": "builtin",
+          "widgetId": "singleLine",
+          "settings": {
+            "helpText": ""
+          }
+        },
+        {
+          "fieldId": "shortName",
+          "widgetNamespace": "builtin",
+          "widgetId": "singleLine",
+          "settings": {
+            "helpText": ""
+          }
+        },
+        {
+          "fieldId": "logo",
+          "widgetNamespace": "builtin",
+          "widgetId": "assetLinkEditor",
+          "settings": {
+            "helpText": ""
+          }
+        },
+        {
+          "fieldId": "favicon",
+          "widgetNamespace": "builtin",
+          "widgetId": "assetLinkEditor",
+          "settings": {
+            "helpText": ""
+          }
+        },
+        {
+          "fieldId": "defaultDescription",
+          "widgetNamespace": "builtin",
+          "widgetId": "multipleLine",
+          "settings": {
+            "helpText": ""
+          }
+        },
+        {
+          "fieldId": "homePage",
+          "widgetNamespace": "builtin",
+          "widgetId": "entryLinkEditor",
+          "settings": {
+            "helpText": ""
+          }
+        },
+        {
+          "fieldId": "mainMenu",
+          "widgetNamespace": "builtin",
+          "widgetId": "entryLinkEditor",
+          "settings": {
+            "helpText": ""
+          }
+        },
+        {
+          "fieldId": "footerMenus",
+          "widgetNamespace": "builtin",
+          "widgetId": "entryLinksEditor",
+          "settings": {
+            "helpText": ""
+          }
+        },
+        {
+          "fieldId": "legalMenu",
+          "widgetNamespace": "builtin",
+          "widgetId": "entryLinkEditor",
+          "settings": {
+            "helpText": ""
+          }
+        },
+        {
+          "fieldId": "email",
+          "widgetNamespace": "builtin",
+          "widgetId": "singleLine",
+          "settings": {
+            "helpText": ""
+          }
+        },
+        {
+          "fieldId": "address",
+          "widgetNamespace": "builtin",
+          "widgetId": "multipleLine",
+          "settings": {
+            "helpText": ""
+          }
+        },
+        {
+          "fieldId": "headerSocialLinks",
+          "widgetNamespace": "builtin",
+          "widgetId": "entryLinksEditor",
+          "settings": {
+            "helpText": ""
+          }
+        },
+        {
+          "fieldId": "socialLinks",
+          "widgetNamespace": "builtin",
+          "widgetId": "entryLinksEditor",
+          "settings": {
+            "helpText": ""
+          }
+        },
+        {
+          "fieldId": "footerBrandLabel",
+          "widgetNamespace": "builtin",
+          "widgetId": "singleLine",
+          "settings": {
+            "helpText": ""
+          }
+        },
+        {
+          "fieldId": "contactHeading",
+          "widgetNamespace": "builtin",
+          "widgetId": "singleLine",
+          "settings": {
+            "helpText": ""
+          }
+        },
+        {
+          "fieldId": "connectHeading",
+          "widgetNamespace": "builtin",
+          "widgetId": "singleLine",
+          "settings": {
+            "helpText": ""
+          }
+        },
+        {
+          "fieldId": "instagramLabel",
+          "widgetNamespace": "builtin",
+          "widgetId": "singleLine",
+          "settings": {
+            "helpText": ""
+          }
+        },
+        {
+          "fieldId": "joinBanner",
+          "widgetNamespace": "builtin",
+          "widgetId": "entryLinkEditor",
+          "settings": {
+            "helpText": ""
+          }
+        },
+        {
+          "fieldId": "footerGallery",
+          "widgetNamespace": "builtin",
+          "widgetId": "entryLinksEditor",
+          "settings": {
+            "helpText": ""
+          }
+        },
+        {
+          "fieldId": "copyright",
+          "widgetNamespace": "builtin",
+          "widgetId": "multipleLine",
+          "settings": {
+            "helpText": "Example: © {year} Hobsons Bay Chess Club. All Rights Reserved."
+          }
+        },
+        {
+          "fieldId": "newsTitle",
+          "widgetNamespace": "builtin",
+          "widgetId": "singleLine",
+          "settings": {
+            "helpText": ""
+          }
+        },
+        {
+          "fieldId": "newsDescription",
+          "widgetNamespace": "builtin",
+          "widgetId": "multipleLine",
+          "settings": {
+            "helpText": ""
+          }
+        },
+        {
+          "fieldId": "readMoreLabel",
+          "widgetNamespace": "builtin",
+          "widgetId": "singleLine",
+          "settings": {
+            "helpText": ""
+          }
+        },
+        {
+          "fieldId": "homeLabel",
+          "widgetNamespace": "builtin",
+          "widgetId": "singleLine",
+          "settings": {
+            "helpText": ""
+          }
+        },
+        {
+          "fieldId": "newsLabel",
+          "widgetNamespace": "builtin",
+          "widgetId": "singleLine",
+          "settings": {
+            "helpText": ""
+          }
+        },
+        {
+          "fieldId": "menuLabel",
+          "widgetNamespace": "builtin",
+          "widgetId": "singleLine",
+          "settings": {
+            "helpText": ""
+          }
+        }
+      ]
+    },
+    {
+      "contentTypeId": "navigationMenu",
+      "controls": [
+        {
+          "fieldId": "title",
+          "widgetNamespace": "builtin",
+          "widgetId": "singleLine",
+          "settings": {
+            "helpText": ""
+          }
+        },
+        {
+          "fieldId": "items",
+          "widgetNamespace": "builtin",
+          "widgetId": "entryLinksEditor",
+          "settings": {
+            "helpText": ""
+          }
+        }
+      ]
+    },
+    {
+      "contentTypeId": "navigationItem",
+      "controls": [
+        {
+          "fieldId": "label",
+          "widgetNamespace": "builtin",
+          "widgetId": "singleLine",
+          "settings": {
+            "helpText": ""
+          }
+        },
+        {
+          "fieldId": "page",
+          "widgetNamespace": "builtin",
+          "widgetId": "entryLinkEditor",
+          "settings": {
+            "helpText": "A page reference follows future slug changes. Leave URL blank when a page is selected."
+          }
+        },
+        {
+          "fieldId": "tournamentFeed",
+          "widgetNamespace": "builtin",
+          "widgetId": "entryLinkEditor",
+          "settings": {
+            "helpText": "Choose the shared tournament service and destination to keep these links in sync with its URL settings."
+          }
+        },
+        {
+          "fieldId": "tournamentDestination",
+          "widgetNamespace": "builtin",
+          "widgetId": "dropdown",
+          "settings": {
+            "helpText": ""
+          }
+        },
+        {
+          "fieldId": "url",
+          "widgetNamespace": "builtin",
+          "widgetId": "singleLine",
+          "settings": {
+            "helpText": "Use https://, /path/, mailto: or #anchor. A selected page takes priority, followed by a selected tournament destination."
+          }
+        },
+        {
+          "fieldId": "children",
+          "widgetNamespace": "builtin",
+          "widgetId": "entryLinksEditor",
+          "settings": {
+            "helpText": "Drag to reorder. Supports nested menus. Do not link an item to itself."
+          }
+        },
+        {
+          "fieldId": "openInNewTab",
+          "widgetNamespace": "builtin",
+          "widgetId": "boolean",
+          "settings": {
+            "helpText": "",
+            "trueLabel": "Yes",
+            "falseLabel": "No"
+          }
+        },
+        {
+          "fieldId": "icon",
+          "widgetNamespace": "builtin",
+          "widgetId": "dropdown",
+          "settings": {
+            "helpText": ""
+          }
+        },
+        {
+          "fieldId": "enabled",
+          "widgetNamespace": "builtin",
+          "widgetId": "boolean",
+          "settings": {
+            "helpText": "",
+            "trueLabel": "Show",
+            "falseLabel": "Hide"
+          }
+        }
+      ]
+    },
+    {
+      "contentTypeId": "page",
+      "controls": [
+        {
+          "fieldId": "title",
+          "widgetNamespace": "builtin",
+          "widgetId": "singleLine",
+          "settings": {
+            "helpText": ""
+          }
+        },
+        {
+          "fieldId": "slug",
+          "widgetNamespace": "builtin",
+          "widgetId": "slugEditor",
+          "settings": {
+            "helpText": "Lowercase words and hyphens, no surrounding slash. Homepage uses home. Preserve existing slugs for inbound links."
+          }
+        },
+        {
+          "fieldId": "template",
+          "widgetNamespace": "builtin",
+          "widgetId": "dropdown",
+          "settings": {
+            "helpText": ""
+          }
+        },
+        {
+          "fieldId": "description",
+          "widgetNamespace": "builtin",
+          "widgetId": "multipleLine",
+          "settings": {
+            "helpText": ""
+          }
+        },
+        {
+          "fieldId": "seoTitle",
+          "widgetNamespace": "builtin",
+          "widgetId": "singleLine",
+          "settings": {
+            "helpText": ""
+          }
+        },
+        {
+          "fieldId": "heroImage",
+          "widgetNamespace": "builtin",
+          "widgetId": "assetLinkEditor",
+          "settings": {
+            "helpText": ""
+          }
+        },
+        {
+          "fieldId": "heroTitle",
+          "widgetNamespace": "builtin",
+          "widgetId": "singleLine",
+          "settings": {
+            "helpText": ""
+          }
+        },
+        {
+          "fieldId": "heroStrapline",
+          "widgetNamespace": "builtin",
+          "widgetId": "singleLine",
+          "settings": {
+            "helpText": ""
+          }
+        },
+        {
+          "fieldId": "heroDescription",
+          "widgetNamespace": "builtin",
+          "widgetId": "multipleLine",
+          "settings": {
+            "helpText": ""
+          }
+        },
+        {
+          "fieldId": "partnerImage",
+          "widgetNamespace": "builtin",
+          "widgetId": "assetLinkEditor",
+          "settings": {
+            "helpText": ""
+          }
+        },
+        {
+          "fieldId": "partnerAlt",
+          "widgetNamespace": "builtin",
+          "widgetId": "singleLine",
+          "settings": {
+            "helpText": ""
+          }
+        },
+        {
+          "fieldId": "partnerLink",
+          "widgetNamespace": "builtin",
+          "widgetId": "entryLinkEditor",
+          "settings": {
+            "helpText": ""
+          }
+        },
+        {
+          "fieldId": "heroActions",
+          "widgetNamespace": "builtin",
+          "widgetId": "entryLinksEditor",
+          "settings": {
+            "helpText": ""
+          }
+        },
+        {
+          "fieldId": "featureCards",
+          "widgetNamespace": "builtin",
+          "widgetId": "entryLinksEditor",
+          "settings": {
+            "helpText": ""
+          }
+        },
+        {
+          "fieldId": "sections",
+          "widgetNamespace": "builtin",
+          "widgetId": "entryLinksEditor",
+          "settings": {
+            "helpText": "Drag to reorder. Open a linked section to edit. Removing its reference hides it on this page."
+          }
+        },
+        {
+          "fieldId": "noindex",
+          "widgetNamespace": "builtin",
+          "widgetId": "boolean",
+          "settings": {
+            "helpText": "",
+            "trueLabel": "Yes",
+            "falseLabel": "No"
+          }
+        },
+        {
+          "fieldId": "enabled",
+          "widgetNamespace": "builtin",
+          "widgetId": "boolean",
+          "settings": {
+            "helpText": "",
+            "trueLabel": "Show",
+            "falseLabel": "Hide"
+          }
+        },
+        {
+          "fieldId": "wordpressId",
+          "widgetNamespace": "builtin",
+          "widgetId": "numberEditor",
+          "settings": {
+            "helpText": ""
+          }
+        },
+        {
+          "fieldId": "originalUrl",
+          "widgetNamespace": "builtin",
+          "widgetId": "singleLine",
+          "settings": {
+            "helpText": ""
+          }
+        }
+      ]
+    },
+    {
+      "contentTypeId": "post",
+      "controls": [
+        {
+          "fieldId": "title",
+          "widgetNamespace": "builtin",
+          "widgetId": "singleLine",
+          "settings": {
+            "helpText": ""
+          }
+        },
+        {
+          "fieldId": "slug",
+          "widgetNamespace": "builtin",
+          "widgetId": "slugEditor",
+          "settings": {
+            "helpText": ""
+          }
+        },
+        {
+          "fieldId": "publishedAt",
+          "widgetNamespace": "builtin",
+          "widgetId": "datePicker",
+          "settings": {
+            "helpText": ""
+          }
+        },
+        {
+          "fieldId": "excerpt",
+          "widgetNamespace": "builtin",
+          "widgetId": "multipleLine",
+          "settings": {
+            "helpText": ""
+          }
+        },
+        {
+          "fieldId": "image",
+          "widgetNamespace": "builtin",
+          "widgetId": "assetLinkEditor",
+          "settings": {
+            "helpText": ""
+          }
+        },
+        {
+          "fieldId": "imageAlt",
+          "widgetNamespace": "builtin",
+          "widgetId": "singleLine",
+          "settings": {
+            "helpText": ""
+          }
+        },
+        {
+          "fieldId": "author",
+          "widgetNamespace": "builtin",
+          "widgetId": "singleLine",
+          "settings": {
+            "helpText": ""
+          }
+        },
+        {
+          "fieldId": "category",
+          "widgetNamespace": "builtin",
+          "widgetId": "singleLine",
+          "settings": {
+            "helpText": ""
+          }
+        },
+        {
+          "fieldId": "body",
+          "widgetNamespace": "builtin",
+          "widgetId": "richTextEditor",
+          "settings": {
+            "helpText": ""
+          }
+        },
+        {
+          "fieldId": "seoTitle",
+          "widgetNamespace": "builtin",
+          "widgetId": "singleLine",
+          "settings": {
+            "helpText": ""
+          }
+        },
+        {
+          "fieldId": "noindex",
+          "widgetNamespace": "builtin",
+          "widgetId": "boolean",
+          "settings": {
+            "helpText": "",
+            "trueLabel": "Yes",
+            "falseLabel": "No"
+          }
+        },
+        {
+          "fieldId": "enabled",
+          "widgetNamespace": "builtin",
+          "widgetId": "boolean",
+          "settings": {
+            "helpText": "",
+            "trueLabel": "Show",
+            "falseLabel": "Hide"
+          }
+        },
+        {
+          "fieldId": "migrationReviewRequired",
+          "widgetNamespace": "builtin",
+          "widgetId": "boolean",
+          "settings": {
+            "helpText": "Imported football theme demo content: replace or disable before launch.",
+            "trueLabel": "Yes",
+            "falseLabel": "No"
+          }
+        },
+        {
+          "fieldId": "wordpressId",
+          "widgetNamespace": "builtin",
+          "widgetId": "numberEditor",
+          "settings": {
+            "helpText": ""
+          }
+        },
+        {
+          "fieldId": "originalUrl",
+          "widgetNamespace": "builtin",
+          "widgetId": "singleLine",
+          "settings": {
+            "helpText": ""
+          }
+        }
+      ]
+    },
+    {
+      "contentTypeId": "section",
+      "controls": [
+        {
+          "fieldId": "internalName",
+          "widgetNamespace": "builtin",
+          "widgetId": "singleLine",
+          "settings": {
+            "helpText": ""
+          }
+        },
+        {
+          "fieldId": "kind",
+          "widgetNamespace": "builtin",
+          "widgetId": "dropdown",
+          "settings": {
+            "helpText": "Content pages: Rich text, Columns, Cards, Accordion, Gallery or Embed. Homepage layouts use the corresponding linked collections."
+          }
+        },
+        {
+          "fieldId": "enabled",
+          "widgetNamespace": "builtin",
+          "widgetId": "boolean",
+          "settings": {
+            "helpText": "",
+            "trueLabel": "Show",
+            "falseLabel": "Hide"
+          }
+        },
+        {
+          "fieldId": "title",
+          "widgetNamespace": "builtin",
+          "widgetId": "singleLine",
+          "settings": {
+            "helpText": ""
+          }
+        },
+        {
+          "fieldId": "subtitle",
+          "widgetNamespace": "builtin",
+          "widgetId": "singleLine",
+          "settings": {
+            "helpText": ""
+          }
+        },
+        {
+          "fieldId": "secondaryTitle",
+          "widgetNamespace": "builtin",
+          "widgetId": "singleLine",
+          "settings": {
+            "helpText": ""
+          }
+        },
+        {
+          "fieldId": "eyebrow",
+          "widgetNamespace": "builtin",
+          "widgetId": "singleLine",
+          "settings": {
+            "helpText": ""
+          }
+        },
+        {
+          "fieldId": "body",
+          "widgetNamespace": "builtin",
+          "widgetId": "richTextEditor",
+          "settings": {
+            "helpText": "Use the rich text toolbar: tables, lists, links and embedded images. Embed Card entries for FAQs/timelines."
+          }
+        },
+        {
+          "fieldId": "image",
+          "widgetNamespace": "builtin",
+          "widgetId": "assetLinkEditor",
+          "settings": {
+            "helpText": ""
+          }
+        },
+        {
+          "fieldId": "imageAlt",
+          "widgetNamespace": "builtin",
+          "widgetId": "singleLine",
+          "settings": {
+            "helpText": ""
+          }
+        },
+        {
+          "fieldId": "actions",
+          "widgetNamespace": "builtin",
+          "widgetId": "entryLinksEditor",
+          "settings": {
+            "helpText": "First link is primary. Leaderboard + Events: first = Full Table, second = All Events."
+          }
+        },
+        {
+          "fieldId": "children",
+          "widgetNamespace": "builtin",
+          "widgetId": "entryLinksEditor",
+          "settings": {
+            "helpText": ""
+          }
+        },
+        {
+          "fieldId": "cards",
+          "widgetNamespace": "builtin",
+          "widgetId": "entryLinksEditor",
+          "settings": {
+            "helpText": ""
+          }
+        },
+        {
+          "fieldId": "statistics",
+          "widgetNamespace": "builtin",
+          "widgetId": "entryLinksEditor",
+          "settings": {
+            "helpText": ""
+          }
+        },
+        {
+          "fieldId": "days",
+          "widgetNamespace": "builtin",
+          "widgetId": "entryLinksEditor",
+          "settings": {
+            "helpText": ""
+          }
+        },
+        {
+          "fieldId": "sponsors",
+          "widgetNamespace": "builtin",
+          "widgetId": "entryLinksEditor",
+          "settings": {
+            "helpText": ""
+          }
+        },
+        {
+          "fieldId": "posts",
+          "widgetNamespace": "builtin",
+          "widgetId": "entryLinksEditor",
+          "settings": {
+            "helpText": "Featured articles in order; empty uses newest enabled articles. Review imported demo posts before launch."
+          }
+        },
+        {
+          "fieldId": "gallery",
+          "widgetNamespace": "builtin",
+          "widgetId": "entryLinksEditor",
+          "settings": {
+            "helpText": ""
+          }
+        },
+        {
+          "fieldId": "tournamentFeed",
+          "widgetNamespace": "builtin",
+          "widgetId": "entryLinkEditor",
+          "settings": {
+            "helpText": "Required for Leaderboard + Events. Scores and event cards refresh from the existing tournament service."
+          }
+        },
+        {
+          "fieldId": "tone",
+          "widgetNamespace": "builtin",
+          "widgetId": "dropdown",
+          "settings": {
+            "helpText": ""
+          }
+        },
+        {
+          "fieldId": "limit",
+          "widgetNamespace": "builtin",
+          "widgetId": "numberEditor",
+          "settings": {
+            "helpText": ""
+          }
+        },
+        {
+          "fieldId": "emptyText",
+          "widgetNamespace": "builtin",
+          "widgetId": "singleLine",
+          "settings": {
+            "helpText": ""
+          }
+        },
+        {
+          "fieldId": "embedUrl",
+          "widgetNamespace": "builtin",
+          "widgetId": "multipleLine",
+          "settings": {
+            "helpText": ""
+          }
+        }
+      ]
+    },
+    {
+      "contentTypeId": "contentCard",
+      "controls": [
+        {
+          "fieldId": "title",
+          "widgetNamespace": "builtin",
+          "widgetId": "singleLine",
+          "settings": {
+            "helpText": ""
+          }
+        },
+        {
+          "fieldId": "presentation",
+          "widgetNamespace": "builtin",
+          "widgetId": "dropdown",
+          "settings": {
+            "helpText": ""
+          }
+        },
+        {
+          "fieldId": "eyebrow",
+          "widgetNamespace": "builtin",
+          "widgetId": "singleLine",
+          "settings": {
+            "helpText": ""
+          }
+        },
+        {
+          "fieldId": "description",
+          "widgetNamespace": "builtin",
+          "widgetId": "multipleLine",
+          "settings": {
+            "helpText": ""
+          }
+        },
+        {
+          "fieldId": "body",
+          "widgetNamespace": "builtin",
+          "widgetId": "richTextEditor",
+          "settings": {
+            "helpText": ""
+          }
+        },
+        {
+          "fieldId": "image",
+          "widgetNamespace": "builtin",
+          "widgetId": "assetLinkEditor",
+          "settings": {
+            "helpText": ""
+          }
+        },
+        {
+          "fieldId": "imageAlt",
+          "widgetNamespace": "builtin",
+          "widgetId": "singleLine",
+          "settings": {
+            "helpText": ""
+          }
+        },
+        {
+          "fieldId": "icon",
+          "widgetNamespace": "builtin",
+          "widgetId": "dropdown",
+          "settings": {
+            "helpText": ""
+          }
+        },
+        {
+          "fieldId": "link",
+          "widgetNamespace": "builtin",
+          "widgetId": "entryLinkEditor",
+          "settings": {
+            "helpText": ""
+          }
+        },
+        {
+          "fieldId": "enabled",
+          "widgetNamespace": "builtin",
+          "widgetId": "boolean",
+          "settings": {
+            "helpText": "",
+            "trueLabel": "Show",
+            "falseLabel": "Hide"
+          }
+        }
+      ]
+    },
+    {
+      "contentTypeId": "statistic",
+      "controls": [
+        {
+          "fieldId": "label",
+          "widgetNamespace": "builtin",
+          "widgetId": "singleLine",
+          "settings": {
+            "helpText": ""
+          }
+        },
+        {
+          "fieldId": "value",
+          "widgetNamespace": "builtin",
+          "widgetId": "singleLine",
+          "settings": {
+            "helpText": ""
+          }
+        },
+        {
+          "fieldId": "icon",
+          "widgetNamespace": "builtin",
+          "widgetId": "dropdown",
+          "settings": {
+            "helpText": ""
+          }
+        },
+        {
+          "fieldId": "enabled",
+          "widgetNamespace": "builtin",
+          "widgetId": "boolean",
+          "settings": {
+            "helpText": "",
+            "trueLabel": "Show",
+            "falseLabel": "Hide"
+          }
+        }
+      ]
+    },
+    {
+      "contentTypeId": "scheduleDay",
+      "controls": [
+        {
+          "fieldId": "day",
+          "widgetNamespace": "builtin",
+          "widgetId": "dropdown",
+          "settings": {
+            "helpText": ""
+          }
+        },
+        {
+          "fieldId": "sessions",
+          "widgetNamespace": "builtin",
+          "widgetId": "entryLinksEditor",
+          "settings": {
+            "helpText": ""
+          }
+        },
+        {
+          "fieldId": "closedText",
+          "widgetNamespace": "builtin",
+          "widgetId": "singleLine",
+          "settings": {
+            "helpText": ""
+          }
+        }
+      ]
+    },
+    {
+      "contentTypeId": "scheduleSession",
+      "controls": [
+        {
+          "fieldId": "title",
+          "widgetNamespace": "builtin",
+          "widgetId": "singleLine",
+          "settings": {
+            "helpText": ""
+          }
+        },
+        {
+          "fieldId": "time",
+          "widgetNamespace": "builtin",
+          "widgetId": "singleLine",
+          "settings": {
+            "helpText": ""
+          }
+        },
+        {
+          "fieldId": "location",
+          "widgetNamespace": "builtin",
+          "widgetId": "singleLine",
+          "settings": {
+            "helpText": ""
+          }
+        },
+        {
+          "fieldId": "link",
+          "widgetNamespace": "builtin",
+          "widgetId": "entryLinkEditor",
+          "settings": {
+            "helpText": ""
+          }
+        }
+      ]
+    },
+    {
+      "contentTypeId": "sponsor",
+      "controls": [
+        {
+          "fieldId": "name",
+          "widgetNamespace": "builtin",
+          "widgetId": "singleLine",
+          "settings": {
+            "helpText": ""
+          }
+        },
+        {
+          "fieldId": "image",
+          "widgetNamespace": "builtin",
+          "widgetId": "assetLinkEditor",
+          "settings": {
+            "helpText": ""
+          }
+        },
+        {
+          "fieldId": "website",
+          "widgetNamespace": "builtin",
+          "widgetId": "singleLine",
+          "settings": {
+            "helpText": ""
+          }
+        },
+        {
+          "fieldId": "description",
+          "widgetNamespace": "builtin",
+          "widgetId": "multipleLine",
+          "settings": {
+            "helpText": ""
+          }
+        },
+        {
+          "fieldId": "enabled",
+          "widgetNamespace": "builtin",
+          "widgetId": "boolean",
+          "settings": {
+            "helpText": "",
+            "trueLabel": "Show",
+            "falseLabel": "Hide"
+          }
+        }
+      ]
+    },
+    {
+      "contentTypeId": "galleryImage",
+      "controls": [
+        {
+          "fieldId": "title",
+          "widgetNamespace": "builtin",
+          "widgetId": "singleLine",
+          "settings": {
+            "helpText": ""
+          }
+        },
+        {
+          "fieldId": "image",
+          "widgetNamespace": "builtin",
+          "widgetId": "assetLinkEditor",
+          "settings": {
+            "helpText": ""
+          }
+        },
+        {
+          "fieldId": "alt",
+          "widgetNamespace": "builtin",
+          "widgetId": "singleLine",
+          "settings": {
+            "helpText": ""
+          }
+        },
+        {
+          "fieldId": "link",
+          "widgetNamespace": "builtin",
+          "widgetId": "entryLinkEditor",
+          "settings": {
+            "helpText": ""
+          }
+        },
+        {
+          "fieldId": "enabled",
+          "widgetNamespace": "builtin",
+          "widgetId": "boolean",
+          "settings": {
+            "helpText": "",
+            "trueLabel": "Show",
+            "falseLabel": "Hide"
+          }
+        }
+      ]
+    },
+    {
+      "contentTypeId": "tournamentFeed",
+      "controls": [
+        {
+          "fieldId": "title",
+          "widgetNamespace": "builtin",
+          "widgetId": "singleLine",
+          "settings": {
+            "helpText": ""
+          }
+        },
+        {
+          "fieldId": "year",
+          "widgetNamespace": "builtin",
+          "widgetId": "numberEditor",
+          "settings": {
+            "helpText": ""
+          }
+        },
+        {
+          "fieldId": "dataUrl",
+          "widgetNamespace": "builtin",
+          "widgetId": "singleLine",
+          "settings": {
+            "helpText": "Currently https://tournament.hobsonsbaychess.com/open-ratings.json. Its year must match Expected leaderboard year."
+          }
+        },
+        {
+          "fieldId": "leaderboardUrl",
+          "widgetNamespace": "builtin",
+          "widgetId": "singleLine",
+          "settings": {
+            "helpText": ""
+          }
+        },
+        {
+          "fieldId": "upcomingUrl",
+          "widgetNamespace": "builtin",
+          "widgetId": "singleLine",
+          "settings": {
+            "helpText": ""
+          }
+        },
+        {
+          "fieldId": "calendarUrl",
+          "widgetNamespace": "builtin",
+          "widgetId": "singleLine",
+          "settings": {
+            "helpText": ""
+          }
+        },
+        {
+          "fieldId": "rows",
+          "widgetNamespace": "builtin",
+          "widgetId": "numberEditor",
+          "settings": {
+            "helpText": ""
+          }
+        },
+        {
+          "fieldId": "eventsLimit",
+          "widgetNamespace": "builtin",
+          "widgetId": "numberEditor",
+          "settings": {
+            "helpText": ""
+          }
+        },
+        {
+          "fieldId": "pointsLabel",
+          "widgetNamespace": "builtin",
+          "widgetId": "singleLine",
+          "settings": {
+            "helpText": ""
+          }
+        },
+        {
+          "fieldId": "updatedLabel",
+          "widgetNamespace": "builtin",
+          "widgetId": "singleLine",
+          "settings": {
+            "helpText": ""
+          }
+        },
+        {
+          "fieldId": "pointsExplanation",
+          "widgetNamespace": "builtin",
+          "widgetId": "multipleLine",
+          "settings": {
+            "helpText": ""
+          }
+        },
+        {
+          "fieldId": "unavailableText",
+          "widgetNamespace": "builtin",
+          "widgetId": "singleLine",
+          "settings": {
+            "helpText": ""
+          }
+        }
+      ]
+    }
+  ]
+}

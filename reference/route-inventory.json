@@ -1,0 +1,440 @@
+[
+  {
+    "wordpressId": 5242,
+    "url": "https://hobsonsbaychess.com/policies/",
+    "title": "Policies",
+    "decision": "migrate-club-page"
+  },
+  {
+    "wordpressId": 5225,
+    "url": "https://hobsonsbaychess.com/calendar/",
+    "title": "Calendar",
+    "decision": "migrate-club-page"
+  },
+  {
+    "wordpressId": 5209,
+    "url": "https://hobsonsbaychess.com/dgt-link/",
+    "title": "DGT Link",
+    "decision": "migrate-club-page"
+  },
+  {
+    "wordpressId": 5044,
+    "url": "https://hobsonsbaychess.com/best-in-the-west/",
+    "title": "Best in the West",
+    "decision": "migrate-club-page"
+  },
+  {
+    "wordpressId": 5021,
+    "url": "https://hobsonsbaychess.com/peter-caissa-memorial/",
+    "title": "Peter Caissa Memorial",
+    "decision": "migrate-club-page"
+  },
+  {
+    "wordpressId": 5008,
+    "url": "https://hobsonsbaychess.com/champions/",
+    "title": "Champions",
+    "decision": "migrate-club-page"
+  },
+  {
+    "wordpressId": 4852,
+    "url": "https://hobsonsbaychess.com/history/",
+    "title": "History",
+    "decision": "migrate-club-page"
+  },
+  {
+    "wordpressId": 4612,
+    "url": "https://hobsonsbaychess.com/coming-soon/",
+    "title": "Coming Soon",
+    "decision": "archive-and-review-demo-route"
+  },
+  {
+    "wordpressId": 4424,
+    "url": "https://hobsonsbaychess.com/membership/",
+    "title": "Membership",
+    "decision": "migrate-club-page"
+  },
+  {
+    "wordpressId": 4419,
+    "url": "https://hobsonsbaychess.com/tournaments/",
+    "title": "Tournaments",
+    "decision": "migrate-club-page"
+  },
+  {
+    "wordpressId": 4382,
+    "url": "https://hobsonsbaychess.com/sponsors/",
+    "title": "Sponsors",
+    "decision": "migrate-club-page"
+  },
+  {
+    "wordpressId": 4332,
+    "url": "https://hobsonsbaychess.com/juniors/",
+    "title": "Juniors",
+    "decision": "migrate-club-page"
+  },
+  {
+    "wordpressId": 4272,
+    "url": "https://hobsonsbaychess.com/play-chess/",
+    "title": "Play Chess",
+    "decision": "migrate-club-page"
+  },
+  {
+    "wordpressId": 3899,
+    "url": "https://hobsonsbaychess.com/about-us/booking/",
+    "title": "Booking Form",
+    "decision": "archive-and-review-demo-route"
+  },
+  {
+    "wordpressId": 3888,
+    "url": "https://hobsonsbaychess.com/under-construction/",
+    "title": "Under Construction",
+    "decision": "archive-and-review-demo-route"
+  },
+  {
+    "wordpressId": 3885,
+    "url": "https://hobsonsbaychess.com/search/",
+    "title": "Search",
+    "decision": "archive-and-review-demo-route"
+  },
+  {
+    "wordpressId": 3879,
+    "url": "https://hobsonsbaychess.com/page-not-found/",
+    "title": "Page not found",
+    "decision": "archive-and-review-demo-route"
+  },
+  {
+    "wordpressId": 3688,
+    "url": "https://hobsonsbaychess.com/elements/single-event-elements/",
+    "title": "Single Event",
+    "decision": "archive-and-review-demo-route"
+  },
+  {
+    "wordpressId": 3682,
+    "url": "https://hobsonsbaychess.com/elements/results-elements/",
+    "title": "Results",
+    "decision": "archive-and-review-demo-route"
+  },
+  {
+    "wordpressId": 3676,
+    "url": "https://hobsonsbaychess.com/elements/single-product-elements/",
+    "title": "Single Product",
+    "decision": "archive-and-review-demo-route"
+  },
+  {
+    "wordpressId": 2844,
+    "url": "https://hobsonsbaychess.com/shop/on-sale/",
+    "title": "On Sale",
+    "decision": "archive-and-review-demo-route"
+  },
+  {
+    "wordpressId": 2835,
+    "url": "https://hobsonsbaychess.com/elements/table-elements/",
+    "title": "Table",
+    "decision": "archive-and-review-demo-route"
+  },
+  {
+    "wordpressId": 2810,
+    "url": "https://hobsonsbaychess.com/shop/order-tracking-form/",
+    "title": "Order Tracking Form",
+    "decision": "archive-and-review-demo-route"
+  },
+  {
+    "wordpressId": 2797,
+    "url": "https://hobsonsbaychess.com/gallery-grid-view/",
+    "title": "Gallery Grid View",
+    "decision": "archive-and-review-demo-route"
+  },
+  {
+    "wordpressId": 2783,
+    "url": "https://hobsonsbaychess.com/elements/score-elements/",
+    "title": "Score & Single Score",
+    "decision": "archive-and-review-demo-route"
+  },
+  {
+    "wordpressId": 2781,
+    "url": "https://hobsonsbaychess.com/elements/quotes-elements/",
+    "title": "Quotes",
+    "decision": "archive-and-review-demo-route"
+  },
+  {
+    "wordpressId": 2779,
+    "url": "https://hobsonsbaychess.com/elements/program-schedule-elements/",
+    "title": "Program & Schedule",
+    "decision": "archive-and-review-demo-route"
+  },
+  {
+    "wordpressId": 2777,
+    "url": "https://hobsonsbaychess.com/elements/card-image-icon/",
+    "title": "Card Image & Icon",
+    "decision": "archive-and-review-demo-route"
+  },
+  {
+    "wordpressId": 2771,
+    "url": "https://hobsonsbaychess.com/elements/call-to-action/",
+    "title": "Call to action",
+    "decision": "archive-and-review-demo-route"
+  },
+  {
+    "wordpressId": 2623,
+    "url": "https://hobsonsbaychess.com/home/footer-home-03/",
+    "title": "Footer – Home 03",
+    "decision": "archive-and-review-demo-route"
+  },
+  {
+    "wordpressId": 2081,
+    "url": "https://hobsonsbaychess.com/",
+    "title": "Home 04 – Volleyball",
+    "decision": "rebuild-homepage"
+  },
+  {
+    "wordpressId": 2079,
+    "url": "https://hobsonsbaychess.com/home/football/",
+    "title": "Home 03 – Football",
+    "decision": "archive-and-review-demo-route"
+  },
+  {
+    "wordpressId": 2030,
+    "url": "https://hobsonsbaychess.com/home/footer-home-02/",
+    "title": "Footer – Home 02",
+    "decision": "archive-and-review-demo-route"
+  },
+  {
+    "wordpressId": 1922,
+    "url": "https://hobsonsbaychess.com/home/soccer/",
+    "title": "Home 02 – Soccer",
+    "decision": "archive-and-review-demo-route"
+  },
+  {
+    "wordpressId": 1764,
+    "url": "https://hobsonsbaychess.com/home/footer/",
+    "title": "Footer",
+    "decision": "archive-and-review-demo-route"
+  },
+  {
+    "wordpressId": 1740,
+    "url": "https://hobsonsbaychess.com/about-us/sponsors/",
+    "title": "Sponsors",
+    "decision": "archive-and-review-demo-route"
+  },
+  {
+    "wordpressId": 1723,
+    "url": "https://hobsonsbaychess.com/about-us/team/",
+    "title": "Team",
+    "decision": "archive-and-review-demo-route"
+  },
+  {
+    "wordpressId": 1718,
+    "url": "https://hobsonsbaychess.com/results/single-game/",
+    "title": "Single Game",
+    "decision": "archive-and-review-demo-route"
+  },
+  {
+    "wordpressId": 1712,
+    "url": "https://hobsonsbaychess.com/results/services/",
+    "title": "Services",
+    "decision": "archive-and-review-demo-route"
+  },
+  {
+    "wordpressId": 1710,
+    "url": "https://hobsonsbaychess.com/results/",
+    "title": "Results",
+    "decision": "archive-and-review-demo-route"
+  },
+  {
+    "wordpressId": 1707,
+    "url": "https://hobsonsbaychess.com/results/program/",
+    "title": "Program",
+    "decision": "archive-and-review-demo-route"
+  },
+  {
+    "wordpressId": 1701,
+    "url": "https://hobsonsbaychess.com/about-us/history/",
+    "title": "History",
+    "decision": "archive-and-review-demo-route"
+  },
+  {
+    "wordpressId": 1698,
+    "url": "https://hobsonsbaychess.com/results/events-schedule/",
+    "title": "Events & Schedule",
+    "decision": "archive-and-review-demo-route"
+  },
+  {
+    "wordpressId": 1379,
+    "url": "https://hobsonsbaychess.com/elements/tabs/",
+    "title": "Tabs",
+    "decision": "archive-and-review-demo-route"
+  },
+  {
+    "wordpressId": 1374,
+    "url": "https://hobsonsbaychess.com/elements/accordions/",
+    "title": "Accordions",
+    "decision": "archive-and-review-demo-route"
+  },
+  {
+    "wordpressId": 1369,
+    "url": "https://hobsonsbaychess.com/elements/service-element/",
+    "title": "Service",
+    "decision": "archive-and-review-demo-route"
+  },
+  {
+    "wordpressId": 1358,
+    "url": "https://hobsonsbaychess.com/elements/google-maps/",
+    "title": "Google Maps",
+    "decision": "archive-and-review-demo-route"
+  },
+  {
+    "wordpressId": 1352,
+    "url": "https://hobsonsbaychess.com/elements/cost-calculator/",
+    "title": "Cost Calculator",
+    "decision": "archive-and-review-demo-route"
+  },
+  {
+    "wordpressId": 1348,
+    "url": "https://hobsonsbaychess.com/elements/",
+    "title": "Elements",
+    "decision": "archive-and-review-demo-route"
+  },
+  {
+    "wordpressId": 1345,
+    "url": "https://hobsonsbaychess.com/elements/price-list/",
+    "title": "Price List",
+    "decision": "archive-and-review-demo-route"
+  },
+  {
+    "wordpressId": 1337,
+    "url": "https://hobsonsbaychess.com/elements/progress-bar/",
+    "title": "Progress Bar",
+    "decision": "archive-and-review-demo-route"
+  },
+  {
+    "wordpressId": 1330,
+    "url": "https://hobsonsbaychess.com/blog/blog-single-column-no-sidebar/",
+    "title": "Blog Single – Column, No sidebar",
+    "decision": "archive-and-review-demo-route"
+  },
+  {
+    "wordpressId": 1323,
+    "url": "https://hobsonsbaychess.com/elements/slider/",
+    "title": "Slider",
+    "decision": "archive-and-review-demo-route"
+  },
+  {
+    "wordpressId": 1311,
+    "url": "https://hobsonsbaychess.com/elements/blog-layouts/",
+    "title": "Blog Layouts",
+    "decision": "archive-and-review-demo-route"
+  },
+  {
+    "wordpressId": 1302,
+    "url": "https://hobsonsbaychess.com/elements/countdown-counter/",
+    "title": "Countdown & Counter",
+    "decision": "archive-and-review-demo-route"
+  },
+  {
+    "wordpressId": 1285,
+    "url": "https://hobsonsbaychess.com/elements/inner-row-column/",
+    "title": "Inner Row & Column",
+    "decision": "archive-and-review-demo-route"
+  },
+  {
+    "wordpressId": 1253,
+    "url": "https://hobsonsbaychess.com/elements/images/",
+    "title": "Images",
+    "decision": "archive-and-review-demo-route"
+  },
+  {
+    "wordpressId": 1241,
+    "url": "https://hobsonsbaychess.com/elements/icons/",
+    "title": "Icons",
+    "decision": "archive-and-review-demo-route"
+  },
+  {
+    "wordpressId": 1231,
+    "url": "https://hobsonsbaychess.com/elements/buttons/",
+    "title": "Buttons",
+    "decision": "archive-and-review-demo-route"
+  },
+  {
+    "wordpressId": 1226,
+    "url": "https://hobsonsbaychess.com/elements/headlines/",
+    "title": "Headlines",
+    "decision": "archive-and-review-demo-route"
+  },
+  {
+    "wordpressId": 1200,
+    "url": "https://hobsonsbaychess.com/blog/blog-grid/",
+    "title": "Blog Grid",
+    "decision": "archive-and-review-demo-route"
+  },
+  {
+    "wordpressId": 129,
+    "url": "https://hobsonsbaychess.com/shop/shop-single/",
+    "title": "Shop Single",
+    "decision": "archive-and-review-demo-route"
+  },
+  {
+    "wordpressId": 37,
+    "url": "https://hobsonsbaychess.com/gallery/gallery-single/",
+    "title": "Gallery Single",
+    "decision": "archive-and-review-demo-route"
+  },
+  {
+    "wordpressId": 35,
+    "url": "https://hobsonsbaychess.com/gallery/",
+    "title": "Gallery",
+    "decision": "archive-and-review-demo-route"
+  },
+  {
+    "wordpressId": 28,
+    "url": "https://hobsonsbaychess.com/blog/blog-single/",
+    "title": "Blog Single",
+    "decision": "archive-and-review-demo-route"
+  },
+  {
+    "wordpressId": 25,
+    "url": "https://hobsonsbaychess.com/blog/",
+    "title": "Blog",
+    "decision": "archive-and-review-demo-route"
+  },
+  {
+    "wordpressId": 23,
+    "url": "https://hobsonsbaychess.com/shop/my-account/",
+    "title": "My Account",
+    "decision": "archive-and-review-demo-route"
+  },
+  {
+    "wordpressId": 21,
+    "url": "https://hobsonsbaychess.com/shop/checkout/",
+    "title": "Checkout",
+    "decision": "archive-and-review-demo-route"
+  },
+  {
+    "wordpressId": 19,
+    "url": "https://hobsonsbaychess.com/shop/cart/",
+    "title": "Cart",
+    "decision": "archive-and-review-demo-route"
+  },
+  {
+    "wordpressId": 16,
+    "url": "https://hobsonsbaychess.com/shop/",
+    "title": "Shop",
+    "decision": "archive-and-review-demo-route"
+  },
+  {
+    "wordpressId": 13,
+    "url": "https://hobsonsbaychess.com/contact/",
+    "title": "Contact",
+    "decision": "migrate-club-page"
+  },
+  {
+    "wordpressId": 11,
+    "url": "https://hobsonsbaychess.com/about-us/",
+    "title": "About Us",
+    "decision": "migrate-club-page"
+  },
+  {
+    "wordpressId": 1566,
+    "url": "https://hobsonsbaychess.com/home/",
+    "title": "Home",
+    "decision": "archive-and-review-demo-route"
+  }
+]

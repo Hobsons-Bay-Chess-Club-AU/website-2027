@@ -1,0 +1,5 @@
+---
+import {safeUrl} from '../lib/sanitize.mjs';
+const {item,class:className='',...rest}=Astro.props;
+---
+{item&&<a href={safeUrl(item.href)} class={className||undefined} target={item.openInNewTab?'_blank':undefined} rel={item.openInNewTab?'noopener noreferrer':undefined} {...rest}><slot>{item.label}</slot></a>}

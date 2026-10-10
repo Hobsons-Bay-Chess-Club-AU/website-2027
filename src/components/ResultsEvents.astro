@@ -1,0 +1,66 @@
+---
+import CmsLink from './CmsLink.astro';
+import {safeUrl} from '../lib/sanitize.mjs';
+import {getTournamentData} from '../lib/tournaments.mjs';
+const {section}=Astro.props;
+const feed=section.tournamentFeed;
+if(!feed)throw new Error('Link a Tournament website integration to the Leaderboard + Events section.');
+const data=await getTournamentData(feed);
+const updated=data.generatedAt?new Intl.DateTimeFormat('en-AU',{day:'numeric',month:'short',year:'numeric',timeZone:'Australia/Melbourne'}).format(new Date(data.generatedAt)):'';
+---
+<section class="section section-light tournament-summary" data-leaderboard-url={feed.dataUrl} data-upcoming-url={feed.upcomingUrl} data-year={feed.year} data-rows={feed.rows} data-events-limit={feed.eventsLimit} data-updated-label={feed.updatedLabel}>
+ <div class="container results-events">
+  <div class="standings">
+   <div class="section-heading"><div><h2>{section.title}</h2><p>{section.subtitle}</p></div><CmsLink item={section.actions[0]} class="text-link"/></div>
+   <div class="table-scroll"><table><caption class="sr-only">{feed.pointsExplanation}</caption><thead><tr><th scope="col">#</th><th scope="col">Players</th><th scope="col">{feed.pointsLabel}</th></tr></thead><tbody data-leaderboard-rows>{data.rows.map(row=><tr><td>{row.rank}</td><th scope="row">{row.title&&<span>{row.title} </span>}{row.name}</th><td>{row.points}</td></tr>)}</tbody></table></div>
+   <p class="results-explanation">{feed.pointsExplanation}</p>
+   <p class="results-updated" data-leaderboard-updated>{updated&&<>{feed.updatedLabel} <time datetime={data.generatedAt}>{updated}</time></>}</p>
+   {!data.rows.length&&<p>{feed.unavailableText}</p>}
+  </div>
+  <div><div class="section-heading"><h2>{section.secondaryTitle}</h2><CmsLink item={section.actions[1]} class="text-link"/></div><div class="event-list" data-upcoming-events>{data.events.map(event=><a class="event-card" href={safeUrl(event.url)}><div class="event-date"><strong>{event.day}</strong><span>{event.month}</span></div>{event.image&&<img src={safeUrl(event.image)} alt="" width="70" height="85" loading="lazy" decoding="async"/>}<div><h3>{event.title}</h3><p>{event.dates}</p><p>{event.location}</p></div><span class="event-arrow" aria-hidden="true">↗</span></a>)}</div>{!data.events.length&&<p>{section.emptyText||feed.unavailableText}</p>}</div>
+ </div>
+</section>
+<script>
+ import {leaderboardRows,tournamentDataUrl,normalizeTournamentEvent} from '../lib/leaderboard.mjs';
+ const textElement=(tag:string,text:string,className?:string)=>{
+  const node=document.createElement(tag);node.textContent=text;if(className)node.className=className;return node;
+ };
+ for(const root of document.querySelectorAll<HTMLElement>('.tournament-summary')){
+  const refresh=async()=>{
+   const dataUrl=tournamentDataUrl(root.dataset.leaderboardUrl);
+   const upcomingUrl=tournamentDataUrl(root.dataset.upcomingUrl,'upcoming');
+   const updates=await Promise.allSettled([
+    fetch(dataUrl,{signal:AbortSignal.timeout(10000)}).then(async response=>{
+     if(!response.ok)throw new Error('Leaderboard unavailable');
+     const data=await response.json(),rows=leaderboardRows(data,Number(root.dataset.year),Number(root.dataset.rows));
+     const body=root.querySelector('[data-leaderboard-rows]'),fragment=document.createDocumentFragment();
+     for(const row of rows){
+      const tr=document.createElement('tr'),name=textElement('th',(row.title?row.title+' ':'')+row.name);name.setAttribute('scope','row');
+      tr.append(textElement('td',String(row.rank)),name,textElement('td',String(row.points)));fragment.append(tr);
+     }
+     body?.replaceChildren(fragment);
+     const time=textElement('time',new Intl.DateTimeFormat('en-AU',{day:'numeric',month:'short',year:'numeric',timeZone:'Australia/Melbourne'}).format(new Date(data.generatedAt)));
+     time.setAttribute('datetime',data.generatedAt);
+     root.querySelector('[data-leaderboard-updated]')?.replaceChildren(document.createTextNode(root.dataset.updatedLabel+' '),time);
+    }),
+    fetch(upcomingUrl,{signal:AbortSignal.timeout(10000)}).then(async response=>{
+     if(!response.ok)throw new Error('Upcoming events unavailable');
+     const page=new DOMParser().parseFromString(await response.text(),'text/html');
+     const events=[...page.querySelectorAll<HTMLAnchorElement>('a[href*="/v2/upcoming/"]')].map(a=>normalizeTournamentEvent({href:a.getAttribute('href'),title:a.querySelector('h2')?.textContent,dates:a.querySelector('p')?.textContent,location:a.querySelectorAll('p')[1]?.textContent,image:a.querySelector('img')?.getAttribute('src')})).filter(Boolean).slice(0,Number(root.dataset.eventsLimit));
+     const fragment=document.createDocumentFragment();
+     for(const event of events){
+      const a=document.createElement('a');a.href=event.url;a.className='event-card';
+      const date=document.createElement('div');date.className='event-date';date.append(textElement('strong',event.day),textElement('span',event.month));a.append(date);
+      if(event.image){const image=document.createElement('img');image.src=event.image;image.alt='';image.width=70;image.height=85;image.loading='lazy';a.append(image);}
+      const copy=document.createElement('div');copy.append(textElement('h3',event.title),textElement('p',event.dates),textElement('p',event.location));
+      const arrow=textElement('span','↗','event-arrow');arrow.setAttribute('aria-hidden','true');a.append(copy,arrow);fragment.append(a);
+     }
+     // Preserve the dated build snapshot if upstream markup has unexpectedly changed.
+     if(events.length)root.querySelector('[data-upcoming-events]')?.replaceChildren(fragment);
+    })
+   ]);
+   root.dataset.refreshState=updates.every(r=>r.status==='fulfilled')?'current':'snapshot';
+  };
+  refresh().catch(()=>{root.dataset.refreshState='snapshot';});
+ }
+</script>

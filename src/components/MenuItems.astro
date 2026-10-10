@@ -1,0 +1,7 @@
+---
+import CmsLink from './CmsLink.astro';
+const {items=[],depth=0}=Astro.props;
+---
+{items.map(item=>item.children.length?(
+ <details class="menu-group" data-depth={depth}><summary>{item.label}<span aria-hidden="true">+</span></summary><div class="menu-children"><CmsLink item={item}>{item.label}{item.href.startsWith('https:')&&<span aria-hidden="true"> ↗</span>}</CmsLink><Astro.self items={item.children} depth={depth+1}/></div></details>
+):<CmsLink item={item} class="menu-link">{item.label}{item.href.startsWith('https:')&&<span aria-hidden="true">↗</span>}</CmsLink>)}

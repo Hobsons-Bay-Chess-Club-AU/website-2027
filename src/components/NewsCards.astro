@@ -1,0 +1,5 @@
+---
+import {safeUrl} from '../lib/sanitize.mjs';
+const {posts=[],settings,listing=false}=Astro.props;
+---
+<div class="news-grid">{posts.map(post=><a class="news-card" href={'/'+post.slug+'/'}>{post.image&&<img src={safeUrl(post.image)} alt={post.imageAlt||''} width="600" height="400" loading="lazy" decoding="async"/>}<div><time datetime={post.publishedAt}>{new Intl.DateTimeFormat('en-AU',{day:'numeric',month:'long',...(listing?{year:'numeric'}:{}),timeZone:'UTC'}).format(new Date(post.publishedAt))}</time>{(post.author||post.category)&&<p class="news-meta">{post.author&&<span>by {post.author}</span>}{post.category&&<span>{post.category}</span>}</p>}{listing?<h2>{post.title}</h2>:<h3>{post.title}</h3>}{listing&&<p>{post.excerpt}</p>}<span class="text-link">{settings.readMoreLabel} <span aria-hidden="true">→</span></span></div></a>)}</div>

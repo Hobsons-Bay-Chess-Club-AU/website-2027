@@ -1,0 +1,20 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Sections from './Sections.astro';
+import CmsLink from './CmsLink.astro';
+import Icon from './Icon.astro';
+import {getContent} from '../lib/content.mjs';
+import {safeUrl} from '../lib/sanitize.mjs';
+const {settings,home,posts}=await getContent();
+---
+<Layout home title={home.title} seoTitle={home.seoTitle} description={home.description} image={home.heroImage} noindex={home.noindex}>
+ <section class="home-hero" style={"--hero-image:url('"+safeUrl(home.heroImage)+"')"} aria-labelledby="home-heading">
+  <div class="container hero-inner">
+   <div class="hero-top"><div class="hero-introduction"><div class="hero-copy"><h1 id="home-heading">{home.heroTitle}<span>{home.heroStrapline}</span></h1><p>{home.heroDescription}</p></div><div class="hero-buttons">{home.heroActions.map((action,i)=><CmsLink item={action} class={'button '+(i===0?'button-outline':'button-gold')}/>)}</div></div>
+   <CmsLink item={home.partnerLink} class="hero-partner" aria-label={home.partnerLink?.label}><img src={safeUrl(home.partnerImage)} alt={home.partnerAlt||''} width="716" height="426" fetchpriority="high"/></CmsLink>
+   </div>
+   <div class="hero-features">{home.featureCards.map(card=><CmsLink item={card.link} class="feature-card"><Icon name={card.icon} class="feature-icon"/><h2>{card.title}</h2><div class="feature-caption"><Icon name="arrow"/><p>{card.description}</p></div></CmsLink>)}</div>
+  </div>
+ </section>
+ <Sections sections={home.sections} settings={settings} posts={posts}/>
+</Layout>

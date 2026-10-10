@@ -1,0 +1,8 @@
+---
+import Layout from '../layouts/Layout.astro';
+import NewsCards from '../components/NewsCards.astro';
+import {getContent} from '../lib/content.mjs';
+import {safeUrl} from '../lib/sanitize.mjs';
+const {posts,settings}=await getContent();
+---
+<Layout title={settings.newsLabel} description={settings.newsDescription}><section class="page-hero" style={"--page-image:url('"+safeUrl(settings.heroImage)+"')"}><div class="container"><a class="breadcrumb" href="/">{settings.homeLabel} /</a><h1>{settings.newsTitle}</h1></div></section><section class="section section-light"><div class="container"><NewsCards posts={posts} settings={settings} listing/></div></section></Layout>

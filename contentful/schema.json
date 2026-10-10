@@ -1,0 +1,2325 @@
+{
+  "version": 2,
+  "contentTypes": [
+    {
+      "sys": {
+        "id": "siteSettings"
+      },
+      "name": "Website settings",
+      "description": "Start here: homepage, menus, branding and footer.",
+      "displayField": "title",
+      "fields": [
+        {
+          "id": "title",
+          "name": "Club name",
+          "type": "Symbol",
+          "required": true,
+          "localized": false,
+          "validations": [
+            {
+              "size": {
+                "max": 256
+              }
+            }
+          ]
+        },
+        {
+          "id": "shortName",
+          "name": "Short name",
+          "type": "Symbol",
+          "required": true,
+          "localized": false,
+          "validations": [
+            {
+              "size": {
+                "max": 256
+              }
+            }
+          ]
+        },
+        {
+          "id": "logo",
+          "name": "Club logo",
+          "type": "Link",
+          "required": true,
+          "localized": false,
+          "linkType": "Asset",
+          "validations": [
+            {
+              "linkMimetypeGroup": [
+                "image"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "favicon",
+          "name": "Browser icon",
+          "type": "Link",
+          "required": false,
+          "localized": false,
+          "linkType": "Asset",
+          "validations": [
+            {
+              "linkMimetypeGroup": [
+                "image"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "defaultDescription",
+          "name": "Default search description",
+          "type": "Text",
+          "required": true,
+          "localized": false
+        },
+        {
+          "id": "homePage",
+          "name": "Homepage",
+          "type": "Link",
+          "required": true,
+          "localized": false,
+          "linkType": "Entry",
+          "validations": [
+            {
+              "linkContentType": [
+                "page"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "mainMenu",
+          "name": "Main menu",
+          "type": "Link",
+          "required": true,
+          "localized": false,
+          "linkType": "Entry",
+          "validations": [
+            {
+              "linkContentType": [
+                "navigationMenu"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "footerMenus",
+          "name": "Footer link columns",
+          "type": "Array",
+          "required": false,
+          "localized": false,
+          "items": {
+            "type": "Link",
+            "linkType": "Entry",
+            "validations": [
+              {
+                "linkContentType": [
+                  "navigationMenu"
+                ]
+              }
+            ]
+          },
+          "validations": [
+            {
+              "size": {
+                "max": 200
+              }
+            }
+          ]
+        },
+        {
+          "id": "legalMenu",
+          "name": "Legal links",
+          "type": "Link",
+          "required": false,
+          "localized": false,
+          "linkType": "Entry",
+          "validations": [
+            {
+              "linkContentType": [
+                "navigationMenu"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "email",
+          "name": "Public contact email",
+          "type": "Symbol",
+          "required": true,
+          "localized": false,
+          "validations": [
+            {
+              "size": {
+                "max": 256
+              }
+            }
+          ]
+        },
+        {
+          "id": "address",
+          "name": "Venue address",
+          "type": "Text",
+          "required": true,
+          "localized": false
+        },
+        {
+          "id": "headerSocialLinks",
+          "name": "Header social links",
+          "type": "Array",
+          "required": false,
+          "localized": false,
+          "items": {
+            "type": "Link",
+            "linkType": "Entry",
+            "validations": [
+              {
+                "linkContentType": [
+                  "navigationItem"
+                ]
+              }
+            ]
+          },
+          "validations": [
+            {
+              "size": {
+                "max": 200
+              }
+            }
+          ]
+        },
+        {
+          "id": "socialLinks",
+          "name": "Footer social links",
+          "type": "Array",
+          "required": false,
+          "localized": false,
+          "items": {
+            "type": "Link",
+            "linkType": "Entry",
+            "validations": [
+              {
+                "linkContentType": [
+                  "navigationItem"
+                ]
+              }
+            ]
+          },
+          "validations": [
+            {
+              "size": {
+                "max": 200
+              }
+            }
+          ]
+        },
+        {
+          "id": "footerBrandLabel",
+          "name": "Footer brand text",
+          "type": "Symbol",
+          "required": false,
+          "localized": false,
+          "validations": [
+            {
+              "size": {
+                "max": 256
+              }
+            }
+          ]
+        },
+        {
+          "id": "contactHeading",
+          "name": "Contact heading",
+          "type": "Symbol",
+          "required": false,
+          "localized": false,
+          "validations": [
+            {
+              "size": {
+                "max": 256
+              }
+            }
+          ]
+        },
+        {
+          "id": "connectHeading",
+          "name": "Social heading",
+          "type": "Symbol",
+          "required": false,
+          "localized": false,
+          "validations": [
+            {
+              "size": {
+                "max": 256
+              }
+            }
+          ]
+        },
+        {
+          "id": "instagramLabel",
+          "name": "Instagram link text",
+          "type": "Symbol",
+          "required": false,
+          "localized": false,
+          "validations": [
+            {
+              "size": {
+                "max": 256
+              }
+            }
+          ]
+        },
+        {
+          "id": "joinBanner",
+          "name": "Join/contact banner",
+          "type": "Link",
+          "required": false,
+          "localized": false,
+          "linkType": "Entry",
+          "validations": [
+            {
+              "linkContentType": [
+                "section"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "footerGallery",
+          "name": "Footer image gallery",
+          "type": "Array",
+          "required": false,
+          "localized": false,
+          "items": {
+            "type": "Link",
+            "linkType": "Entry",
+            "validations": [
+              {
+                "linkContentType": [
+                  "galleryImage"
+                ]
+              }
+            ]
+          },
+          "validations": [
+            {
+              "size": {
+                "max": 200
+              }
+            }
+          ]
+        },
+        {
+          "id": "copyright",
+          "name": "Copyright — use {year} for current year",
+          "type": "Text",
+          "required": false,
+          "localized": false
+        },
+        {
+          "id": "newsTitle",
+          "name": "News listing heading",
+          "type": "Symbol",
+          "required": true,
+          "localized": false,
+          "validations": [
+            {
+              "size": {
+                "max": 256
+              }
+            }
+          ]
+        },
+        {
+          "id": "newsDescription",
+          "name": "News listing description",
+          "type": "Text",
+          "required": false,
+          "localized": false
+        },
+        {
+          "id": "readMoreLabel",
+          "name": "Read-more label",
+          "type": "Symbol",
+          "required": true,
+          "localized": false,
+          "validations": [
+            {
+              "size": {
+                "max": 256
+              }
+            }
+          ]
+        },
+        {
+          "id": "homeLabel",
+          "name": "Home breadcrumb",
+          "type": "Symbol",
+          "required": true,
+          "localized": false,
+          "validations": [
+            {
+              "size": {
+                "max": 256
+              }
+            }
+          ]
+        },
+        {
+          "id": "newsLabel",
+          "name": "News breadcrumb",
+          "type": "Symbol",
+          "required": true,
+          "localized": false,
+          "validations": [
+            {
+              "size": {
+                "max": 256
+              }
+            }
+          ]
+        },
+        {
+          "id": "menuLabel",
+          "name": "Menu heading",
+          "type": "Symbol",
+          "required": true,
+          "localized": false,
+          "validations": [
+            {
+              "size": {
+                "max": 256
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "sys": {
+        "id": "navigationMenu"
+      },
+      "name": "Menu",
+      "description": "Drag items to change order. Main navigation, footer columns and legal links.",
+      "displayField": "title",
+      "fields": [
+        {
+          "id": "title",
+          "name": "Menu name / column heading",
+          "type": "Symbol",
+          "required": true,
+          "localized": false,
+          "validations": [
+            {
+              "size": {
+                "max": 256
+              }
+            }
+          ]
+        },
+        {
+          "id": "items",
+          "name": "Menu items in display order",
+          "type": "Array",
+          "required": true,
+          "localized": false,
+          "items": {
+            "type": "Link",
+            "linkType": "Entry",
+            "validations": [
+              {
+                "linkContentType": [
+                  "navigationItem"
+                ]
+              }
+            ]
+          },
+          "validations": [
+            {
+              "size": {
+                "max": 200,
+                "min": 1
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "sys": {
+        "id": "navigationItem"
+      },
+      "name": "Menu item / button / social link",
+      "description": "Select a page OR enter a URL. Link children to create submenus.",
+      "displayField": "label",
+      "fields": [
+        {
+          "id": "label",
+          "name": "Link text",
+          "type": "Symbol",
+          "required": true,
+          "localized": false,
+          "validations": [
+            {
+              "size": {
+                "max": 256
+              }
+            }
+          ]
+        },
+        {
+          "id": "page",
+          "name": "Website page",
+          "type": "Link",
+          "required": false,
+          "localized": false,
+          "linkType": "Entry",
+          "validations": [
+            {
+              "linkContentType": [
+                "page",
+                "post"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "tournamentFeed",
+          "name": "Tournament service",
+          "type": "Link",
+          "required": false,
+          "localized": false,
+          "linkType": "Entry",
+          "validations": [
+            {
+              "linkContentType": [
+                "tournamentFeed"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "tournamentDestination",
+          "name": "Tournament destination",
+          "type": "Symbol",
+          "required": false,
+          "localized": false,
+          "validations": [
+            {
+              "in": [
+                "leaderboard",
+                "upcoming",
+                "calendar"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "url",
+          "name": "External URL, local route, email or anchor",
+          "type": "Symbol",
+          "required": false,
+          "localized": false,
+          "validations": [
+            {
+              "size": {
+                "max": 256
+              }
+            }
+          ]
+        },
+        {
+          "id": "children",
+          "name": "Submenu items",
+          "type": "Array",
+          "required": false,
+          "localized": false,
+          "items": {
+            "type": "Link",
+            "linkType": "Entry",
+            "validations": [
+              {
+                "linkContentType": [
+                  "navigationItem"
+                ]
+              }
+            ]
+          },
+          "validations": [
+            {
+              "size": {
+                "max": 200
+              }
+            }
+          ]
+        },
+        {
+          "id": "openInNewTab",
+          "name": "Open in new tab",
+          "type": "Boolean",
+          "required": false,
+          "localized": false
+        },
+        {
+          "id": "icon",
+          "name": "Icon",
+          "type": "Symbol",
+          "required": false,
+          "localized": false,
+          "validations": [
+            {
+              "in": [
+                "none",
+                "chess",
+                "pawn",
+                "board",
+                "membership",
+                "history",
+                "people",
+                "junior",
+                "calendar",
+                "events",
+                "attendance",
+                "facebook",
+                "instagram",
+                "youtube"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "enabled",
+          "name": "Show on website",
+          "type": "Boolean",
+          "required": false,
+          "localized": false,
+          "defaultValue": {
+            "en-US": true
+          }
+        }
+      ]
+    },
+    {
+      "sys": {
+        "id": "page"
+      },
+      "name": "Website page",
+      "description": "Edit hero and ordered sections. Rich text does not require HTML.",
+      "displayField": "title",
+      "fields": [
+        {
+          "id": "title",
+          "name": "Page title",
+          "type": "Symbol",
+          "required": true,
+          "localized": false,
+          "validations": [
+            {
+              "size": {
+                "max": 256
+              }
+            }
+          ]
+        },
+        {
+          "id": "slug",
+          "name": "URL slug",
+          "type": "Symbol",
+          "required": true,
+          "localized": false,
+          "validations": [
+            {
+              "unique": true
+            },
+            {
+              "regexp": {
+                "pattern": "^[a-z0-9-]+(?:/[a-z0-9-]+)*$"
+              }
+            }
+          ]
+        },
+        {
+          "id": "template",
+          "name": "Page template",
+          "type": "Symbol",
+          "required": true,
+          "localized": false,
+          "validations": [
+            {
+              "in": [
+                "content",
+                "home"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "description",
+          "name": "Summary / search description",
+          "type": "Text",
+          "required": true,
+          "localized": false
+        },
+        {
+          "id": "seoTitle",
+          "name": "Search/social title override",
+          "type": "Symbol",
+          "required": false,
+          "localized": false,
+          "validations": [
+            {
+              "size": {
+                "max": 256
+              }
+            }
+          ]
+        },
+        {
+          "id": "heroImage",
+          "name": "Hero background",
+          "type": "Link",
+          "required": false,
+          "localized": false,
+          "linkType": "Asset",
+          "validations": [
+            {
+              "linkMimetypeGroup": [
+                "image"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "heroTitle",
+          "name": "Hero title override",
+          "type": "Symbol",
+          "required": false,
+          "localized": false,
+          "validations": [
+            {
+              "size": {
+                "max": 256
+              }
+            }
+          ]
+        },
+        {
+          "id": "heroStrapline",
+          "name": "Homepage gold strapline",
+          "type": "Symbol",
+          "required": false,
+          "localized": false,
+          "validations": [
+            {
+              "size": {
+                "max": 256
+              }
+            }
+          ]
+        },
+        {
+          "id": "heroDescription",
+          "name": "Hero introduction",
+          "type": "Text",
+          "required": false,
+          "localized": false
+        },
+        {
+          "id": "partnerImage",
+          "name": "Partner graphic",
+          "type": "Link",
+          "required": false,
+          "localized": false,
+          "linkType": "Asset",
+          "validations": [
+            {
+              "linkMimetypeGroup": [
+                "image"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "partnerAlt",
+          "name": "Partner alternative text",
+          "type": "Symbol",
+          "required": false,
+          "localized": false,
+          "validations": [
+            {
+              "size": {
+                "max": 256
+              }
+            }
+          ]
+        },
+        {
+          "id": "partnerLink",
+          "name": "Partner link",
+          "type": "Link",
+          "required": false,
+          "localized": false,
+          "linkType": "Entry",
+          "validations": [
+            {
+              "linkContentType": [
+                "navigationItem"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "heroActions",
+          "name": "Hero buttons",
+          "type": "Array",
+          "required": false,
+          "localized": false,
+          "items": {
+            "type": "Link",
+            "linkType": "Entry",
+            "validations": [
+              {
+                "linkContentType": [
+                  "navigationItem"
+                ]
+              }
+            ]
+          },
+          "validations": [
+            {
+              "size": {
+                "max": 200
+              }
+            }
+          ]
+        },
+        {
+          "id": "featureCards",
+          "name": "Homepage feature cards",
+          "type": "Array",
+          "required": false,
+          "localized": false,
+          "items": {
+            "type": "Link",
+            "linkType": "Entry",
+            "validations": [
+              {
+                "linkContentType": [
+                  "contentCard"
+                ]
+              }
+            ]
+          },
+          "validations": [
+            {
+              "size": {
+                "max": 200
+              }
+            }
+          ]
+        },
+        {
+          "id": "sections",
+          "name": "Sections in display order",
+          "type": "Array",
+          "required": false,
+          "localized": false,
+          "items": {
+            "type": "Link",
+            "linkType": "Entry",
+            "validations": [
+              {
+                "linkContentType": [
+                  "section"
+                ]
+              }
+            ]
+          },
+          "validations": [
+            {
+              "size": {
+                "max": 200
+              }
+            }
+          ]
+        },
+        {
+          "id": "noindex",
+          "name": "Hide from search engines",
+          "type": "Boolean",
+          "required": false,
+          "localized": false
+        },
+        {
+          "id": "enabled",
+          "name": "Show on website",
+          "type": "Boolean",
+          "required": false,
+          "localized": false,
+          "defaultValue": {
+            "en-US": true
+          }
+        },
+        {
+          "id": "wordpressId",
+          "name": "Original WordPress ID",
+          "type": "Integer",
+          "required": false,
+          "localized": false
+        },
+        {
+          "id": "originalUrl",
+          "name": "Original URL — reference",
+          "type": "Symbol",
+          "required": false,
+          "localized": false,
+          "validations": [
+            {
+              "size": {
+                "max": 256
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "sys": {
+        "id": "post"
+      },
+      "name": "News article",
+      "description": "Rich text article. Imported sports demo articles require editorial review.",
+      "displayField": "title",
+      "fields": [
+        {
+          "id": "title",
+          "name": "Article title",
+          "type": "Symbol",
+          "required": true,
+          "localized": false,
+          "validations": [
+            {
+              "size": {
+                "max": 256
+              }
+            }
+          ]
+        },
+        {
+          "id": "slug",
+          "name": "URL slug",
+          "type": "Symbol",
+          "required": true,
+          "localized": false,
+          "validations": [
+            {
+              "unique": true
+            },
+            {
+              "regexp": {
+                "pattern": "^[a-z0-9-]+(?:/[a-z0-9-]+)*$"
+              }
+            }
+          ]
+        },
+        {
+          "id": "publishedAt",
+          "name": "Article date",
+          "type": "Date",
+          "required": true,
+          "localized": false
+        },
+        {
+          "id": "excerpt",
+          "name": "Short summary",
+          "type": "Text",
+          "required": false,
+          "localized": false
+        },
+        {
+          "id": "image",
+          "name": "Cover image",
+          "type": "Link",
+          "required": false,
+          "localized": false,
+          "linkType": "Asset",
+          "validations": [
+            {
+              "linkMimetypeGroup": [
+                "image"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "imageAlt",
+          "name": "Cover alternative text",
+          "type": "Symbol",
+          "required": false,
+          "localized": false,
+          "validations": [
+            {
+              "size": {
+                "max": 256
+              }
+            }
+          ]
+        },
+        {
+          "id": "author",
+          "name": "Author",
+          "type": "Symbol",
+          "required": false,
+          "localized": false,
+          "validations": [
+            {
+              "size": {
+                "max": 256
+              }
+            }
+          ]
+        },
+        {
+          "id": "category",
+          "name": "Category",
+          "type": "Symbol",
+          "required": false,
+          "localized": false,
+          "validations": [
+            {
+              "size": {
+                "max": 256
+              }
+            }
+          ]
+        },
+        {
+          "id": "body",
+          "name": "Article body",
+          "type": "RichText",
+          "required": false,
+          "localized": false,
+          "validations": [
+            {
+              "enabledMarks": [
+                "bold",
+                "italic",
+                "underline",
+                "code",
+                "superscript",
+                "subscript"
+              ]
+            },
+            {
+              "enabledNodeTypes": [
+                "heading-2",
+                "heading-3",
+                "heading-4",
+                "heading-5",
+                "heading-6",
+                "ordered-list",
+                "unordered-list",
+                "hr",
+                "blockquote",
+                "embedded-asset-block",
+                "embedded-entry-block",
+                "hyperlink",
+                "entry-hyperlink",
+                "asset-hyperlink",
+                "table"
+              ]
+            },
+            {
+              "nodes": {
+                "embedded-entry-block": [
+                  {
+                    "linkContentType": [
+                      "contentCard",
+                      "section",
+                      "galleryImage"
+                    ]
+                  }
+                ],
+                "entry-hyperlink": [
+                  {
+                    "linkContentType": [
+                      "page",
+                      "post"
+                    ]
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "seoTitle",
+          "name": "Search/social title override",
+          "type": "Symbol",
+          "required": false,
+          "localized": false,
+          "validations": [
+            {
+              "size": {
+                "max": 256
+              }
+            }
+          ]
+        },
+        {
+          "id": "noindex",
+          "name": "Hide from search engines",
+          "type": "Boolean",
+          "required": false,
+          "localized": false
+        },
+        {
+          "id": "enabled",
+          "name": "Show on website",
+          "type": "Boolean",
+          "required": false,
+          "localized": false,
+          "defaultValue": {
+            "en-US": true
+          }
+        },
+        {
+          "id": "migrationReviewRequired",
+          "name": "Imported content needs review",
+          "type": "Boolean",
+          "required": false,
+          "localized": false
+        },
+        {
+          "id": "wordpressId",
+          "name": "Original WordPress ID",
+          "type": "Integer",
+          "required": false,
+          "localized": false
+        },
+        {
+          "id": "originalUrl",
+          "name": "Original URL — reference",
+          "type": "Symbol",
+          "required": false,
+          "localized": false,
+          "validations": [
+            {
+              "size": {
+                "max": 256
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "sys": {
+        "id": "section"
+      },
+      "name": "Page / homepage section",
+      "description": "Choose layout and edit its fields. Link to a page and drag to reorder. Fields apply to the selected layout.",
+      "displayField": "internalName",
+      "fields": [
+        {
+          "id": "internalName",
+          "name": "Editor name",
+          "type": "Symbol",
+          "required": true,
+          "localized": false,
+          "validations": [
+            {
+              "size": {
+                "max": 256
+              }
+            }
+          ]
+        },
+        {
+          "id": "kind",
+          "name": "Section layout",
+          "type": "Symbol",
+          "required": true,
+          "localized": false,
+          "validations": [
+            {
+              "in": [
+                "richText",
+                "columns",
+                "cards",
+                "accordion",
+                "gallery",
+                "embed",
+                "statistics",
+                "leaderboardEvents",
+                "feature",
+                "schedule",
+                "sponsors",
+                "news",
+                "quote",
+                "cta"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "enabled",
+          "name": "Show on website",
+          "type": "Boolean",
+          "required": false,
+          "localized": false,
+          "defaultValue": {
+            "en-US": true
+          }
+        },
+        {
+          "id": "title",
+          "name": "Section heading",
+          "type": "Symbol",
+          "required": false,
+          "localized": false,
+          "validations": [
+            {
+              "size": {
+                "max": 256
+              }
+            }
+          ]
+        },
+        {
+          "id": "subtitle",
+          "name": "Supporting text",
+          "type": "Symbol",
+          "required": false,
+          "localized": false,
+          "validations": [
+            {
+              "size": {
+                "max": 256
+              }
+            }
+          ]
+        },
+        {
+          "id": "secondaryTitle",
+          "name": "Second column heading",
+          "type": "Symbol",
+          "required": false,
+          "localized": false,
+          "validations": [
+            {
+              "size": {
+                "max": 256
+              }
+            }
+          ]
+        },
+        {
+          "id": "eyebrow",
+          "name": "Small heading / attribution",
+          "type": "Symbol",
+          "required": false,
+          "localized": false,
+          "validations": [
+            {
+              "size": {
+                "max": 256
+              }
+            }
+          ]
+        },
+        {
+          "id": "body",
+          "name": "Formatted text",
+          "type": "RichText",
+          "required": false,
+          "localized": false,
+          "validations": [
+            {
+              "enabledMarks": [
+                "bold",
+                "italic",
+                "underline",
+                "code",
+                "superscript",
+                "subscript"
+              ]
+            },
+            {
+              "enabledNodeTypes": [
+                "heading-2",
+                "heading-3",
+                "heading-4",
+                "heading-5",
+                "heading-6",
+                "ordered-list",
+                "unordered-list",
+                "hr",
+                "blockquote",
+                "embedded-asset-block",
+                "embedded-entry-block",
+                "hyperlink",
+                "entry-hyperlink",
+                "asset-hyperlink",
+                "table"
+              ]
+            },
+            {
+              "nodes": {
+                "embedded-entry-block": [
+                  {
+                    "linkContentType": [
+                      "contentCard",
+                      "section",
+                      "galleryImage"
+                    ]
+                  }
+                ],
+                "entry-hyperlink": [
+                  {
+                    "linkContentType": [
+                      "page",
+                      "post"
+                    ]
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "image",
+          "name": "Background / feature image",
+          "type": "Link",
+          "required": false,
+          "localized": false,
+          "linkType": "Asset",
+          "validations": [
+            {
+              "linkMimetypeGroup": [
+                "image"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "imageAlt",
+          "name": "Image alternative text",
+          "type": "Symbol",
+          "required": false,
+          "localized": false,
+          "validations": [
+            {
+              "size": {
+                "max": 256
+              }
+            }
+          ]
+        },
+        {
+          "id": "actions",
+          "name": "Buttons / heading links",
+          "type": "Array",
+          "required": false,
+          "localized": false,
+          "items": {
+            "type": "Link",
+            "linkType": "Entry",
+            "validations": [
+              {
+                "linkContentType": [
+                  "navigationItem"
+                ]
+              }
+            ]
+          },
+          "validations": [
+            {
+              "size": {
+                "max": 200
+              }
+            }
+          ]
+        },
+        {
+          "id": "children",
+          "name": "Column sections",
+          "type": "Array",
+          "required": false,
+          "localized": false,
+          "items": {
+            "type": "Link",
+            "linkType": "Entry",
+            "validations": [
+              {
+                "linkContentType": [
+                  "section"
+                ]
+              }
+            ]
+          },
+          "validations": [
+            {
+              "size": {
+                "max": 200
+              }
+            }
+          ]
+        },
+        {
+          "id": "cards",
+          "name": "Cards or questions",
+          "type": "Array",
+          "required": false,
+          "localized": false,
+          "items": {
+            "type": "Link",
+            "linkType": "Entry",
+            "validations": [
+              {
+                "linkContentType": [
+                  "contentCard"
+                ]
+              }
+            ]
+          },
+          "validations": [
+            {
+              "size": {
+                "max": 200
+              }
+            }
+          ]
+        },
+        {
+          "id": "statistics",
+          "name": "Club statistics",
+          "type": "Array",
+          "required": false,
+          "localized": false,
+          "items": {
+            "type": "Link",
+            "linkType": "Entry",
+            "validations": [
+              {
+                "linkContentType": [
+                  "statistic"
+                ]
+              }
+            ]
+          },
+          "validations": [
+            {
+              "size": {
+                "max": 200
+              }
+            }
+          ]
+        },
+        {
+          "id": "days",
+          "name": "Weekly schedule days",
+          "type": "Array",
+          "required": false,
+          "localized": false,
+          "items": {
+            "type": "Link",
+            "linkType": "Entry",
+            "validations": [
+              {
+                "linkContentType": [
+                  "scheduleDay"
+                ]
+              }
+            ]
+          },
+          "validations": [
+            {
+              "size": {
+                "max": 200
+              }
+            }
+          ]
+        },
+        {
+          "id": "sponsors",
+          "name": "Sponsors in order",
+          "type": "Array",
+          "required": false,
+          "localized": false,
+          "items": {
+            "type": "Link",
+            "linkType": "Entry",
+            "validations": [
+              {
+                "linkContentType": [
+                  "sponsor"
+                ]
+              }
+            ]
+          },
+          "validations": [
+            {
+              "size": {
+                "max": 200
+              }
+            }
+          ]
+        },
+        {
+          "id": "posts",
+          "name": "Featured news",
+          "type": "Array",
+          "required": false,
+          "localized": false,
+          "items": {
+            "type": "Link",
+            "linkType": "Entry",
+            "validations": [
+              {
+                "linkContentType": [
+                  "post"
+                ]
+              }
+            ]
+          },
+          "validations": [
+            {
+              "size": {
+                "max": 200
+              }
+            }
+          ]
+        },
+        {
+          "id": "gallery",
+          "name": "Gallery images",
+          "type": "Array",
+          "required": false,
+          "localized": false,
+          "items": {
+            "type": "Link",
+            "linkType": "Entry",
+            "validations": [
+              {
+                "linkContentType": [
+                  "galleryImage"
+                ]
+              }
+            ]
+          },
+          "validations": [
+            {
+              "size": {
+                "max": 200
+              }
+            }
+          ]
+        },
+        {
+          "id": "tournamentFeed",
+          "name": "Tournament service",
+          "type": "Link",
+          "required": false,
+          "localized": false,
+          "linkType": "Entry",
+          "validations": [
+            {
+              "linkContentType": [
+                "tournamentFeed"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "tone",
+          "name": "Background style",
+          "type": "Symbol",
+          "required": false,
+          "localized": false,
+          "validations": [
+            {
+              "in": [
+                "light",
+                "dark",
+                "gold"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "limit",
+          "name": "Items to display",
+          "type": "Integer",
+          "required": false,
+          "localized": false,
+          "validations": [
+            {
+              "range": {
+                "min": 1,
+                "max": 20
+              }
+            }
+          ]
+        },
+        {
+          "id": "emptyText",
+          "name": "No-items message",
+          "type": "Symbol",
+          "required": false,
+          "localized": false,
+          "validations": [
+            {
+              "size": {
+                "max": 256
+              }
+            }
+          ]
+        },
+        {
+          "id": "embedUrl",
+          "name": "Approved YouTube or Google embed URL",
+          "type": "Text",
+          "required": false,
+          "localized": false
+        }
+      ]
+    },
+    {
+      "sys": {
+        "id": "contentCard"
+      },
+      "name": "Card / question / timeline item",
+      "description": "Reusable features, information cards, FAQs and timelines.",
+      "displayField": "title",
+      "fields": [
+        {
+          "id": "title",
+          "name": "Title / question",
+          "type": "Symbol",
+          "required": true,
+          "localized": false,
+          "validations": [
+            {
+              "size": {
+                "max": 256
+              }
+            }
+          ]
+        },
+        {
+          "id": "presentation",
+          "name": "Card style",
+          "type": "Symbol",
+          "required": true,
+          "localized": false,
+          "validations": [
+            {
+              "in": [
+                "card",
+                "faq",
+                "timeline"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "eyebrow",
+          "name": "Small heading / year",
+          "type": "Symbol",
+          "required": false,
+          "localized": false,
+          "validations": [
+            {
+              "size": {
+                "max": 256
+              }
+            }
+          ]
+        },
+        {
+          "id": "description",
+          "name": "Short description",
+          "type": "Text",
+          "required": false,
+          "localized": false
+        },
+        {
+          "id": "body",
+          "name": "Formatted content / answer",
+          "type": "RichText",
+          "required": false,
+          "localized": false,
+          "validations": [
+            {
+              "enabledMarks": [
+                "bold",
+                "italic",
+                "underline",
+                "code",
+                "superscript",
+                "subscript"
+              ]
+            },
+            {
+              "enabledNodeTypes": [
+                "heading-2",
+                "heading-3",
+                "heading-4",
+                "heading-5",
+                "heading-6",
+                "ordered-list",
+                "unordered-list",
+                "hr",
+                "blockquote",
+                "embedded-asset-block",
+                "embedded-entry-block",
+                "hyperlink",
+                "entry-hyperlink",
+                "asset-hyperlink",
+                "table"
+              ]
+            },
+            {
+              "nodes": {
+                "embedded-entry-block": [
+                  {
+                    "linkContentType": [
+                      "contentCard",
+                      "section",
+                      "galleryImage"
+                    ]
+                  }
+                ],
+                "entry-hyperlink": [
+                  {
+                    "linkContentType": [
+                      "page",
+                      "post"
+                    ]
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "image",
+          "name": "Image",
+          "type": "Link",
+          "required": false,
+          "localized": false,
+          "linkType": "Asset",
+          "validations": [
+            {
+              "linkMimetypeGroup": [
+                "image"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "imageAlt",
+          "name": "Image alternative text",
+          "type": "Symbol",
+          "required": false,
+          "localized": false,
+          "validations": [
+            {
+              "size": {
+                "max": 256
+              }
+            }
+          ]
+        },
+        {
+          "id": "icon",
+          "name": "Icon",
+          "type": "Symbol",
+          "required": false,
+          "localized": false,
+          "validations": [
+            {
+              "in": [
+                "none",
+                "chess",
+                "pawn",
+                "board",
+                "membership",
+                "history",
+                "people",
+                "junior",
+                "calendar",
+                "events",
+                "attendance",
+                "facebook",
+                "instagram",
+                "youtube"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "link",
+          "name": "Card action",
+          "type": "Link",
+          "required": false,
+          "localized": false,
+          "linkType": "Entry",
+          "validations": [
+            {
+              "linkContentType": [
+                "navigationItem"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "enabled",
+          "name": "Show on website",
+          "type": "Boolean",
+          "required": false,
+          "localized": false,
+          "defaultValue": {
+            "en-US": true
+          }
+        }
+      ]
+    },
+    {
+      "sys": {
+        "id": "statistic"
+      },
+      "name": "Club statistic",
+      "description": "Individual value and label. Do not relabel historical counts without new figures.",
+      "displayField": "label",
+      "fields": [
+        {
+          "id": "label",
+          "name": "Label",
+          "type": "Symbol",
+          "required": true,
+          "localized": false,
+          "validations": [
+            {
+              "size": {
+                "max": 256
+              }
+            }
+          ]
+        },
+        {
+          "id": "value",
+          "name": "Display value, e.g. 130+",
+          "type": "Symbol",
+          "required": true,
+          "localized": false,
+          "validations": [
+            {
+              "size": {
+                "max": 256
+              }
+            }
+          ]
+        },
+        {
+          "id": "icon",
+          "name": "Icon",
+          "type": "Symbol",
+          "required": false,
+          "localized": false,
+          "validations": [
+            {
+              "in": [
+                "none",
+                "chess",
+                "pawn",
+                "board",
+                "membership",
+                "history",
+                "people",
+                "junior",
+                "calendar",
+                "events",
+                "attendance",
+                "facebook",
+                "instagram",
+                "youtube"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "enabled",
+          "name": "Show on website",
+          "type": "Boolean",
+          "required": false,
+          "localized": false,
+          "defaultValue": {
+            "en-US": true
+          }
+        }
+      ]
+    },
+    {
+      "sys": {
+        "id": "scheduleDay"
+      },
+      "name": "Weekly schedule day",
+      "description": "All seven days. Link sessions on playing days.",
+      "displayField": "day",
+      "fields": [
+        {
+          "id": "day",
+          "name": "Day",
+          "type": "Symbol",
+          "required": true,
+          "localized": false,
+          "validations": [
+            {
+              "in": [
+                "Monday",
+                "Tuesday",
+                "Wednesday",
+                "Thursday",
+                "Friday",
+                "Saturday",
+                "Sunday"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "sessions",
+          "name": "Sessions in order",
+          "type": "Array",
+          "required": false,
+          "localized": false,
+          "items": {
+            "type": "Link",
+            "linkType": "Entry",
+            "validations": [
+              {
+                "linkContentType": [
+                  "scheduleSession"
+                ]
+              }
+            ]
+          },
+          "validations": [
+            {
+              "size": {
+                "max": 200
+              }
+            }
+          ]
+        },
+        {
+          "id": "closedText",
+          "name": "No-session message",
+          "type": "Symbol",
+          "required": true,
+          "localized": false,
+          "validations": [
+            {
+              "size": {
+                "max": 256
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "sys": {
+        "id": "scheduleSession"
+      },
+      "name": "Weekly session",
+      "description": "Normal club times. Event dates remain on the tournament website.",
+      "displayField": "title",
+      "fields": [
+        {
+          "id": "title",
+          "name": "Session name",
+          "type": "Symbol",
+          "required": true,
+          "localized": false,
+          "validations": [
+            {
+              "size": {
+                "max": 256
+              }
+            }
+          ]
+        },
+        {
+          "id": "time",
+          "name": "Display time",
+          "type": "Symbol",
+          "required": true,
+          "localized": false,
+          "validations": [
+            {
+              "size": {
+                "max": 256
+              }
+            }
+          ]
+        },
+        {
+          "id": "location",
+          "name": "Venue label",
+          "type": "Symbol",
+          "required": false,
+          "localized": false,
+          "validations": [
+            {
+              "size": {
+                "max": 256
+              }
+            }
+          ]
+        },
+        {
+          "id": "link",
+          "name": "Optional details link",
+          "type": "Link",
+          "required": false,
+          "localized": false,
+          "linkType": "Entry",
+          "validations": [
+            {
+              "linkContentType": [
+                "navigationItem"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "sys": {
+        "id": "sponsor"
+      },
+      "name": "Sponsor / partner",
+      "description": "Edit logo, name and destination; reorder on the section.",
+      "displayField": "name",
+      "fields": [
+        {
+          "id": "name",
+          "name": "Sponsor name",
+          "type": "Symbol",
+          "required": true,
+          "localized": false,
+          "validations": [
+            {
+              "size": {
+                "max": 256
+              }
+            }
+          ]
+        },
+        {
+          "id": "image",
+          "name": "Sponsor logo",
+          "type": "Link",
+          "required": true,
+          "localized": false,
+          "linkType": "Asset",
+          "validations": [
+            {
+              "linkMimetypeGroup": [
+                "image"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "website",
+          "name": "Website or local sponsor page",
+          "type": "Symbol",
+          "required": false,
+          "localized": false,
+          "validations": [
+            {
+              "size": {
+                "max": 256
+              }
+            }
+          ]
+        },
+        {
+          "id": "description",
+          "name": "Description",
+          "type": "Text",
+          "required": false,
+          "localized": false
+        },
+        {
+          "id": "enabled",
+          "name": "Show on website",
+          "type": "Boolean",
+          "required": false,
+          "localized": false,
+          "defaultValue": {
+            "en-US": true
+          }
+        }
+      ]
+    },
+    {
+      "sys": {
+        "id": "galleryImage"
+      },
+      "name": "Gallery image",
+      "description": "Native media picker, alternative text and optional link.",
+      "displayField": "title",
+      "fields": [
+        {
+          "id": "title",
+          "name": "Editor name",
+          "type": "Symbol",
+          "required": true,
+          "localized": false,
+          "validations": [
+            {
+              "size": {
+                "max": 256
+              }
+            }
+          ]
+        },
+        {
+          "id": "image",
+          "name": "Image",
+          "type": "Link",
+          "required": true,
+          "localized": false,
+          "linkType": "Asset",
+          "validations": [
+            {
+              "linkMimetypeGroup": [
+                "image"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "alt",
+          "name": "Alternative text",
+          "type": "Symbol",
+          "required": true,
+          "localized": false,
+          "validations": [
+            {
+              "size": {
+                "max": 256
+              }
+            }
+          ]
+        },
+        {
+          "id": "link",
+          "name": "Image link",
+          "type": "Link",
+          "required": false,
+          "localized": false,
+          "linkType": "Entry",
+          "validations": [
+            {
+              "linkContentType": [
+                "navigationItem"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "enabled",
+          "name": "Show on website",
+          "type": "Boolean",
+          "required": false,
+          "localized": false,
+          "defaultValue": {
+            "en-US": true
+          }
+        }
+      ]
+    },
+    {
+      "sys": {
+        "id": "tournamentFeed"
+      },
+      "name": "Tournament website integration",
+      "description": "Presentation only. Tournament scores, registrations and calendar are owned by the existing service.",
+      "displayField": "title",
+      "fields": [
+        {
+          "id": "title",
+          "name": "Editor name",
+          "type": "Symbol",
+          "required": true,
+          "localized": false,
+          "validations": [
+            {
+              "size": {
+                "max": 256
+              }
+            }
+          ]
+        },
+        {
+          "id": "year",
+          "name": "Expected leaderboard year",
+          "type": "Integer",
+          "required": true,
+          "localized": false,
+          "validations": [
+            {
+              "range": {
+                "min": 2020,
+                "max": 2100
+              }
+            }
+          ]
+        },
+        {
+          "id": "dataUrl",
+          "name": "Open leaderboard JSON URL",
+          "type": "Symbol",
+          "required": true,
+          "localized": false,
+          "validations": [
+            {
+              "size": {
+                "max": 256
+              }
+            }
+          ]
+        },
+        {
+          "id": "leaderboardUrl",
+          "name": "Full leaderboard URL",
+          "type": "Symbol",
+          "required": true,
+          "localized": false,
+          "validations": [
+            {
+              "size": {
+                "max": 256
+              }
+            }
+          ]
+        },
+        {
+          "id": "upcomingUrl",
+          "name": "Upcoming events URL",
+          "type": "Symbol",
+          "required": true,
+          "localized": false,
+          "validations": [
+            {
+              "size": {
+                "max": 256
+              }
+            }
+          ]
+        },
+        {
+          "id": "calendarUrl",
+          "name": "Calendar URL",
+          "type": "Symbol",
+          "required": true,
+          "localized": false,
+          "validations": [
+            {
+              "size": {
+                "max": 256
+              }
+            }
+          ]
+        },
+        {
+          "id": "rows",
+          "name": "Leaderboard rows",
+          "type": "Integer",
+          "required": true,
+          "localized": false,
+          "validations": [
+            {
+              "range": {
+                "min": 1,
+                "max": 20
+              }
+            }
+          ]
+        },
+        {
+          "id": "eventsLimit",
+          "name": "Upcoming cards",
+          "type": "Integer",
+          "required": true,
+          "localized": false,
+          "validations": [
+            {
+              "range": {
+                "min": 1,
+                "max": 10
+              }
+            }
+          ]
+        },
+        {
+          "id": "pointsLabel",
+          "name": "Points column label",
+          "type": "Symbol",
+          "required": true,
+          "localized": false,
+          "validations": [
+            {
+              "size": {
+                "max": 256
+              }
+            }
+          ]
+        },
+        {
+          "id": "updatedLabel",
+          "name": "Data timestamp label",
+          "type": "Symbol",
+          "required": true,
+          "localized": false,
+          "validations": [
+            {
+              "size": {
+                "max": 256
+              }
+            }
+          ]
+        },
+        {
+          "id": "pointsExplanation",
+          "name": "Scoring explanation",
+          "type": "Text",
+          "required": true,
+          "localized": false
+        },
+        {
+          "id": "unavailableText",
+          "name": "Unavailable message",
+          "type": "Symbol",
+          "required": true,
+          "localized": false,
+          "validations": [
+            {
+              "size": {
+                "max": 256
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

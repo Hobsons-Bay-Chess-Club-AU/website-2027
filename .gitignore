@@ -1,0 +1,11 @@
+.env
+.env.*
+!.env.example
+node_modules/
+dist/
+.astro/
+reference/admin-export/
+reference/screenshots/
+*.log
+contentful/import-report.json
+

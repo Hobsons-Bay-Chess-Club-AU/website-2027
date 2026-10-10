@@ -1,0 +1,39 @@
+import Link from "next/link";
+import LeaderboardTable from "@/components/LeaderboardTable";
+
+// Generate static parameters for the dynamic route
+export function generateStaticParams() {
+  return [
+    { category: 'open' },
+    { category: 'junior' },
+    { category: 'overall' }
+  ];
+}
+
+interface CategoryLeaderboardPageProps {
+  params: Promise<{
+    category: string;
+  }>;
+}
+
+export default async function CategoryLeaderboardPage({ params }: CategoryLeaderboardPageProps) {
+  const { category } = await params;
+
+  // Validate category parameter
+  if (category !== 'open' && category !== 'junior' && category !== 'overall') {
+    return (
+      <div className="font-sans min-h-screen bg-gradient-to-br from-primary-50 to-primary-200 flex items-center justify-center">
+        <div className="text-center">
+          <div className="text-red-600 text-6xl mb-4">⚠️</div>
+          <p className="text-red-600 mb-4">Invalid leaderboard category</p>
+          <p className="text-gray-600 mb-4">Please use &apos;open&apos;, &apos;junior&apos;, or &apos;overall&apos;</p>
+          <Link href="/leaderboard" className="inline-block px-6 py-3 bg-primary-600 text-white rounded-lg hover:bg-primary-700">
+            Back to Leaderboards
+          </Link>
+        </div>
+      </div>
+    );
+  }
+
+  return <LeaderboardTable type={category as 'open' | 'junior' | 'overall'} />;
+}

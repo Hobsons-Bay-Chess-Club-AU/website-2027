@@ -1,0 +1,166 @@
+{
+  "year": "2026",
+  "generatedAt": "2026-10-05T02:15:50.380Z",
+  "capturedAt": "2026-10-10T00:54:39.099Z",
+  "source": "https://tournament.hobsonsbaychess.com/v2/leaderboard/open",
+  "rows": [
+    {
+      "name": "Nguyen, Anh Kiet",
+      "title": "CM",
+      "points": 23.5,
+      "rank": 1
+    },
+    {
+      "name": "Bodke, Krishna Manthan",
+      "title": "",
+      "points": 23,
+      "rank": 2
+    },
+    {
+      "name": "Hogan, Steven",
+      "title": "",
+      "points": 20,
+      "rank": 3
+    },
+    {
+      "name": "Lacson, Joemar",
+      "title": "",
+      "points": 20,
+      "rank": 4
+    },
+    {
+      "name": "Davis, Tony J",
+      "title": "CM",
+      "points": 19.5,
+      "rank": 5
+    },
+    {
+      "name": "Whitford, Matthew",
+      "title": "",
+      "points": 19.5,
+      "rank": 6
+    },
+    {
+      "name": "Paul, Nikash",
+      "title": "",
+      "points": 17,
+      "rank": 7
+    },
+    {
+      "name": "Hill, James",
+      "title": "",
+      "points": 16,
+      "rank": 8
+    },
+    {
+      "name": "Krishnan, Anirudh",
+      "title": "",
+      "points": 16,
+      "rank": 9
+    },
+    {
+      "name": "Menezes, Eric",
+      "title": "",
+      "points": 16,
+      "rank": 10
+    },
+    {
+      "name": "Hogg, Dean",
+      "title": "",
+      "points": 15.5,
+      "rank": 11
+    },
+    {
+      "name": "Paul, Cijo",
+      "title": "",
+      "points": 14.5,
+      "rank": 12
+    },
+    {
+      "name": "Szuveges, Narelle S",
+      "title": "WIM",
+      "points": 13,
+      "rank": 13
+    },
+    {
+      "name": "Annapureddy, Dhruthin Reddy",
+      "title": "",
+      "points": 12,
+      "rank": 14
+    },
+    {
+      "name": "Ashok, Arjun",
+      "title": "",
+      "points": 12,
+      "rank": 15
+    },
+    {
+      "name": "Hari, Dhruv",
+      "title": "",
+      "points": 11.5,
+      "rank": 16
+    },
+    {
+      "name": "Nowak, Ruben",
+      "title": "",
+      "points": 11.5,
+      "rank": 17
+    },
+    {
+      "name": "Ramanathan, Ashwin",
+      "title": "",
+      "points": 11.5,
+      "rank": 18
+    },
+    {
+      "name": "Wilkinson, Greg",
+      "title": "",
+      "points": 11,
+      "rank": 19
+    },
+    {
+      "name": "Wang, Tim",
+      "title": "",
+      "points": 10.5,
+      "rank": 20
+    }
+  ],
+  "events": [
+    {
+      "url": "https://tournament.hobsonsbaychess.com/v2/upcoming/86516-koshnitsky-rookies-and-juniors-cup-2026",
+      "title": "Koshnitsky Rookies and Juniors Cup 2026",
+      "dates": "1 Aug 2026 – 10 Oct 2026",
+      "location": "Hobsons Bay Chess Club",
+      "image": "https://s3.tidyhq.com/orgs/40754567c138/event/image/50f34168b215b72ce7d0c284c106bde863e88b37/show/Koshnitsky_R_J.jpg",
+      "day": "1",
+      "month": "Aug"
+    },
+    {
+      "url": "https://tournament.hobsonsbaychess.com/v2/upcoming/89036-2026-hobsons-bay-club-championship-open",
+      "title": "2026 Hobsons Bay Club Championship (Open)",
+      "dates": "6 Oct 2026 – 1 Dec 2026",
+      "location": "108 Queen St",
+      "image": "https://s3.tidyhq.com/orgs/40754567c138/event/image/9d13153977fb4dedda1c14134488ff5bf5a28094/show/HBCC_Events_Banners_%2828%29.jpg",
+      "day": "6",
+      "month": "Oct"
+    },
+    {
+      "url": "https://tournament.hobsonsbaychess.com/v2/upcoming/89309-hobsons-bay-junior-coaching-2026-term-4",
+      "title": "Hobsons Bay Junior Coaching 2026 Term 4",
+      "dates": "10 Oct 2026 – 5 Dec 2026",
+      "location": "Hobsons Bay Chess Club",
+      "image": "https://s3.tidyhq.com/orgs/40754567c138/event/image/01d72cc1547b41dbc016aff5fe323ba3034ad9d6/show/HBCC_Events_Banners_%281%29.jpg",
+      "day": "10",
+      "month": "Oct"
+    },
+    {
+      "url": "https://tournament.hobsonsbaychess.com/v2/upcoming/89505-hbcc-junior-club-championship-reserves-rookies-juniors-2026",
+      "title": "HBCC Junior Club Championship + Reserves Rookies & Juniors 2026",
+      "dates": "17 Oct 2026 – 5 Dec 2026",
+      "location": "Hobsons Bay Chess Club",
+      "image": "https://s3.tidyhq.com/orgs/40754567c138/event/image/4d02fba87744c1666c56583de76726462340a381/show/Club_Championship_Jnrs.jpg",
+      "day": "17",
+      "month": "Oct"
+    }
+  ]
+}

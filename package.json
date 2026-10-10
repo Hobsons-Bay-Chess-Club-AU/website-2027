@@ -1,0 +1,31 @@
+{
+  "name": "hbcc-website-2027",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev --host 127.0.0.1 --port 4327",
+    "build": "astro build",
+    "build:production": "node scripts/run-astro.mjs production",
+    "preview": "astro preview --host 127.0.0.1 --port 4327",
+    "reference:capture": "node scripts/capture-wordpress.mjs",
+    "contentful:check": "node scripts/check-contentful.mjs",
+    "contentful:verify": "node scripts/verify-contentful.mjs",
+    "contentful:import": "node scripts/import-contentful.mjs",
+    "contentful:prepare": "node scripts/prepare-content.mjs && node scripts/prepare-cms-content.mjs && node scripts/prepare-model.mjs",
+    "cms:preview": "node scripts/run-astro.mjs cms-preview",
+    "verify": "node scripts/verify-build.mjs",
+    "test": "node --test tests/*.test.mjs"
+  },
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "dependencies": {
+    "astro": "^7.3.8",
+    "cheerio": "^1.2.0",
+    "sanitize-html": "^2.18.0"
+  },
+  "devDependencies": {
+    "sharp": "^0.35.5"
+  }
+}

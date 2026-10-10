@@ -1,0 +1,113 @@
+[
+  {
+    "slug": "about-us",
+    "originalWords": 163,
+    "convertedWords": 163,
+    "missingWords": [],
+    "deliberateReplacement": false
+  },
+  {
+    "slug": "history",
+    "originalWords": 668,
+    "convertedWords": 668,
+    "missingWords": [],
+    "deliberateReplacement": false
+  },
+  {
+    "slug": "play-chess",
+    "originalWords": 661,
+    "convertedWords": 661,
+    "missingWords": [],
+    "deliberateReplacement": false
+  },
+  {
+    "slug": "juniors",
+    "originalWords": 737,
+    "convertedWords": 737,
+    "missingWords": [],
+    "deliberateReplacement": false
+  },
+  {
+    "slug": "tournaments",
+    "originalWords": 371,
+    "convertedWords": 371,
+    "missingWords": [],
+    "deliberateReplacement": false
+  },
+  {
+    "slug": "champions",
+    "originalWords": 44,
+    "convertedWords": 44,
+    "missingWords": [],
+    "deliberateReplacement": false
+  },
+  {
+    "slug": "best-in-the-west",
+    "originalWords": 160,
+    "convertedWords": 160,
+    "missingWords": [],
+    "deliberateReplacement": false
+  },
+  {
+    "slug": "peter-caissa-memorial",
+    "originalWords": 717,
+    "convertedWords": 717,
+    "missingWords": [],
+    "deliberateReplacement": false
+  },
+  {
+    "slug": "dgt-link",
+    "originalWords": 49,
+    "convertedWords": 49,
+    "missingWords": [],
+    "deliberateReplacement": false
+  },
+  {
+    "slug": "calendar",
+    "originalWords": 12,
+    "convertedWords": 12,
+    "missingWords": [
+      "&lt;span",
+      "data-mce-type=\"bookmark\"",
+      "style=\"display:",
+      "inline-block;",
+      "width:",
+      "0px;",
+      "overflow:",
+      "hidden;",
+      "line-height:",
+      "0;\"",
+      "class=\"mce_SELRES_start\"&gt;",
+      "&lt;/span&gt;"
+    ],
+    "deliberateReplacement": true
+  },
+  {
+    "slug": "sponsors",
+    "originalWords": 423,
+    "convertedWords": 423,
+    "missingWords": [],
+    "deliberateReplacement": false
+  },
+  {
+    "slug": "membership",
+    "originalWords": 447,
+    "convertedWords": 447,
+    "missingWords": [],
+    "deliberateReplacement": false
+  },
+  {
+    "slug": "contact",
+    "originalWords": 50,
+    "convertedWords": 50,
+    "missingWords": [],
+    "deliberateReplacement": false
+  },
+  {
+    "slug": "policies",
+    "originalWords": 18,
+    "convertedWords": 18,
+    "missingWords": [],
+    "deliberateReplacement": false
+  }
+]
