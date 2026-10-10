@@ -30,7 +30,12 @@ async function request(route,{method='GET',body,headers={},allow404=false,baseUr
   if(response.status===429&&attempt<4){await delay(Math.min(10000,1000*(Number(response.headers.get('x-contentful-ratelimit-reset'))||1)));continue;}
   if(response.status===404&&allow404)return null;
   if(!response.ok){
-   let reason='';try{const error=await response.json();reason=typeof error.message==='string'?' '+error.message:'';}catch{}
+   let reason='';try{
+    const error=await response.json();
+    reason=error.sys?.id==='OrganizationAccessGrantRequired'
+     ? ' Authorize this token for the organization under Contentful Settings > CMA tokens > Authorize access.'
+     : typeof error.message==='string'?' '+error.message.replaceAll(env.managementToken,'[redacted]'):'';
+   }catch{}
    throw new Error('Contentful '+method+' '+route+': HTTP '+response.status+'.'+reason);
   }
   return response.status===204?null:response.json();
