@@ -42,7 +42,7 @@ test('page text, images, menus and section order change through native CMS field
  assert.equal(result.home.heroTitle,'An edited club heading');assert.equal(result.home.sections[0].kind,'quote');
  assert.equal(result.settings.mainMenu.items[0].label,'Member Login');assert.equal(result.home.heroImage,'https://images.ctfassets.net/test/new-image.webp');
  byId(data,'hbcc-tournament-feed').fields.calendarUrl='https://tournament.hobsonsbaychess.com/v2/calendar?view=month';
- assert.equal(normalize(data).settings.mainMenu.items.find(i=>i.label==='Calendar').href,'https://tournament.hobsonsbaychess.com/v2/calendar?view=month');
+ assert.equal(normalize(data).settings.mainMenu.items.find(i=>i.label==='Calendar').href,'/calendar/');
  const membership=result.pages.find(p=>p.slug==='membership'),sectionId=membership.sections[0].id;
  byId(data,sectionId).fields.enabled=false;
  assert.equal(normalize(data).pages.find(p=>p.slug==='membership').sections.length,membership.sections.length-1);
@@ -68,7 +68,7 @@ test('missing published references and colliding page/article routes cannot sile
  const data=fresh(),membership=data.items.find(e=>e.fields.slug==='membership');
  data.items=data.items.filter(e=>e.sys.id!==membership.sys.id);
  assert.throws(()=>normalize(data),/Missing published/);
- const duplicates=fresh(),post=duplicates.items.find(e=>e.sys.contentType.sys.id==='post');
+ const duplicates=fresh(),post=duplicates.items.find(e=>e.sys.contentType.sys.id==='post'&&e.fields.enabled!==false);
  post.fields.slug='membership';assert.throws(()=>normalize(duplicates),/duplicate or reserved/);
 });
 test('rich text renders editable tables, images and FAQs while escaping injected content',()=>{
@@ -103,8 +103,8 @@ test('tournament integration validates its URLs and keeps dated results during a
 });
 test('migration package uses native fields, valid references and existing media',async()=>{
  const schema=JSON.parse(await readFile('contentful/schema.json','utf8')),seed=JSON.parse(await readFile('contentful/seed.json','utf8')),assets=JSON.parse(await readFile('contentful/assets.json','utf8'));
- assert.equal(schema.contentTypes.length,13);assert.equal(seed.entries.length,290);
- assert.equal(validatePackage(schema,seed,assets).entries,290);
+ assert.equal(schema.contentTypes.length,15);assert.equal(seed.entries.length,447);
+ assert.equal(validatePackage(schema,seed,assets).entries,447);
  assert.ok(schema.contentTypes.every(t=>t.fields.every(f=>f.type!=='Object'&&f.id!=='bodyHtml')));
  for(const asset of assets)await access(asset.path);
  assert.ok(!JSON.stringify(fixture).includes('https://hobsonsbaychess.com/wp-content/'));

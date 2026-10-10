@@ -766,5 +766,29 @@
     "path": "reference/assets/975134025c-post_10.jpg",
     "fileName": "975134025c-post_10.jpg",
     "title": "post 10.jpg"
+  },
+  {
+    "id": "facebook-venue-1719675343499404",
+    "title": "HBCC junior championship venue, October 2026",
+    "fileName": "junior-championship-venue-2026.jpg",
+    "path": "reference/facebook/media/junior-championship-venue-2026.jpg",
+    "localUrl": "/news-assets/junior-championship-venue-2026.webp",
+    "sourceUrl": "https://www.facebook.com/photo/?fbid=1719675343499404&set=pcb.1719675640166041"
+  },
+  {
+    "id": "facebook-winner-1705974998202772",
+    "title": "HBCC women's championship awards, September 2026",
+    "fileName": "womens-championship-winner-2026.jpg",
+    "path": "reference/facebook/media/womens-championship-winner-2026.jpg",
+    "localUrl": "/news-assets/womens-championship-winner-2026.webp",
+    "sourceUrl": "https://www.facebook.com/photo/?fbid=1705974998202772&set=pcb.1705981161535489"
+  },
+  {
+    "id": "facebook-awards-1705974908202781",
+    "title": "HBCC women's championship presentation, September 2026",
+    "fileName": "womens-championship-presentation-2026.jpg",
+    "path": "reference/facebook/media/womens-championship-presentation-2026.jpg",
+    "localUrl": "/news-assets/womens-championship-presentation-2026.webp",
+    "sourceUrl": "https://www.facebook.com/photo/?fbid=1705974908202781&set=pcb.1705981161535489"
   }
 ]

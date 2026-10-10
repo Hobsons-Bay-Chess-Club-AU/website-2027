@@ -4,68 +4,77 @@
     "originalWords": 163,
     "convertedWords": 163,
     "missingWords": [],
-    "deliberateReplacement": false
+    "deliberateReplacement": false,
+    "excludedTemplateNews": false
   },
   {
     "slug": "history",
     "originalWords": 668,
     "convertedWords": 668,
     "missingWords": [],
-    "deliberateReplacement": false
+    "deliberateReplacement": false,
+    "excludedTemplateNews": false
   },
   {
     "slug": "play-chess",
     "originalWords": 661,
     "convertedWords": 661,
     "missingWords": [],
-    "deliberateReplacement": false
+    "deliberateReplacement": false,
+    "excludedTemplateNews": false
   },
   {
     "slug": "juniors",
     "originalWords": 737,
     "convertedWords": 737,
     "missingWords": [],
-    "deliberateReplacement": false
+    "deliberateReplacement": false,
+    "excludedTemplateNews": false
   },
   {
     "slug": "tournaments",
-    "originalWords": 371,
-    "convertedWords": 371,
+    "originalWords": 337,
+    "convertedWords": 337,
     "missingWords": [],
-    "deliberateReplacement": false
+    "deliberateReplacement": false,
+    "excludedTemplateNews": true
   },
   {
     "slug": "champions",
     "originalWords": 44,
     "convertedWords": 44,
     "missingWords": [],
-    "deliberateReplacement": false
+    "deliberateReplacement": false,
+    "excludedTemplateNews": false
   },
   {
     "slug": "best-in-the-west",
     "originalWords": 160,
     "convertedWords": 160,
     "missingWords": [],
-    "deliberateReplacement": false
+    "deliberateReplacement": false,
+    "excludedTemplateNews": false
   },
   {
     "slug": "peter-caissa-memorial",
     "originalWords": 717,
     "convertedWords": 717,
     "missingWords": [],
-    "deliberateReplacement": false
+    "deliberateReplacement": false,
+    "excludedTemplateNews": false
   },
   {
     "slug": "dgt-link",
     "originalWords": 49,
     "convertedWords": 49,
     "missingWords": [],
-    "deliberateReplacement": false
+    "deliberateReplacement": false,
+    "excludedTemplateNews": false
   },
   {
     "slug": "calendar",
     "originalWords": 12,
-    "convertedWords": 12,
+    "convertedWords": 1,
     "missingWords": [
       "&lt;span",
       "data-mce-type=\"bookmark\"",
@@ -80,34 +89,39 @@
       "class=\"mce_SELRES_start\"&gt;",
       "&lt;/span&gt;"
     ],
-    "deliberateReplacement": true
+    "deliberateReplacement": true,
+    "excludedTemplateNews": false
   },
   {
     "slug": "sponsors",
     "originalWords": 423,
     "convertedWords": 423,
     "missingWords": [],
-    "deliberateReplacement": false
+    "deliberateReplacement": false,
+    "excludedTemplateNews": false
   },
   {
     "slug": "membership",
     "originalWords": 447,
     "convertedWords": 447,
     "missingWords": [],
-    "deliberateReplacement": false
+    "deliberateReplacement": false,
+    "excludedTemplateNews": false
   },
   {
     "slug": "contact",
     "originalWords": 50,
     "convertedWords": 50,
     "missingWords": [],
-    "deliberateReplacement": false
+    "deliberateReplacement": false,
+    "excludedTemplateNews": false
   },
   {
     "slug": "policies",
     "originalWords": 18,
     "convertedWords": 18,
     "missingWords": [],
-    "deliberateReplacement": false
+    "deliberateReplacement": false,
+    "excludedTemplateNews": false
   }
 ]

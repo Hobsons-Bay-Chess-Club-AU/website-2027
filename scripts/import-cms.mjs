@@ -116,6 +116,7 @@ try{
  // References can form cycles; publish only after all entries exist.
  if(publish)for(const entry of seed.entries){
   const existing=await request('/entries/'+entry.sys.id);
+  if(existing.fields.enabled?.[locale]===false||existing.fields.needsReview?.[locale]===true){report.skipped.push('unpublished:'+entry.sys.id);continue;}
   if(!existing.sys.publishedVersion){await request('/entries/'+entry.sys.id+'/published',{method:'PUT',headers:versionHeaders(existing)});report.published.push('entry:'+entry.sys.id);}
  }
  report.finishedAt=new Date().toISOString();

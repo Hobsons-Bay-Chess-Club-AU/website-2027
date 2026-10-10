@@ -1,6 +1,7 @@
 import reference from '../data/cms.json' with {type:'json'};
 import {safeUrl} from './sanitize.mjs';
 import {renderRichText} from './render-rich-text.mjs';
+import {normalizeCalendarEvents} from './calendar.mjs';
 
 let cached,cachedAt=0;
 export function resolveEntries(entries,assets=[]){
@@ -52,14 +53,15 @@ export function normalizeContent(items){
   return {...e,bodyHtml:renderRichText(e.body,byId),actions:refs(e.actions,'navigationItem').map(n=>navigation(n)).filter(Boolean),
    children:refs(e.children,'section').map(n=>section(n,[...trail,e.id])),cards:refs(e.cards,'contentCard').map(card),statistics:refs(e.statistics,'statistic'),
    days:refs(e.days,'scheduleDay').map(day=>({...day,sessions:refs(day.sessions,'scheduleSession').map(s=>({...s,link:action(s.link)}))})),
-   sponsors:refs(e.sponsors,'sponsor'),posts:refs(e.posts,'post'),gallery:refs(e.gallery,'galleryImage').map(gallery),tournamentFeed:e.tournamentFeed?get(e.tournamentFeed,'tournamentFeed'):null};
+   sponsors:refs(e.sponsors,'sponsor'),posts:refs(e.posts,'post'),gallery:refs(e.gallery,'galleryImage').map(gallery),tournamentFeed:e.tournamentFeed?get(e.tournamentFeed,'tournamentFeed'):null,
+   calendar:e.calendar?(()=>{const calendar=get(e.calendar,'calendarSchedule');return {...calendar,events:normalizeCalendarEvents(refs(calendar.events,'calendarEvent'))};})():null};
  };
  const home=get(raw.homePage,'page');
  if(home.template!=='home'||home.enabled===false)throw new Error('Website settings must select an enabled Homepage template.');
  const pageEntries=items.filter(e=>e.type==='page'&&e.enabled!==false),postEntries=items.filter(e=>e.type==='post'&&e.enabled!==false);
  const slugs=new Set();
  for(const p of [...pageEntries,...postEntries]){
-  if(!p.title||!p.slug||!/^[a-z0-9-]+(?:\/[a-z0-9-]+)*$/.test(p.slug)||slugs.has(p.slug)||['news','404','sitemap.xml','robots.txt','wp-admin','blog','author/boldthemes','category/hbcc-chess','about/club-history'].includes(p.slug))throw new Error(`Invalid, duplicate or reserved Contentful page/article slug ${p.slug||'(empty)'}.`);
+  if(!p.title||!p.slug||!/^[a-z0-9-]+(?:\/[a-z0-9-]+)*$/.test(p.slug)||slugs.has(p.slug)||['news','404','sitemap.xml','robots.txt','wp-admin','blog','author/boldthemes','category/hbcc-chess','about/club-history','alonso-already-looking-ahead-after-goal-feast','horstweg-can-be-a-double-gameweek-hero','pre-match-briefing-hammers-vs-eagles','video-highlights-eagles-24-21-rhinos','watch-the-highlights-and-goals-against-seagulls'].includes(p.slug))throw new Error(`Invalid, duplicate or reserved Contentful page/article slug ${p.slug||'(empty)'}.`);
   slugs.add(p.slug);
  }
  const expandPage=p=>({...p,sections:refs(p.sections,'section').map(s=>section(s)),heroActions:refs(p.heroActions,'navigationItem').map(n=>navigation(n)).filter(Boolean),featureCards:refs(p.featureCards,'contentCard').map(card),partnerLink:action(p.partnerLink)});

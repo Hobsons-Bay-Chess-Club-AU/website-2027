@@ -1,127 +1,119 @@
 # HBCC Contentful editor guide
 
-The website now uses structured entries, native rich text, media pickers and ordered references. Ordinary editing needs no HTML or JSON. The package contains **13 content types, 290 entries and 96 assets**.
+The actual [Contentful space](https://app.contentful.com/spaces/7r7s5slcmer0/entries) contains **15 native content types, 447 entries and 99 processed assets**. There are 439 published entries and 99 published assets. Five disabled theme articles and three calendar events needing date confirmation remain drafts.
 
-**Account status:** the actual Contentful space is empty at the latest check. Delivery and Preview keys work; creating these models and entries requires a Management token. Local review uses the same structured model from a preserved fixture until import is complete.
+Ordinary editing uses rich text, media pickers, dropdowns and ordered entry references. No HTML or JSON is required.
 
 ## Content model
 
-| Type | What editors manage |
+| Type | Editors manage |
 | --- | --- |
-| Website settings (`siteSettings`) | Club name, logo, favicon, contact/address, homepage, main/footer/legal menus, header/footer social links, join banner, footer gallery, copyright and news labels |
-| Website page (`page`) | Title, slug, summary/SEO, hero, ordered sections, homepage partner/buttons/features, visibility and search indexing |
-| Menu (`navigationMenu`) | Named menu or footer column; items in display order |
-| Menu item / button / social link (`navigationItem`) | Label, page reference or URL, nested children, new-tab behavior, icon and visibility |
-| Page / homepage section (`section`) | Layout, headings, rich text, image, actions and linked collections |
-| Card / question / timeline item (`contentCard`) | Features, information cards, FAQ questions/answers and dated timeline entries |
-| Club statistic (`statistic`) | Display value, label, icon and visibility |
-| Weekly schedule day (`scheduleDay`) | Day, ordered sessions and no-session message |
-| Weekly session (`scheduleSession`) | Session name, display time, venue and optional link |
+| Website settings (`siteSettings`) | Branding, contact/address, homepage, menus, socials, join banner, footer gallery and news labels |
+| Website page (`page`) | Title, slug, SEO, hero, ordered sections, homepage partner/actions/features and visibility |
+| Menu (`navigationMenu`) | Main navigation or footer column, with items in display order |
+| Menu item / button / social link (`navigationItem`) | Label, page or URL, children, new-tab setting, icon and visibility |
+| Page / homepage section (`section`) | Layout, heading, rich text, media, actions and linked collections/calendar |
+| Card / question / timeline item (`contentCard`) | Features, cards, FAQs and timeline items |
+| Club statistic (`statistic`) | Value, label, icon and visibility |
+| Weekly schedule day (`scheduleDay`) | Day, sessions and empty-day message |
+| Weekly session (`scheduleSession`) | Name, display time, venue and link |
 | Sponsor / partner (`sponsor`) | Name, logo, website, description and visibility |
 | Gallery image (`galleryImage`) | Media, alternative text and optional link |
 | News article (`post`) | Title, slug, date, rich text, cover/alt, author, category, summary and visibility |
-| Tournament integration (`tournamentFeed`) | Expected year, existing service URLs, row/card counts, point label, explanation and timestamp wording |
+| Club calendar (`calendarSchedule`) | Year, introduction and linked calendar events |
+| Calendar event (`calendarEvent`) | Title, first/last dates, category, details, arbiter and visibility |
+| Tournament integration (`tournamentFeed`) | Year, existing service URLs, table/card counts and explanatory text |
 
-Sections support rich text, columns, cards, accordions, galleries, approved embeds, statistics, standings/events, feature banners, schedules, sponsors, news, testimonials and join banners. Reuse a section on several pages. The developer controls typography and responsive layout; editors control the content and order.
-
-Every field has a native control: rich text, media/entry picker, ordered entry list, dropdown, slug, number/date input or labelled visibility toggle. Help text explains references, collections and scoring.
-
-```mermaid
-flowchart TD
- Settings[Website settings] --> Home[Homepage]
- Settings --> Menus[Main / footer / legal menus]
- Menus --> Links[Menu items]
- Links --> Links
- Links --> Pages[Pages / articles]
- Home --> Sections[Ordered sections]
- Pages --> Sections
- Sections --> Cards[Cards / FAQs / galleries]
- Sections --> Stats[Statistics]
- Sections --> Schedule[Days and sessions]
- Sections --> Sponsors[Sponsors]
- Sections --> News[Featured articles]
- Sections --> Feed[Tournament service settings]
- Feed --> Tournament[Existing tournament website]
-```
+Sections support rich text, columns, cards, accordions, galleries, approved embeds, statistics, standings/events, feature banners, weekly schedules, sponsors, news, testimonials, join banners and calendars. Reuse linked sections across pages. The frontend controls typography and responsive layout; Contentful controls content and order.
 
 ## Edit pages
 
-1. In Contentful's Content tab, filter by **Website page** and open the page.
-2. Change its title, summary, hero or search title. Replace images with the media picker.
-3. Open a linked entry in **Sections in display order**. Use the rich text toolbar for headings, links, lists, tables and embedded images.
-4. Drag sections to reorder them. Remove a reference to remove it from this page, or set **Show on website** to Hide to disable the section everywhere it is used.
-5. Add a Section entry for another block. Columns link to child sections. FAQs link to Card entries with FAQ presentation, or embed them in rich text.
-6. Review drafts, then publish changed entries and their linked media.
+1. Filter the Content tab by **Website page** and open a page.
+2. Change its title, summary, hero or search title; replace images using the picker.
+3. Open a linked **Sections in display order** entry. Edit its native rich text, actions, media or collections.
+4. Drag sections to reorder. Remove a reference to remove it from this page, or set **Show on website** to Hide to disable it everywhere.
+5. Add a Section for another block. Columns reference child sections; FAQs reference Card entries.
+6. Publish the changed page, linked entries and media.
 
-New enabled pages appear at the next build without a source-code route. Preserve existing slugs during migration: page references follow a slug edit, but inbound addresses still require redirects. The homepage is selected in Website settings and uses the Homepage template. News and several system routes are reserved.
+New enabled pages appear at the next build without a new code route. Keep existing slugs during migration: page references follow slug edits, but inbound URLs require redirects. News and system routes are reserved.
 
-The Home page has dedicated hero, partner, buttons and feature-card fields. Seven ordered section references manage the rest of the homepage. Website settings manage the shared footer.
+The Home page has dedicated hero, partner, action and feature-card fields, plus seven ordered sections. [Website settings](https://app.contentful.com/spaces/7r7s5slcmer0/entries/hbcc-site-settings) controls the shared header/footer.
 
 ## Manage menus
 
 1. Open **Main navigation**, **Club**, **Quick Links** or **Legal links** under Menu.
-2. Drag linked items into order or add a Menu item.
-3. Enter its label and select a website page. Use URL for external destinations, `/news/`, mail links or anchors. For shared tournament links, select Tournament service and its destination; they follow the service's URL settings. A page reference takes priority, followed by a tournament destination, then URL.
-4. Link child items for submenus. Tournaments retains Upcoming & Register → its event links, and Champions → its two history pages.
-5. Choose new-tab behavior and visibility; preview and publish the changed item and menu.
+2. Drag items into order, or create a Menu item.
+3. Enter its label and select a page. Use URL for external destinations, `/news/`, email or anchors. Shared tournament links can reference Tournament service and its destination. Priority is page, tournament destination, then URL.
+4. Reference child items for submenus. Tournaments retains Upcoming & Register and Champions nesting.
+5. Choose visibility/new-tab behavior, then publish the item and menu.
 
-Reuse items in several menus or as buttons. Avoid linking an item into its own descendants. Missing published references, recursive cycles and duplicate routes fail clearly instead of creating broken links.
+Items can be reused as buttons or in other menus. Avoid linking an item into its own descendants. Missing published references, cycles and duplicate routes fail the build clearly.
+
+## Manage news
+
+Three September/October 2026 club stories are published with original HBCC photographs and source credits. The five football demos are disabled drafts; their old URLs redirect to `/news/`.
+
+Create a **News article**, supply title, unique slug, date, summary, rich text, cover and descriptive alt text. Select **Show**, then publish the article and media. The homepage and Tournaments news section select the newest published, visible articles automatically. A News section can also reference a specific ordered selection.
+
+Dates display in Melbourne time. **Allow Facebook updates** is off for the three curated stories; ordinary editors can leave the technical import fingerprints untouched.
+
+Future Facebook imports save drafts and protect manual editorial changes. The unattended scraper is disabled because Facebook's anonymous page currently provides no dated posts. Initial stories were captured through the signed-in browser; [EDITORIAL-UPDATE.md](EDITORIAL-UPDATE.md) documents the draft import and its current limitation.
+
+## Manage the club calendar
+
+The native [Calendar page](https://hobsons-bay-chess-club-au.github.io/website-2027/calendar/) replaces the spreadsheet embed. Its **Club calendar** links **150 visible events**, with month/agenda views, filters and an iCalendar download. Mobile opens in agenda view.
+
+1. Open **Club calendar ` HBCC Calendar 2026** and its **Calendar events** list.
+2. Open an event to edit its title, first day, last day, category or details. The last day is inclusive; single-day events use the same date in both fields.
+3. For a new event, create a **Calendar event**, choose Show, then add its reference to the Club calendar.
+4. Publish the event and the calendar if its references changed. Publish the page/section only if you changed them.
+5. Hide an event to remove it from the website. Remove its reference if it should no longer belong to this calendar.
+
+The source supplied dates without session times, so imports and calendar downloads use whole-day dates. Retain the actual Melbourne date when using Contentful's Date picker. For a future year, create a Club calendar with that year and its events, then select it in the Calendar section.
+
+The original date text, weekday, sheet row, event type, school schedule and arbiter are retained for checking. **Three contradictory rows are hidden drafts, not linked to the published calendar**. To include one, confirm its dates with the club, correct them, turn off **Date needs confirmation**, choose Show, add its reference and publish. [The editorial update](EDITORIAL-UPDATE.md) lists the exact rows.
+
+The tournament application's own [calendar](https://tournament.hobsonsbaychess.com/v2/calendar), upcoming events and registration remain available as separate services. Editing the club calendar does not change tournament registration data.
 
 ## Tournament data
 
-Tournament administration stays on the [existing site](https://tournament.hobsonsbaychess.com/v2/upcoming) and [repository](https://github.com/Hobsons-Bay-Chess-Club-AU/tournaments). There is no duplicate Event model to maintain.
+Tournament administration stays on the [existing site](https://tournament.hobsonsbaychess.com/v2/upcoming) and [repository](https://github.com/Hobsons-Bay-Chess-Club-AU/tournaments).
 
-**2026 Standings** uses the [Open leaderboard](https://tournament.hobsonsbaychess.com/v2/leaderboard/open). Points sum standard/classical tournament scores; rapid/blitz scores are excluded. The first eight positions match the source, including its order for ties. This replaces the single 2025 Club Championship table.
+**2026 Standings** uses the [Open leaderboard](https://tournament.hobsonsbaychess.com/v2/leaderboard/open), summing standard/classical scores and preserving source ordering for ties. Rapid/blitz scores are excluded. It replaces the single 2025 Club Championship table.
 
-The JSON carries its year and generation timestamp. A year mismatch is rejected; the homepage shows the actual update date, **5 October 2026** at capture. Results and event cards refresh in the browser from public tournament endpoints, without CMS credentials. A verified dated snapshot also supports static rendering and service outages.
+The feed checks its year and displays its generation date. Results and upcoming cards refresh from public endpoints; a verified dated snapshot supports static rendering and outages. Contentful manages headings, counts and links, while the service manages scores/registration. Changing the expected year cannot relabel old data.
 
-Contentful manages surrounding headings, explanations, counts and links. It does not manage scores, registration or event dates. Changing the expected year requires corresponding source data; it does not relabel old results.
+## Publish to the website
 
-Calendar navigation, the weekly schedule action and the retained `/calendar/` page lead to [the existing calendar](https://tournament.hobsonsbaychess.com/v2/calendar). Specific event registration remains on the existing portal.
+A Contentful publish updates the CMS immediately. Page copy, routes, menus, news, calendar and media reach the static website after a rebuild.
 
-## Import and preview
+The [public GitHub repository](https://github.com/Hobsons-Bay-Chess-Club-AU/website-2027) builds the **published Delivery API**, with hourly rebuilds enabled. For an immediate update use **Actions ` Build and deploy HBCC ` Run workflow ` contentful**. Publish dependencies as well as the page; a failed build preserves the previous deployment. [GITHUB-PAGES.md](GITHUB-PAGES.md) covers hosting.
 
-Run from `C:\dev\hbcc\dev\website-2027`. Keep the existing read keys in `.env` and add `CONTENTFUL_MANAGEMENT_TOKEN` there. Do not commit or paste credentials.
+Tournament standings/upcoming cards refresh directly from their service, independently of CMS publication.
 
-```powershell
-npm run contentful:import                 # Validate counts; no writes
-npm run contentful:import -- --apply       # Create models/editors and import drafts
-npm run contentful:verify                 # Verify the complete draft graph
-npm run cms:preview                       # http://127.0.0.1:4328/
-```
+## Developer import and preview
 
-The importer stages model IDs before applying cross-type validations, processes preserved media, then creates entries. It detects the default locale, uses stable IDs, retries rate limits and records `contentful/import-report.json`. Reruns skip existing content and do not overwrite editor changes or incompatible models.
-
-Models are activated; assets and entries remain drafts by default. Optional `--apply --publish` publishes the batch after all entries exist. Review imported demo news and historical information first.
-
-After publication:
+Keep credentials in ignored local `.env`. Delivery/Preview keys read content; the Management token performs migrations and draft imports.
 
 ```powershell
+npm run contentful:import                        # Dry run, no writes
+npm run contentful:import -- --apply              # Initial draft import, skips existing entries
 npm run contentful:verify -- --published
-npm run build:production
+npm run cms:preview                              # Native CMS drafts, port 4328
+npm run build:production                         # Published content only
 npm run verify
 ```
 
-Production uses published Delivery content and refuses an empty/incomplete CMS. Static builds cannot include Preview drafts. Ordinary local review uses port 4327; strict draft preview uses port 4328. Stop the ordinary dev server before starting the strict CMS preview.
+The initial importer activates models/editors, processes preserved media, detects locale and uses stable IDs. Reruns skip existing entries and refuse incompatible models. Its optional `--apply --publish` keeps disabled/review entries unpublished.
 
-## Publishing to hosting
+`npm run contentful:update` validates the controlled migration update; `--apply --publish` applies it. This is a developer migration command: it rewrites a documented set of baseline entries. Routine editorial changes belong in Contentful, not another migration rerun.
 
-The main site is static Astro. A Contentful publish updates the CMS immediately; page copy, new routes, menus and media reach the site after rebuilding/deploying. Reload local CMS preview to see saved drafts.
+Strict production builds require complete published content and refuse Preview drafts. Local CMS preview reads saved drafts on reload. Ordinary local review uses port 4327; strict CMS preview uses 4328.
 
-The [GitHub Pages preview](https://hobsons-bay-chess-club-au.github.io/website-2027/) is deployed from the [public frontend repository](https://github.com/Hobsons-Bay-Chess-Club-AU/website-2027), using the saved reference snapshot. After importing and publishing the CMS, switch repository variable `CONTENT_SOURCE` from `reference` to `contentful`. Actions will then build from the published Delivery API and deploy `dist`. Publish linked records as well as the page; a failed build preserves the previous deployment.
+## Club review before domain launch
 
-After initial Contentful import/publication, enable `CONTENTFUL_REBUILD_ENABLED` for hourly rebuilds, or use **Actions → Build and deploy HBCC → Run workflow** for immediate updates. An authenticated publish/unpublish webhook bridge can be added later. See [GITHUB-PAGES.md](GITHUB-PAGES.md) for setup and the difference between a reference preview and the actual CMS deployment.
+Historical junior counts, membership fees, sponsor tiers, committee names, policies and downloads retain captured wording and need club acceptance. Contact uses email because Contact Form 7 is not a portable mail backend. Three spreadsheet date conflicts need club confirmation. The production domain remains on WordPress.
 
-Tournament scores and upcoming cards refresh directly from the existing public service, so they do not require a CMS publication or main-site rebuild.
+See [HOMEPAGE-AUDIT.md](HOMEPAGE-AUDIT.md), [MIGRATION-PLAN.md](MIGRATION-PLAN.md) and the [live CMS verification](CMS-LIVE-VERIFICATION.json).
 
-## Content still needing club review
-
-- Five WordPress news stories are football theme demos. They are preserved and flagged **Imported content needs review**; replace or hide them.
-- `99 Juniors in 2025` is historical; no unverified 2026 count was invented.
-- Membership fees, sponsor tiers, committee names and policies/downloads retain captured wording.
-- Contact Form 7 is not a portable mail backend. The contact route uses a functional email link.
-- The source schedule PDF was missing; the new links use the tournament calendar.
-
-See [the homepage audit](HOMEPAGE-AUDIT.md), [migration plan](MIGRATION-PLAN.md) and `reference/audit/page-conversion-report.json`.
-
-The model uses Contentful's [native editor interfaces](https://www.contentful.com/developers/docs/extensibility/app-framework/editor-interfaces/) and [rich text format](https://www.contentful.com/developers/docs/tutorials/general/getting-started-with-rich-text-field-type/).
+The model follows Contentful's [native editor interfaces](https://www.contentful.com/developers/docs/extensibility/app-framework/editor-interfaces/) and [rich text format](https://www.contentful.com/developers/docs/tutorials/general/getting-started-with-rich-text-field-type/).

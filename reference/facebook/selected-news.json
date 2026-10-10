@@ -1,0 +1,72 @@
+{
+ "capturedAt": "2026-10-10",
+ "page": "https://www.facebook.com/hobsonsbaychess/",
+ "articles": [
+  {
+   "id": "hbcc-news-junior-championship-2026",
+   "facebookPostId": "1719675640166041",
+   "title": "Venue ready for the Victorian Junior Rapid and Blitz Championship",
+   "slug": "victorian-junior-rapid-blitz-championship-2026",
+   "publishedAt": "2026-10-02T11:36:00Z",
+   "excerpt": "A first look at the prepared venue ahead of the Victorian Junior Rapid and Blitz Championship in Bacchus Marsh.",
+   "image": "facebook-venue-1719675343499404",
+   "imageAlt": "Chess tables prepared in the hall for the Victorian Junior Rapid and Blitz Championship.",
+   "originalUrl": "https://www.facebook.com/hobsonsbaychess/posts/pfbid02cRywzg9S7LtjKg2DaLjNdn3EmzvU2iiuwvtivGvjNGavqqWj3BFXxHN1ZEdc16w4l",
+   "paragraphs": [
+    "HBCC shared photographs of the prepared playing hall ahead of the 2026 Victorian Junior Rapid and Blitz Championship.",
+    "The rows of boards, clocks and tables were ready for the junior players. The championship was scheduled for 3–4 October in Bacchus Marsh."
+   ],
+   "links": [
+    {"label":"View the club announcement and venue photos","url":"https://www.facebook.com/hobsonsbaychess/posts/pfbid02cRywzg9S7LtjKg2DaLjNdn3EmzvU2iiuwvtivGvjNGavqqWj3BFXxHN1ZEdc16w4l"},
+    {"label":"Championship event details","url":"https://www.facebook.com/events/1748395692857747/"}
+   ],
+   "credit": "Venue photograph shared by Hobsons Bay Chess Club."
+  },
+  {
+   "id": "hbcc-news-star-weekly-september-2026",
+   "facebookPostId": "pfbid0wDgYXMRvenHTuWGyBgqyqKrXWnhKh78BJEnpzx5pzAfusiSb8rhz4nhknQuRTugql",
+   "title": "Record turnout for women's chess in Altona",
+   "slug": "record-turnout-victorian-womens-championship-2026",
+   "publishedAt": "2026-09-22T03:40:00Z",
+   "excerpt": "Star Weekly reports on 42 players at the Victorian Women's Championship and the growing participation of women and girls.",
+   "image": "facebook-winner-1705974998202772",
+   "imageAlt": "A championship participant holds her trophy beside a club representative at the HBCC awards presentation.",
+   "originalUrl": "https://www.facebook.com/hobsonsbaychess/posts/pfbid0wDgYXMRvenHTuWGyBgqyqKrXWnhKh78BJEnpzx5pzAfusiSb8rhz4nhknQuRTugql",
+   "paragraphs": [
+    "HBCC shared Star Weekly's coverage of the 2026 Victorian Women's Championship, held in Altona on 12 and 19 September.",
+    "The newspaper reported a field of 42 players, up 40 per cent from 2025. Deethya Sai Katakam and Narelle Szuveges shared first place.",
+    "The report also highlighted the participation of junior girls and the live broadcast of games. Read the original story for the full report."
+   ],
+   "links": [
+    {"label":"Read Chess championed in Star Weekly","url":"https://maribyrnonghobsonsbay.starweekly.com.au/news/chess-championed/"},
+    {"label":"View HBCC's Facebook announcement","url":"https://www.facebook.com/hobsonsbaychess/posts/pfbid0wDgYXMRvenHTuWGyBgqyqKrXWnhKh78BJEnpzx5pzAfusiSb8rhz4nhknQuRTugql"}
+   ],
+   "credit": "Club photograph from HBCC's championship album. Championship figures and results are attributed to Star Weekly."
+  },
+  {
+   "id": "hbcc-news-womens-awards-2026",
+   "facebookPostId": "1705981161535489",
+   "title": "Victorian Women's Championship awards and photo gallery",
+   "slug": "victorian-womens-championship-awards-2026",
+   "publishedAt": "2026-09-20T11:15:00Z",
+   "excerpt": "HBCC and Geelong Chess Club celebrate the championship participants and share the awards photographs.",
+   "image": "facebook-awards-1705974908202781",
+   "imageAlt": "A championship participant holds a trophy between two representatives at the HBCC awards presentation.",
+   "originalUrl": "https://www.facebook.com/hobsonsbaychess/posts/pfbid0KKvHW6fz55ebyitpiJMUhct1L5c9bMALocHXeDQUQrBZCZfgzHr397it5kyJrkkDl",
+   "paragraphs": [
+    "Hobsons Bay Chess Club has shared its photo gallery from the 2026 Victorian Women's Championship and awards presentation.",
+    "HBCC and Geelong Chess Club co-organised the event under Chess Victoria. The club thanked Melissa Horne MP for presenting awards to the participants.",
+    "The original Facebook album includes the championship photographs and moments from the presentation."
+   ],
+   "links": [
+    {"label":"View the full championship photo gallery","url":"https://www.facebook.com/hobsonsbaychess/posts/pfbid0KKvHW6fz55ebyitpiJMUhct1L5c9bMALocHXeDQUQrBZCZfgzHr397it5kyJrkkDl"}
+   ],
+   "credit": "Awards photograph shared by Hobsons Bay Chess Club."
+  }
+ ],
+ "images": [
+  {"id":"facebook-venue-1719675343499404","fileName":"junior-championship-venue-2026.jpg","title":"HBCC junior championship venue, October 2026","sourceUrl":"https://www.facebook.com/photo/?fbid=1719675343499404&set=pcb.1719675640166041"},
+  {"id":"facebook-winner-1705974998202772","fileName":"womens-championship-winner-2026.jpg","title":"HBCC women's championship awards, September 2026","sourceUrl":"https://www.facebook.com/photo/?fbid=1705974998202772&set=pcb.1705981161535489"},
+  {"id":"facebook-awards-1705974908202781","fileName":"womens-championship-presentation-2026.jpg","title":"HBCC women's championship presentation, September 2026","sourceUrl":"https://www.facebook.com/photo/?fbid=1705974908202781&set=pcb.1705981161535489"}
+ ]
+}

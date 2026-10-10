@@ -1,0 +1,3 @@
+import {readFile,writeFile} from 'node:fs/promises';
+const seed=JSON.parse(await readFile('contentful/seed.json','utf8')),assets=JSON.parse(await readFile('contentful/assets.json','utf8'));
+await writeFile('src/data/cms.json',JSON.stringify({capturedAt:new Date().toISOString(),items:seed.entries.map(e=>({...e,fields:Object.fromEntries(Object.entries(e.fields).map(([key,value])=>[key,value[seed.locale]]))})),assets:assets.map(a=>({sys:{id:a.id},fields:{title:a.title,description:a.title,file:{url:a.localUrl,contentType:/\.pdf$/.test(a.fileName)?'application/pdf':'image/'+a.fileName.split('.').at(-1)}}}))},null,2));

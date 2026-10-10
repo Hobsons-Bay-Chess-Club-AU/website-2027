@@ -4,70 +4,65 @@ Project: `C:\dev\hbcc\dev\website-2027`
 Source: [hobsonsbaychess.com](https://hobsonsbaychess.com/)  
 Updated: 10 October 2026
 
-## Objective
+## Objective and completed work
 
-Preserve HBCC branding, content and club addresses while replacing WordPress editing with Contentful. Astro generates the main site. Results, upcoming events/calendar, registration, member login, games, broadcasts and Oceania Youth retain their existing services.
+Preserve HBCC branding, content and club addresses while replacing WordPress editing with Contentful. Astro generates the frontend for GitHub Pages. Scores, upcoming tournaments, registration, member login, games and broadcasts retain their existing services. The main club calendar is now a Contentful component, imported from the source spreadsheet.
 
-The expanded implementation has editable pages/sections, recursive main/footer menus, native media/rich text and a 2026 tournament feed. Changes follow [the pre-change homepage audit](HOMEPAGE-AUDIT.md).
+- Captured 73 WordPress pages, five posts and 387 media records, with HTML, styles, fonts and media. Fourteen club information pages are retained.
+- Downloaded the authenticated 545-record All content WXR. The original is unchanged; a separate UTF-8 copy repairs two legacy byte errors. The private export and screenshots are ignored by Git. This is a content export, not a full database/filesystem backup.
+- Audited every homepage section before changing the first version, with a frozen source copy. Restored missing footer/contact/social links, original menu nesting and new-tab behavior.
+- Converted the first version's 13 information pages to native rich text without dropping their wording. Removed demo news widgets; replaced the calendar embed on request. Inner theme layouts remain approximations, not pixel-identical reproductions.
+- Created and imported 15 native Contentful types/editor configurations, 447 entries and 99 assets. Published 439 entries and 99 assets.
+- Published three actual club stories with original HBCC images, source links and credits. Five football theme demos remain disabled drafts, with old routes redirected to News.
+- Converted 119 spreadsheet rows into 153 events: 150 published and three hidden drafts with contradictory source dates. Added month/agenda views, filters and iCalendar download.
+- Verified real published Delivery content, CMS references, desktop/mobile calendar behavior, all 21 tests and a strict production build.
+- Configured the public frontend repository for Contentful builds, GitHub Pages and hourly editorial rebuilds. The Facebook draft-import workflow remains disabled because the anonymous feed contains no dated posts.
 
-## Completed source and audit work
+[CMS-GUIDE.md](CMS-GUIDE.md) explains native editing. [EDITORIAL-UPDATE.md](EDITORIAL-UPDATE.md) records the news sources and calendar conflicts. The original [homepage audit](HOMEPAGE-AUDIT.md) remains the baseline evidence.
 
-- Captured 73 published WordPress pages, five posts and 387 media records. Fourteen club information pages are retained; unused sports demo routes are archived for review.
-- Preserved HTML, styles, fonts and media under `reference/`. The manifest records URLs, hashes, dates and errors. Originals remain separate from approximately 13 MB of optimized runtime media/fonts.
-- Downloaded authenticated All content WXR to `reference/admin-export/hbcc-wordpress-2026-10-10.xml`. Its 545 records include published/draft/trashed pages, posts, attachments, menus, custom CSS, forms, timelines and other theme/plugin data. The original 6 MB file is unchanged; two invalid legacy dash bytes were repaired only in a separate UTF-8 copy.
-- WXR/screenshots stay local and ignored by Git. WXR contains media references, not a complete database/filesystem backup; reconcile uncaptured assets before closing WordPress.
-- Recorded the full homepage audit before CMS changes and froze first-version content/source. Restored missing footer links/contact/Instagram/YouTube, original menu nesting and new-tab behavior.
-- Native rich text preserves all wording from the first version's 13 information pages. Calendar deliberately points to the existing service. Detailed inner layouts remain theme approximations; this is not pixel-identical reproduction.
+## Architecture
 
-## Content architecture
+Website settings link homepage, recursive menus, branding, shared banner and gallery. Pages link ordered native sections; sections link cards, statistics, weekly schedules, sponsors, news, calendar or tournament presentation settings. Editors use rich text and entry/media pickers rather than HTML/JSON.
 
-The package has 13 types, 290 entries and 96 media assets. Website settings link to homepage, menus, branding, socials, shared banner and gallery. Pages link to ordered sections; menus link to recursive items with page references or URLs.
+The package contains 447 entries; five disabled news posts and three review events are excluded from publication. The published main site renders 20 content pages plus nine legacy HTML redirects.
 
-Sections cover formatted content, columns, cards/FAQs, galleries/embeds, statistics, standings/events, features, schedules, sponsors, news, quotes and join banners. Other records manage cards, values, days/sessions, sponsors, gallery media, articles and tournament presentation. There are no HTML or JSON-object fields for normal editing.
+The initial importer defaults to dry-run and skips existing entries. The controlled update script is a developer migration tool, not a routine publishing command; reapplying it can reset selected baseline content.
 
-[CMS-GUIDE.md](CMS-GUIDE.md) documents types and editorial steps. Native assets/references, slug checks and cycle/missing-dependency validation support repeatable imports and reliable builds.
-
-## Remaining sequence
+## Launch sequence
 
 | Step | Status / action |
 | --- | --- |
-| Preserve source and audit homepage | Complete; evidence and differences documented |
-| Build editable frontend/model | Complete locally; 22 HTML routes and prepared native model |
-| Load Contentful drafts | Requires `CONTENTFUL_MANAGEMENT_TOKEN` in `.env`; current read APIs work but space is empty |
-| Validate imported graph | Run `contentful:verify`, open draft preview at port 4328 and exercise real CMS edits |
-| Review club content | Replace/hide sports demo news; review historical counts, fees, sponsor tiers, committee, policies and downloads |
-| Publish reviewed records | Publish linked entries/assets; verify Delivery API and strict production build |
-| Connect hosting | Complete for reference preview: public repository, Actions workflow, Delivery secrets and successful Pages deployment; CMS source switch follows import/publication |
-| Optional contact form | Choose a sending destination if email contact is insufficient and test real delivery |
-| Accept staging | Check retained routes, layouts, downloads, keyboard use, SEO, redirects and publish/rebuild |
-| Domain cutover | Deploy accepted release, configure certificate/DNS and rollback; preserve email/service subdomains |
+| Preserve source and audit homepage | Complete, including frozen first-version evidence |
+| Build editable pages, menus and media | Complete in the actual Contentful account |
+| Import/publish CMS graph | Complete; strict Delivery verification passes |
+| Replace theme news and spreadsheet calendar | Complete; three calendar rows retained for confirmation |
+| Connect GitHub hosting | Contentful is selected; hourly rebuilds enabled |
+| Review club content | Confirm historical counts, fees, sponsor tiers, committee, policies/downloads and calendar conflicts |
+| Accept staging | Club checks retained routes, layouts, accessibility, content and downloads |
+| Optional unattended Facebook import | Draft workflow prepared; needs a usable public feed before enabling |
+| Optional contact form | Choose and test a sending service if email is insufficient |
+| Domain cutover | Configure Pages custom domain, DNS/certificate and rollback; preserve email/service subdomains |
 
-The importer defaults to dry-run. `--apply` activates models/editors, processes preserved media and creates drafts. It detects locale, uses stable IDs, retries limits and records changes. Reruns skip existing entries and refuse incompatible models. `--apply --publish` is available for a reviewed batch.
+## Updates, routes and recovery
 
-## Update behavior
+Contentful publication reaches the website after a static rebuild. Immediate rebuilds are available from GitHub Actions; scheduled rebuilds run hourly, subject to GitHub delays. Production uses the published Delivery API and excludes Preview drafts.
 
-Existing `.env` names are supported. Management credentials are migration-only; Delivery/Preview access is server-only and public output is checked for leakage.
+Tournament scores and upcoming cards refresh separately from public endpoints, with checked year and generation date. Standard/classical scores replace the old 2025 Club Championship measure. Registration and the tournament website's own calendar remain on that service.
 
-Publishing page/menu/media changes takes effect after rebuilding/deploying the static site. Strict launch builds need actual published CMS content and reject Preview drafts. Local CMS preview reads drafts on reload; empty-space fallback supports local review.
+Retained club routes are `/about-us/`, `/history/`, `/play-chess/`, `/juniors/`, `/tournaments/`, `/champions/`, `/best-in-the-west/`, `/peter-caissa-memorial/`, `/dgt-link/`, `/calendar/`, `/sponsors/`, `/membership/`, `/contact/` and `/policies/`. `/news/` lists current club articles. Page references follow slug edits, but inbound addresses require redirects.
 
-Tournament results and event cards refresh in the browser and at build time. The year is checked and the source date shown. 2026 Open points sum standard/classical scores across tournaments, replacing the single 2025 Club Championship table. Registration and calendar stay on the existing service.
+The fixture and original public assets support offline review/recovery. Credentials, private export, raw Facebook hydration and runtime reports remain outside Git. Retain WordPress/export access until the club accepts launch and uncaptured assets are reconciled.
 
-## Retained routes
+## Validation
 
-Keep `/about-us/`, `/history/`, `/play-chess/`, `/juniors/`, `/tournaments/`, `/champions/`, `/best-in-the-west/`, `/peter-caissa-memorial/`, `/dgt-link/`, `/calendar/`, `/sponsors/`, `/membership/`, `/contact/` and `/policies/`. `/news/` lists retained articles; their original slugs remain.
+Twenty-one tests cover native editing, menu hierarchy/cycles, new/renamed routes, dependencies, rich text safety, API pagination/preview, real 2026 scoring, outages, repository paths, calendar date formats/month overlap/downloads and Facebook draft protection. The conversion audit checks retained wording, excluding the intentional replacement of demo news and the calendar embed.
 
-Page references follow slug edits, but inbound paths still need redirects. Preserve slugs until redirect changes are planned. Legacy aliases are in deployment configuration; decide redirects/404s for archived demo routes.
-
-## Validation and launch
-
-Eleven tests cover CMS edits, menu hierarchy/cycles, new/renamed pages, dependencies, rich text safety, preview routing/pagination, real 2026 scoring, outages and package integrity. The conversion audit checks retained wording. Build validation checks local links/assets, headings, WordPress media dependence and secrets.
-
-Desktop/390 px checks cover homepage, live refresh, nested menus and FAQs. The Pages build supports the repository preview path and later custom domain. Thirteen tests and 1,326 link/asset checks pass, including on GitHub. The reference preview is deployed; Delivery secrets, manual rebuild and opt-in hourly CMS rebuild are configured. Real CMS import/publication, source switch, optional authenticated webhooks, optional form sending, DNS and club acceptance remain launch work. See [GITHUB-PAGES.md](GITHUB-PAGES.md).
+The published root build checks 958 local links/assets across 20 pages and nine aliases, without missing files, unsafe URLs, WordPress media dependence or credential leakage. Browser checks cover desktop/390 px calendar controls and the previously checked homepage/menu/FAQs. [GITHUB-PAGES.md](GITHUB-PAGES.md) covers project-path builds and future domain hosting.
 
 ## Primary documentation
 
-- [WordPress export](https://wordpress.com/support/export/) describes recovery scope.
-- [Contentful Management API](https://www.contentful.com/developers/docs/references/content-management-api/overview/) covers model/media/entry management.
-- [Contentful editor interfaces](https://www.contentful.com/developers/docs/extensibility/app-framework/editor-interfaces/) defines configured native controls.
-- [Rich text format](https://www.contentful.com/developers/docs/tutorials/general/getting-started-with-rich-text-field-type/) defines editable nodes/tables.
-- [Tournament application](https://github.com/Hobsons-Bay-Chess-Club-AU/tournaments) supplies existing service routes and scoring.
+- [WordPress export](https://wordpress.com/support/export/)
+- [Contentful Management API](https://www.contentful.com/developers/docs/references/content-management-api/overview/)
+- [Native editor interfaces](https://www.contentful.com/developers/docs/extensibility/app-framework/editor-interfaces/)
+- [Rich text format](https://www.contentful.com/developers/docs/tutorials/general/getting-started-with-rich-text-field-type/)
+- [Tournament application](https://github.com/Hobsons-Bay-Chess-Club-AU/tournaments)

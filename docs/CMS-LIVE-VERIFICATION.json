@@ -1,0 +1,89 @@
+{
+  "checkedAt": "2026-10-10T06:27:05.988Z",
+  "source": "Actual Contentful Management and Delivery APIs",
+  "space": "7r7s5slcmer0",
+  "environment": "master",
+  "contentTypes": 15,
+  "nativeEditorInterfaces": 15,
+  "entries": 447,
+  "publishedEntries": 439,
+  "assets": 99,
+  "publishedAssets": 99,
+  "publishedNews": 3,
+  "publishedCalendarEvents": 150,
+  "retainedDrafts": [
+    {
+      "id": "calendar-2026-9b67f9cb36a8f77c",
+      "type": "calendarEvent",
+      "enabled": false,
+      "needsReview": true
+    },
+    {
+      "id": "calendar-2026-5d5e1f601bd54af6",
+      "type": "calendarEvent",
+      "enabled": false,
+      "needsReview": true
+    },
+    {
+      "id": "calendar-2026-0cd7d9ae1c8e7b10",
+      "type": "calendarEvent",
+      "enabled": false,
+      "needsReview": true
+    },
+    {
+      "id": "wp-post-1062",
+      "type": "post",
+      "enabled": false,
+      "needsReview": false
+    },
+    {
+      "id": "wp-post-1054",
+      "type": "post",
+      "enabled": false,
+      "needsReview": false
+    },
+    {
+      "id": "wp-post-1059",
+      "type": "post",
+      "enabled": false,
+      "needsReview": false
+    },
+    {
+      "id": "wp-post-1072",
+      "type": "post",
+      "enabled": false,
+      "needsReview": false
+    },
+    {
+      "id": "wp-post-1071",
+      "type": "post",
+      "enabled": false,
+      "needsReview": false
+    }
+  ],
+  "tests": {
+    "passed": 21,
+    "failed": 0
+  },
+  "browserChecks": {
+    "publishedCalendarDesktop": [
+      "month view",
+      "October category filter",
+      "next month",
+      "agenda view"
+    ],
+    "publishedCalendarMobile": {
+      "width": 390,
+      "height": 844,
+      "defaultView": "agenda",
+      "documentWidth": 390
+    }
+  },
+  "facebook": {
+    "initialNews": "Published browser-captured club stories",
+    "futureImports": "drafts for review",
+    "scheduledScrapeEnabled": false,
+    "publicFeed": "No dated posts in anonymous response"
+  },
+  "domainCutover": false
+}

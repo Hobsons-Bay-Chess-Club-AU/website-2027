@@ -1,11 +1,11 @@
 {
-  "checkedAt": "2026-10-10T04:23:45.317Z",
-  "site": "https://hobsonsbaychess.com",
-  "basePath": "/",
-  "htmlPages": 26,
-  "contentPages": 22,
-  "redirectPages": 4,
-  "checkedLocalLinksAndAssets": 1326,
+  "checkedAt": "2026-10-10T06:28:30.530Z",
+  "site": "https://hobsons-bay-chess-club-au.github.io",
+  "basePath": "/website-2027/",
+  "htmlPages": 29,
+  "contentPages": 20,
+  "redirectPages": 9,
+  "checkedLocalLinksAndAssets": 958,
   "missing": [],
   "wordpressAssets": [],
   "unsafe": []

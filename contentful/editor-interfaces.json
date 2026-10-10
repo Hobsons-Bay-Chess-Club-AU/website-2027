@@ -602,6 +602,40 @@
           "widgetNamespace": "builtin",
           "widgetId": "singleLine",
           "settings": {
+            "helpText": "Public source permalink. Shown as a source link on imported club news."
+          }
+        },
+        {
+          "fieldId": "facebookPostId",
+          "widgetNamespace": "builtin",
+          "widgetId": "singleLine",
+          "settings": {
+            "helpText": ""
+          }
+        },
+        {
+          "fieldId": "facebookSyncEnabled",
+          "widgetNamespace": "builtin",
+          "widgetId": "boolean",
+          "settings": {
+            "helpText": "Future imports remain drafts. Turn off to keep an article entirely under manual editorial control. Manual article edits are protected from overwrite.",
+            "trueLabel": "Yes",
+            "falseLabel": "No"
+          }
+        },
+        {
+          "fieldId": "facebookSourceHash",
+          "widgetNamespace": "builtin",
+          "widgetId": "singleLine",
+          "settings": {
+            "helpText": ""
+          }
+        },
+        {
+          "fieldId": "facebookImportHash",
+          "widgetNamespace": "builtin",
+          "widgetId": "singleLine",
+          "settings": {
             "helpText": ""
           }
         }
@@ -745,7 +779,7 @@
           "widgetNamespace": "builtin",
           "widgetId": "entryLinksEditor",
           "settings": {
-            "helpText": "Featured articles in order; empty uses newest enabled articles. Review imported demo posts before launch."
+            "helpText": "Featured articles in order; leave empty to show the newest published club news automatically."
           }
         },
         {
@@ -794,6 +828,14 @@
           "widgetId": "multipleLine",
           "settings": {
             "helpText": ""
+          }
+        },
+        {
+          "fieldId": "calendar",
+          "widgetNamespace": "builtin",
+          "widgetId": "entryLinkEditor",
+          "settings": {
+            "helpText": "Choose a Club calendar for the Calendar layout. Edit its linked Calendar event entries to update dates."
           }
         }
       ]
@@ -1070,6 +1112,172 @@
           "widgetId": "entryLinkEditor",
           "settings": {
             "helpText": ""
+          }
+        },
+        {
+          "fieldId": "enabled",
+          "widgetNamespace": "builtin",
+          "widgetId": "boolean",
+          "settings": {
+            "helpText": "",
+            "trueLabel": "Show",
+            "falseLabel": "Hide"
+          }
+        }
+      ]
+    },
+    {
+      "contentTypeId": "calendarSchedule",
+      "controls": [
+        {
+          "fieldId": "title",
+          "widgetNamespace": "builtin",
+          "widgetId": "singleLine",
+          "settings": {
+            "helpText": ""
+          }
+        },
+        {
+          "fieldId": "year",
+          "widgetNamespace": "builtin",
+          "widgetId": "numberEditor",
+          "settings": {
+            "helpText": ""
+          }
+        },
+        {
+          "fieldId": "description",
+          "widgetNamespace": "builtin",
+          "widgetId": "multipleLine",
+          "settings": {
+            "helpText": ""
+          }
+        },
+        {
+          "fieldId": "sourceUrl",
+          "widgetNamespace": "builtin",
+          "widgetId": "multipleLine",
+          "settings": {
+            "helpText": ""
+          }
+        },
+        {
+          "fieldId": "events",
+          "widgetNamespace": "builtin",
+          "widgetId": "entryLinksEditor",
+          "settings": {
+            "helpText": ""
+          }
+        }
+      ]
+    },
+    {
+      "contentTypeId": "calendarEvent",
+      "controls": [
+        {
+          "fieldId": "title",
+          "widgetNamespace": "builtin",
+          "widgetId": "singleLine",
+          "settings": {
+            "helpText": ""
+          }
+        },
+        {
+          "fieldId": "startDate",
+          "widgetNamespace": "builtin",
+          "widgetId": "datePicker",
+          "settings": {
+            "helpText": "Use the exact local date. The spreadsheet supplied dates without session times."
+          }
+        },
+        {
+          "fieldId": "endDate",
+          "widgetNamespace": "builtin",
+          "widgetId": "datePicker",
+          "settings": {
+            "helpText": "Inclusive last day. A single-day event uses the same first and last date."
+          }
+        },
+        {
+          "fieldId": "category",
+          "widgetNamespace": "builtin",
+          "widgetId": "dropdown",
+          "settings": {
+            "helpText": ""
+          }
+        },
+        {
+          "fieldId": "details",
+          "widgetNamespace": "builtin",
+          "widgetId": "multipleLine",
+          "settings": {
+            "helpText": ""
+          }
+        },
+        {
+          "fieldId": "schoolSchedule",
+          "widgetNamespace": "builtin",
+          "widgetId": "singleLine",
+          "settings": {
+            "helpText": ""
+          }
+        },
+        {
+          "fieldId": "eventType",
+          "widgetNamespace": "builtin",
+          "widgetId": "singleLine",
+          "settings": {
+            "helpText": ""
+          }
+        },
+        {
+          "fieldId": "arbiter",
+          "widgetNamespace": "builtin",
+          "widgetId": "multipleLine",
+          "settings": {
+            "helpText": ""
+          }
+        },
+        {
+          "fieldId": "sourceRow",
+          "widgetNamespace": "builtin",
+          "widgetId": "numberEditor",
+          "settings": {
+            "helpText": ""
+          }
+        },
+        {
+          "fieldId": "sourceDateText",
+          "widgetNamespace": "builtin",
+          "widgetId": "singleLine",
+          "settings": {
+            "helpText": ""
+          }
+        },
+        {
+          "fieldId": "sourceDay",
+          "widgetNamespace": "builtin",
+          "widgetId": "singleLine",
+          "settings": {
+            "helpText": ""
+          }
+        },
+        {
+          "fieldId": "sourceUrl",
+          "widgetNamespace": "builtin",
+          "widgetId": "multipleLine",
+          "settings": {
+            "helpText": ""
+          }
+        },
+        {
+          "fieldId": "needsReview",
+          "widgetNamespace": "builtin",
+          "widgetId": "boolean",
+          "settings": {
+            "helpText": "Conflicting spreadsheet dates remain hidden drafts. Confirm dates, turn this off, choose Show, and add the event to the calendar before publishing.",
+            "trueLabel": "Yes",
+            "falseLabel": "No"
           }
         },
         {

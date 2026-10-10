@@ -890,7 +890,7 @@
         "id": "post"
       },
       "name": "News article",
-      "description": "Rich text article. Imported sports demo articles require editorial review.",
+      "description": "Club news with native rich text, media and optional Facebook import details. Facebook sync saves drafts for editorial review.",
       "displayField": "title",
       "fields": [
         {
@@ -1112,6 +1112,55 @@
               }
             }
           ]
+        },
+        {
+          "id": "facebookPostId",
+          "name": "Original Facebook post ID",
+          "type": "Symbol",
+          "required": false,
+          "localized": false,
+          "validations": [
+            {
+              "size": {
+                "max": 256
+              }
+            }
+          ]
+        },
+        {
+          "id": "facebookSyncEnabled",
+          "name": "Allow Facebook updates",
+          "type": "Boolean",
+          "required": false,
+          "localized": false
+        },
+        {
+          "id": "facebookSourceHash",
+          "name": "Facebook source fingerprint",
+          "type": "Symbol",
+          "required": false,
+          "localized": false,
+          "validations": [
+            {
+              "size": {
+                "max": 256
+              }
+            }
+          ]
+        },
+        {
+          "id": "facebookImportHash",
+          "name": "Last imported article fingerprint",
+          "type": "Symbol",
+          "required": false,
+          "localized": false,
+          "validations": [
+            {
+              "size": {
+                "max": 256
+              }
+            }
+          ]
         }
       ]
     },
@@ -1159,7 +1208,8 @@
                 "sponsors",
                 "news",
                 "quote",
-                "cta"
+                "cta",
+                "calendar"
               ]
             }
           ]
@@ -1584,6 +1634,21 @@
           "type": "Text",
           "required": false,
           "localized": false
+        },
+        {
+          "id": "calendar",
+          "name": "Club calendar",
+          "type": "Link",
+          "required": false,
+          "localized": false,
+          "linkType": "Entry",
+          "validations": [
+            {
+              "linkContentType": [
+                "calendarSchedule"
+              ]
+            }
+          ]
         }
       ]
     },
@@ -2149,10 +2214,241 @@
     },
     {
       "sys": {
+        "id": "calendarSchedule"
+      },
+      "name": "Club calendar",
+      "description": "Choose the year and linked events. The initial schedule was imported from Schedule 2026.xlsx.",
+      "displayField": "title",
+      "fields": [
+        {
+          "id": "title",
+          "name": "Calendar name",
+          "type": "Symbol",
+          "required": true,
+          "localized": false,
+          "validations": [
+            {
+              "size": {
+                "max": 256
+              }
+            }
+          ]
+        },
+        {
+          "id": "year",
+          "name": "Calendar year",
+          "type": "Integer",
+          "required": true,
+          "localized": false
+        },
+        {
+          "id": "description",
+          "name": "Calendar introduction",
+          "type": "Text",
+          "required": false,
+          "localized": false
+        },
+        {
+          "id": "sourceUrl",
+          "name": "Original spreadsheet",
+          "type": "Text",
+          "required": false,
+          "localized": false
+        },
+        {
+          "id": "events",
+          "name": "Calendar events",
+          "type": "Array",
+          "required": true,
+          "localized": false,
+          "items": {
+            "type": "Link",
+            "linkType": "Entry",
+            "validations": [
+              {
+                "linkContentType": [
+                  "calendarEvent"
+                ]
+              }
+            ]
+          },
+          "validations": [
+            {
+              "size": {
+                "max": 200,
+                "min": 1
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "sys": {
+        "id": "calendarEvent"
+      },
+      "name": "Calendar event",
+      "description": "Edit a tournament round, coaching session, social night or closure. Dates use Melbourne local calendar days; source times were not supplied.",
+      "displayField": "title",
+      "fields": [
+        {
+          "id": "title",
+          "name": "Event name",
+          "type": "Symbol",
+          "required": true,
+          "localized": false,
+          "validations": [
+            {
+              "size": {
+                "max": 256
+              }
+            }
+          ]
+        },
+        {
+          "id": "startDate",
+          "name": "First date",
+          "type": "Date",
+          "required": true,
+          "localized": false
+        },
+        {
+          "id": "endDate",
+          "name": "Last date (inclusive)",
+          "type": "Date",
+          "required": true,
+          "localized": false
+        },
+        {
+          "id": "category",
+          "name": "Category",
+          "type": "Symbol",
+          "required": true,
+          "localized": false,
+          "validations": [
+            {
+              "in": [
+                "seniors",
+                "juniors",
+                "coaching",
+                "external",
+                "social",
+                "training",
+                "club",
+                "closed"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "details",
+          "name": "Details",
+          "type": "Text",
+          "required": false,
+          "localized": false
+        },
+        {
+          "id": "schoolSchedule",
+          "name": "School term / holiday",
+          "type": "Symbol",
+          "required": false,
+          "localized": false,
+          "validations": [
+            {
+              "size": {
+                "max": 256
+              }
+            }
+          ]
+        },
+        {
+          "id": "eventType",
+          "name": "Original event type",
+          "type": "Symbol",
+          "required": false,
+          "localized": false,
+          "validations": [
+            {
+              "size": {
+                "max": 256
+              }
+            }
+          ]
+        },
+        {
+          "id": "arbiter",
+          "name": "Arbiters",
+          "type": "Text",
+          "required": false,
+          "localized": false
+        },
+        {
+          "id": "sourceRow",
+          "name": "Original spreadsheet row",
+          "type": "Integer",
+          "required": false,
+          "localized": false
+        },
+        {
+          "id": "sourceDateText",
+          "name": "Original written date",
+          "type": "Symbol",
+          "required": false,
+          "localized": false,
+          "validations": [
+            {
+              "size": {
+                "max": 256
+              }
+            }
+          ]
+        },
+        {
+          "id": "sourceDay",
+          "name": "Original weekday",
+          "type": "Symbol",
+          "required": false,
+          "localized": false,
+          "validations": [
+            {
+              "size": {
+                "max": 256
+              }
+            }
+          ]
+        },
+        {
+          "id": "sourceUrl",
+          "name": "Original spreadsheet",
+          "type": "Text",
+          "required": false,
+          "localized": false
+        },
+        {
+          "id": "needsReview",
+          "name": "Date needs confirmation",
+          "type": "Boolean",
+          "required": false,
+          "localized": false
+        },
+        {
+          "id": "enabled",
+          "name": "Show on website",
+          "type": "Boolean",
+          "required": false,
+          "localized": false,
+          "defaultValue": {
+            "en-US": true
+          }
+        }
+      ]
+    },
+    {
+      "sys": {
         "id": "tournamentFeed"
       },
       "name": "Tournament website integration",
-      "description": "Presentation only. Tournament scores, registrations and calendar are owned by the existing service.",
+      "description": "Tournament scores and registration remain on the existing service. The club calendar is managed separately.",
       "displayField": "title",
       "fields": [
         {

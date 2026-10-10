@@ -1,90 +1,67 @@
-# Hobsons Bay Chess Club — website 2027
+# Hobsons Bay Chess Club ` website 2027
 
-An Astro reconstruction of HBCC's WordPress site with a structured Contentful CMS: homepage, 14 club information pages, preserved news routes, nested menus, native rich text/sections, archived media and the 2026 tournament integration.
+Astro rebuild of HBCC's WordPress website, with Contentful managing pages, menus, sections, news, calendar events and media. GitHub Actions builds published content for [GitHub Pages](https://hobsons-bay-chess-club-au.github.io/website-2027/).
 
-**Current state:** [the GitHub Pages preview is deployed](https://hobsons-bay-chess-club-au.github.io/website-2027/) using the structured reference snapshot. Delivery/Preview keys are valid, but the Contentful space is empty. Creating the model/content requires `CONTENTFUL_MANAGEMENT_TOKEN` in local `.env`; nothing has yet been imported into the account.
+The actual Contentful account is populated: **15 types, 447 entries and 99 assets**. There are **439 published entries**, including three recent club stories and 150 calendar events. Five disabled theme news posts and three conflicting spreadsheet events remain drafts. [Open Website settings](https://app.contentful.com/spaces/7r7s5slcmer0/entries/hbcc-site-settings).
 
-## Run locally
+## Develop and verify
+
+Requires Node 22.12+; development and Actions use Node 24.
 
 ```powershell
 Set-Location C:\dev\hbcc\dev\website-2027
 npm ci
-npm run dev
-```
-
-Open <http://127.0.0.1:4327/>. Node 22.12+ is required; this environment uses Node 24.
-
-`CONTENT_SOURCE=auto` reads Contentful when populated. A verified empty space renders the structured local reference; an API failure is reported. `reference` explicitly selects the fixture, while `contentful` requires real CMS content.
-
-## CMS
-
-Read [the editor guide](docs/CMS-GUIDE.md) for managing pages, menus, sections, media and publication.
-
-The package has **13 types, 290 entries, 96 assets and 13 editor configurations**. All fields use native controls. Normal page editing uses rich text and references, with no raw HTML/JSON-object fields.
-
-```powershell
-npm run contentful:check
-npm run contentful:import                 # Dry run
-npm run contentful:import -- --apply       # Import drafts after adding Management token
-npm run contentful:verify
-npm run cms:preview                       # http://127.0.0.1:4328/
-```
-
-Models activate; media and entries remain drafts. Existing entries and incompatible models are not overwritten. The local import report is ignored by Git. Read keys cannot perform an import.
-
-After review/publication:
-
-```powershell
+npm run dev                          # http://127.0.0.1:4327/
+npm run cms:preview                  # Draft CMS preview, port 4328
+npm test
 npm run contentful:verify -- --published
 npm run build:production
 npm run verify
 ```
 
-Production builds refuse Preview drafts and require the published CMS.
+Local `.env` supports the original Delivery/Preview key names. Production reads the published Delivery API, refuses Preview drafts and reports missing references. `CONTENT_SOURCE=reference` explicitly selects the preserved fixture for offline review; `contentful` requires the account.
 
-## GitHub hosting
+Read [the CMS guide](docs/CMS-GUIDE.md) for native editing, publishing and calendar/news management. Normal page editing uses rich text and entry/media pickers.
 
-[The frontend repository](https://github.com/Hobsons-Bay-Chess-Club-AU/website-2027) now has a GitHub Actions workflow, repository-path support and Contentful Delivery build secrets. The GitHub preview can use the saved reference while the CMS import is pending; custom-domain builds require published Contentful content.
+## News and calendar
 
-The repository is public, Pages is enabled and deployment has succeeded. Repository variable `CONTENT_SOURCE=reference` explicitly selects the preview snapshot until Contentful is imported and published. Custom-domain builds refuse the reference snapshot. See [the deployment guide](docs/GITHUB-PAGES.md) for Contentful updates and the later domain move.
+Three genuine September/October 2026 club stories replace the five football theme demos, including the homepage and Tournaments news section. Original HBCC photographs are uploaded to Contentful; articles credit and link their sources. Old demo news addresses redirect to `/news/`.
 
-## Tournament service
-
-The 2025 table and old January/March cards are replaced with the [2026 Open leaderboard](https://tournament.hobsonsbaychess.com/v2/leaderboard/open), current upcoming events and existing calendar links. Scoring follows the [tournament application](https://github.com/Hobsons-Bay-Chess-Club-AU/tournaments): standard/classical scores, stable ties and a checked year.
-
-The source update date is shown. Browser refreshes read public tournament endpoints; verified dated results support static rendering and outages. Contentful owns presentation; the existing service owns scores, dates and registration.
-
-## Checks
+The interactive `/calendar/` imports Schedule 2026.xlsx's published spreadsheet. It offers month/agenda views, category filtering and an iCalendar download; mobile opens in agenda view. Editors manage individual events in Contentful. Three contradictory source rows are documented for review, and no event times were invented.
 
 ```powershell
-npm test
-node scripts/audit-page-conversion.mjs
-npm run build
-npm run verify
+npm run news:scrape                                  # Public scrape, dry run
+npm run news:scrape -- --file=reference/facebook/captured-posts.json --apply
 ```
 
-Thirteen tests cover actual CMS field changes, menu hierarchy/hiding/cycles, new/renamed pages, missing references, safe rich text, preview authentication/pagination, 2026 scoring, outages, native package integrity, repository paths and custom-domain publication guards. Conversion checks preserve all first-version wording on 13 pages; calendar content is deliberately replaced with the existing-service link.
+Future imports save **drafts**, deduplicate and protect editor changes. Unattended Facebook scraping is **disabled**: the anonymous page currently supplies a profile without dated posts. The initial capture used the signed-in browser. [Editorial update](docs/EDITORIAL-UPDATE.md) records sources, limitations and review items.
 
-The build generates 22 content pages, four legacy HTML redirects, robots.txt and the sitemap. The verifier checks links/assets (including fonts, backgrounds and scripts), headings, repository paths, WordPress media dependence and credential leakage. Browser checks cover desktop, 390 px mobile, nested menus and membership FAQs. Pages checks also verify navigation under the repository path. See [the pre-change homepage audit](docs/HOMEPAGE-AUDIT.md).
+## Hosting and existing services
 
-## Files
+[The public repository](https://github.com/Hobsons-Bay-Chess-Club-AU/website-2027) has Pages enabled, Delivery build secrets and `CONTENT_SOURCE=contentful`. Pushes to main deploy published content. Hourly CMS rebuilds are enabled; editors can run **Actions ` Build and deploy HBCC ` Run workflow** for an immediate rebuild. See [the deployment guide](docs/GITHUB-PAGES.md).
+
+Standings and upcoming cards use the [existing tournament application](https://github.com/Hobsons-Bay-Chess-Club-AU/tournaments), with 2026 standard/classical points, checked year, stable ties and a dated fallback. Results, registration and the tournament website's own calendar remain there. The main club calendar is now separately editable.
+
+The `hobsonsbaychess.com` domain still serves WordPress. Domain/DNS cutover is a separate launch step.
+
+## Checks and migration files
+
+Twenty-one tests cover CMS editing/references/menus, rich text safety, tournament scoring/outages, deployment paths, spreadsheet dates, calendar filters/downloads and Facebook draft protection. The published root build produces 20 content pages and nine legacy HTML redirects; 958 local links/assets passed verification. Desktop and 390 px checks cover the calendar and the previously audited homepage/menu/FAQs.
 
 | Path | Purpose |
 | --- | --- |
-| `src/components/`, `src/pages/` | Layouts, recursive navigation and tournament summary |
-| `src/lib/content-source.mjs` | API reader, native references and validation |
-| `src/data/cms.json` | Structured local reference using the Contentful model |
-| `src/data/site.json` | First-version conversion source |
-| `src/data/tournaments.json` | Verified dated tournament fallback |
-| `contentful/` | Model, seed, assets and native editor configuration |
-| `scripts/import-cms.mjs` | Dry-run/resumable draft importer |
-| `reference/audit/` | Homepage inventory, frozen first version and conversion evidence |
-| `reference/api/`, `html/`, `styles/`, `assets/`, `fonts/` | Public source capture and original media |
-| `reference/admin-export/` | Private WXR, excluded from Git/build |
-| `public/wp-assets/`, `public/fonts/` | Optimized runtime media/self-hosted fonts |
+| `src/components/`, `src/pages/` | Frontend, navigation, calendar and tournament summary |
+| `src/lib/content-source.mjs` | API reader and native reference validation |
+| `src/data/cms.json` | Preserved structured fixture |
+| `contentful/` | Schema, seed, assets and native editor controls |
+| `scripts/import-cms.mjs` | Initial dry-run/resumable draft import |
+| `scripts/apply-site-update.mjs` | Controlled migration update; not a routine editor tool |
+| `scripts/sync-facebook-news.mjs` | Public/captured post import to drafts |
+| `reference/calendar/`, `reference/facebook/` | Spreadsheet, source audit, news references and original photos |
+| `reference/audit/` | Pre-change homepage audit and frozen first version |
+| `reference/admin-export/` | Private WordPress export, excluded from Git/build |
+| `public/wp-assets/`, `public/news-assets/`, `public/fonts/` | Offline media and self-hosted fonts |
 
-The unchanged WordPress export has 545 records, with a separately repaired UTF-8 audit copy. It contains content/metadata and media references rather than a full filesystem/database backup. Original public downloads are retained separately; runtime media/fonts use about 13 MB.
+The original 545-record WordPress export is unchanged, with a separate repaired UTF-8 audit copy. It contains content/metadata and media references rather than a complete filesystem/database backup. Public downloads are preserved; credentials, private export, raw Facebook hydration and screenshots are excluded from Git.
 
-The reference preview is deployed on GitHub Pages; no production domain or DNS cutover was performed. Imported news is sports demo material flagged for review. Historical fees, sponsorship and policies remain captured content. Contact uses a real email link; the missing schedule download is replaced by the tournament calendar.
-
-See [the migration plan](docs/MIGRATION-PLAN.md) for recovery and launch work.
+Historical counts, fees, sponsor tiers, committee and policies still need club acceptance. Contact uses the club email link. See [the homepage audit](docs/HOMEPAGE-AUDIT.md) and [migration plan](docs/MIGRATION-PLAN.md).

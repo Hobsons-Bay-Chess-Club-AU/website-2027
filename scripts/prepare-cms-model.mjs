@@ -29,14 +29,15 @@ const contentTypes=[
   asset('partnerImage','Partner graphic'),text('partnerAlt','Partner alternative text'),ref('partnerLink','Partner link',['navigationItem']),refs('heroActions','Hero buttons',['navigationItem']),refs('featureCards','Homepage feature cards',['contentCard']),refs('sections','Sections in display order',['section']),field('noindex','Hide from search engines','Boolean'),enabled(),
   field('wordpressId','Original WordPress ID','Integer'),text('originalUrl','Original URL — reference')
  ]),
- type('post','News article','Rich text article. Imported sports demo articles require editorial review.','title',[
-  text('title','Article title',true),slug,field('publishedAt','Article date','Date',true),long('excerpt','Short summary'),asset('image','Cover image'),text('imageAlt','Cover alternative text'),text('author','Author'),text('category','Category'),rich('body','Article body'),text('seoTitle','Search/social title override'),field('noindex','Hide from search engines','Boolean'),enabled(),field('migrationReviewRequired','Imported content needs review','Boolean'),field('wordpressId','Original WordPress ID','Integer'),text('originalUrl','Original URL — reference')
+ type('post','News article','Club news with native rich text, media and optional Facebook import details. Facebook sync saves drafts for editorial review.','title',[
+  text('title','Article title',true),slug,field('publishedAt','Article date','Date',true),long('excerpt','Short summary'),asset('image','Cover image'),text('imageAlt','Cover alternative text'),text('author','Author'),text('category','Category'),rich('body','Article body'),text('seoTitle','Search/social title override'),field('noindex','Hide from search engines','Boolean'),enabled(),field('migrationReviewRequired','Imported content needs review','Boolean'),field('wordpressId','Original WordPress ID','Integer'),text('originalUrl','Original URL — reference'),
+  text('facebookPostId','Original Facebook post ID'),field('facebookSyncEnabled','Allow Facebook updates','Boolean'),text('facebookSourceHash','Facebook source fingerprint'),text('facebookImportHash','Last imported article fingerprint')
  ]),
  type('section','Page / homepage section','Choose layout and edit its fields. Link to a page and drag to reorder. Fields apply to the selected layout.','internalName',[
-  text('internalName','Editor name',true),select('kind','Section layout',['richText','columns','cards','accordion','gallery','embed','statistics','leaderboardEvents','feature','schedule','sponsors','news','quote','cta'],true),enabled(),
+  text('internalName','Editor name',true),select('kind','Section layout',['richText','columns','cards','accordion','gallery','embed','statistics','leaderboardEvents','feature','schedule','sponsors','news','quote','cta','calendar'],true),enabled(),
   text('title','Section heading'),text('subtitle','Supporting text'),text('secondaryTitle','Second column heading'),text('eyebrow','Small heading / attribution'),rich('body','Formatted text'),asset('image','Background / feature image'),text('imageAlt','Image alternative text'),
   refs('actions','Buttons / heading links',['navigationItem']),refs('children','Column sections',['section']),refs('cards','Cards or questions',['contentCard']),refs('statistics','Club statistics',['statistic']),refs('days','Weekly schedule days',['scheduleDay']),refs('sponsors','Sponsors in order',['sponsor']),refs('posts','Featured news',['post']),refs('gallery','Gallery images',['galleryImage']),ref('tournamentFeed','Tournament service',['tournamentFeed']),
-  select('tone','Background style',['light','dark','gold']),field('limit','Items to display','Integer',false,{validations:[{range:{min:1,max:20}}]}),text('emptyText','No-items message'),long('embedUrl','Approved YouTube or Google embed URL')
+  select('tone','Background style',['light','dark','gold']),field('limit','Items to display','Integer',false,{validations:[{range:{min:1,max:20}}]}),text('emptyText','No-items message'),long('embedUrl','Approved YouTube or Google embed URL'),ref('calendar','Club calendar',['calendarSchedule'])
  ]),
  type('contentCard','Card / question / timeline item','Reusable features, information cards, FAQs and timelines.','title',[
   text('title','Title / question',true),select('presentation','Card style',['card','faq','timeline'],true),text('eyebrow','Small heading / year'),long('description','Short description'),rich('body','Formatted content / answer'),asset('image','Image'),text('imageAlt','Image alternative text'),icon(),ref('link','Card action',['navigationItem']),enabled()
@@ -46,7 +47,17 @@ const contentTypes=[
  type('scheduleSession','Weekly session','Normal club times. Event dates remain on the tournament website.','title',[text('title','Session name',true),text('time','Display time',true),text('location','Venue label'),ref('link','Optional details link',['navigationItem'])]),
  type('sponsor','Sponsor / partner','Edit logo, name and destination; reorder on the section.','name',[text('name','Sponsor name',true),asset('image','Sponsor logo',true),text('website','Website or local sponsor page'),long('description','Description'),enabled()]),
  type('galleryImage','Gallery image','Native media picker, alternative text and optional link.','title',[text('title','Editor name',true),asset('image','Image',true),text('alt','Alternative text',true),ref('link','Image link',['navigationItem']),enabled()]),
- type('tournamentFeed','Tournament website integration','Presentation only. Tournament scores, registrations and calendar are owned by the existing service.','title',[
+ type('calendarSchedule','Club calendar','Choose the year and linked events. The initial schedule was imported from Schedule 2026.xlsx.','title',[
+  text('title','Calendar name',true),field('year','Calendar year','Integer',true),long('description','Calendar introduction'),long('sourceUrl','Original spreadsheet'),refs('events','Calendar events',['calendarEvent'],true)
+ ]),
+ type('calendarEvent','Calendar event','Edit a tournament round, coaching session, social night or closure. Dates use Melbourne local calendar days; source times were not supplied.','title',[
+  text('title','Event name',true),field('startDate','First date','Date',true),field('endDate','Last date (inclusive)','Date',true),
+  select('category','Category',['seniors','juniors','coaching','external','social','training','club','closed'],true),
+  long('details','Details'),text('schoolSchedule','School term / holiday'),text('eventType','Original event type'),long('arbiter','Arbiters'),
+  field('sourceRow','Original spreadsheet row','Integer'),text('sourceDateText','Original written date'),text('sourceDay','Original weekday'),long('sourceUrl','Original spreadsheet'),
+  field('needsReview','Date needs confirmation','Boolean'),enabled()
+ ]),
+ type('tournamentFeed','Tournament website integration','Tournament scores and registration remain on the existing service. The club calendar is managed separately.','title',[
   text('title','Editor name',true),field('year','Expected leaderboard year','Integer',true,{validations:[{range:{min:2020,max:2100}}]}),text('dataUrl','Open leaderboard JSON URL',true),text('leaderboardUrl','Full leaderboard URL',true),text('upcomingUrl','Upcoming events URL',true),text('calendarUrl','Calendar URL',true),
   field('rows','Leaderboard rows','Integer',true,{validations:[{range:{min:1,max:20}}]}),field('eventsLimit','Upcoming cards','Integer',true,{validations:[{range:{min:1,max:10}}]}),text('pointsLabel','Points column label',true),text('updatedLabel','Data timestamp label',true),long('pointsExplanation','Scoring explanation',true),text('unavailableText','Unavailable message',true)
  ])
@@ -62,7 +73,13 @@ const helps={
  'section.body':'Use the rich text toolbar: tables, lists, links and embedded images. Embed Card entries for FAQs/timelines.',
  'section.tournamentFeed':'Required for Leaderboard + Events. Scores and event cards refresh from the existing tournament service.',
  'section.actions':'First link is primary. Leaderboard + Events: first = Full Table, second = All Events.',
- 'section.posts':'Featured articles in order; empty uses newest enabled articles. Review imported demo posts before launch.',
+ 'section.posts':'Featured articles in order; leave empty to show the newest published club news automatically.',
+ 'section.calendar':'Choose a Club calendar for the Calendar layout. Edit its linked Calendar event entries to update dates.',
+ 'calendarEvent.startDate':'Use the exact local date. The spreadsheet supplied dates without session times.',
+ 'calendarEvent.endDate':'Inclusive last day. A single-day event uses the same first and last date.',
+ 'calendarEvent.needsReview':'Conflicting spreadsheet dates remain hidden drafts. Confirm dates, turn this off, choose Show, and add the event to the calendar before publishing.',
+ 'post.facebookSyncEnabled':'Future imports remain drafts. Turn off to keep an article entirely under manual editorial control. Manual article edits are protected from overwrite.',
+ 'post.originalUrl':'Public source permalink. Shown as a source link on imported club news.',
  'tournamentFeed.dataUrl':'Currently https://tournament.hobsonsbaychess.com/open-ratings.json. Its year must match Expected leaderboard year.',
  'siteSettings.copyright':'Example: © {year} Hobsons Bay Chess Club. All Rights Reserved.',
  'post.migrationReviewRequired':'Imported football theme demo content: replace or disable before launch.'

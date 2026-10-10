@@ -8,4 +8,7 @@ reference/admin-export/
 reference/screenshots/
 *.log
 contentful/import-report.json
+contentful/update-report.json
+contentful/facebook-sync-report.json
+reference/facebook/public-page.html
 
