@@ -1,0 +1,97 @@
+{
+  "checkedAt": "2026-10-10T06:34:04.903Z",
+  "commit": "a63c520356497bc50aa1c37b41c73dbc848e037e",
+  "workflow": "https://github.com/Hobsons-Bay-Chess-Club-AU/website-2027/actions/runs/38031214457",
+  "workflowConclusion": "success",
+  "site": "https://hobsons-bay-chess-club-au.github.io/website-2027/",
+  "routes": [
+    {
+      "route": "",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8"
+    },
+    {
+      "route": "news/",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8"
+    },
+    {
+      "route": "calendar/",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8"
+    },
+    {
+      "route": "calendar.ics",
+      "status": 200,
+      "contentType": "text/calendar"
+    },
+    {
+      "route": "victorian-junior-rapid-blitz-championship-2026/",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8"
+    },
+    {
+      "route": "record-turnout-victorian-womens-championship-2026/",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8"
+    },
+    {
+      "route": "victorian-womens-championship-awards-2026/",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8"
+    },
+    {
+      "route": "tournaments/",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8"
+    },
+    {
+      "route": "alonso-already-looking-ahead-after-goal-feast/",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8"
+    }
+  ],
+  "newsTitles": [
+    "Venue ready for the Victorian Junior Rapid and Blitz Championship",
+    "Record turnout for women's chess in Altona",
+    "Victorian Women's Championship awards and photo gallery"
+  ],
+  "contentfulImages": [
+    {
+      "status": 200,
+      "contentType": "image/jpeg"
+    },
+    {
+      "status": 200,
+      "contentType": "image/jpeg"
+    },
+    {
+      "status": 200,
+      "contentType": "image/jpeg"
+    }
+  ],
+  "calendarEvents": 150,
+  "icsEvents": 150,
+  "demoNewsVisible": false,
+  "legacyAliasVerified": true,
+  "browserChecks": {
+    "desktopCalendar": {
+      "initialMonth": "October 2026",
+      "initialEvents": 14,
+      "coachingEvents": 4,
+      "nextMonth": "November 2026",
+      "nextMonthCoachingEvents": 3
+    },
+    "mobileCalendar": {
+      "width": 390,
+      "documentWidth": 390,
+      "defaultView": "agenda",
+      "monthHidden": true
+    },
+    "news": {
+      "loadedPhotos": 3,
+      "fontsLoaded": true,
+      "horizontalOverflow": false
+    }
+  }
+}

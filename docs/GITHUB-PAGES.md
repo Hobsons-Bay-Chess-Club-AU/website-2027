@@ -14,7 +14,7 @@ Contentful holds editable content. GitHub Actions reads the published Delivery A
 | `CONTENTFUL_REBUILD_ENABLED` | `true` |
 | `FACEBOOK_SCRAPE_ENABLED` | `false` |
 
-Build secrets `CONTENTFUL_SPACE_ID` and `CONTENTFUL_DELIVERY_TOKEN` are configured. Management and Preview tokens stay local. The initial reference preview was replaced as the default source after the actual CMS graph was imported and published.
+Build secrets `CONTENTFUL_SPACE_ID` and `CONTENTFUL_DELIVERY_TOKEN` are configured. Management and Preview tokens stay local. The initial reference preview was replaced as the default source after the actual CMS graph was imported and published. The published-content [deployment passed](https://github.com/Hobsons-Bay-Chess-Club-AU/website-2027/actions/runs/38031214457); [GITHUB-RELEASE-VERIFICATION.json](GITHUB-RELEASE-VERIFICATION.json) records live news, photos, calendar/download and browser checks.
 
 ## Publish an editorial change
 
