@@ -3,25 +3,29 @@ import path from 'node:path';
 import {load} from 'cheerio';
 import {loadEnv} from './env.mjs';
 import {normalizeBase,withBase} from '../src/lib/site-url.mjs';
-const root=path.resolve('dist');
+const review=process.env.SITE_VARIANT==='v2';
+const root=path.resolve(review?'dist/v2':'dist');
 const htmlFiles=[];
 const textFiles=[];
-async function walk(dir){for(const item of await readdir(dir,{withFileTypes:true})){const p=path.join(dir,item.name);if(item.isDirectory())await walk(p);else {if(p.endsWith('.html'))htmlFiles.push(p);if(/\.(html|[cm]?js|json|css|txt|xml)$/.test(p))textFiles.push(p);}}}
+async function walk(dir){for(const item of await readdir(dir,{withFileTypes:true})){const p=path.join(dir,item.name);if(item.isDirectory()){if(!review&&dir===root&&item.name==='v2')continue;await walk(p);}else {if(p.endsWith('.html'))htmlFiles.push(p);if(/\.(html|[cm]?js|json|css|txt|xml|md)$/.test(p))textFiles.push(p);}}}
 await walk(root);
 const missing=[],wordpressAssets=[],unsafe=[];
 const credentials=loadEnv();
 const base=normalizeBase(process.env.SITE_BASE_PATH);
 const site=new URL(process.env.SITE_URL||'https://hobsonsbaychess.com');
-const preview=site.hostname.endsWith('.github.io');
+const preview=site.hostname.endsWith('.github.io')||review;
 const secrets=[credentials.deliveryToken,credentials.previewToken,credentials.managementToken].filter(v=>v&&v.length>16);
 for(const file of textFiles){const text=await readFile(file,'utf8');if(secrets.some(secret=>text.includes(secret)))unsafe.push({file:path.relative(root,file),issue:'A server credential appears in the output'});}
 let checked=0;
 let redirects=0;
 const fileUrl=file=>new URL(withBase('/'+path.relative(root,file).replaceAll('\\','/'),base),site);
-async function checkUrl(value,file,context=fileUrl(file)){
- if(!value||/^(?:#|data:|mailto:|tel:)/.test(value))return;
+async function checkUrl(value,file,context=fileUrl(file),currentLink=false){
+ if(!value||/^(?:data:|mailto:|tel:)/.test(value))return;
  let url;try{url=new URL(value,context);}catch{unsafe.push({file:path.relative(root,file),issue:'Invalid resource URL'});return;}
  if(url.origin!==site.origin)return;
+ if(currentLink&&review&&url.pathname===normalizeBase(process.env.SITE_CURRENT_BASE_PATH)&&!url.search&&!url.hash){
+  await access(path.resolve('dist/index.html'));checked++;return;
+ }
  if(base!=='/'&&!url.pathname.startsWith(base)){
   unsafe.push({file:path.relative(root,file),value,issue:'Local URL is outside the configured repository path'});return;
  }
@@ -32,7 +36,13 @@ async function checkUrl(value,file,context=fileUrl(file)){
  if(relative.startsWith('..')||path.isAbsolute(relative)){
   unsafe.push({file:path.relative(root,file),issue:'Resource URL leaves the build directory'});return;
  }
- try{await access(target);checked++;}catch{missing.push({file:path.relative(root,file),value});}
+ try{
+  await access(target);checked++;
+  if(review&&url.hash&&target.endsWith('.html')){
+   const $=load(await readFile(target,'utf8')),id=decodeURIComponent(url.hash.slice(1));
+   if(!$('[id]').toArray().some(el=>$(el).attr('id')===id))missing.push({file:path.relative(root,file),value,issue:'Missing section anchor'});
+  }
+ }catch{missing.push({file:path.relative(root,file),value});}
 }
 for(const file of htmlFiles){
  const html=await readFile(file,'utf8'),$=load(html);
@@ -48,7 +58,7 @@ for(const file of htmlFiles){
  for(const el of $('a[href],img[src],link[href],iframe[src],script[src]').toArray()){
   const tag=el.tagName,attr=['img','iframe','script'].includes(tag)?'src':'href',value=$(el).attr(attr);
   if(/^https:\/\/hobsonsbaychess\.com\/wp-content\//.test(value))wordpressAssets.push({file:path.relative(root,file),value});
-  await checkUrl(value,file);
+  await checkUrl(value,file,fileUrl(file),$(el).attr('data-current-version')!==undefined);
  }
  for(const el of $('[style]').toArray())for(const match of $(el).attr('style').matchAll(/url\(\s*['"]?([^'"\s)]+)/g))await checkUrl(match[1],file);
  if(/javascript\s*:/i.test(html))unsafe.push({file:path.relative(root,file),issue:'javascript URL detected'});
@@ -64,6 +74,6 @@ for(const asset of [...new Set(JSON.stringify(data).match(/\/(wp-assets|fonts)\/
  try{await access(path.join(root,asset));checked++;}catch{missing.push({file:'site content',value:asset});}
 }
 const report={checkedAt:new Date().toISOString(),site:site.origin,basePath:base,htmlPages:htmlFiles.length,contentPages:htmlFiles.length-redirects,redirectPages:redirects,checkedLocalLinksAndAssets:checked,missing,wordpressAssets,unsafe};
-await writeFile('docs/verification.json',JSON.stringify(report,null,2));
+await writeFile(review?'docs/v2-verification.json':'docs/verification.json',JSON.stringify(report,null,2));
 console.log(JSON.stringify(report,null,2));
 if(missing.length||wordpressAssets.length||unsafe.length)process.exitCode=1;

@@ -10,6 +10,7 @@ export default defineConfig({
   site: process.env.SITE_URL || 'https://hobsonsbaychess.com',
   base,
   output: 'static',
+  outDir: process.env.SITE_VARIANT === 'v2' ? './dist/v2/' : './dist/',
   trailingSlash: 'always',
   redirects: {
     '/blog': withBase('/news/',base),

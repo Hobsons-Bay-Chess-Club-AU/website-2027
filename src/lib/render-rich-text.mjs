@@ -26,7 +26,8 @@ export function renderRichText(document,entries={},trail=[]){
   const item=entries[ref?.sys?.id];if(!item||item.enabled===false)return null;
   const page=entries[item.page?.sys?.id],feed=entries[item.tournamentFeed?.sys?.id];
   const key={leaderboard:'leaderboardUrl',upcoming:'upcomingUrl',calendar:'calendarUrl'}[item.tournamentDestination];
-  return {label:item.label,url:page?(page.template==='home'?'/':'/'+page.slug+'/'):feed&&key?feed[key]:item.url,newTab:item.openInNewTab};
+  const fragment=item.fragment&&/^[a-z][a-z0-9-]*$/.test(item.fragment)?'#'+item.fragment:'';
+  return {label:item.label,url:page?(page.template==='home'?'/':'/'+page.slug+'/')+fragment:feed&&key?feed[key]:item.url,newTab:item.openInNewTab};
  };
  const linked=(html,ref)=>{
   const item=linkTarget(ref);if(!item)return html;

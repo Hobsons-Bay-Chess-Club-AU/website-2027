@@ -8,6 +8,7 @@
     "build": "astro build",
     "build:production": "node scripts/run-astro.mjs production",
     "build:pages": "node scripts/run-astro.mjs pages",
+    "build:review": "node scripts/run-astro.mjs review",
     "preview": "astro preview --host 127.0.0.1 --port 4327",
     "reference:capture": "node scripts/capture-wordpress.mjs",
     "contentful:check": "node scripts/check-contentful.mjs",

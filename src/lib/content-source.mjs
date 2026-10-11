@@ -2,6 +2,13 @@ import reference from '../data/cms.json' with {type:'json'};
 import {safeUrl} from './sanitize.mjs';
 import {renderRichText} from './render-rich-text.mjs';
 import {normalizeCalendarEvents} from './calendar.mjs';
+import {createReviewEntries} from './review-content.mjs';
+
+export function navigationFragment(value){
+ if(!value)return '';
+ if(!/^[a-z][a-z0-9-]*$/.test(value))throw new Error('Navigation fragment must be a stable section ID.');
+ return '#'+value;
+}
 
 let cached,cachedAt=0;
 export function resolveEntries(entries,assets=[]){
@@ -40,7 +47,7 @@ export function normalizeContent(items){
    if(!key)throw new Error('Choose a tournament destination for menu item '+entry.label+'.');
    href=feed[key];
   }
-  if(entry.page){const page=get(entry.page);if(page.enabled===false)return null;href=page.template==='home'?'/':`/${page.slug}/`;}
+  if(entry.page){const page=get(entry.page);if(page.enabled===false)return null;href=(page.template==='home'?'/':`/${page.slug}/`)+navigationFragment(entry.fragment);}
   if(!entry.label||!href||safeUrl(href,'')==='')throw new Error(`Menu item ${entry.id} needs valid link text and a page or URL.`);
   return {...entry,href:safeUrl(href),children:refs(entry.children,'navigationItem').map(e=>navigation(e,[...trail,entry.id])).filter(Boolean)};
  };
@@ -64,10 +71,21 @@ export function normalizeContent(items){
   if(!p.title||!p.slug||!/^[a-z0-9-]+(?:\/[a-z0-9-]+)*$/.test(p.slug)||slugs.has(p.slug)||['news','404','sitemap.xml','robots.txt','wp-admin','blog','author/boldthemes','category/hbcc-chess','about/club-history','alonso-already-looking-ahead-after-goal-feast','horstweg-can-be-a-double-gameweek-hero','pre-match-briefing-hammers-vs-eagles','video-highlights-eagles-24-21-rhinos','watch-the-highlights-and-goals-against-seagulls'].includes(p.slug))throw new Error(`Invalid, duplicate or reserved Contentful page/article slug ${p.slug||'(empty)'}.`);
   slugs.add(p.slug);
  }
- const expandPage=p=>({...p,sections:refs(p.sections,'section').map(s=>section(s)),heroActions:refs(p.heroActions,'navigationItem').map(n=>navigation(n)).filter(Boolean),featureCards:refs(p.featureCards,'contentCard').map(card),partnerLink:action(p.partnerLink)});
+ const expandPage=p=>{
+  const sections=refs(p.sections,'section').map(s=>section(s)),anchors=new Set();
+  const check=s=>{
+   for(const value of [s.anchor,...(s.cards||[]).map(c=>c.anchor)].filter(Boolean)){
+    navigationFragment(value);if(anchors.has(value))throw new Error('Duplicate section anchor '+value+' on '+p.slug);anchors.add(value);
+   }
+   for(const child of s.children||[])check(child);
+  };
+  sections.forEach(check);
+  return {...p,sections,heroActions:refs(p.heroActions,'navigationItem').map(n=>navigation(n)).filter(Boolean),featureCards:refs(p.featureCards,'contentCard').map(card),partnerLink:action(p.partnerLink)};
+ };
  const homepage=expandPage(home);
  const globals={...raw,mainMenu:menu(raw.mainMenu),footerMenus:(raw.footerMenus||[]).map(menu),legalMenu:raw.legalMenu?menu(raw.legalMenu):null,
   headerSocialLinks:refs(raw.headerSocialLinks,'navigationItem').map(n=>navigation(n)).filter(Boolean),socialLinks:refs(raw.socialLinks,'navigationItem').map(n=>navigation(n)).filter(Boolean),
+  headerActions:raw.headerActions?menu(raw.headerActions):null,quickActions:raw.quickActions?menu(raw.quickActions):null,
   joinBanner:raw.joinBanner&&get(raw.joinBanner).enabled!==false?section(get(raw.joinBanner,'section')):null,footerGallery:refs(raw.footerGallery,'galleryImage').map(gallery),
   heroImage:home.heroImage,heroDescription:home.heroDescription||raw.defaultDescription};
  for(const field of ['title','logo','email','address','newsTitle','readMoreLabel','homeLabel','newsLabel','menuLabel'])if(!globals[field])throw new Error(`Website settings is missing ${field}.`);
@@ -78,12 +96,16 @@ export function normalizeContent(items){
 export const referenceContent={...normalizeContent(resolveEntries(reference.items,reference.assets)),source:'reference'};
 export async function loadContent(options={}){
  const env=options.env||{...process.env,...(import.meta.env||{})};
+ const variant=env.SITE_VARIANT||'current';
+ if(!['current','v2'].includes(variant))throw new Error('SITE_VARIANT must be current or v2.');
+ const content=(items,source)=>({...normalizeContent(variant==='v2'?createReviewEntries(items):items),source});
+ const saved=()=>variant==='v2'?content(resolveEntries(reference.items,reference.assets),'reference'):{...referenceContent};
  const mode=env.CONTENT_SOURCE||'auto';
  if(!['auto','reference','contentful'].includes(mode))throw new Error('CONTENT_SOURCE must be auto, reference or contentful.');
- if(mode==='reference')return {...referenceContent,source:'reference'};
+ if(mode==='reference')return saved();
  const space=env.CONTENTFUL_SPACE_ID||env.CONTENTFUL_SPACEID,preview=env.CONTENTFUL_USE_PREVIEW==='true';
  const token=preview?(env.CONTENTFUL_PREVIEW_TOKEN||env.CONTENTFUL_PREVIEW_API):(env.CONTENTFUL_DELIVERY_TOKEN||env.CONTENTFUL_DELIVERY_API);
- if(!space||!token){if(mode==='contentful')throw new Error('Set Contentful space and Delivery/Preview key in the server environment.');return {...referenceContent,reason:'not-configured'};}
+ if(!space||!token){if(mode==='contentful')throw new Error('Set Contentful space and Delivery/Preview key in the server environment.');return {...saved(),reason:'not-configured'};}
  const environment=env.CONTENTFUL_ENVIRONMENT||'master',host=preview?'preview.contentful.com':'cdn.contentful.com',fetcher=options.fetch||fetch;
  const entries=[],assets=[];let skip=0,total=0;
  do{
@@ -94,8 +116,8 @@ export async function loadContent(options={}){
   entries.push(...body.items);assets.push(...(body.includes?.Asset||[]));total=body.total;skip+=body.items.length;
   if(total>skip&&!body.items.length)throw new Error('Contentful pagination ended early.');
  }while(skip<total);
- if(!entries.length){if(mode==='contentful')throw new Error('Contentful is empty. Import, review and publish the content before building for launch.');return {...referenceContent,reason:'verified-empty-space'};}
- return normalizeContent(resolveEntries(entries,assets));
+ if(!entries.length){if(mode==='contentful')throw new Error('Contentful is empty. Import, review and publish the content before building for launch.');return {...saved(),reason:'verified-empty-space'};}
+ return content(resolveEntries(entries,assets),'contentful');
 }
 export const getContent=()=>{
  if(import.meta.env?.DEV&&Date.now()-cachedAt>5000)cached=undefined;

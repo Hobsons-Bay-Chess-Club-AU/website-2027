@@ -41,6 +41,7 @@
 .club-calendar .calendar-event .calendar-event-meta{font-size:12px;color:#73766b}
 .club-calendar .calendar-footer{display:flex;justify-content:space-between;align-items:center;gap:20px;padding-top:22px;font-size:13px;color:#6c6d64}
 .club-calendar .calendar-empty{padding:30px 0}
+.club-calendar .calendar-original-source{display:flex;flex-wrap:wrap;align-items:baseline;gap:12px;font-size:12px;color:#6c6d64;margin-top:22px}
 @media(max-width:700px){
  .club-calendar .calendar-toolbar{gap:16px}.club-calendar .calendar-navigation{width:100%;justify-content:space-between;gap:6px}
  .club-calendar .calendar-navigation h3{font-size:25px;min-width:0}.club-calendar .calendar-options{width:100%;justify-content:space-between;gap:8px}

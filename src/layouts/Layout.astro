@@ -4,9 +4,12 @@ import Footer from '../components/Footer.astro';
 import { getContent } from '../lib/content.mjs';
 import { siteUrl as safeUrl } from '../lib/site-url.mjs';
 import '../styles/global.css';
+import '../styles/review.css';
 const { settings } = await getContent();
 const { title = settings.title, seoTitle, description = settings.defaultDescription, image = settings.heroImage, home = false, noindex = false } = Astro.props;
 const staging = import.meta.env.SITE_STAGING === 'true';
+const review = settings.reviewVersion === 'v2';
+const currentUrl = review ? new URL('../',new URL(safeUrl('/'),Astro.site)).href : null;
 const canonical = new URL(Astro.url.pathname === safeUrl('/404/') ? safeUrl('/404.html') : Astro.url.pathname, Astro.site);
 const pageTitle = seoTitle || (home ? `${settings.shortName} | ${settings.title}` : `${title} | ${settings.title}`);
 const absoluteImage = new URL(safeUrl(image || settings.heroImage), Astro.site).href;
@@ -28,11 +31,12 @@ const structured = { '@context':'https://schema.org', '@type':'SportsClub', name
     <meta property="og:title" content={pageTitle} /><meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} /><meta property="og:image" content={absoluteImage} />
     <meta name="twitter:card" content="summary_large_image" />
-    {(noindex || staging) && <meta name="robots" content="noindex, nofollow" />}
+    {(noindex || staging || review) && <meta name="robots" content="noindex, nofollow" />}
     <script type="application/ld+json" set:html={JSON.stringify(structured).replace(/</g,'\\u003c')} />
   </head>
-  <body class:list={{ 'home-page': home }}>
+  <body class:list={{ 'home-page': home, 'review-layout': review }}>
     <a class="skip-link" href="#main">Skip to content</a>
+    {review&&<aside class="review-banner" aria-label="Team review version"><div><strong>V2 · Team review</strong><span>Proposed website changes</span></div><div><a href={safeUrl('/review/')}>Changes & checklist</a><a href={currentUrl} data-current-version>Current version ↗</a></div></aside>}
     <Header settings={settings} />
     <main id="main"><slot /></main>
     <Footer settings={settings} />

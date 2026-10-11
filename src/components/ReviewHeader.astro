@@ -1,0 +1,64 @@
+---
+import CmsLink from './CmsLink.astro';
+import Icon from './Icon.astro';
+import {siteUrl} from '../lib/site-url.mjs';
+const {settings}=Astro.props;
+const main=settings.mainMenu.items;
+const membership=settings.headerActions.items;
+const quick=settings.quickActions.items;
+---
+<header class="review-site-header">
+ <div class="review-header-row">
+  <a class="brand" href={siteUrl('/')} aria-label="Hobsons Bay Chess Club home"><img src={siteUrl(settings.logo)} alt="Hobsons Bay Chess Club" width="64" height="64"/></a>
+  <nav class="desktop-navigation" aria-label="Main navigation">
+   {main.map((item,index)=><div class="desktop-nav-group">
+    <CmsLink item={item} class="desktop-nav-link"/>
+    {item.children.length>0&&<>
+     <button type="button" class="desktop-dropdown-toggle" aria-label={'Show '+item.label+' menu'} aria-expanded="false" aria-controls={'desktop-menu-'+index}><span aria-hidden="true">⌄</span></button>
+     <div id={'desktop-menu-'+index} class:list={['desktop-dropdown',{'desktop-dropdown-wide':item.label==='Club'}]} hidden>
+      {item.children.map((child,childIndex)=><>
+       {child.group!==item.children[childIndex-1]?.group&&child.group&&<p class="dropdown-group-label">{child.group}</p>}
+       <CmsLink item={child}/>
+      </>)}
+     </div>
+    </>}
+   </div>)}
+  </nav>
+  <div class="review-membership-actions">
+   {membership.map((item,index)=><CmsLink item={item} class={index===0?'button button-gold header-join':'header-login'}/>)}
+   <div class="review-social-links">{settings.headerSocialLinks.map(item=><CmsLink item={item} class="social-link" aria-label={item.label}><Icon name={item.icon}/></CmsLink>)}</div>
+   <button type="button" class="menu-toggle review-menu-toggle" aria-label="Open menu" aria-haspopup="dialog" aria-controls="site-menu"><span></span><span></span><span></span></button>
+  </div>
+ </div>
+ <nav class="review-quick-links" aria-label="Quick tasks">{quick.map(item=><CmsLink item={item}/>)}</nav>
+</header>
+<dialog id="site-menu" class="site-menu review-mobile-menu" aria-label="Site navigation">
+ <div class="menu-heading"><a href={siteUrl('/')}>{settings.menuLabel}</a><button type="button" class="menu-close" aria-label="Close menu">×</button></div>
+ <nav class="mobile-quick-tasks" aria-label="Quick tasks">{[...membership,...quick].map(item=><CmsLink item={item}/>)}</nav>
+ <nav class="review-mobile-navigation" aria-label="Main navigation">
+  {main.map((item,index)=><div class="mobile-nav-group">
+   <div class="mobile-nav-heading"><CmsLink item={item}/>{item.children.length>0&&<button type="button" class="mobile-dropdown-toggle" aria-label={'Show '+item.label+' menu'} aria-expanded="false" aria-controls={'mobile-menu-'+index}><span aria-hidden="true">+</span></button>}</div>
+   {item.children.length>0&&<div class="mobile-nav-children" id={'mobile-menu-'+index} hidden>{item.children.map(child=><CmsLink item={child}/>)}</div>}
+  </div>)}
+ </nav>
+ <p class="menu-contact"><a href={`mailto:${settings.email}`}>{settings.email}</a></p>
+ <a class="text-link" href={siteUrl('/review/')}>Changes & review checklist</a>
+</dialog>
+<script>
+ const groups=Array.from(document.querySelectorAll<HTMLElement>('.desktop-nav-group'));
+ function closeDesktop(returnFocus=false){
+  for(const group of groups){const button=group.querySelector<HTMLButtonElement>('.desktop-dropdown-toggle'),panel=group.querySelector<HTMLElement>('.desktop-dropdown');
+   if(button?.getAttribute('aria-expanded')==='true'){button.setAttribute('aria-expanded','false');if(panel)panel.hidden=true;if(returnFocus)button.focus();}
+  }
+ }
+ for(const group of groups){
+  const button=group.querySelector<HTMLButtonElement>('.desktop-dropdown-toggle'),panel=group.querySelector<HTMLElement>('.desktop-dropdown');
+  button?.addEventListener('click',()=>{const open=button.getAttribute('aria-expanded')==='true';closeDesktop();button.setAttribute('aria-expanded',String(!open));if(panel)panel.hidden=open;});
+  group.addEventListener('focusout',event=>{if(!group.contains(event.relatedTarget as Node))closeDesktop();});
+ }
+ document.addEventListener('click',event=>{if(!groups.some(group=>group.contains(event.target as Node)))closeDesktop();});
+ document.addEventListener('keydown',event=>{if(event.key==='Escape')closeDesktop(true);});
+ for(const button of document.querySelectorAll<HTMLButtonElement>('.mobile-dropdown-toggle')){
+  button.addEventListener('click',()=>{const panel=document.getElementById(button.getAttribute('aria-controls')||''),open=button.getAttribute('aria-expanded')==='true';button.setAttribute('aria-expanded',String(!open));button.setAttribute('aria-label',(open?'Show ':'Hide ')+button.getAttribute('aria-label')?.replace(/^(Show|Hide) /,''));if(panel)panel.hidden=open;});
+ }
+</script>

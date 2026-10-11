@@ -36,10 +36,12 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npm test
-      - name: Build and verify the saved reference
-        run: npm run build && npm run verify
+      - name: Build and verify both review and current versions
+        run: npm run build:pages
         env:
           CONTENT_SOURCE: reference
+          SITE_URL: https://hobsons-bay-chess-club-au.github.io
+          SITE_BASE_PATH: /website-2027/
 
   build:
     needs: validate
@@ -58,8 +60,8 @@ jobs:
         id: pages
         uses: actions/configure-pages@v6
       - run: npm ci
-      - name: Build and verify the website
-        run: npm run build:pages && npm run verify
+      - name: Build and verify the current website and V2 review
+        run: npm run build:pages
         env:
           SITE_URL: ${{ steps.pages.outputs.origin }}
           SITE_BASE_PATH: ${{ steps.pages.outputs.base_path }}

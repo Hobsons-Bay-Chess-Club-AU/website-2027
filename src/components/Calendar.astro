@@ -3,24 +3,26 @@ import {calendarCategories,calendarMonth,eventsInMonth} from '../lib/calendar.mj
 import {siteUrl} from '../lib/site-url.mjs';
 import '../styles/calendar.css';
 const {schedule}=Astro.props;
+const review=schedule?.reviewVersion==='v2';
 if(!schedule)throw new Error('Choose a club calendar for the Calendar section.');
 const month=calendarMonth(schedule.events);
 const events=eventsInMonth(schedule.events,month);
 const dayLabel=value=>new Intl.DateTimeFormat('en-AU',{day:'numeric',month:'short',year:'numeric',timeZone:'UTC'}).format(new Date(value+'T00:00:00Z'));
 const serialized=JSON.stringify({events:schedule.events,title:schedule.title,month}).replace(/</g,'\\u003c');
 ---
-<div class="club-calendar" data-club-calendar>
+<div class="club-calendar" data-club-calendar data-calendar-review={review?'true':undefined}>
  <p class="calendar-introduction">{schedule.description}</p>
  <div class="calendar-toolbar">
   <div class="calendar-navigation"><button type="button" data-calendar-previous aria-label="Previous month">←</button><h3 data-calendar-heading aria-live="polite">{new Intl.DateTimeFormat('en-AU',{month:'long',year:'numeric',timeZone:'UTC'}).format(new Date(month+'-01T00:00:00Z'))}</h3><button type="button" data-calendar-next aria-label="Next month">→</button><button type="button" data-calendar-today>Today</button></div>
-  <div class="calendar-options"><label>Show<select data-calendar-filter><option value="all">All events</option>{Object.entries(calendarCategories).map(([value,label])=><option value={value}>{label}</option>)}</select></label><label>View<select data-calendar-view><option value="month">Month</option><option value="agenda">Agenda</option></select></label></div>
+  <div class="calendar-options"><label>Show<select data-calendar-filter><option value="all">All events</option>{Object.entries(calendarCategories).map(([value,label])=><option value={value}>{label}</option>)}</select></label><label>View<select data-calendar-view><option value="month">Month</option><option value="agenda">Agenda</option>{review&&<option value="upcoming">Upcoming</option>}</select></label></div>
  </div>
  <div class="calendar-month" data-calendar-month hidden><div class="calendar-weekdays" aria-hidden="true">{['Mon','Tue','Wed','Thu','Fri','Sat','Sun'].map(day=><span>{day}</span>)}</div><div class="calendar-grid" data-calendar-grid role="group" aria-label="Calendar dates"></div></div>
  <p class="calendar-count" data-calendar-count role="status">{events.length} events this month</p>
  <div class="calendar-agenda" data-calendar-agenda aria-label="Events this month">
-  {events.map(event=><article class={'calendar-event calendar-category-'+event.category} id={'calendar-event-'+event.id}><div class="calendar-event-date"><time datetime={event.startDate}>{dayLabel(event.startDate)}</time>{event.endDate!==event.startDate&&<span> – <time datetime={event.endDate}>{dayLabel(event.endDate)}</time></span>}</div><div><span class="calendar-category">{calendarCategories[event.category]}</span><h4>{event.title}</h4>{event.details&&<p>{event.details}</p>}{event.schoolSchedule&&<p class="calendar-event-meta">{event.schoolSchedule}</p>}{event.arbiter&&<p class="calendar-event-meta">Arbiters: {event.arbiter}</p>}</div></article>)}
+  {events.map(event=><article class={'calendar-event calendar-category-'+event.category} id={'calendar-event-'+event.id}><div class="calendar-event-date"><time datetime={event.startDate}>{dayLabel(event.startDate)}</time>{event.endDate!==event.startDate&&<span> – <time datetime={event.endDate}>{dayLabel(event.endDate)}</time></span>}</div><div><span class="calendar-category">{calendarCategories[event.category]}</span><h4>{event.title}</h4>{event.details&&<p>{event.details}</p>}{event.schoolSchedule&&<p class="calendar-event-meta">{event.schoolSchedule}</p>}{event.arbiter&&<p class="calendar-event-meta">Arbiters: {event.arbiter}</p>}{review&&event.url&&<a class="text-link" href={siteUrl(event.url)}>Event details</a>}</div></article>)}
  </div>
  <div class="calendar-footer"><p>Dates follow the club schedule. Check event details for playing times.</p><a href={siteUrl('/calendar.ics')} download="hbcc-club-calendar.ics" class="text-link">Download calendar ↓</a></div>
+ {review&&schedule.annualPdf&&<p class="calendar-original-source"><a href={siteUrl(schedule.annualPdf)} class="text-link">Annual Schedule (original PDF)</a><span>{schedule.revisionText}</span></p>}
  <script type="application/json" is:inline data-calendar-data set:html={serialized}/>
 </div>
 <script>
