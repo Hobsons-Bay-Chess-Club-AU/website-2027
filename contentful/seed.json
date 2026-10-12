@@ -30258,7 +30258,7 @@
                         "content": [
                           {
                             "nodeType": "text",
-                            "value": "Tuesdays from around 7:15pm until late.",
+                            "value": "When: Tuesdays from around 7:15pm until late.",
                             "marks": [],
                             "data": {}
                           }
@@ -30276,7 +30276,7 @@
                         "content": [
                           {
                             "nodeType": "text",
-                            "value": "Classical or rapid events depending on the term.",
+                            "value": "Format: Classical or rapid events depending on the term.",
                             "marks": [],
                             "data": {}
                           }
@@ -30294,7 +30294,7 @@
                         "content": [
                           {
                             "nodeType": "text",
-                            "value": "Swiss-system pairings managed on our tournament site.",
+                            "value": "Pairings: Swiss-system pairings managed on our tournament site.",
                             "marks": [],
                             "data": {}
                           }
@@ -30312,7 +30312,7 @@
                         "content": [
                           {
                             "nodeType": "text",
-                            "value": "Suitable for adults and older juniors comfortable with clocks and notation.",
+                            "value": "Who: Suitable for adults and older juniors comfortable with clocks and notation.",
                             "marks": [],
                             "data": {}
                           }

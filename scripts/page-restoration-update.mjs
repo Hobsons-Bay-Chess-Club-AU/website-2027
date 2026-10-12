@@ -70,8 +70,8 @@ export function pageRestorationUpdate(items){
   imageCards('wp-page-4272-section-0');imageCards('wp-page-4272-section-3',{layoutStyle:'benefits'});
   for(const [i,imageId] of [[1,31],[2,32]]){
    const id='wp-page-4272-section-'+i,nodes=structuredClone(get(id).body.content);
-   const bullets=source('play-chess',i).icons.map(value=>value.replace(/^(?:When|Format|Pairings|Who):\s*/,''));
-   const copy=nodes.filter(n=>n.nodeType!=='embedded-entry-block'&&!n.nodeType.startsWith('heading-')&&!bullets.some(b=>tidy(nodeText(n)).includes(b)));
+   const bullets=source('play-chess',i).icons;
+   const copy=nodes.filter(n=>n.nodeType!=='embedded-entry-block'&&!n.nodeType.startsWith('heading-')&&!bullets.some(b=>tidy(nodeText(n)).includes(b.replace(/^(?:When|Format|Pairings|Who):\s*/,''))));
    copy.splice(1,0,list(bullets));
    // Keep the annual-PDF hyperlink intact for the optional V2 download.
    if(i===2){const subheading=nodes.find(n=>n.nodeType==='heading-6');if(subheading)copy.splice(2,0,subheading);}

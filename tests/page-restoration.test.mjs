@@ -19,7 +19,7 @@ test('fresh WordPress icon copy survives the native CMS conversion in both versi
   for(const [slug,indices] of [['play-chess',[1,2]],['juniors',[6]],['tournaments',[1,4]]]){
    const text=pageText(page(c,slug));
    for(const i of indices)for(const value of source.sources[slug].sections[i].icons){
-    const copy=value.replace(/^(?:When|Format|Pairings|Who):\s*/,'').replace(/^[^:]+:\s*(?=Juniors|We expect|Please arrive|Important updates)/,'');
+    const copy=value.replace(/^[^:]+:\s*(?=Juniors|We expect|Please arrive|Important updates)/,'');
     assert.ok(text.includes(copy),variant+' '+slug+' omitted '+copy);
    }
   }
