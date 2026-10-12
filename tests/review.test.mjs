@@ -15,7 +15,8 @@ const hrefFor=(p,label)=>{
  const visit=s=>[...s.actions,...s.cards.flatMap(c=>c.link?[c.link]:[]),...s.children.flatMap(visit)];
  const action=p.sections.flatMap(visit).find(a=>a.label.toLowerCase()===label.toLowerCase());
  if(action)return action.href;
- const $=load(p.sections.map(s=>s.bodyHtml).join(''));
+ const bodies=s=>[s.bodyHtml,...s.children.flatMap(bodies)];
+ const $=load(p.sections.flatMap(bodies).join(''));
  return $('a').toArray().find(a=>$(a).text().trim().toLowerCase()===label.toLowerCase())?.attribs.href;
 };
 
@@ -55,11 +56,13 @@ test('page references retain fragments through slug changes and duplicate anchor
 
 test('coaching and Juniors use one roster derived from the published coach source',()=>{
  const entries=raw(),source=entries.find(e=>e.id==='wp-page-4332-section-5');
- const role=source.body.content.find(n=>n.content?.some(t=>t.value==='Head Coach'));role.content[0].value='Coaching coordinator';
+ entries.find(e=>e.id===source.cards[0].sys.id).description='Coaching coordinator';
+ source.body.content.push({nodeType:'paragraph',data:{},content:[{nodeType:'text',value:'Additional CMS coaching introduction.',marks:[],data:{}}]});
  const c=normalizeContent(createReviewEntries(entries));
  const coaches=page(c,'coaching').sections.find(s=>s.anchor==='coaches').cards;
  assert.deepEqual(coaches.map(c=>c.title),['Anirudh Krishnan','Tony Davis','Ronald Enano','Joemar Lacson']);
  assert.equal(coaches[0].description,'Coaching coordinator');
+ assert.ok(page(c,'coaching').sections.find(s=>s.anchor==='coaches').bodyHtml.includes('Additional CMS coaching introduction.'));
  assert.deepEqual(page(c,'juniors').sections.find(s=>s.anchor==='coaches').cards,coaches);
  const text=Object.values(c.entries).map(e=>JSON.stringify(e.body||'')).join('');
  assert.ok(!text.includes('bold_timeline'));assert.ok(!text.includes('[X]'));

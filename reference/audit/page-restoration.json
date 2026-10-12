@@ -1,0 +1,271 @@
+{
+  "capturedAt": "2026-10-12",
+  "sources": {
+    "play-chess": {
+      "url": "https://hobsonsbaychess.com/play-chess/",
+      "sha256": "092544076a7db8d6ef658dc82dc43360f9a57a68c67f96844bb0abeb029708ef",
+      "heroTitle": "Play Chess at Hobsons Bay Chess Club",
+      "heroDescription": "Club nights, social chess and tournaments for adults and older juniors in Melbourne’s West",
+      "sections": [
+        {
+          "heading": "Who Can Play?",
+          "intro": "Our Play Chess program is designed for adults and older juniors who want regular, organised chess – from relaxed social games to serious rated tournaments.",
+          "icons": []
+        },
+        {
+          "heading": "Club Nights - Weekly Competitive Chess",
+          "intro": "HBCC runs regular classical and rapid tournaments on our club nights. These events are structured, paired rounds where you’ll be matched against players of similar strength over multiple weeks.",
+          "icons": [
+            "When: Tuesdays from around 7:15pm until late.",
+            "Format: Classical or rapid events depending on the term.",
+            "Pairings: Swiss-system pairings managed on our tournament site.",
+            "Who: Suitable for adults and older juniors comfortable with clocks and notation."
+          ]
+        },
+        {
+          "heading": "Social Nights - Chess Without the Pressure",
+          "intro": "Social nights are relaxed, non-competitive gatherings designed for chess enthusiasts of all skill levels. No clocks, no stress – just friendly games at your own pace.",
+          "icons": [
+            "Casual atmosphere – focus on enjoying the game.",
+            "Open to all levels – perfect for beginners and casual players.",
+            "Meet fellow enthusiasts and make new friends.",
+            "Optional tips and guidance from experienced players and coaches."
+          ]
+        },
+        {
+          "heading": "Tournaments & Ratings How It Works",
+          "intro": "If you’re new to organised chess, the terminology can be confusing. Here’s a simple guide to the types of events we run and how ratings work.",
+          "icons": []
+        },
+        {
+          "heading": "How to Get Started",
+          "intro": "Getting started at HBCC is simple. Follow these steps and we’ll take care of the rest.",
+          "icons": []
+        },
+        {
+          "heading": "Frequently Asked Questions",
+          "intro": "",
+          "icons": []
+        },
+        {
+          "heading": "Ready to Play?",
+          "intro": "Join us for a social night or club event and discover why HBCC is the home of chess in Melbourne’s West.",
+          "icons": []
+        }
+      ]
+    },
+    "juniors": {
+      "url": "https://hobsonsbaychess.com/juniors/",
+      "sha256": "0e7bf62eafb638493113559d9d9ba29a6b5be2274787b871f5bc8013b9558702",
+      "heroTitle": "Juniors Chess at Hobsons Bay Chess Club",
+      "heroDescription": "Fun, structured chess coaching and tournaments for kids in Melbourne’s West. Building skills, confidence and character on and off the board.",
+      "sections": [
+        {
+          "heading": "Who Is Our Juniors Chess For?",
+          "intro": "HBCC welcomes juniors of all abilities – from absolute beginners to strong tournament players.",
+          "icons": []
+        },
+        {
+          "heading": "A Clear Pathway from Beginner to Competitive Chess",
+          "intro": "HBCC offers a simple, progressive pathway that supports juniors as they grow from beginners into confident, competitive players.",
+          "icons": []
+        },
+        {
+          "heading": "Programs & Levels",
+          "intro": "We offer Junior Coaching where we group juniors by experience (not by age) so every child is challenged at the right level in a supportive environment.",
+          "icons": []
+        },
+        {
+          "heading": "Weekly Tournament & Coaching Schedule",
+          "intro": "Our Juniors coaching program runs parallel to school terms. Our Junior tournaments and social nights happen all through the year including school holidays. Exact term dates and special events are published in our Juniors Calendar.",
+          "icons": []
+        },
+        {
+          "heading": "Junior Tournaments & Ratings",
+          "intro": "Tournaments are a fun and important part of a junior’s development. They build resilience, sportsmanship, and help juniors apply what they learn in coaching.",
+          "icons": []
+        },
+        {
+          "heading": "Coaching & Support Team",
+          "intro": "Our juniors are supported by experienced coaches and volunteers who are passionate about teaching chess in a safe, encouraging environment.",
+          "icons": []
+        },
+        {
+          "heading": "Information for Parents",
+          "intro": "",
+          "icons": [
+            "Safety & Supervision: Juniors are supervised by coaches and volunteers during sessions. We aim to provide a safe, welcoming environment for every child.",
+            "Behaviour & Fair Play: We expect respectful behaviour, good sportsmanship and fair play. Parents and juniors should review our Code of Conduct and club policies.",
+            "Drop-off & Pick-up: Please arrive on time, sign in if required, and ensure your child is collected promptly after the session ends.",
+            "Communication: Important updates are shared via email and our club platforms. If you have questions, contact the Juniors Coordinator."
+          ]
+        },
+        {
+          "heading": "How to Enrol",
+          "intro": "HBCC offers a simple, progressive pathway that supports juniors as they grow from beginners into confident, competitive players.",
+          "icons": []
+        },
+        {
+          "heading": "Frequently Asked Questions",
+          "intro": "",
+          "icons": []
+        },
+        {
+          "heading": "Ready to Get Your Child Started?",
+          "intro": "Enrol in our Juniors program and give your child the chance to learn, play and grow with one of Melbourne’s most active chess clubs.",
+          "icons": []
+        }
+      ]
+    },
+    "tournaments": {
+      "url": "https://hobsonsbaychess.com/tournaments/",
+      "sha256": "77250844b36ae19f889ee7aa2a0510b9f45665ef84bf9373fe77b264f7828baf",
+      "heroTitle": "Tournaments at Hobsons Bay Chess Club",
+      "heroDescription": "From friendly club events to flagship open tournaments – compete, improve and enjoy great chess in Melbourne’s West.",
+      "sections": [
+        {
+          "heading": "Flagship Events",
+          "intro": "HBCC runs several major tournaments across the year, designed for different ages and competitive levels.",
+          "icons": []
+        },
+        {
+          "heading": "Club Competitions",
+          "intro": "Across the year we run seasonal competitions that help members improve through regular, structured play.",
+          "icons": [
+            "Club Championship & Reserves Championship (classical format).",
+            "Rapid series and themed events (e.g., Swiss nights, mini-tournaments).",
+            "Junior term events and rating-focused tournaments."
+          ]
+        },
+        {
+          "heading": "How Our Tournaments Work",
+          "intro": "If you’re new to organised chess, don’t worry we keep it friendly and structured.",
+          "icons": []
+        },
+        {
+          "heading": "Latest from HBCC",
+          "intro": "",
+          "icons": []
+        },
+        {
+          "heading": "Venue & Tournament Rules",
+          "intro": "To ensure a great experience for everyone, please review the venue rules and tournament expectations before attending.",
+          "icons": [
+            "Start times: Please arrive early; late arrivals may receive a default time penalty depending on the event rules.",
+            "Mobile phones: Must be switched off or set to silent and stored as per arbiter instructions.",
+            "Behaviour: Respect opponents, arbiters and venue staff. Parents should support a positive junior environment.",
+            "Fair play: We follow standard chess rules and fair-play expectations, especially for rated events."
+          ]
+        },
+        {
+          "heading": "Frequently Asked Questions",
+          "intro": "",
+          "icons": []
+        },
+        {
+          "heading": "Ready to Compete?",
+          "intro": "View upcoming tournaments, register online, and join a welcoming chess community in Melbourne's West.",
+          "icons": []
+        }
+      ]
+    },
+    "sponsors": {
+      "url": "https://hobsonsbaychess.com/sponsors/",
+      "sha256": "e85c39aa45fd13e64aa8a6c0517d147a8db39e1453fbc813eb6f41479276dc0a",
+      "heroTitle": "Partner With Hobsons Bay Chess Club",
+      "heroDescription": "Put your brand in front of families, juniors and competitive players across Melbourne’s West — while supporting a community club bringing chess to the region since 1974.",
+      "sections": [
+        {
+          "heading": "Thank You to Our Sponsors",
+          "intro": "HBCC gratefully acknowledges the support of sponsors who help keep chess accessible for our community.",
+          "icons": []
+        },
+        {
+          "heading": "Why Sponsor HBCC?",
+          "intro": "HBCC is a long-running community chess club in Melbourne’s west, welcoming players of many ages and backgrounds. We run regular club nights, junior programs and major tournaments.",
+          "icons": []
+        },
+        {
+          "heading": "Sponsorship Packages",
+          "intro": "Choose a tier that suits your business. We can tailor inclusions for the right partner.",
+          "icons": []
+        },
+        {
+          "heading": "What Sponsors Receive",
+          "intro": "Deliverables vary by tier. Typical sponsor inclusions include:",
+          "icons": []
+        },
+        {
+          "heading": "Sponsor Activations",
+          "intro": "",
+          "icons": []
+        },
+        {
+          "heading": "How Sponsorship Works",
+          "intro": "",
+          "icons": []
+        },
+        {
+          "heading": "Frequently Asked Questions",
+          "intro": "",
+          "icons": []
+        },
+        {
+          "heading": "Ready to Partner With HBCC?",
+          "intro": "We?d love to work with local businesses who value community impact and long-term relationships.",
+          "icons": []
+        }
+      ]
+    },
+    "contact": {
+      "url": "https://hobsonsbaychess.com/contact/",
+      "sha256": "1d2d872a756ab24a8a6cf8f2802ef9e3a4b4661e3c0dd35090ae6fa602e1436f",
+      "heroTitle": "GET IN TOUCH",
+      "heroDescription": "",
+      "sections": [
+        {
+          "heading": "",
+          "intro": "Open Tuesday Tournaments: Meet at 7:30 PM Juniors Coaching Saturday: Meet at 4:00 PM Rookies & Juniors Saturday Tournaments: Meet at 6:00 PM",
+          "icons": []
+        },
+        {
+          "heading": "Where We Play",
+          "intro": "",
+          "icons": []
+        },
+        {
+          "heading": "",
+          "intro": "Thinking of coming along to check us out? Then check out our seniors calendar. For juniors, check our our juniors calendar",
+          "icons": []
+        },
+        {
+          "heading": "BUY EVENT TICKETS",
+          "intro": "",
+          "icons": []
+        }
+      ]
+    },
+    "champions": {
+      "url": "https://hobsonsbaychess.com/champions/",
+      "sha256": "485c33d62d095bb580b21c5f9fdd3ebce16ce1d53a2ff114f9975ed7e77ed50b",
+      "heroTitle": "Our Champions",
+      "heroDescription": "",
+      "sections": [
+        {
+          "heading": "",
+          "intro": "",
+          "icons": []
+        }
+      ]
+    }
+  },
+  "champion2025": {
+    "year": 2025,
+    "playerName": "Julian McIntyre",
+    "score": "5 points",
+    "standingsUrl": "https://tournament.hobsonsbaychess.com/www2025HobsonsBayClubChampionship/standings.html",
+    "verifiedAt": "2026-10-12",
+    "sourceSha256": "0af1f5b965814e942917bd4e88f90fce45c593e98ad63afae3daec7fda02dc3b",
+    "sourceHeading": "Standings at round 7"
+  }
+}

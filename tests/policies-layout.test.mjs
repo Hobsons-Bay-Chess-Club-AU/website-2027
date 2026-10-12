@@ -39,7 +39,7 @@ test('policy documents, ordering, visibility and stable links follow native CMS 
  assert.equal(policies.find(p=>p.id==='hbcc-policy-etiquette').document,'https://assets.ctfassets.net/test/revised.pdf');
  assert.equal(c.entries['hbcc-policy-etiquette'].title,'Updated Etiquette');
  assert.equal(sections(page(c,'membership')).flatMap(s=>s.actions).find(a=>a.label==='Member Etiquette').href,'/club-policies/#updated-etiquette');
- assert.match(page(c,'tournaments').sections.find(s=>s.id==='wp-page-4419-section-4').bodyHtml,/club-policies\/#open-tournament-rules/);
+ assert.equal(sections(page(c,'tournaments')).flatMap(s=>s.actions).find(a=>a.label==='View Rules').href,'/club-policies/#open-tournament-rules');
  p.enabled=false;c=normalized(data);
  assert.equal(page(c,'club-policies').sections[0].policies.length,6);
  assert.equal(sections(page(c,'membership')).flatMap(s=>s.actions).find(a=>a.label==='Member Etiquette').href,'/club-policies/');

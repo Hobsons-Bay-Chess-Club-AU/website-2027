@@ -104,11 +104,12 @@ test('tournament integration validates its URLs and keeps dated results during a
 });
 test('migration package uses native fields, valid references and existing media',async()=>{
  const schema=JSON.parse(await readFile('contentful/schema.json','utf8')),seed=JSON.parse(await readFile('contentful/seed.json','utf8')),assets=JSON.parse(await readFile('contentful/assets.json','utf8'));
- assert.equal(schema.contentTypes.length,16);assert.ok(schema.contentTypes.some(t=>t.sys.id==='policy'));
+ assert.equal(schema.contentTypes.length,17);assert.ok(schema.contentTypes.some(t=>t.sys.id==='policy'));assert.ok(schema.contentTypes.some(t=>t.sys.id==='clubChampion'));
  assert.equal(validatePackage(schema,seed,assets).entries,seed.entries.length);
  assert.ok(schema.contentTypes.every(t=>t.fields.every(f=>f.type!=='Object'&&f.id!=='bodyHtml')));
  for(const asset of assets)await access(asset.path);
  assert.ok(!JSON.stringify(fixture).includes('https://hobsonsbaychess.com/wp-content/'));
+ assert.ok(!JSON.stringify(fixture).includes('/wp-content/uploads/'));
  const fonts=await readFile('public/fonts/hbcc-fonts.css','utf8');assert.ok(!fonts.includes('https://'));
 });
 test('page conversion preserves every word of the first-version content except the delegated calendar',async()=>{

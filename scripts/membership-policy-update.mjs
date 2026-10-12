@@ -95,7 +95,8 @@ export function membershipPolicyUpdate(items){
   const etiquette=get('wp-page-4424-section-4'),etiquetteNodes=etiquette.body.content;
   const etiquettePhoto=get(etiquetteNodes.find(n=>n.nodeType==='embedded-entry-block').data.target.sys.id);
   const policyImage=put('section','membership-policy-image',{internalName:'Membership — policy image',kind:'richText',image:etiquettePhoto.image,imageAlt:etiquettePhoto.alt,body:empty(),enabled:true});
-  const policyText=put('section','membership-policy-links',{internalName:'Membership — etiquette and policy links',kind:'richText',title:words(etiquetteNodes.find(n=>n.nodeType.startsWith('heading'))),body:doc(...etiquetteNodes.filter(n=>n.nodeType==='paragraph')),actions:[memberEtiquette,memberPrivacy,memberVenue,allPolicies],enabled:true});
+  const policyLabels=['member etiquette','privacy policy','venue rules (for tournaments)'];
+  const policyText=put('section','membership-policy-links',{internalName:'Membership — etiquette and policy links',kind:'richText',title:words(etiquetteNodes.find(n=>n.nodeType.startsWith('heading'))),body:doc(...etiquetteNodes.filter(n=>n.nodeType==='paragraph'&&!policyLabels.includes(words(n).toLowerCase()))),actions:[memberEtiquette,memberPrivacy,memberVenue,allPolicies],enabled:true});
   patch(etiquette.id,{kind:'columns',layoutStyle:'split',body:empty(),children:[policyImage,policyText],tone:'light'});
 
   const juniors=get('wp-page-4424-section-5'),juniorNodes=juniors.body.content;

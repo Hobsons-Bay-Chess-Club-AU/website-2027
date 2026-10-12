@@ -3,6 +3,7 @@ import {safeUrl} from './sanitize.mjs';
 import {renderRichText,richTextPlainText} from './render-rich-text.mjs';
 import {policyHref} from './policies.mjs';
 import {normalizeCalendarEvents} from './calendar.mjs';
+import {orderedChampions} from './champions.mjs';
 import {createReviewEntries} from './review-content.mjs';
 
 export function navigationFragment(value){
@@ -68,7 +69,7 @@ export function normalizeContent(items){
   return {...e,bodyHtml:renderRichText(e.body,byId),actions:refs(e.actions,'navigationItem').map(n=>navigation(n)).filter(Boolean),
    children:refs(e.children,'section').map(n=>section(n,[...trail,e.id])),cards:refs(e.cards,'contentCard').map(card),statistics:refs(e.statistics,'statistic'),
    days:refs(e.days,'scheduleDay').map(day=>({...day,sessions:refs(day.sessions,'scheduleSession').map(s=>({...s,link:action(s.link)}))})),
-   sponsors:refs(e.sponsors,'sponsor'),policies:refs(e.policies,'policy').map(policy),posts:refs(e.posts,'post'),gallery:refs(e.gallery,'galleryImage').map(gallery),tournamentFeed:e.tournamentFeed?get(e.tournamentFeed,'tournamentFeed'):null,
+   sponsors:refs(e.sponsors,'sponsor'),policies:refs(e.policies,'policy').map(policy),champions:orderedChampions(refs(e.champions,'clubChampion')),posts:refs(e.posts,'post'),gallery:refs(e.gallery,'galleryImage').map(gallery),tournamentFeed:e.tournamentFeed?get(e.tournamentFeed,'tournamentFeed'):null,
    calendar:e.calendar?(()=>{const calendar=get(e.calendar,'calendarSchedule');return {...calendar,events:normalizeCalendarEvents(refs(calendar.events,'calendarEvent'))};})():null};
  };
  const home=get(raw.homePage,'page');

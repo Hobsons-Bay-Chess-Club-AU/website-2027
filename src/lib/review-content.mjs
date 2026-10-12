@@ -1,5 +1,6 @@
 // The proposal is an isolated overlay on published CMS entries. Never writes to
 // Contentful, and never mutates the entries used by the current website.
+import {sponsorProfileAnchor} from './sponsors.mjs';
 export const reviewDate = '12 October 2026';
 export const reviewSources = {
  coaching:'https://portal.hobsonsbaychess.com/public/schedule/events/89309-hobsons-bay-junior-coaching-2026-term-4',
@@ -30,15 +31,17 @@ export function createReviewEntries(publishedItems){
  const section=(id,title,fields={})=>add('section',id,{internalName:title,title,kind:'richText',tone:'light',enabled:true,...fields});
  const card=(id,title,fields={})=>add('contentCard',id,{title,presentation:'card',enabled:true,...fields});
  const menu=(id,title,links)=>add('navigationMenu',id,{title,items:links});
- const repairLinks=(id,rules)=>visit(get(id).body,node=>{
+ const repairLinks=(id,rules)=>{visit(get(id).body,node=>{
   if(!['hyperlink','entry-hyperlink','asset-hyperlink'].includes(node.nodeType))return;
   const replacement=rules[linkLabel(node)];if(!replacement)return;
   node.nodeType='hyperlink';node.data={uri:replacement.url};
   if(replacement.label)node.content=[text(replacement.label)];
- });
+ });for(const child of get(id).children||[])repairLinks(child.sys.id,rules);};
  const anchor=(id,value)=>{get(id).anchor=value;};
  const settings=get('hbcc-site-settings');settings.reviewVersion='v2';settings.reviewDate=reviewDate;
- const annualNode=get('wp-page-4272-section-1').body.content.flatMap(n=>n.content||[]).find(n=>n.nodeType==='asset-hyperlink');
+ let annualNode;
+ const findAnnual=id=>{visit(get(id).body,n=>{if(n.nodeType==='asset-hyperlink')annualNode=n;});for(const child of get(id).children||[])findAnnual(child.sys.id);};
+ findAnnual('wp-page-4272-section-1');
  const annualPdf=annualNode?.data?.target?.url;
  if(!annualPdf)throw new Error('V2 needs the existing annual schedule PDF.');
 
@@ -118,7 +121,11 @@ export function createReviewEntries(publishedItems){
  // Derive cards from the same published Junior program/coach sections each build.
  // This keeps the preview roster and the Junior page tied to one source.
  const makeSourceCards=(sourceId,imagePrefix,titlePairs,cardPrefix)=>{
-  const source=get(sourceId),nodes=source.body.content,images=nodes.filter(n=>n.nodeType==='embedded-entry-block');
+  const source=get(sourceId);
+  if(source.kind==='cards'&&source.cards?.length){
+   return source.cards.map(r=>{if(imagePrefix==='program')get(r.sys.id).link=pageAction('Enrol or Enquire','review-coaching-page','enrol');return r;});
+  }
+  const nodes=source.body.content,images=nodes.filter(n=>n.nodeType==='embedded-entry-block');
   return images.map((image,i)=>{
    const start=nodes.indexOf(image),end=nodes.indexOf(images[i+1]);
    const chunk=nodes.slice(start+1,end<0?undefined:end);
@@ -132,10 +139,11 @@ export function createReviewEntries(publishedItems){
  const programs=makeSourceCards('wp-page-4332-section-2','program',[], 'review-program-');
  const coaches=makeSourceCards('wp-page-4332-section-5','coach',[], 'review-coach-');
  const programsSource=get('wp-page-4332-section-2'),coachesSource=get('wp-page-4332-section-5');
- programsSource.kind='cards';programsSource.title='Programs & Levels';programsSource.anchor='programs';programsSource.cards=programs;
- programsSource.body=document('Juniors are grouped by chess experience so that each child can learn at an appropriate level. Contact us to discuss the right group.');
- coachesSource.kind='cards';coachesSource.title='Coaching & Support Team';coachesSource.anchor='coaches';coachesSource.cards=coaches;
- coachesSource.body=document('Meet the coaches named on the club’s current website. The team is supported by club volunteers.');
+ const nativePrograms=programsSource.kind==='cards',nativeCoaches=coachesSource.kind==='cards';
+ programsSource.kind='cards';programsSource.title||='Programs & Levels';programsSource.anchor='programs';programsSource.cards=programs;
+ if(!nativePrograms)programsSource.body=document(nodeText(programsSource.body.content.find(n=>n.nodeType==='paragraph')).replace(/\s+/g,' ').trim()||'Juniors are grouped by chess experience so that each child can learn at an appropriate level. Contact us to discuss the right group.');
+ coachesSource.kind='cards';coachesSource.title||='Coaching & Support Team';coachesSource.anchor='coaches';coachesSource.cards=coaches;
+ if(!nativeCoaches)coachesSource.body=document(nodeText(coachesSource.body.content.find(n=>n.nodeType==='paragraph')).replace(/\s+/g,' ').trim()||'Meet the coaches named on the club’s current website. The team is supported by club volunteers.');
  const termDates=['2026-10-10','2026-10-17','2026-10-24','2026-11-07','2026-11-14','2026-11-21','2026-11-28','2026-12-05'];
  const term=section('review-coaching-term','Term 4, 2026',{
   tone:'gold',body:document('Eight Saturday sessions: 10, 17 and 24 October; 7, 14, 21 and 28 November; and 5 December. No coaching on 31 October. Session times depend on the group and coach; check the term listing and your coordinator’s advice.',
@@ -154,24 +162,30 @@ export function createReviewEntries(publishedItems){
   actions:[action('Upcoming Tournaments',reviewSources.upcoming),register,results,pageAction('Live Boards','wp-page-5209'),action('Games & PGNs',reviewSources.games),action('Oceania Youth 2027','https://oceaniayouth2027.hobsonsbaychess.com/')],
  });
  const flagship=get('wp-page-4419-section-0');
+ if(flagship.kind==='cards'&&flagship.cards?.length){
+  flagship.anchor='flagship';
+  for(const r of flagship.cards)get(r.sys.id).link=results;
+ }else{
  const flagshipImages=flagship.body.content.filter(n=>n.nodeType==='embedded-entry-block');
  const flagshipNames=['Honourable Bob Cup','C. J. S. Purdy Cup','HBCC Club Championship','Koshnitsky Cup'];
  const flagshipDescriptions=flagship.body.content.filter(n=>n.nodeType==='paragraph').slice(1).map(nodeText);
  flagshipDescriptions[3]='A recurring classical competition commemorating Igor Koshnitsky.';
- flagship.kind='cards';flagship.title='Flagship Events';flagship.anchor='flagship';flagship.body=document('The club runs these recurring competitions. Check the tournament directory for each year’s dates and divisions.');
+ const flagshipIntro=flagship.body.content.find(n=>n.nodeType==='paragraph');
+ flagship.kind='cards';flagship.title='Flagship Events';flagship.anchor='flagship';flagship.body=document(nodeText(flagshipIntro)||'The club runs these recurring competitions. Check the tournament directory for each year’s dates and divisions.');
  flagship.cards=flagshipImages.map((n,i)=>card('review-flagship-'+i,flagshipNames[i],{image:get(n.data.target.sys.id).image,imageAlt:flagshipNames[i],description:flagshipDescriptions[i],link:results}));
+ }
  get('wp-page-4419').sections.unshift(tournamentHub);
 
- const sponsorEntries=get('home-sponsors').sponsors.map(r=>get(r.sys.id));
+ const sponsorEntries=(get('wp-page-4382-section-0').sponsors||get('home-sponsors').sponsors).map(r=>get(r.sys.id));
  const sponsorCards=sponsorEntries.map((s,i)=>{
-  const id='sponsor-'+s.id.replace(/[^a-z0-9-]/g,'').replace(/^(?:home-)?sponsor-?/,'');
+  const id=sponsorProfileAnchor(s.id);
   const external=s.website&&!s.website.startsWith('/')?s.website:null;
   const result=card('review-sponsor-'+i,s.name,{anchor:id,image:s.image,imageAlt:s.name,description:s.description||undefined,link:external?action('Visit '+s.name,external):undefined});
   if(!external)s.website='/sponsors/#'+id;
   return result;
  });
- const sponsorListing=get('wp-page-4382-section-0');sponsorListing.kind='cards';sponsorListing.title='Our Sponsors & Partners';sponsorListing.body=document('Thank you to the businesses and organisations supporting chess in our community.');sponsorListing.cards=sponsorCards;
- get('wp-page-4382-section-2').body=document('Ask the club for the current sponsorship pack, package prices and availability. The sponsorship team can discuss suitable inclusions and any current member offers.');
+ const sponsorListing=get('wp-page-4382-section-0');sponsorListing.kind='cards';sponsorListing.layoutStyle='sponsorProfiles';sponsorListing.title='Our Sponsors & Partners';sponsorListing.body=document(sponsorListing.subtitle||'Thank you to the businesses and organisations supporting chess in our community.');sponsorListing.subtitle='';sponsorListing.cards=sponsorCards;
+ const packages=get('wp-page-4382-section-2');packages.kind='richText';packages.layoutStyle='default';packages.cards=[];packages.body=document('Choose a package that suits your business. We can tailor inclusions for the right partner.','Ask the club for the current sponsorship pack, package prices and availability. The sponsorship team can discuss suitable inclusions and any current member offers.');packages.actions=[pageAction('Request Sponsorship Pack','wp-page-13')];
  anchor('wp-page-4382-section-7','become-a-sponsor');
  visit(get('wp-page-4382-section-4').body,n=>{if(n.nodeType==='text')n.value=n.value.replace('Member Offer?','Example member offer:').replace('We?d','We’d');});
 

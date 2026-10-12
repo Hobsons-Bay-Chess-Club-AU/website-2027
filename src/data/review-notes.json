@@ -1,51 +1,237 @@
 {
   "date": "12 October 2026",
   "changes": [
-    {"title":"Visible desktop navigation","detail":"Six clear groups — Play, Calendar, Tournaments, Coaching, Club and News — replace the desktop-only hamburger journey. Group names open their overview pages; separate controls open the dropdowns. The arrows now align with the menu labels."},
-    {"title":"Membership layout restored in both versions","detail":"Five fee cards, four benefits, shared club statistics, joining steps, etiquette/policy links, junior information and five expandable FAQs replace the flattened text. Existing fee amounts and public payment instructions are retained. Fees, cards, steps and actions are native Contentful entries.","path":"/membership/"},
-    {"title":"About Us content and layout restored in both versions","detail":"The original introduction, five committee portraits, ten volunteers, three affiliation logos, sixteen arbiter names, governance links, venue map, opening hours and joining actions are restored. Names and roles are editable cards in Contentful; the existing source’s spelling differences still need club confirmation.","path":"/about-us/"},
-    {"title":"Policies managed as a Contentful type","detail":"Seven existing approved club documents are published as reusable Club policy entries. Membership etiquette, privacy and tournament-rule links open the relevant section of the Policies hub. About, Juniors and Tournaments also use these references. Editors can replace documents, change titles, reorder policies or hide an entry without changing code.","path":"/policies/"},
-    {"title":"Join, login and quick tasks","detail":"Join / Renew and Member Login sit in the desktop header. What's On, Register for an Event and Pairings & Results sit below it. All five tasks are near the top of the mobile menu."},
-    {"title":"Simpler navigation groups","detail":"Junior Chess is under Play. Coaching has its own group. History, champions, Peter Caissa, committee, arbiters, sponsors, membership, policies and contact are grouped under Club. Finished 2026 event bookings are removed from the upcoming menu; their historical pages remain."},
-    {"title":"A First Visit section","detail":"Play now opens with choosing an activity, arriving early, equipment and venue guidance. It includes the existing weekly session times and direct links to the club calendar, junior chess and enquiries.","path":"/play-chess/#first-visit"},
-    {"title":"A dedicated Coaching page","detail":"Programs and levels, the existing four named coaches, Term 4 dates, parent policies, private coaching and an enquiry/term-details gateway are collected in one place. Juniors and Coaching use the same program and coach cards.","path":"/coaching/"},
-    {"title":"Accurate coaching availability wording","detail":"The review says current group ticket sales have ended and one-on-one tickets are sold out. New families can enquire and follow the existing registration/orientation process. Actual class times depend on the group and coach."},
-    {"title":"A Tournaments routing hub","detail":"One section connects upcoming competitions, event registration, pairings/results, live boards, games/PGNs and Oceania Youth 2027. Recurring flagship events now have readable names and cards. The inherited, unsupported Grandmaster description of Igor Koshnitsky is omitted.","path":"/tournaments/"},
-    {"title":"Calendar links you can share","detail":"Senior, junior, coaching and social filters open directly from navigation and page links. The chosen category, view and month stay in the URL, survive reload, and follow browser Back/Forward.","path":"/calendar/?category=coaching"},
-    {"title":"An upcoming agenda","detail":"What's On shows remaining dates across future months rather than only the current month. Month and monthly agenda views are retained, together with an iCalendar download.","path":"/calendar/?view=upcoming"},
-    {"title":"Term 4 calendar corrections","detail":"Coaching sessions 4–8 move to 7, 14, 21 and 28 November and 5 December, following the current booking page. A clearly named coaching break appears on 31 October. The junior championship round on 31 October remains, and 28 November is labelled as a junior tournament break rather than a whole-club closure."},
-    {"title":"Clear calendar sources and next steps","detail":"Affected coaching and junior championship dates link to their event details. The original annual PDF is available as a secondary download and is labelled as an older source with later corrections in the review calendar."},
-    {"title":"Six named sponsor profiles","detail":"The Sponsors page reuses the six existing homepage sponsor names and logos. Homepage logos link to those profiles. Sponsorship enquiries have their own section link. Unconfirmed package prices and Sold Out labels are replaced with an enquiry for current availability.","path":"/sponsors/"},
-    {"title":"Useful privacy and policy destinations","detail":"A Privacy & Photography page links to the existing approved document. Footer privacy links open it. The misleading Cookie Policy link is removed; the Policies hub retains its documents.","path":"/privacy-policy/"},
-    {"title":"Inherited content cleanup","detail":"Exposed WordPress timeline shortcodes are removed from History, Champions, Best in the West and Peter Caissa. The junior age placeholder is replaced with an enquiry. Obvious capitalisation/address-label errors are corrected. Ended live broadcasts are clearly labelled Broadcast Archive.","path":"/dgt-link/"},
-    {"title":"A separate review version","detail":"Navigation and calendar proposals stay inside /v2/. Membership, About Us and policy repairs are shared fixes published in Contentful and shown in both rebuilt versions. Every review page has a banner linking to this change list and is excluded from search indexing. The original WordPress domain remains unchanged."}
+    {
+      "title": "Visible desktop navigation",
+      "detail": "Six clear groups — Play, Calendar, Tournaments, Coaching, Club and News — replace the desktop-only hamburger journey. Group names open their overview pages; separate controls open the dropdowns. The arrows now align with the menu labels."
+    },
+    {
+      "title": "Membership layout restored in both versions",
+      "detail": "Five fee cards, four benefits, shared club statistics, joining steps, etiquette/policy links, junior information and five expandable FAQs replace the flattened text. Existing fee amounts and public payment instructions are retained. Fees, cards, steps and actions are native Contentful entries.",
+      "path": "/membership/"
+    },
+    {
+      "title": "About Us content and layout restored in both versions",
+      "detail": "The original introduction, five committee portraits, ten volunteers, three affiliation logos, sixteen arbiter names, governance links, venue map, opening hours and joining actions are restored. Names and roles are editable cards in Contentful; the existing source’s spelling differences still need club confirmation.",
+      "path": "/about-us/"
+    },
+    {
+      "title": "Policies managed as a Contentful type",
+      "detail": "Seven existing approved club documents are published as reusable Club policy entries. Membership etiquette, privacy and tournament-rule links open the relevant section of the Policies hub. About, Juniors and Tournaments also use these references. Editors can replace documents, change titles, reorder policies or hide an entry without changing code.",
+      "path": "/policies/"
+    },
+    {
+      "title": "Join, login and quick tasks",
+      "detail": "Join / Renew and Member Login sit in the desktop header. What's On, Register for an Event and Pairings & Results sit below it. All five tasks are near the top of the mobile menu."
+    },
+    {
+      "title": "Simpler navigation groups",
+      "detail": "Junior Chess is under Play. Coaching has its own group. History, champions, Peter Caissa, committee, arbiters, sponsors, membership, policies and contact are grouped under Club. Finished 2026 event bookings are removed from the upcoming menu; their historical pages remain."
+    },
+    {
+      "title": "A First Visit section",
+      "detail": "Play now opens with choosing an activity, arriving early, equipment and venue guidance. It includes the existing weekly session times and direct links to the club calendar, junior chess and enquiries.",
+      "path": "/play-chess/#first-visit"
+    },
+    {
+      "title": "A dedicated Coaching page",
+      "detail": "Programs and levels, the existing four named coaches, Term 4 dates, parent policies, private coaching and an enquiry/term-details gateway are collected in one place. Juniors and Coaching use the same program and coach cards.",
+      "path": "/coaching/"
+    },
+    {
+      "title": "Accurate coaching availability wording",
+      "detail": "The review says current group ticket sales have ended and one-on-one tickets are sold out. New families can enquire and follow the existing registration/orientation process. Actual class times depend on the group and coach."
+    },
+    {
+      "title": "A Tournaments routing hub",
+      "detail": "One section connects upcoming competitions, event registration, pairings/results, live boards, games/PGNs and Oceania Youth 2027. Recurring flagship events now have readable names and cards. The inherited, unsupported Grandmaster description of Igor Koshnitsky is omitted.",
+      "path": "/tournaments/"
+    },
+    {
+      "title": "Calendar links you can share",
+      "detail": "Senior, junior, coaching and social filters open directly from navigation and page links. The chosen category, view and month stay in the URL, survive reload, and follow browser Back/Forward.",
+      "path": "/calendar/?category=coaching"
+    },
+    {
+      "title": "An upcoming agenda",
+      "detail": "What's On shows remaining dates across future months rather than only the current month. Month and monthly agenda views are retained, together with an iCalendar download.",
+      "path": "/calendar/?view=upcoming"
+    },
+    {
+      "title": "Term 4 calendar corrections",
+      "detail": "Coaching sessions 4–8 move to 7, 14, 21 and 28 November and 5 December, following the current booking page. A clearly named coaching break appears on 31 October. The junior championship round on 31 October remains, and 28 November is labelled as a junior tournament break rather than a whole-club closure."
+    },
+    {
+      "title": "Clear calendar sources and next steps",
+      "detail": "Affected coaching and junior championship dates link to their event details. The original annual PDF is available as a secondary download and is labelled as an older source with later corrections in the review calendar."
+    },
+    {
+      "title": "Seven aligned sponsor profiles",
+      "detail": "The full audit restored Bacchus Marsh Grammar, which was present on WordPress but absent from the six homepage-derived profiles. Seven native sponsor entries now use consistent logo areas, heading positions and card heights. Benefits, statistics, package headings, inclusion lists, activations, process steps, FAQs and enquiry actions have proper layouts. The GS Chess destination is restored. V2 retains enquiries for current prices and availability.",
+      "path": "/sponsors/"
+    },
+    {
+      "title": "Champions newest first, including 2025",
+      "detail": "Julian McIntyre is added as the 2025 club champion with 5 points, verified against final round-seven standings. Twelve Club champion records are native Contentful entries, automatically ordered newest first. The latest winner links to the final results; original gaps are retained for club confirmation.",
+      "path": "/champions/"
+    },
+    {
+      "title": "Missing Play, Junior and Tournament content restored",
+      "detail": "Fresh WordPress comparison found eight missing Play points, four parent-information points and seven tournament/rules points. All nineteen are restored. Native cards, image/text sections, steps, original introductions, FAQs and hero actions replace flattened content. Programs and coaches remain shared between Juniors and Coaching.",
+      "path": "/play-chess/"
+    },
+    {
+      "title": "Contact page rebuilt with the omitted visitor information",
+      "detail": "The map, session guidance, address/directions, visitor advice, arrival and forfeit information, etiquette policy and useful enquiry/event/membership actions are restored. Email is the working contact destination. Duplicate source text and placeholder shop/buttons are removed; coaching times point to the current term/group listing.",
+      "path": "/contact/"
+    },
+    {
+      "title": "Every migrated page reviewed",
+      "detail": "All fourteen core pages were compared with fresh WordPress content, including photos, tables, links, lists and maps. History, Best in the West and Peter Caissa retain their original material and now lose leaked shortcodes in both versions. The full audit records intentional differences and outstanding club decisions; download it above."
+    },
+    {
+      "title": "Useful privacy and policy destinations",
+      "detail": "A Privacy & Photography page links to the existing approved document. Footer privacy links open it. The misleading Cookie Policy link is removed; the Policies hub retains its documents.",
+      "path": "/privacy-policy/"
+    },
+    {
+      "title": "Inherited content cleanup",
+      "detail": "Exposed WordPress timeline shortcodes are removed from History, Champions, Best in the West and Peter Caissa. The junior age placeholder is replaced with an enquiry. Obvious capitalisation/address-label errors are corrected. Ended live broadcasts are clearly labelled Broadcast Archive.",
+      "path": "/dgt-link/"
+    },
+    {
+      "title": "A separate review version",
+      "detail": "Navigation and calendar proposals stay inside /v2/. Membership, About Us, policies and full page-audit repairs are shared fixes published in Contentful and shown in both rebuilt versions. Every review page has a banner linking to this change list and is excluded from search indexing. The original WordPress domain remains unchanged."
+    }
   ],
   "linkRepairs": [
-    ["Play: Register for Social Night", "Membership page", "Find Social Nights → filtered upcoming calendar"],
-    ["Play: View Seniors Calendar", "Annual PDF", "Senior calendar filter"],
-    ["Play: View Calendar", "Contact page", "Club calendar"],
-    ["Membership: View Calendar", "Contact page", "Club calendar"],
-    ["Membership: Renew Now", "Homepage", "Portal membership choices"],
-    ["Membership: View Juniors Program", "Annual PDF", "Junior Chess page"],
-    ["About: Join the Club / Join HBCC Today", "Contact page", "Membership page"],
-    ["Juniors: enrol actions", "Contact page", "Coaching enrol/enquiry section"],
-    ["Juniors: View Juniors Calendar", "Annual PDF", "Junior calendar filter"],
-    ["Homepage weekly schedule: View Calendar", "Tournament calendar", "Main club calendar"],
-    ["Calendar: external View Calendar", "Unclear label", "Renamed Tournament Calendar; destination retained"],
-    ["Footer: Results & Pairings", "Open leaderboard", "Pairings & Results → tournament directory"],
-    ["Footer: Privacy / Privacy Policy", "General policies list", "Privacy & Photography page and approved document"],
-    ["Footer: Cookie Policy", "General policies list", "Removed until matching approved content exists"]
+    [
+      "Play: Register for Social Night",
+      "Membership page",
+      "Find Social Nights → filtered upcoming calendar"
+    ],
+    [
+      "Play: View Seniors Calendar",
+      "Annual PDF",
+      "Senior calendar filter"
+    ],
+    [
+      "Play: View Calendar",
+      "Contact page",
+      "Club calendar"
+    ],
+    [
+      "Membership: View Calendar",
+      "Contact page",
+      "Club calendar"
+    ],
+    [
+      "Membership: Renew Now",
+      "Homepage",
+      "Portal membership choices"
+    ],
+    [
+      "Membership: View Juniors Program",
+      "Annual PDF",
+      "Junior Chess page"
+    ],
+    [
+      "About: Join the Club / Join HBCC Today",
+      "Contact page",
+      "Membership page"
+    ],
+    [
+      "Juniors: enrol actions",
+      "Contact page",
+      "Coaching enrol/enquiry section"
+    ],
+    [
+      "Juniors: View Juniors Calendar",
+      "Annual PDF",
+      "Junior calendar filter"
+    ],
+    [
+      "Homepage weekly schedule: View Calendar",
+      "Tournament calendar",
+      "Main club calendar"
+    ],
+    [
+      "Calendar: external View Calendar",
+      "Unclear label",
+      "Renamed Tournament Calendar; destination retained"
+    ],
+    [
+      "Footer: Results & Pairings",
+      "Open leaderboard",
+      "Pairings & Results → tournament directory"
+    ],
+    [
+      "Footer: Privacy / Privacy Policy",
+      "General policies list",
+      "Privacy & Photography page and approved document"
+    ],
+    [
+      "Footer: Cookie Policy",
+      "General policies list",
+      "Removed until matching approved content exists"
+    ]
   ],
   "pending": [
-    {"title":"Coaches and parent guidance","detail":"Confirm the current roster, program levels, minimum-age guidance and the first-time enquiry/orientation process. The existing site names four coaches; the booking description refers to five.","owner":"Coaching coordinator"},
-    {"title":"Calendar sign-off","detail":"Confirm the program-specific Term 4 corrections and volunteer-night wording. Two ambiguous imported date ranges remain excluded. The quarantined Best in the West year typo still needs a targeted correction in the CMS; its published organiser page confirms 29–30 August 2026.","owner":"Calendar / tournament coordinator"},
-    {"title":"Membership information","detail":"Review the retained fee amounts, annual renewal wording and participation conditions against the current membership portal.","owner":"Membership / treasurer"},
-    {"title":"Committee, volunteers and arbiters","detail":"Confirm the current names, roles and titles restored from WordPress. The source spells Lachlan’s surname Dwyer in Volunteers and Drywer in Arbiters, and uses Srikrishna / Sri Krishna Yendru. These source differences are preserved for review. Supply an approved constitution separately if it should accompany the existing By-Law.","owner":"Committee / secretary"},
-    {"title":"Honour boards and titled players","detail":"Supply recent winners and verified current player titles, club affiliation, biographies and photographs. No new winners or empty player page have been invented.","owner":"Committee / tournament organiser"},
-    {"title":"Sponsors and offers","detail":"Confirm the six sponsors are current and supply current websites, package availability and any real member offers, including expiry and redemption details. New offers are not advertised yet.","owner":"Sponsor lead"},
-    {"title":"Newsletters and subscriptions","detail":"Provide editions, dates and the chosen subscription service before enabling a newsletter archive or Subscribe action. The three published club stories remain available.","owner":"Newsletter editor / committee"},
-    {"title":"News categories","detail":"Add Tournament Reports and Club Announcements archives once sufficient stories have actually been categorised.","owner":"News editor"},
-    {"title":"CMS promotion and domain launch","detail":"After review, apply the remaining accepted navigation/date changes as targeted Contentful updates, including the optional action-menu, section-anchor and calendar-source fields. Membership, About Us and the policy type are already published shared CMS fixes. The remaining V2 proposal is an overlay on that content; the production WordPress domain is unchanged.","owner":"Website maintainer"}
+    {
+      "title": "Coaches and parent guidance",
+      "detail": "Confirm the current roster, program levels, minimum-age guidance and the first-time enquiry/orientation process. The existing site names four coaches; the booking description refers to five.",
+      "owner": "Coaching coordinator"
+    },
+    {
+      "title": "Calendar sign-off",
+      "detail": "Confirm the program-specific Term 4 corrections and volunteer-night wording. Two ambiguous imported date ranges remain excluded. The quarantined Best in the West year typo still needs a targeted correction in the CMS; its published organiser page confirms 29–30 August 2026.",
+      "owner": "Calendar / tournament coordinator"
+    },
+    {
+      "title": "Membership information",
+      "detail": "Review the retained fee amounts, annual renewal wording and participation conditions against the current membership portal.",
+      "owner": "Membership / treasurer"
+    },
+    {
+      "title": "Committee, volunteers and arbiters",
+      "detail": "Confirm the current names, roles and titles restored from WordPress. The source spells Lachlan’s surname Dwyer in Volunteers and Drywer in Arbiters, and uses Srikrishna / Sri Krishna Yendru. These source differences are preserved for review. Supply an approved constitution separately if it should accompany the existing By-Law.",
+      "owner": "Committee / secretary"
+    },
+    {
+      "title": "Honour boards and titled players",
+      "detail": "The 2025 club champion is now verified and published. Supply earlier Champions records, clarify the original 2020/2021 gaps, and provide any 2026 champion from final results. Confirm later Best in the West/Peter Caissa winners and verified current titles, affiliations, biographies and photographs.",
+      "owner": "Committee / tournament organiser"
+    },
+    {
+      "title": "Sponsors and offers",
+      "detail": "Confirm all seven original supporters are current and supply current websites, package availability and any real member offers, including expiry and redemption details. New offers are not advertised yet.",
+      "owner": "Sponsor lead"
+    },
+    {
+      "title": "Shared session and opening times",
+      "detail": "WordPress About and Contact disagree on closing times. Homepage coaching says 5–6pm while Contact says 4pm; current term times vary by coach/group. Confirm one shared schedule. Contact currently directs families to their specific booking listing.",
+      "owner": "Committee / coaching coordinator"
+    },
+    {
+      "title": "Shop, enquiry service and later history",
+      "detail": "Supply the actual club-shop destination if one is in use. Decide whether email is sufficient or select an approved contact-form service. Provide a later history chapter beyond the source’s 2003 endpoint.",
+      "owner": "Committee / website maintainer"
+    },
+    {
+      "title": "Newsletters and subscriptions",
+      "detail": "Provide editions, dates and the chosen subscription service before enabling a newsletter archive or Subscribe action. The three published club stories remain available.",
+      "owner": "Newsletter editor / committee"
+    },
+    {
+      "title": "News categories",
+      "detail": "Add Tournament Reports and Club Announcements archives once sufficient stories have actually been categorised.",
+      "owner": "News editor"
+    },
+    {
+      "title": "CMS promotion and domain launch",
+      "detail": "After review, apply the accepted navigation/date changes as targeted Contentful updates, including the optional action-menu and calendar-source fields. Section anchors, Membership, About Us, policies and the full page-audit repairs are already native shared CMS updates. V2 remains an overlay on that content; the production WordPress domain is unchanged.",
+      "owner": "Website maintainer"
+    }
   ],
   "checks": [
     "On desktop, open each navigation group using the separate arrow; check that its label also opens the overview page.",
@@ -56,6 +242,8 @@
     "As a competitor, reach upcoming events, registration, individual pairings/results, broadcasts and PGNs from Tournaments.",
     "Filter the calendar, switch between month, agenda and upcoming, reload the page, then use Back/Forward. Check October, November and December coaching dates.",
     "On a phone or tablet, open the menu, use the five quick tasks and each group, and close it using the close button or Escape.",
-    "Check sponsor names/logos, the sponsorship enquiry, privacy document, historical winners and existing news photographs."
+    "Check sponsor names/logos, the sponsorship enquiry, privacy document, historical winners and existing news photographs.",
+    "On Champions, verify Julian McIntyre in 2025 with the linked final standings, followed by 2024 and 2023.",
+    "Compare all seven sponsor profiles, benefits, inclusions and process steps; check Contact?s venue map, etiquette link and enquiry actions."
   ]
 }

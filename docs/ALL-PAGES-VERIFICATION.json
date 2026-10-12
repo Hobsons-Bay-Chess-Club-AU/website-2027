@@ -1,0 +1,130 @@
+{
+  "checkedAt": "2026-10-12T02:23:42.427Z",
+  "space": "7r7s5slcmer0",
+  "environment": "master",
+  "contentTypes": 17,
+  "entries": 642,
+  "publishedEntries": 634,
+  "assets": 100,
+  "publishedAssets": 100,
+  "restoration": {
+    "uniquePublishedEntries": 155,
+    "newEntries": 111,
+    "updatedEntries": 44,
+    "unrelatedEntriesUnchanged": 487,
+    "unrelatedDraftsPreserved": 8,
+    "existingAssetsUnchanged": 100
+  },
+  "publishedApi": {
+    "currentPages": 14,
+    "v2Pages": 17,
+    "newsArticles": 3,
+    "champions": [
+      {
+        "year": 2025,
+        "name": "Julian McIntyre",
+        "score": "5 points",
+        "standingsUrl": "https://tournament.hobsonsbaychess.com/www2025HobsonsBayClubChampionship/standings.html"
+      },
+      {
+        "year": 2024,
+        "name": "Rheyansh Annapureddy",
+        "score": null,
+        "standingsUrl": null
+      },
+      {
+        "year": 2023,
+        "name": "Tony Davis",
+        "score": null,
+        "standingsUrl": null
+      },
+      {
+        "year": 2022,
+        "name": "Rheyansh Annapureddy",
+        "score": null,
+        "standingsUrl": null
+      },
+      {
+        "year": 2019,
+        "name": "Nathan Hibberd",
+        "score": null,
+        "standingsUrl": null
+      },
+      {
+        "year": 2018,
+        "name": "Daniel Gusain",
+        "score": null,
+        "standingsUrl": null
+      },
+      {
+        "year": 2017,
+        "name": "Bruce Williams",
+        "score": null,
+        "standingsUrl": null
+      },
+      {
+        "year": 2016,
+        "name": "Nathan Hibberd",
+        "score": null,
+        "standingsUrl": null
+      },
+      {
+        "year": 2015,
+        "name": "Vishal Bhat",
+        "score": null,
+        "standingsUrl": null
+      },
+      {
+        "year": 2014,
+        "name": "Dean Hogg",
+        "score": null,
+        "standingsUrl": null
+      },
+      {
+        "year": 2013,
+        "name": "Dean Hogg",
+        "score": null,
+        "standingsUrl": null
+      },
+      {
+        "year": 2012,
+        "name": "Dallas Gatti",
+        "score": null,
+        "standingsUrl": null
+      }
+    ],
+    "sponsorNames": [
+      "Alkassab Dental Surgery",
+      "Joyous Realty Estate",
+      "VACDIRECT Hoppers Crossing",
+      "GS Chess",
+      "Visa Finder",
+      "Community Bank Altona & Laverton",
+      "Bacchus Marsh Grammar"
+    ],
+    "contactSections": [
+      "restored-contact-sessions",
+      "wp-page-13-section-0",
+      "restored-contact-visitor",
+      "restored-contact-enquiries"
+    ],
+    "currentCalendarEvents": 150,
+    "v2CalendarEvents": 151
+  },
+  "drafts": [
+    "calendar-2026-9b67f9cb36a8f77c",
+    "calendar-2026-5d5e1f601bd54af6",
+    "calendar-2026-0cd7d9ae1c8e7b10",
+    "wp-post-1062",
+    "wp-post-1054",
+    "wp-post-1059",
+    "wp-post-1072",
+    "wp-post-1071"
+  ],
+  "validation": {
+    "tests": 38,
+    "currentAndV2PublishedBuilds": "passed",
+    "localLinkAndAssetChecks": "passed",
+    "desktopAndPhonePageChecks": "passed"
+  }
+}

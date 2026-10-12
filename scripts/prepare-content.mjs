@@ -38,7 +38,9 @@ function migrateHtml(html, { stripHero = false } = {}) {
     details.find('summary').text(title); details.find('div').html(body); $(e).replaceWith(details);
   });
   $('.bt_bb_counter').each((_,e) => $(e).text($(e).find('.onedigit').map((_,d)=>$(d).attr('data-digit')).get().join('')));
-  $('.bt_bb_icon_holder, .bt_bb_section_top_section_coverage_image, .bt_bb_background_image_holder, .bt_bb_section_bottom_section_coverage_image, .bt_bb_section_top_section_coverage, .bt_bb_section_bottom_section_coverage').remove();
+  // Icon holders also contain editorial labels and paragraphs. Font glyphs
+  // live in theme attributes, which are stripped below; retain their text.
+  $('.bt_bb_section_top_section_coverage_image, .bt_bb_background_image_holder, .bt_bb_section_bottom_section_coverage_image, .bt_bb_section_top_section_coverage, .bt_bb_section_bottom_section_coverage').remove();
   if (stripHero) $('.bt_bb_section').first().remove();
   $('img').each((_,e) => {
     const src = $(e).attr('data-src') || $(e).attr('src');

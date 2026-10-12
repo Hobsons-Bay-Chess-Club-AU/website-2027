@@ -294,6 +294,14 @@
           }
         },
         {
+          "fieldId": "fragment",
+          "widgetNamespace": "builtin",
+          "widgetId": "singleLine",
+          "settings": {
+            "helpText": "Optional stable section link on the selected page, without #. The destination section must have the same Stable section link."
+          }
+        },
+        {
           "fieldId": "children",
           "widgetNamespace": "builtin",
           "widgetId": "entryLinksEditor",
@@ -687,11 +695,19 @@
           }
         },
         {
+          "fieldId": "anchor",
+          "widgetNamespace": "builtin",
+          "widgetId": "singleLine",
+          "settings": {
+            "helpText": "Optional lowercase section ID, e.g. become-a-sponsor. Keep it stable for navigation and incoming links."
+          }
+        },
+        {
           "fieldId": "layoutStyle",
           "widgetNamespace": "builtin",
           "widgetId": "dropdown",
           "settings": {
-            "helpText": "Pricing: fee cards. Benefits: four panels. Steps: numbered joining steps. Split: image/text columns. Portraits: committee photos. Roster: compact names and roles. Affiliations: contained linked logos."
+            "helpText": "Pricing: fee cards. Benefits: four panels. Steps: numbered steps. Split: image/text columns. Portraits: committee or coach photos. Roster: compact names and roles. Affiliations: contained linked logos. Tiles: three image cards. Sponsor profiles: aligned logo panels."
           }
         },
         {
@@ -807,6 +823,14 @@
           }
         },
         {
+          "fieldId": "champions",
+          "widgetNamespace": "builtin",
+          "widgetId": "entryLinksEditor",
+          "settings": {
+            "helpText": "Choose the Honour board layout, then link published Club champion records. The website sorts by year, newest first. Avoid duplicate records for one year."
+          }
+        },
+        {
           "fieldId": "posts",
           "widgetNamespace": "builtin",
           "widgetId": "entryLinksEditor",
@@ -892,6 +916,14 @@
           }
         },
         {
+          "fieldId": "anchor",
+          "widgetNamespace": "builtin",
+          "widgetId": "singleLine",
+          "settings": {
+            "helpText": "Optional lowercase card ID for a direct link to this card."
+          }
+        },
+        {
           "fieldId": "eyebrow",
           "widgetNamespace": "builtin",
           "widgetId": "singleLine",
@@ -953,6 +985,69 @@
           "widgetId": "entryLinkEditor",
           "settings": {
             "helpText": ""
+          }
+        },
+        {
+          "fieldId": "enabled",
+          "widgetNamespace": "builtin",
+          "widgetId": "boolean",
+          "settings": {
+            "helpText": "",
+            "trueLabel": "Show",
+            "falseLabel": "Hide"
+          }
+        }
+      ]
+    },
+    {
+      "contentTypeId": "clubChampion",
+      "controls": [
+        {
+          "fieldId": "title",
+          "widgetNamespace": "builtin",
+          "widgetId": "singleLine",
+          "settings": {
+            "helpText": ""
+          }
+        },
+        {
+          "fieldId": "year",
+          "widgetNamespace": "builtin",
+          "widgetId": "numberEditor",
+          "settings": {
+            "helpText": ""
+          }
+        },
+        {
+          "fieldId": "playerName",
+          "widgetNamespace": "builtin",
+          "widgetId": "singleLine",
+          "settings": {
+            "helpText": ""
+          }
+        },
+        {
+          "fieldId": "playerTitle",
+          "widgetNamespace": "builtin",
+          "widgetId": "singleLine",
+          "settings": {
+            "helpText": ""
+          }
+        },
+        {
+          "fieldId": "score",
+          "widgetNamespace": "builtin",
+          "widgetId": "singleLine",
+          "settings": {
+            "helpText": ""
+          }
+        },
+        {
+          "fieldId": "standingsUrl",
+          "widgetNamespace": "builtin",
+          "widgetId": "singleLine",
+          "settings": {
+            "helpText": "Link to the confirmed final standings. Do not infer a winner from an event that is still running."
           }
         },
         {

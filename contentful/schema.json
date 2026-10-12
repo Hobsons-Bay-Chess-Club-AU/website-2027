@@ -561,6 +561,20 @@
           ]
         },
         {
+          "id": "fragment",
+          "name": "Section link on the selected page",
+          "type": "Symbol",
+          "required": false,
+          "localized": false,
+          "validations": [
+            {
+              "size": {
+                "max": 256
+              }
+            }
+          ]
+        },
+        {
           "id": "children",
           "name": "Submenu items",
           "type": "Array",
@@ -1240,7 +1254,8 @@
                 "quote",
                 "cta",
                 "calendar",
-                "policies"
+                "policies",
+                "honourBoard"
               ]
             }
           ]
@@ -1254,6 +1269,20 @@
           "defaultValue": {
             "en-US": true
           }
+        },
+        {
+          "id": "anchor",
+          "name": "Stable section link",
+          "type": "Symbol",
+          "required": false,
+          "localized": false,
+          "validations": [
+            {
+              "size": {
+                "max": 256
+              }
+            }
+          ]
         },
         {
           "id": "layoutStyle",
@@ -1271,7 +1300,9 @@
                 "split",
                 "portraits",
                 "roster",
-                "affiliations"
+                "affiliations",
+                "tiles",
+                "sponsorProfiles"
               ]
             }
           ]
@@ -1597,6 +1628,31 @@
           ]
         },
         {
+          "id": "champions",
+          "name": "Club championship winners",
+          "type": "Array",
+          "required": false,
+          "localized": false,
+          "items": {
+            "type": "Link",
+            "linkType": "Entry",
+            "validations": [
+              {
+                "linkContentType": [
+                  "clubChampion"
+                ]
+              }
+            ]
+          },
+          "validations": [
+            {
+              "size": {
+                "max": 200
+              }
+            }
+          ]
+        },
+        {
           "id": "posts",
           "name": "Featured news",
           "type": "Array",
@@ -1773,6 +1829,20 @@
           ]
         },
         {
+          "id": "anchor",
+          "name": "Stable card link",
+          "type": "Symbol",
+          "required": false,
+          "localized": false,
+          "validations": [
+            {
+              "size": {
+                "max": 256
+              }
+            }
+          ]
+        },
+        {
           "id": "eyebrow",
           "name": "Small heading / year",
           "type": "Symbol",
@@ -1935,6 +2005,111 @@
               "linkContentType": [
                 "navigationItem"
               ]
+            }
+          ]
+        },
+        {
+          "id": "enabled",
+          "name": "Show on website",
+          "type": "Boolean",
+          "required": false,
+          "localized": false,
+          "defaultValue": {
+            "en-US": true
+          }
+        }
+      ]
+    },
+    {
+      "sys": {
+        "id": "clubChampion"
+      },
+      "name": "Club champion",
+      "description": "One record per championship year. The honour board shows the most recent year first. Use confirmed final results.",
+      "displayField": "title",
+      "fields": [
+        {
+          "id": "title",
+          "name": "Editor name, e.g. 2025 — Julian McIntyre",
+          "type": "Symbol",
+          "required": true,
+          "localized": false,
+          "validations": [
+            {
+              "size": {
+                "max": 256
+              }
+            }
+          ]
+        },
+        {
+          "id": "year",
+          "name": "Championship year",
+          "type": "Integer",
+          "required": true,
+          "localized": false,
+          "validations": [
+            {
+              "range": {
+                "min": 1974,
+                "max": 2100
+              }
+            }
+          ]
+        },
+        {
+          "id": "playerName",
+          "name": "Champion name",
+          "type": "Symbol",
+          "required": true,
+          "localized": false,
+          "validations": [
+            {
+              "size": {
+                "max": 256
+              }
+            }
+          ]
+        },
+        {
+          "id": "playerTitle",
+          "name": "Chess title, if confirmed",
+          "type": "Symbol",
+          "required": false,
+          "localized": false,
+          "validations": [
+            {
+              "size": {
+                "max": 256
+              }
+            }
+          ]
+        },
+        {
+          "id": "score",
+          "name": "Result, e.g. 5 points",
+          "type": "Symbol",
+          "required": false,
+          "localized": false,
+          "validations": [
+            {
+              "size": {
+                "max": 256
+              }
+            }
+          ]
+        },
+        {
+          "id": "standingsUrl",
+          "name": "Final standings URL",
+          "type": "Symbol",
+          "required": false,
+          "localized": false,
+          "validations": [
+            {
+              "size": {
+                "max": 256
+              }
             }
           ]
         },

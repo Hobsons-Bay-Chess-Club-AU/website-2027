@@ -1,0 +1,11 @@
+---
+import {siteUrl as safeUrl} from '../lib/site-url.mjs';
+const {champions=[]}=Astro.props;
+---
+<ol class="honour-board" aria-label="Club champions, newest first">
+ {champions.map((champion,i)=><li class:list={['honour-board-entry',{'honour-board-latest':i===0}]}>
+  <span class="honour-board-year">{champion.year}</span>
+  <div>{i===0&&<p class="eyebrow">Most recent champion</p>}<h3>{champion.playerTitle&&<span class="champion-title">{champion.playerTitle} </span>}{champion.playerName}</h3>{champion.score&&<p>{champion.score}</p>}</div>
+  {champion.standingsUrl&&<a class="text-link" href={safeUrl(champion.standingsUrl)}>Final standings ↗</a>}
+ </li>)}
+</ol>

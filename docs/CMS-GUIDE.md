@@ -1,6 +1,6 @@
 # HBCC Contentful editor guide
 
-The actual [Contentful space](https://app.contentful.com/spaces/7r7s5slcmer0/entries) contains **16 native content types, 531 entries and 100 processed assets**. There are 523 published entries and 100 published assets. Five disabled theme articles and three calendar events needing date confirmation remain drafts.
+The actual [Contentful space](https://app.contentful.com/spaces/7r7s5slcmer0/entries) contains **17 native content types, 642 entries and 100 processed assets** after the page restoration. There are 634 published entries and 100 published assets. Five disabled theme articles and three calendar events needing date confirmation remain drafts.
 
 Ordinary editing uses rich text, media pickers, dropdowns and ordered entry references. No HTML or JSON is required.
 
@@ -15,6 +15,7 @@ Ordinary editing uses rich text, media pickers, dropdowns and ordered entry refe
 | Page / homepage section (`section`) | Layout, heading, rich text, media, actions and linked collections/calendar |
 | Card / question / timeline item (`contentCard`) | Features, FAQs, timelines, membership fees, steps, portraits and names/roles |
 | Club policy (`policy`) | Title, stable link, summary, approved document, optional text/version/effective date and visibility |
+| Club champion (`clubChampion`) | Championship year, player name, optional title, result, final standings URL and visibility |
 | Club statistic (`statistic`) | Value, label, icon and visibility |
 | Weekly schedule day (`scheduleDay`) | Day, sessions and empty-day message |
 | Weekly session (`scheduleSession`) | Name, display time, venue and link |
@@ -25,7 +26,15 @@ Ordinary editing uses rich text, media pickers, dropdowns and ordered entry refe
 | Calendar event (`calendarEvent`) | Title, first/last dates, category, details, arbiter and visibility |
 | Tournament integration (`tournamentFeed`) | Year, existing service URLs, table/card counts and explanatory text |
 
-Sections support rich text, columns, cards, accordions, galleries, approved embeds, policies, statistics, standings/events, feature banners, weekly schedules, sponsors, news, testimonials, join banners and calendars. **Layout variation** controls fee cards, benefits, joining steps, image/text columns, portraits, compact rosters and affiliation logos. Reuse linked sections across pages. The frontend controls typography and responsive layout; Contentful controls content and order.
+Sections support rich text, columns, cards, accordions, galleries, approved embeds, policies, honour boards, statistics, standings/events, feature banners, weekly schedules, sponsors, news, testimonials, join banners and calendars. **Layout variation** controls fee cards, benefits, numbered steps, image/text columns, portraits, compact rosters, affiliation logos, three-column tiles and aligned sponsor profiles. Reuse linked sections across pages. The frontend controls typography and responsive layout; Contentful controls content and order.
+
+## Update champions
+
+1. Create a **Club champion** record. Enter the year and player name, and an optional confirmed chess title, result and final standings URL.
+2. Publish the record. Open **Champions → Club Champions**, choose the **Honour board** layout, and add it under **Club championship winners**.
+3. Publish the section and rebuild. The website orders records by year, newest first, regardless of reference order. Use one record per championship year; joint winners can share the player-name field.
+
+The imported board contains eleven existing years plus **2025 — Julian McIntyre, 5 points**, linked to the final round-seven standings. Do not infer the club champion from the annual aggregate leaderboard or an unfinished event.
 
 ## Edit pages
 
@@ -131,12 +140,14 @@ The initial importer activates models/editors, processes preserved media, detect
 
 `node scripts/apply-membership-about-policies.mjs` previews the targeted one-time Membership/About/policy migration; `--apply` publishes that approved scope. It checks versions, refuses unpublished editorial conflicts, preserves other fields and eight unrelated drafts, and saves a private before-snapshot/report under ignored `reference/screenshots/`. It leaves subsequent card edits intact when the migration is already applied. Do not use a complete import to update edited CMS content.
 
+`node scripts/apply-page-restoration.mjs` previews the one-time Play/Juniors/Tournaments/Sponsors/Champions/Contact restoration and shortcode cleanup. `--apply` publishes its bounded scope. Publication order is checked before writes; existing published page backlinks are allowed. A saved creation-phase failure can be resumed with `--resume --apply` only when newly created drafts still exactly match the snapshot-derived plan and have not been edited. Subsequent editorial changes are preserved.
+
 Strict production builds require complete published content and refuse Preview drafts. Local CMS preview reads saved drafts on reload. Ordinary local review uses port 4327; strict CMS preview uses 4328.
 
 ## Club review before domain launch
 
 Historical junior counts, membership fees, sponsor tiers, committee names, policies and downloads retain captured wording and need club acceptance. Contact uses email because Contact Form 7 is not a portable mail backend. Three spreadsheet date conflicts need club confirmation. The production domain remains on WordPress.
 
-See [HOMEPAGE-AUDIT.md](HOMEPAGE-AUDIT.md), [MIGRATION-PLAN.md](MIGRATION-PLAN.md), the [initial CMS verification](CMS-LIVE-VERIFICATION.json) and the [current Membership/About/policy verification](MEMBERSHIP-ABOUT-POLICIES-VERIFICATION.json).
+See [ALL-PAGES-AUDIT.md](ALL-PAGES-AUDIT.md), [HOMEPAGE-AUDIT.md](HOMEPAGE-AUDIT.md), [MIGRATION-PLAN.md](MIGRATION-PLAN.md), and the verification records. The earlier initial-CMS and Membership/About reports retain their original release counts.
 
 The model follows Contentful's [native editor interfaces](https://www.contentful.com/developers/docs/extensibility/app-framework/editor-interfaces/) and [rich text format](https://www.contentful.com/developers/docs/tutorials/general/getting-started-with-rich-text-field-type/).

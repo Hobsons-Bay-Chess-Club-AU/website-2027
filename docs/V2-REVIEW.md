@@ -6,13 +6,15 @@ Changes, before/after links, club decisions and visitor checklist: https://hobso
 
 Downloadable change list: https://hobsons-bay-chess-club-au.github.io/website-2027/v2/review-notes.md
 
+Full page audit: https://hobsons-bay-chess-club-au.github.io/website-2027/v2/all-pages-audit.md
+
 Current rebuilt version: https://hobsons-bay-chess-club-au.github.io/website-2027/
 
 The proposal implements the core navigation and visitor-journey work in [the navigation audit plan](NAVIGATION-CHANGE-PLAN.md). It includes six navigation groups, desktop dropdowns, mobile quick tasks, First Visit and Coaching, a tournament hub, repaired action links, shareable calendar state and an upcoming agenda, Term 4 corrections, named sponsor profiles, privacy destinations and inherited-content cleanup. The team review page is the complete change list. Its checklist does not submit or persist responses; reviewers reply to the person who shared the link.
 
 ## Isolation and content
 
-The current version reads published Contentful entries without the proposal. V2 reads published Contentful entries and applies the explicitly versioned proposal in `src/lib/review-content.mjs` to a deep copy before normalization. That overlay performs no management API writes. Both versions now share the targeted Membership/About layout repairs and native policy model published in Contentful; they retain separate menus, additional pages and reviewed calendar dates.
+The current version reads published Contentful entries without the proposal. V2 reads published Contentful entries and applies the explicitly versioned proposal in `src/lib/review-content.mjs` to a deep copy before normalization. That overlay performs no management API writes. Both versions now share Membership/About/policy repairs and the [full page-audit restoration](ALL-PAGES-AUDIT.md): Play/Juniors/Tournaments/Contact content, seven aligned sponsors, shortcode cleanup and a native Champions honour board including 2025, newest first. They retain separate menus, additional pages and reviewed calendar dates.
 
 V2 has three additional pages: Coaching, Privacy & Photography and the team review. It also has its own calendar download. Internal links, redirects, fonts and build assets are scoped to `/website-2027/v2/`. The comparison links explicitly return to the current version. Existing tournament, registration, games, membership and login services retain their external destinations.
 

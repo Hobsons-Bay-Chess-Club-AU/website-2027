@@ -44,16 +44,27 @@ Changes and checklist: https://hobsons-bay-chess-club-au.github.io/website-2027/
 
 14. **Clear calendar sources and next steps** — Affected coaching and junior championship dates link to their event details. The original annual PDF is available as a secondary download and is labelled as an older source with later corrections in the review calendar.
 
-15. **Six named sponsor profiles** — The Sponsors page reuses the six existing homepage sponsor names and logos. Homepage logos link to those profiles. Sponsorship enquiries have their own section link. Unconfirmed package prices and Sold Out labels are replaced with an enquiry for current availability.
+15. **Seven aligned sponsor profiles** — The full audit restored Bacchus Marsh Grammar, which was present on WordPress but absent from the six homepage-derived profiles. Seven native sponsor entries now use consistent logo areas, heading positions and card heights. Benefits, statistics, package headings, inclusion lists, activations, process steps, FAQs and enquiry actions have proper layouts. The GS Chess destination is restored. V2 retains enquiries for current prices and availability.
    https://hobsons-bay-chess-club-au.github.io/website-2027/v2/sponsors/
 
-16. **Useful privacy and policy destinations** — A Privacy & Photography page links to the existing approved document. Footer privacy links open it. The misleading Cookie Policy link is removed; the Policies hub retains its documents.
+16. **Champions newest first, including 2025** — Julian McIntyre is added as the 2025 club champion with 5 points, verified against final round-seven standings. Twelve Club champion records are native Contentful entries, automatically ordered newest first. The latest winner links to the final results; original gaps are retained for club confirmation.
+   https://hobsons-bay-chess-club-au.github.io/website-2027/v2/champions/
+
+17. **Missing Play, Junior and Tournament content restored** — Fresh WordPress comparison found eight missing Play points, four parent-information points and seven tournament/rules points. All nineteen are restored. Native cards, image/text sections, steps, original introductions, FAQs and hero actions replace flattened content. Programs and coaches remain shared between Juniors and Coaching.
+   https://hobsons-bay-chess-club-au.github.io/website-2027/v2/play-chess/
+
+18. **Contact page rebuilt with the omitted visitor information** — The map, session guidance, address/directions, visitor advice, arrival and forfeit information, etiquette policy and useful enquiry/event/membership actions are restored. Email is the working contact destination. Duplicate source text and placeholder shop/buttons are removed; coaching times point to the current term/group listing.
+   https://hobsons-bay-chess-club-au.github.io/website-2027/v2/contact/
+
+19. **Every migrated page reviewed** — All fourteen core pages were compared with fresh WordPress content, including photos, tables, links, lists and maps. History, Best in the West and Peter Caissa retain their original material and now lose leaked shortcodes in both versions. The full audit records intentional differences and outstanding club decisions; download it above.
+
+20. **Useful privacy and policy destinations** — A Privacy & Photography page links to the existing approved document. Footer privacy links open it. The misleading Cookie Policy link is removed; the Policies hub retains its documents.
    https://hobsons-bay-chess-club-au.github.io/website-2027/v2/privacy-policy/
 
-17. **Inherited content cleanup** — Exposed WordPress timeline shortcodes are removed from History, Champions, Best in the West and Peter Caissa. The junior age placeholder is replaced with an enquiry. Obvious capitalisation/address-label errors are corrected. Ended live broadcasts are clearly labelled Broadcast Archive.
+21. **Inherited content cleanup** — Exposed WordPress timeline shortcodes are removed from History, Champions, Best in the West and Peter Caissa. The junior age placeholder is replaced with an enquiry. Obvious capitalisation/address-label errors are corrected. Ended live broadcasts are clearly labelled Broadcast Archive.
    https://hobsons-bay-chess-club-au.github.io/website-2027/v2/dgt-link/
 
-18. **A separate review version** — Navigation and calendar proposals stay inside /v2/. Membership, About Us and policy repairs are shared fixes published in Contentful and shown in both rebuilt versions. Every review page has a banner linking to this change list and is excluded from search indexing. The original WordPress domain remains unchanged.
+22. **A separate review version** — Navigation and calendar proposals stay inside /v2/. Membership, About Us, policies and full page-audit repairs are shared fixes published in Contentful and shown in both rebuilt versions. Every review page has a banner linking to this change list and is excluded from search indexing. The original WordPress domain remains unchanged.
 
 ## Action links: before and after
 
@@ -84,15 +95,19 @@ Changes and checklist: https://hobsons-bay-chess-club-au.github.io/website-2027/
 
 - **Committee, volunteers and arbiters** (Committee / secretary): Confirm the current names, roles and titles restored from WordPress. The source spells Lachlan’s surname Dwyer in Volunteers and Drywer in Arbiters, and uses Srikrishna / Sri Krishna Yendru. These source differences are preserved for review. Supply an approved constitution separately if it should accompany the existing By-Law.
 
-- **Honour boards and titled players** (Committee / tournament organiser): Supply recent winners and verified current player titles, club affiliation, biographies and photographs. No new winners or empty player page have been invented.
+- **Honour boards and titled players** (Committee / tournament organiser): The 2025 club champion is now verified and published. Supply earlier Champions records, clarify the original 2020/2021 gaps, and provide any 2026 champion from final results. Confirm later Best in the West/Peter Caissa winners and verified current titles, affiliations, biographies and photographs.
 
-- **Sponsors and offers** (Sponsor lead): Confirm the six sponsors are current and supply current websites, package availability and any real member offers, including expiry and redemption details. New offers are not advertised yet.
+- **Sponsors and offers** (Sponsor lead): Confirm all seven original supporters are current and supply current websites, package availability and any real member offers, including expiry and redemption details. New offers are not advertised yet.
+
+- **Shared session and opening times** (Committee / coaching coordinator): WordPress About and Contact disagree on closing times. Homepage coaching says 5–6pm while Contact says 4pm; current term times vary by coach/group. Confirm one shared schedule. Contact currently directs families to their specific booking listing.
+
+- **Shop, enquiry service and later history** (Committee / website maintainer): Supply the actual club-shop destination if one is in use. Decide whether email is sufficient or select an approved contact-form service. Provide a later history chapter beyond the source’s 2003 endpoint.
 
 - **Newsletters and subscriptions** (Newsletter editor / committee): Provide editions, dates and the chosen subscription service before enabling a newsletter archive or Subscribe action. The three published club stories remain available.
 
 - **News categories** (News editor): Add Tournament Reports and Club Announcements archives once sufficient stories have actually been categorised.
 
-- **CMS promotion and domain launch** (Website maintainer): After review, apply the remaining accepted navigation/date changes as targeted Contentful updates, including the optional action-menu, section-anchor and calendar-source fields. Membership, About Us and the policy type are already published shared CMS fixes. The remaining V2 proposal is an overlay on that content; the production WordPress domain is unchanged.
+- **CMS promotion and domain launch** (Website maintainer): After review, apply the accepted navigation/date changes as targeted Contentful updates, including the optional action-menu and calendar-source fields. Section anchors, Membership, About Us, policies and the full page-audit repairs are already native shared CMS updates. V2 remains an overlay on that content; the production WordPress domain is unchanged.
 
 ## Review checklist
 
@@ -114,8 +129,12 @@ Changes and checklist: https://hobsons-bay-chess-club-au.github.io/website-2027/
 
 - [ ] Check sponsor names/logos, the sponsorship enquiry, privacy document, historical winners and existing news photographs.
 
+- [ ] On Champions, verify Julian McIntyre in 2025 with the linked final standings, followed by 2024 and 2023.
+
+- [ ] Compare all seven sponsor profiles, benefits, inclusions and process steps; check Contact?s venue map, etiquette link and enquiry actions.
+
 ## Feedback
 
 Reply to the person who shared the link. Include the page URL, device, expected behaviour and suggested change. Checkboxes on the website do not submit feedback.
 
-Membership, About Us and policy repairs are published shared CMS fixes shown in both rebuilt versions. The remaining navigation/calendar proposals can be promoted after club review. The WordPress production domain is unchanged.
+Membership, About Us, policies and full page-audit repairs are published shared CMS fixes shown in both rebuilt versions. Champions includes 2025 and is ordered newest first; Sponsors includes seven supporters. The remaining navigation/calendar proposals can be promoted after club review. The WordPress production domain is unchanged.

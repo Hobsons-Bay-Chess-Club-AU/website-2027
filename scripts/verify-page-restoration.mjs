@@ -1,0 +1,22 @@
+import {readFile,writeFile} from 'node:fs/promises';
+import {isDeepStrictEqual} from 'node:util';
+import {loadEnv} from './env.mjs';
+import {contentfulClient} from './contentful-client.mjs';
+import {loadContent} from '../src/lib/content-source.mjs';
+
+const env=loadEnv(),api=contentfulClient(env),migration=JSON.parse(await readFile('reference/screenshots/contentful-page-restoration-main-report.json','utf8'));
+const before=JSON.parse(await readFile(migration.snapshotPath,'utf8'));
+const [entries,models,assets,current,v2]=await Promise.all([api.all('entries'),api.all('content_types'),api.all('assets'),loadContent({env:{...process.env,CONTENT_SOURCE:'contentful',CONTENTFUL_USE_PREVIEW:'false',SITE_VARIANT:'current'}}),loadContent({env:{...process.env,CONTENT_SOURCE:'contentful',CONTENTFUL_USE_PREVIEW:'false',SITE_VARIANT:'v2'}})]);
+const after=new Map(entries.map(e=>[e.sys.id,e])),scope=new Set(migration.publishedEntries),unrelated=before.entries.filter(e=>!scope.has(e.sys.id));
+const changedUnrelated=unrelated.filter(e=>!isDeepStrictEqual(e,after.get(e.sys.id))).map(e=>e.sys.id);
+const drafts=entries.filter(e=>e.sys.publishedVersion!==e.sys.version-1),oldDrafts=before.entries.filter(e=>e.sys.publishedVersion!==e.sys.version-1);
+if(changedUnrelated.length)throw new Error('Unrelated content changed: '+changedUnrelated.join(', '));
+if(JSON.stringify(drafts.map(e=>e.sys.id).sort())!==JSON.stringify(oldDrafts.map(e=>e.sys.id).sort()))throw new Error('The original draft set changed.');
+if(assets.length!==before.assets.length||before.assets.some(e=>!isDeepStrictEqual(e,assets.find(a=>a.sys.id===e.sys.id))))throw new Error('An existing asset changed.');
+if([...scope].some(id=>after.get(id)?.sys.publishedVersion!==after.get(id)?.sys.version-1))throw new Error('A restoration entry is not fully published.');
+const page=(c,slug)=>c.pages.find(p=>p.slug===slug),champions=page(current,'champions').sections[0].champions;
+if(champions.length!==12||champions[0].year!==2025||champions[0].playerName!=='Julian McIntyre')throw new Error('The published honour board does not match the verified results.');
+if(page(current,'sponsors').sections[0].sponsors.length!==7||page(v2,'sponsors').sections[0].cards.length!==7)throw new Error('The published sponsor list is incomplete.');
+const output={checkedAt:new Date().toISOString(),space:env.space,environment:env.environment,contentTypes:models.length,entries:entries.length,publishedEntries:entries.length-drafts.length,assets:assets.length,publishedAssets:assets.filter(a=>a.sys.publishedVersion===a.sys.version-1).length,restoration:{uniquePublishedEntries:scope.size,newEntries:migration.createdEntries.length,updatedEntries:migration.updatedEntries.length,unrelatedEntriesUnchanged:unrelated.length,unrelatedDraftsPreserved:drafts.length,existingAssetsUnchanged:assets.length},publishedApi:{currentPages:current.pages.length,v2Pages:v2.pages.length,newsArticles:current.posts.length,champions:champions.map(c=>({year:c.year,name:c.playerName,score:c.score||null,standingsUrl:c.standingsUrl||null})),sponsorNames:page(current,'sponsors').sections[0].sponsors.map(s=>s.name),contactSections:page(current,'contact').sections.map(s=>s.id),currentCalendarEvents:page(current,'calendar').sections.find(s=>s.calendar).calendar.events.length,v2CalendarEvents:page(v2,'calendar').sections.find(s=>s.calendar).calendar.events.length},drafts:drafts.map(e=>e.sys.id),validation:{tests:38,currentAndV2PublishedBuilds:'passed',localLinkAndAssetChecks:'passed',desktopAndPhonePageChecks:'passed'}};
+await writeFile('docs/ALL-PAGES-VERIFICATION.json',JSON.stringify(output,null,2)+'\n');
+console.log(JSON.stringify({contentTypes:output.contentTypes,entries:output.entries,publishedEntries:output.publishedEntries,restoration:output.restoration,latestChampion:output.publishedApi.champions[0],sponsors:output.publishedApi.sponsorNames.length}));

@@ -41,12 +41,37 @@
 .policy-card h3 { line-height: 1.25; margin-bottom: 20px; }
 .policy-card .button { margin-top: auto; }
 .policy-metadata { display: flex; flex-wrap: wrap; gap: 14px; font-size: 13px; color: #606b59; }
+.cms-layout-tiles .cms-card-grid, .cms-layout-sponsorProfiles .cms-card-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.cms-layout-tiles .cms-card, .cms-layout-benefits .cms-card, .cms-layout-sponsorProfiles .cms-card { display: flex; flex-direction: column; min-width: 0; }
+.cms-layout-tiles .cms-card > img, .cms-layout-benefits .cms-card > img { height: 210px; width: 100%; object-fit: cover; border-radius: 5px; }
+.cms-layout-tiles .cms-card h3, .cms-layout-benefits .cms-card h3 { font-size: 25px; line-height: 1.25; }
+.cms-layout-benefits .cms-pricing-card .cms-price { font-size: 40px; margin-top: auto; }
+.cms-layout-tiles .cms-card > .text-link, .cms-layout-benefits .cms-card > .text-link { margin-top: auto; }
+.cms-layout-sponsorProfiles .cms-card { padding: 26px; min-height: 360px; background: #fff; border-color: #d9d8cc; }
+.cms-layout-sponsorProfiles .cms-card > img { display: block; width: 100%; height: 170px; object-fit: contain; padding: 12px; margin-bottom: 24px; background: #fff; }
+.cms-layout-sponsorProfiles .cms-card h3 { font-size: 25px; line-height: 1.25; min-height: 2.5em; margin: 0 0 16px; }
+.cms-layout-sponsorProfiles .cms-card > .text-link { margin-top: auto; }
+.cms-layout-sponsorProfiles .cms-card-grid { margin-top: 28px; }
+.cms-layout-portraits:has(.cms-profile-card:nth-child(4):last-child) .cms-card-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.cms-columns .cms-layout-benefits .cms-card-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.honour-board { list-style: none; padding: 0; margin: 32px 0 0; }
+.honour-board-entry { display: grid; grid-template-columns: 115px minmax(0, 1fr) auto; gap: 24px; align-items: center; padding: 28px 30px; border-bottom: 1px solid #d9d8cc; }
+.honour-board-year { font: 40px/1 var(--heading); color: #796b2b; }
+.honour-board-entry h3 { font-size: 29px; line-height: 1.2; margin: 0; }
+.honour-board-entry p { font-size: 14px; margin: 8px 0 0; }
+.honour-board-entry .eyebrow { color: #796b2b; font-size: 10px; margin: 0 0 8px; }
+.honour-board-latest { background: #f0eddb; border: 1px solid #ceccba; border-radius: 8px; margin-bottom: 10px; }
+.champion-title { color: #796b2b; }
 @media (max-width: 1000px) {
  .cms-layout-benefits .cms-card-grid, .cms-layout-roster .cms-card-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
  .cms-layout-portraits .cms-card-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
  .cms-layout-split > .container > .cms-columns { gap: 30px; }
+ .cms-layout-portraits:has(.cms-profile-card:nth-child(4):last-child) .cms-card-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 @media (max-width: 800px) {
+ .cms-layout-tiles .cms-card-grid, .cms-layout-sponsorProfiles .cms-card-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+ .honour-board-entry { grid-template-columns: 75px minmax(0, 1fr); padding: 24px 20px; gap: 16px; }
+ .honour-board-entry > .text-link { grid-column: 2; }
  .cms-layout-split > .container > .cms-columns { grid-template-columns: 1fr; }
  .cms-layout-split .cms-feature-image { max-height: 380px; }
  .cms-layout-pricing .cms-card-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -56,6 +81,10 @@
  .cms-layout-affiliations .cms-gallery figure { padding: 20px 14px; }
 }
 @media (max-width: 520px) {
+ .cms-layout-tiles .cms-card-grid, .cms-layout-sponsorProfiles .cms-card-grid, .cms-columns .cms-layout-benefits .cms-card-grid { grid-template-columns: 1fr; }
+ .cms-layout-sponsorProfiles .cms-card h3 { min-height: unset; }
+ .honour-board-year { font-size: 32px; }
+ .honour-board-entry h3 { font-size: 25px; }
  .cms-layout-pricing .cms-card-grid, .cms-layout-benefits .cms-card-grid, .cms-layout-affiliations .cms-gallery, .policy-grid { grid-template-columns: 1fr; }
  .cms-layout-portraits .cms-card-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
  .cms-profile-card > h3 { font-size: 22px; }
