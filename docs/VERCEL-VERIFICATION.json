@@ -1,0 +1,201 @@
+{
+  "checkedAt": "2026-10-12T19:44:38.905Z",
+  "origin": "https://hbcc-website-2027.vercel.app",
+  "variant": "v2",
+  "pages": [
+    {
+      "path": "/",
+      "status": 200,
+      "cache": "MISS"
+    },
+    {
+      "path": "/news/",
+      "status": 200,
+      "cache": "MISS"
+    },
+    {
+      "path": "/review/",
+      "status": 200,
+      "cache": "MISS"
+    },
+    {
+      "path": "/privacy-policy/",
+      "status": 200,
+      "cache": "MISS"
+    },
+    {
+      "path": "/coaching/",
+      "status": 200,
+      "cache": "MISS"
+    },
+    {
+      "path": "/history/",
+      "status": 200,
+      "cache": "MISS"
+    },
+    {
+      "path": "/best-in-the-west/",
+      "status": 200,
+      "cache": "MISS"
+    },
+    {
+      "path": "/peter-caissa-memorial/",
+      "status": 200,
+      "cache": "MISS"
+    },
+    {
+      "path": "/dgt-link/",
+      "status": 200,
+      "cache": "MISS"
+    },
+    {
+      "path": "/calendar/",
+      "status": 200,
+      "cache": "MISS"
+    },
+    {
+      "path": "/policies/",
+      "status": 200,
+      "cache": "MISS"
+    },
+    {
+      "path": "/membership/",
+      "status": 200,
+      "cache": "MISS"
+    },
+    {
+      "path": "/about-us/",
+      "status": 200,
+      "cache": "MISS"
+    },
+    {
+      "path": "/play-chess/",
+      "status": 200,
+      "cache": "MISS"
+    },
+    {
+      "path": "/juniors/",
+      "status": 200,
+      "cache": "MISS"
+    },
+    {
+      "path": "/tournaments/",
+      "status": 200,
+      "cache": "MISS"
+    },
+    {
+      "path": "/sponsors/",
+      "status": 200,
+      "cache": "MISS"
+    },
+    {
+      "path": "/champions/",
+      "status": 200,
+      "cache": "MISS"
+    },
+    {
+      "path": "/contact/",
+      "status": 200,
+      "cache": "MISS"
+    },
+    {
+      "path": "/victorian-junior-rapid-blitz-championship-2026/",
+      "status": 200,
+      "cache": "MISS"
+    },
+    {
+      "path": "/record-turnout-victorian-womens-championship-2026/",
+      "status": 200,
+      "cache": "MISS"
+    },
+    {
+      "path": "/victorian-womens-championship-awards-2026/",
+      "status": 200,
+      "cache": "MISS"
+    },
+    {
+      "path": "/calendar.ics",
+      "status": 200,
+      "cache": "MISS"
+    },
+    {
+      "path": "/sitemap.xml",
+      "status": 200,
+      "cache": "MISS"
+    },
+    {
+      "path": "/robots.txt",
+      "status": 200,
+      "cache": "MISS"
+    }
+  ],
+  "security": [
+    {
+      "label": "Unknown routes return 404",
+      "status": 404
+    },
+    {
+      "label": "Unsigned webhook rejected",
+      "status": 401
+    },
+    {
+      "label": "Webhook rejects wrong space",
+      "status": 400
+    },
+    {
+      "label": "Webhook GET rejected",
+      "status": 405
+    },
+    {
+      "label": "Preview rejects cross-site login",
+      "status": 403
+    },
+    {
+      "label": "Preview login authenticates",
+      "status": 303
+    }
+  ],
+  "preview": {
+    "authenticated": true,
+    "privateNoStore": true,
+    "httpOnlySecureCookies": true,
+    "publicIsolated": true,
+    "unpublishedEntryVerified": true
+  },
+  "webhook": {
+    "id": "4euI8XD6mzqKtpZ8mPRYFb",
+    "publishRefreshVerified": true,
+    "originalContentRestored": true,
+    "deliveries": [
+      {
+        "id": "3Em15MLu3emg6sY8aAweEO",
+        "status": 200,
+        "topic": "delete",
+        "createdAt": "2026-10-12T19:44:58.305Z"
+      },
+      {
+        "id": "5xgiP07DXO0EMcq4USwK0S",
+        "status": 200,
+        "topic": "publish",
+        "createdAt": "2026-10-12T19:44:57.917Z"
+      },
+      {
+        "id": "2cjAg5pGCw882W0SUO2YGk",
+        "status": 200,
+        "topic": "publish",
+        "createdAt": "2026-10-12T19:44:51.628Z"
+      }
+    ]
+  },
+  "cacheHits": [
+    "/",
+    "/membership/",
+    "/calendar/"
+  ],
+  "cms": {
+    "entries": 887,
+    "published": 879,
+    "drafts": 8,
+    "originalsUnchanged": 642
+  }
+}

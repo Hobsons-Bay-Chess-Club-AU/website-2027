@@ -409,6 +409,51 @@
               }
             }
           ]
+        },
+        {
+          "id": "siteVariant",
+          "name": "Website version",
+          "type": "Symbol",
+          "localized": false,
+          "required": false,
+          "validations": [
+            {
+              "in": [
+                "current",
+                "v2"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "headerActions",
+          "name": "Header membership actions",
+          "type": "Link",
+          "linkType": "Entry",
+          "localized": false,
+          "required": false,
+          "validations": [
+            {
+              "linkContentType": [
+                "navigationMenu"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "quickActions",
+          "name": "Header quick tasks",
+          "type": "Link",
+          "linkType": "Entry",
+          "localized": false,
+          "required": false,
+          "validations": [
+            {
+              "linkContentType": [
+                "navigationMenu"
+              ]
+            }
+          ]
         }
       ]
     },
@@ -642,6 +687,14 @@
           "defaultValue": {
             "en-US": true
           }
+        },
+        {
+          "id": "group",
+          "name": "Dropdown group heading",
+          "type": "Symbol",
+          "localized": false,
+          "required": false,
+          "validations": []
         }
       ]
     },
@@ -924,6 +977,21 @@
               "size": {
                 "max": 256
               }
+            }
+          ]
+        },
+        {
+          "id": "siteVariant",
+          "name": "Website version",
+          "type": "Symbol",
+          "localized": false,
+          "required": false,
+          "validations": [
+            {
+              "in": [
+                "current",
+                "v2"
+              ]
             }
           ]
         }
@@ -2699,6 +2767,31 @@
               }
             }
           ]
+        },
+        {
+          "id": "annualPdf",
+          "name": "Original annual schedule",
+          "type": "Link",
+          "linkType": "Asset",
+          "localized": false,
+          "required": false,
+          "validations": []
+        },
+        {
+          "id": "revisionText",
+          "name": "Annual schedule note",
+          "type": "Symbol",
+          "localized": false,
+          "required": false,
+          "validations": []
+        },
+        {
+          "id": "enableUpcoming",
+          "name": "Enable upcoming agenda",
+          "type": "Boolean",
+          "localized": false,
+          "required": false,
+          "validations": []
         }
       ]
     },
@@ -2859,6 +2952,38 @@
           "defaultValue": {
             "en-US": true
           }
+        },
+        {
+          "id": "url",
+          "name": "Event details URL",
+          "type": "Symbol",
+          "localized": false,
+          "required": false,
+          "validations": []
+        },
+        {
+          "id": "verifiedSource",
+          "name": "Verified source URL",
+          "type": "Symbol",
+          "localized": false,
+          "required": false,
+          "validations": []
+        },
+        {
+          "id": "lastChecked",
+          "name": "Source checked on",
+          "type": "Symbol",
+          "localized": false,
+          "required": false,
+          "validations": []
+        },
+        {
+          "id": "closureScope",
+          "name": "Which program is closed",
+          "type": "Symbol",
+          "localized": false,
+          "required": false,
+          "validations": []
         }
       ]
     },

@@ -9,11 +9,14 @@ export async function getStaticPaths(){
  const {pages,posts}=await getContent();
  return [...pages.map(page=>({params:{slug:page.slug},props:{page,isPost:false}})),...posts.map(page=>({params:{slug:page.slug},props:{page,isPost:true}}))];
 }
-const {page,isPost}=Astro.props;
-const {settings,posts}=await getContent();
+const {settings,pages,posts}=await getContent();
+const slug=Astro.params.slug;
+const page=Astro.props.page||pages.find(p=>p.slug===slug)||posts.find(p=>p.slug===slug);
+const isPost=Astro.props.isPost??posts.some(p=>p.id===page?.id);
+if(!page)return Astro.rewrite('/404');
 const hero=page.heroImage||page.image||settings.heroImage;
 ---
 <Layout title={page.title} seoTitle={page.seoTitle} description={page.description||page.excerpt} image={hero} noindex={page.noindex}>
  <section class="page-hero" style={"--page-image:url('"+safeUrl(hero)+"')"}><div class="container"><a class="breadcrumb" href={safeUrl(isPost?'/news/':'/')}>{isPost?settings.newsLabel:settings.homeLabel} <span aria-hidden="true">/</span></a><h1>{page.heroTitle||page.title}</h1>{(page.heroDescription||page.description)&&<p>{page.heroDescription||page.description}</p>}{isPost&&<p><time datetime={page.publishedAt}>{new Intl.DateTimeFormat('en-AU',{day:'numeric',month:'long',year:'numeric',timeZone:'Australia/Melbourne'}).format(new Date(page.publishedAt))}</time>{page.author&&<span> · {page.author}</span>}</p>}{page.heroActions?.length>0&&<div class="cms-actions page-hero-actions">{page.heroActions.map(action=><CmsLink item={action} class="button button-gold"/>)}</div>}</div></section>
- {page.id==='review-team-review'?<ReviewNotes/>:isPost?<article class="cms-section post-content cms-tone-light" aria-label={page.title}><div class="cms-rich-text" set:html={page.bodyHtml}/></article>:<div class="cms-page-content"><Sections sections={page.sections} settings={settings} posts={posts}/></div>}
+ {['review-team-review','v2-review-team-review'].includes(page.id)?<ReviewNotes/>:isPost?<article class="cms-section post-content cms-tone-light" aria-label={page.title}><div class="cms-rich-text" set:html={page.bodyHtml}/></article>:<div class="cms-page-content"><Sections sections={page.sections} settings={settings} posts={posts}/></div>}
 </Layout>

@@ -12,7 +12,9 @@ const { settings, pages, posts } = await getContent();
 const { title = settings.title, seoTitle, description = settings.defaultDescription, image = settings.heroImage, home = false, noindex = false } = Astro.props;
 const staging = import.meta.env.SITE_STAGING === 'true';
 const review = settings.reviewVersion === 'v2';
-const comparison = staging || review;
+const launch = import.meta.env.SITE_LAUNCH === 'true';
+const preview = Astro.locals.contentPreview === true;
+const comparison = !launch && (staging || review);
 const navigation = comparison ? reviewNavigation({review,basePath:safeUrl('/'),pathname:Astro.url.pathname,sharedPaths:settings.reviewCurrentPaths||[...pages,...posts].map(page=>`/${page.slug}/`)}) : null;
 const canonical = new URL(Astro.url.pathname === safeUrl('/404/') ? safeUrl('/404.html') : Astro.url.pathname, Astro.site);
 const pageTitle = seoTitle || (home ? `${settings.shortName} | ${settings.title}` : `${title} | ${settings.title}`);
@@ -35,11 +37,12 @@ const structured = { '@context':'https://schema.org', '@type':'SportsClub', name
     <meta property="og:title" content={pageTitle} /><meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} /><meta property="og:image" content={absoluteImage} />
     <meta name="twitter:card" content="summary_large_image" />
-    {(noindex || staging || review) && <meta name="robots" content="noindex, nofollow" />}
+    {(noindex || staging || review&&!launch || preview) && <meta name="robots" content="noindex, nofollow" />}
     <script type="application/ld+json" set:html={JSON.stringify(structured).replace(/</g,'\\u003c')} />
   </head>
   <body class:list={{ 'home-page': home, 'review-layout': review }}>
     <a class="skip-link" href="#main">Skip to content</a>
+    {preview&&<aside class="review-banner preview-banner" aria-label="Draft content preview"><div><strong>Draft preview</strong><span>Saved changes · visible to editors</span></div><div><a href={Astro.url.pathname}>Refresh saved changes</a><a href={'/api/exit-preview/?next='+encodeURIComponent(Astro.url.pathname)}>Exit preview</a></div></aside>}
     {comparison&&<ReviewBanner review={review} navigation={navigation} />}
     <div class:list={{'current-header-shell':!review}}><Header settings={settings} /></div>
     <main id="main"><slot /></main>

@@ -1,27 +1,31 @@
 # Hobsons Bay Chess Club — website 2027
 
-Astro rebuild of HBCC's WordPress website, with Contentful managing pages, menus, sections, news, calendar events and media. GitHub Actions builds published content for [GitHub Pages](https://hobsons-bay-chess-club-au.github.io/website-2027/).
+Astro rebuild of HBCC's WordPress website, with Contentful managing pages, menus, sections, news, calendar events and media. The approved V2 is [live on Vercel](https://hbcc-website-2027.vercel.app/) with server rendering, one-hour ISR, a Contentful publication webhook and private saved-draft previews. GitHub Actions deploys code updates. [GitHub Pages](https://hobsons-bay-chess-club-au.github.io/website-2027/) retains the current/V2 comparison.
 
-The actual Contentful account is populated: **16 types, 531 entries and 100 assets**. There are **523 published entries**, including three recent club stories, 150 calendar events and seven reusable policies. Membership and About Us now use native fee, step, portrait and roster cards. Five disabled theme news posts and three conflicting spreadsheet events remain drafts. [Open Website settings](https://app.contentful.com/spaces/7r7s5slcmer0/entries/hbcc-site-settings).
+The Contentful account contains **17 types, 887 entries (879 published, eight existing drafts) and 100 assets**. The original 642 records were preserved, with 245 additional native records for the approved V2 pages, menus and proposals. Three recent club stories, calendar events, reusable policies, membership fees, committee cards and champions are editable. [Open approved V2 Website settings](https://app.contentful.com/spaces/7r7s5slcmer0/entries/v2-hbcc-site-settings).
 
 ## Develop and verify
 
-Requires Node 22.12+; development and Actions use Node 24.
+Requires Node 24; development, GitHub Actions and Vercel use Node 24.
 
 ```powershell
 Set-Location C:\dev\hbcc\dev\website-2027
 npm ci
 npm run dev                          # http://127.0.0.1:4327/
+npm run dev:server                   # Approved SSR V2, port 4332
 npm run cms:preview                  # Draft CMS preview, port 4328
 npm test
 npm run contentful:verify -- --published
 npm run build:production
 npm run verify
+npm run build:vercel
+npm run deploy:vercel -- --dry        # Safe upload inventory
+npm run deploy:vercel
 ```
 
 Local `.env` supports the original Delivery/Preview key names. Production reads the published Delivery API, refuses Preview drafts and reports missing references. `CONTENT_SOURCE=reference` explicitly selects the preserved fixture for offline review; `contentful` requires the account.
 
-Read [the CMS guide](docs/CMS-GUIDE.md) for native editing, publishing and calendar/news management. Normal page editing uses rich text and entry/media pickers.
+Read [the CMS guide](docs/CMS-GUIDE.md) for native editing and [the Vercel guide](docs/VERCEL.md) for caching, preview access, webhooks and deployment. Normal editing uses rich text and entry/media pickers.
 
 ## News and calendar
 
@@ -46,7 +50,7 @@ The `hobsonsbaychess.com` domain still serves WordPress. Domain/DNS cutover is a
 
 ## Checks and migration files
 
-Thirty-two tests cover CMS editing/references/menus, policies and document updates, Membership/About restoration, rich text safety, tournament scoring/outages, deployment paths, spreadsheet dates, V2 isolation, calendar filters/downloads and Facebook draft protection. The root build produces 20 content pages and nine legacy HTML redirects; V2 adds three review pages. Both builds verify local links, section anchors, media, repository paths and exclusion of credentials. Desktop and 390 px checks cover the restored pages and navigation.
+Fifty-one tests cover CMS editing/references/menus, policies, page restoration, rich text safety, tournament scoring/outages, deployment paths, spreadsheet dates, native V2 isolation, snapshot invalidation, signed preview sessions, reserved server routes, redirect safety and Facebook draft protection. Both static builds verify links, anchors, media and repository paths. [Live Vercel verification](docs/VERCEL-VERIFICATION.json) covers public routes, CDN hits, private draft isolation and a real Contentful publish/webhook with content restoration.
 
 | Path | Purpose |
 | --- | --- |

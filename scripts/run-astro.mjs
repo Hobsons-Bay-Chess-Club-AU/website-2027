@@ -31,6 +31,11 @@ else if(mode==='review'){
  env.SITE_VARIANT='v2';env.SITE_STAGING='true';args=['build'];
 }
 else if(mode==='cms-preview'){env.CONTENTFUL_USE_PREVIEW='true';env.CONTENT_SOURCE='contentful';args=['dev','--host','127.0.0.1','--port','4328'];}
+else if(mode==='vercel'||mode==='server-dev'){
+ env.SITE_DEPLOY_TARGET='vercel';env.SITE_VARIANT='v2';env.SITE_BASE_PATH='/';env.SITE_LAUNCH='true';env.CONTENT_SOURCE='contentful';env.CONTENTFUL_USE_PREVIEW='false';
+ env.SITE_URL=mode==='server-dev'?'http://127.0.0.1:4332':env.VERCEL_SITE_URL||env.SITE_URL;
+ args=mode==='vercel'?['build']:['dev','--host','127.0.0.1','--port','4332'];
+}
 else throw new Error('Choose production, pages, review or cms-preview.');
 function run(script,arguments_,environment){
  return new Promise(resolve=>{

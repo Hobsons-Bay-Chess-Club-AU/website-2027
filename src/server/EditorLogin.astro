@@ -1,0 +1,18 @@
+---
+import {localReturnPath,privateHeaders} from '../lib/server/security.mjs';
+for(const [name,value] of Object.entries(privateHeaders()))Astro.response.headers.set(name,value);
+Astro.response.headers.set('Content-Security-Policy',"frame-ancestors 'self' https://app.contentful.com https://app.eu.contentful.com");
+const next=localReturnPath(Astro.url.searchParams.get('next'));
+const entryId=Astro.url.searchParams.get('entryId')||'';
+const invalid=Astro.url.searchParams.get('error')==='invalid';
+---
+<!doctype html><html lang="en-AU"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><meta name="robots" content="noindex, nofollow"/><title>Editor preview | HBCC</title><link rel="stylesheet" href="/fonts/hbcc-fonts.css"/></head><body>
+ <main><p class="eyebrow">Hobsons Bay Chess Club</p><h1>Editor preview</h1><p>Enter the club’s preview access code to view saved changes before publishing.</p>
+  {invalid&&<p role="alert" class="error">That access code was not accepted. Please try again.</p>}
+  <form method="post" action="/api/preview/"><input type="hidden" name="next" value={next}/><input type="hidden" name="entryId" value={entryId}/><label for="code">Preview access code</label><input id="code" name="code" type="password" required autocomplete="current-password" maxlength="128"/><button type="submit">Open preview</button></form>
+  <p class="note">Preview shows the latest saved content. Your changes stay private until you publish them in Contentful.</p><a href="/">Return to the website</a>
+ </main>
+</body></html>
+<style>
+ body{margin:0;background:#080b0a;color:#fff;font:16px/1.6 'Exo',Arial,sans-serif;min-height:100svh;display:grid;place-items:center;padding:24px;box-sizing:border-box}main{max-width:440px;background:#111b15;border:1px solid #bdb16b66;border-radius:12px;padding:36px}.eyebrow{color:#d7cd99;font-size:12px;text-transform:uppercase;letter-spacing:.06em}h1{font:700 40px/1.2 'Antonio',sans-serif;margin:16px 0}form{display:grid;gap:12px;margin:24px 0}input,button{font:inherit;padding:13px;border-radius:6px;border:1px solid #bdb16b}input{background:#fff;color:#111;min-width:0}button{background:#bdb16b;color:#111;font-weight:700;cursor:pointer;min-height:48px}label{font-weight:600}input:focus-visible,button:focus-visible,a:focus-visible{outline:3px solid #d7cd99;outline-offset:4px}.note{font-size:13px;color:#bcc5ba}.error{background:#6a2525;padding:12px;border-radius:4px}a{color:#d7cd99;font-size:13px}
+</style>

@@ -43,6 +43,24 @@ jobs:
           SITE_URL: https://hobsons-bay-chess-club-au.github.io
           SITE_BASE_PATH: /website-2027/
 
+  vercel:
+    needs: validate
+    if: vars.VERCEL_ENABLED == 'true' && (github.event_name == 'push' || github.event_name == 'workflow_dispatch')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '24'
+          cache: npm
+      - run: npm ci
+      - name: Deploy the approved Astro website to Vercel
+        run: npm run deploy:vercel
+        env:
+          VERCEL_API_KEY: ${{ secrets.VERCEL_API_KEY }}
+          VERCEL_PROJECT_ID: ${{ vars.VERCEL_PROJECT_ID }}
+          VERCEL_ORG_ID: ${{ vars.VERCEL_ORG_ID }}
+
   build:
     needs: validate
     if: github.event_name != 'pull_request' && vars.PAGES_ENABLED == 'true'

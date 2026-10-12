@@ -4,7 +4,7 @@ import {renderRichText,richTextPlainText} from './render-rich-text.mjs';
 import {policyHref} from './policies.mjs';
 import {normalizeCalendarEvents} from './calendar.mjs';
 import {orderedChampions} from './champions.mjs';
-import {createReviewEntries} from './review-content.mjs';
+import {contentVersion} from './content-versions.mjs';
 
 export function navigationFragment(value){
  if(!value)return '';
@@ -74,9 +74,10 @@ export function normalizeContent(items){
  };
  const home=get(raw.homePage,'page');
  if(home.template!=='home'||home.enabled===false)throw new Error('Website settings must select an enabled Homepage template.');
- const pageEntries=items.filter(e=>e.type==='page'&&e.enabled!==false),postEntries=items.filter(e=>e.type==='post'&&e.enabled!==false);
+ const pageEntries=items.filter(e=>e.type==='page'&&e.enabled!==false&&(raw.siteVariant==='v2'?e.siteVariant==='v2':e.siteVariant!=='v2')),postEntries=items.filter(e=>e.type==='post'&&e.enabled!==false);
  const slugs=new Set();
  for(const p of [...pageEntries,...postEntries]){
+  if(/^(?:api|editor)(?:\/|$)/.test(p.slug||''))throw new Error('Reserved Contentful page/article slug '+p.slug+'. Editor and API routes are managed by the website.');
   if(!p.title||!p.slug||!/^[a-z0-9-]+(?:\/[a-z0-9-]+)*$/.test(p.slug)||slugs.has(p.slug)||['news','404','sitemap.xml','robots.txt','wp-admin','blog','author/boldthemes','category/hbcc-chess','about/club-history','alonso-already-looking-ahead-after-goal-feast','horstweg-can-be-a-double-gameweek-hero','pre-match-briefing-hammers-vs-eagles','video-highlights-eagles-24-21-rhinos','watch-the-highlights-and-goals-against-seagulls'].includes(p.slug))throw new Error(`Invalid, duplicate or reserved Contentful page/article slug ${p.slug||'(empty)'}.`);
   slugs.add(p.slug);
  }
@@ -102,12 +103,12 @@ export function normalizeContent(items){
  return {settings:globals,home:homepage,pages:pageEntries.filter(p=>p.id!==home.id).map(expandPage),posts:postEntries.map(p=>({...p,bodyHtml:renderRichText(p.body,byId)})).sort((a,b)=>Date.parse(b.publishedAt)-Date.parse(a.publishedAt)),entries:byId,source:'contentful'};
 }
 
-export const referenceContent={...normalizeContent(resolveEntries(reference.items,reference.assets)),source:'reference'};
+export const referenceContent={...normalizeContent(contentVersion(resolveEntries(reference.items,reference.assets),'current')),source:'reference'};
 export async function loadContent(options={}){
  const env=options.env||{...process.env,...(import.meta.env||{})};
  const variant=env.SITE_VARIANT||'current';
  if(!['current','v2'].includes(variant))throw new Error('SITE_VARIANT must be current or v2.');
- const content=(items,source)=>({...normalizeContent(variant==='v2'?createReviewEntries(items):items),source});
+ const content=(items,source)=>({...normalizeContent(contentVersion(items,variant)),source});
  const saved=()=>variant==='v2'?content(resolveEntries(reference.items,reference.assets),'reference'):{...referenceContent};
  const mode=env.CONTENT_SOURCE||'auto';
  if(!['auto','reference','contentful'].includes(mode))throw new Error('CONTENT_SOURCE must be auto, reference or contentful.');
@@ -126,7 +127,7 @@ export async function loadContent(options={}){
   if(total>skip&&!body.items.length)throw new Error('Contentful pagination ended early.');
  }while(skip<total);
  if(!entries.length){if(mode==='contentful')throw new Error('Contentful is empty. Import, review and publish the content before building for launch.');return {...saved(),reason:'verified-empty-space'};}
- return content(resolveEntries(entries,assets),'contentful');
+ return {...content(resolveEntries(entries,assets),'contentful'),entryRevisions:Object.fromEntries(entries.map(e=>[e.sys.id,e.sys.revision])),assetRevisions:Object.fromEntries(assets.map(e=>[e.sys.id,e.sys.revision]))};
 }
 export const getContent=()=>{
  if(import.meta.env?.DEV&&Date.now()-cachedAt>5000)cached=undefined;

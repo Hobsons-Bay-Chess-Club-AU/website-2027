@@ -4,6 +4,8 @@
 node_modules/
 dist/
 .astro/
+.vercel/
+contentful/v2-promotion-report.json
 reference/admin-export/
 reference/screenshots/
 *.log

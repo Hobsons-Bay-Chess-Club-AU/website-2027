@@ -1,6 +1,10 @@
 # HBCC Contentful editor guide
 
-The actual [Contentful space](https://app.contentful.com/spaces/7r7s5slcmer0/entries) contains **17 native content types, 642 entries and 100 processed assets** after the page restoration. There are 634 published entries and 100 published assets. Five disabled theme articles and three calendar events needing date confirmation remain drafts.
+The [Contentful space](https://app.contentful.com/spaces/7r7s5slcmer0/entries) contains **17 native content types, 887 entries and 100 processed assets**. There are 879 published entries and eight existing drafts: five disabled theme articles and three events needing date confirmation. The original 642 records are preserved; 245 native records implement the approved V2.
+
+Start at [approved V2 Website settings](https://app.contentful.com/spaces/7r7s5slcmer0/entries/v2-hbcc-site-settings) and follow its page/menu references. Choose **Website version: v2** when creating a page. V2 page slugs use a `v2-` namespace in Contentful (`v2-membership` serves `/membership/`); news slugs remain unprefixed. Imported V2 record IDs start with `v2-`, while unchanged sections, policies and news can be shared with the current version.
+
+**Publishing updates Vercel automatically through the ISR webhook.** Website pages and news have **Preview → HBCC Vercel — saved drafts**. Save first, enter the private preview code once, then use Refresh saved changes/Exit preview. See [preview access and deployment](VERCEL.md). GitHub Pages still uses a static rebuild.
 
 Ordinary editing uses rich text, media pickers, dropdowns and ordered entry references. No HTML or JSON is required.
 
@@ -32,7 +36,7 @@ Sections support rich text, columns, cards, accordions, galleries, approved embe
 
 1. Create a **Club champion** record. Enter the year and player name, and an optional confirmed chess title, result and final standings URL.
 2. Publish the record. Open **Champions → Club Champions**, choose the **Honour board** layout, and add it under **Club championship winners**.
-3. Publish the section and rebuild. The website orders records by year, newest first, regardless of reference order. Use one record per championship year; joint winners can share the player-name field.
+3. Publish the section. The website refreshes through the webhook and orders records by year, newest first, regardless of reference order. Use one record per championship year; joint winners can share the player-name field.
 
 The imported board contains eleven existing years plus **2025 — Julian McIntyre, 5 points**, linked to the final round-seven standings. Do not infer the club champion from the annual aggregate leaderboard or an unfinished event.
 
@@ -45,13 +49,13 @@ The imported board contains eleven existing years plus **2025 — Julian McIntyr
 5. Add a Section for another block. Columns reference child sections; FAQs reference Card entries.
 6. Publish the changed page, linked entries and media.
 
-New enabled pages appear at the next build without a new code route. Keep existing slugs during migration: page references follow slug edits, but inbound URLs require redirects. News and system routes are reserved.
+New enabled V2 pages appear after publication without a new code route or build. Page references follow slug edits; inbound URLs need redirects. News and system routes are reserved.
 
-The Home page has dedicated hero, partner, action and feature-card fields, plus seven ordered sections. [Website settings](https://app.contentful.com/spaces/7r7s5slcmer0/entries/hbcc-site-settings) controls the shared header/footer.
+The Home page has dedicated hero, partner, action and feature-card fields, plus seven ordered sections. [V2 Website settings](https://app.contentful.com/spaces/7r7s5slcmer0/entries/v2-hbcc-site-settings) controls the approved header/footer, membership actions and quick tasks.
 
 ## Manage menus
 
-1. Open **Main navigation**, **Club**, **Quick Links** or **Legal links** under Menu.
+1. Follow **Main navigation**, **Header membership actions**, **Header quick tasks** or footer/legal menus from V2 Website settings. This selects the approved graph even when older menus have similar names.
 2. Drag items into order, or create a Menu item.
 3. Enter its label and select one destination: a page, a Club policy, a tournament service/destination, or a URL for external links, `/news/`, email or anchors. Policy references open the matching section in the Policies hub. Priority is policy, page, tournament destination, then URL; clear the other destination fields when switching.
 4. Reference child items for submenus. Tournaments retains Upcoming & Register and Champions nesting.
@@ -61,23 +65,23 @@ Items can be reused as buttons or in other menus. Avoid linking an item into its
 
 ## Membership and About Us
 
-Open [Membership](https://app.contentful.com/spaces/7r7s5slcmer0/entries/wp-page-4424) to edit the hero and eight ordered sections. **Membership Fees** uses five linked Pricing cards: title, description, display price and portal action. **What You Get as a Member** uses four benefit cards. Statistics reuse the homepage values. The joining section has image and steps child sections; each step is a Card with editable formatted content. The policy section links native policy entries, and the FAQ section contains five FAQ cards.
+Open [Membership](https://app.contentful.com/spaces/7r7s5slcmer0/entries/v2-wp-page-4424) to edit the hero and eight ordered sections. **Membership Fees** uses five linked Pricing cards: title, description, display price and portal action. **What You Get as a Member** uses four benefit cards. Statistics reuse the homepage values. The joining section has image and steps child sections; each step is a Card with editable formatted content. The policy section links native policy entries, and the FAQ section contains five FAQ cards.
 
-Open [About Us](https://app.contentful.com/spaces/7r7s5slcmer0/entries/wp-page-11) to edit the restored introduction, committee portraits, volunteers, affiliation logos, arbiters, governance, venue and joining sections. Committee cards have a name, role, image and alternative text. Volunteer and arbiter cards have a name, role/title and visibility. Drag their references to change order; hide or remove a reference to remove a person. Names/roles were copied from the existing WordPress page; the review list records spelling differences for committee confirmation.
+Open [About Us](https://app.contentful.com/spaces/7r7s5slcmer0/entries/v2-wp-page-11) to edit the restored introduction, committee portraits, volunteers, affiliation logos, arbiters, governance, venue and joining sections. Committee cards have a name, role, image and alternative text. Volunteer and arbiter cards have a name, role/title and visibility. Drag their references to change order; hide or remove a reference to remove a person. Names/roles were copied from the existing WordPress page; the review list records spelling differences for committee confirmation.
 
-These shared fixes appear in both versions. The remaining V2 navigation/calendar proposals are still a versioned review overlay.
+The approved V2 navigation/calendar changes are now native Contentful records. Edit through the V2 page's linked sections; the runtime no longer reapplies the proposal overlay to live CMS content.
 
 ## Manage policies
 
 1. Filter Content by **Club policy**, or open [Member Etiquette](https://app.contentful.com/spaces/7r7s5slcmer0/entries/hbcc-policy-etiquette).
 2. Edit the title/summary. Replace **Approved document (PDF)** using the media picker, or supply approved formatted policy text. An enabled policy needs a document or non-empty text. Optional version/effective-date fields are displayed only when supplied.
-3. Publish the policy and any uploaded media. A document change updates every native reference after the site rebuild.
+3. Publish the policy and any uploaded media. A document change updates every native reference after publication.
 4. Open [Club Policies & Documents](https://app.contentful.com/spaces/7r7s5slcmer0/entries/wp-page-5242-section-0) and drag **Policies in display order** to reorder the hub. Add a new policy reference here before linking to it from another page/menu. Publish the section if its references changed.
 5. Use **Show on website → Hide** to hide a policy. Native links to hidden policies return to the hub. Keep **Stable section link** unchanged for external bookmarks; native links follow changes.
 
 Seven existing approved documents are published: NDA & Code of Conduct, By-Law, Child Safe, Privacy & Photography, Member Etiquette, Open Tournament Rules and Junior Coaching Policies. Membership links open the relevant hub section; About, Juniors, Tournaments and the footer also use native references. No new legal wording, dates or versions were invented. The misleading Cookie Policy link is hidden until an approved matching document exists.
 
-[Website settings](https://app.contentful.com/spaces/7r7s5slcmer0/entries/hbcc-site-settings) selects the **Policies hub** page, so policy links follow its page slug. The V2 privacy page reuses the same Privacy & Photography policy entry.
+[Website settings](https://app.contentful.com/spaces/7r7s5slcmer0/entries/v2-hbcc-site-settings) selects the **Policies hub** page, so policy links follow its page slug. The V2 privacy page reuses the same Privacy & Photography policy entry.
 
 ## Manage news
 

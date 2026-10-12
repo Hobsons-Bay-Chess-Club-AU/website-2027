@@ -1,0 +1,17 @@
+.env
+.env.*
+.git/
+.github/
+node_modules/
+dist/
+.astro/
+reference/
+contentful/
+tests/
+*.docx
+*.log
+docs/*
+!docs/ALL-PAGES-AUDIT.md
+scripts/*
+!scripts/env.mjs
+!scripts/run-astro.mjs
