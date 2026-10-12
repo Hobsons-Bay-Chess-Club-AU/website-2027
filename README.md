@@ -2,7 +2,7 @@
 
 Astro rebuild of HBCC's WordPress website, with Contentful managing pages, menus, sections, news, calendar events and media. GitHub Actions builds published content for [GitHub Pages](https://hobsons-bay-chess-club-au.github.io/website-2027/).
 
-The actual Contentful account is populated: **15 types, 447 entries and 99 assets**. There are **439 published entries**, including three recent club stories and 150 calendar events. Five disabled theme news posts and three conflicting spreadsheet events remain drafts. [Open Website settings](https://app.contentful.com/spaces/7r7s5slcmer0/entries/hbcc-site-settings).
+The actual Contentful account is populated: **16 types, 531 entries and 100 assets**. There are **523 published entries**, including three recent club stories, 150 calendar events and seven reusable policies. Membership and About Us now use native fee, step, portrait and roster cards. Five disabled theme news posts and three conflicting spreadsheet events remain drafts. [Open Website settings](https://app.contentful.com/spaces/7r7s5slcmer0/entries/hbcc-site-settings).
 
 ## Develop and verify
 
@@ -46,7 +46,7 @@ The `hobsonsbaychess.com` domain still serves WordPress. Domain/DNS cutover is a
 
 ## Checks and migration files
 
-Twenty-one tests cover CMS editing/references/menus, rich text safety, tournament scoring/outages, deployment paths, spreadsheet dates, calendar filters/downloads and Facebook draft protection. The published root build produces 20 content pages and nine legacy HTML redirects; 958 local links/assets passed verification. Desktop and 390 px checks cover the calendar and the previously audited homepage/menu/FAQs.
+Thirty-two tests cover CMS editing/references/menus, policies and document updates, Membership/About restoration, rich text safety, tournament scoring/outages, deployment paths, spreadsheet dates, V2 isolation, calendar filters/downloads and Facebook draft protection. The root build produces 20 content pages and nine legacy HTML redirects; V2 adds three review pages. Both builds verify local links, section anchors, media, repository paths and exclusion of credentials. Desktop and 390 px checks cover the restored pages and navigation.
 
 | Path | Purpose |
 | --- | --- |
@@ -56,6 +56,7 @@ Twenty-one tests cover CMS editing/references/menus, rich text safety, tournamen
 | `contentful/` | Schema, seed, assets and native editor controls |
 | `scripts/import-cms.mjs` | Initial dry-run/resumable draft import |
 | `scripts/apply-site-update.mjs` | Controlled migration update; not a routine editor tool |
+| `scripts/apply-membership-about-policies.mjs` | Targeted version-checked Membership/About/policy model migration |
 | `scripts/sync-facebook-news.mjs` | Public/captured post import to drafts |
 | `reference/calendar/`, `reference/facebook/` | Spreadsheet, source audit, news references and original photos |
 | `reference/audit/` | Pre-change homepage audit and frozen first version |

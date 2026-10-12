@@ -1,0 +1,13 @@
+---
+import {siteUrl} from '../lib/site-url.mjs';
+const {policies=[]}=Astro.props;
+---
+<div class="policy-grid">
+ {policies.map(policy=><article id={policy.slug} class="policy-card">
+  <h3>{policy.title}</h3>
+  {policy.summary&&<p>{policy.summary}</p>}
+  {(policy.version||policy.effectiveDate)&&<p class="policy-metadata">{policy.version&&<span>Version {policy.version}</span>}{policy.effectiveDate&&<span>Effective <time datetime={policy.effectiveDate}>{new Intl.DateTimeFormat('en-AU',{day:'numeric',month:'long',year:'numeric',timeZone:'Australia/Melbourne'}).format(new Date(policy.effectiveDate))}</time></span>}</p>}
+  {policy.bodyHtml&&<div class="cms-rich-text" set:html={policy.bodyHtml}/>}
+  {policy.document&&<a class="button button-dark" href={siteUrl(policy.document)} target="_blank" rel="noopener noreferrer" aria-label={'View '+policy.title+' document (opens in a new tab)'}>Open Document <span aria-hidden="true">↗</span></a>}
+ </article>)}
+</div>

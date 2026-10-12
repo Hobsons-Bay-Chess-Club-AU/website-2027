@@ -5,6 +5,7 @@ import { getContent } from '../lib/content.mjs';
 import { siteUrl as safeUrl } from '../lib/site-url.mjs';
 import '../styles/global.css';
 import '../styles/review.css';
+import '../styles/content-layouts.css';
 const { settings } = await getContent();
 const { title = settings.title, seoTitle, description = settings.defaultDescription, image = settings.heroImage, home = false, noindex = false } = Astro.props;
 const staging = import.meta.env.SITE_STAGING === 'true';

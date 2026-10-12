@@ -8,12 +8,13 @@ const currentUrl=new URL('../',new URL(siteUrl('/'),Astro.site)).href;
  <p class="eyebrow">Prepared {notes.date} · Club team review</p>
  <h2>A clearer path into the club</h2>
  <p>This version puts the navigation audit into a working proposal. Use the website as an adult visitor, a parent, a member or a competitor, then send feedback on the journeys and the content. The change list below covers what is implemented and what still needs club information.</p>
+ <p>Membership, About Us and policy repairs now appear in both rebuilt versions and are editable in Contentful. The remaining navigation and calendar proposals are specific to V2.</p>
  <div class="review-intro-actions"><a class="button button-dark" href={siteUrl('/')}>Explore V2</a><a class="button button-dark" href={currentUrl} data-current-version>Compare Current Version ↗</a><a class="button button-dark" href="#review-checklist">Review Checklist</a><a class="text-link" href={siteUrl('/review-notes.md')} download>Download Change List</a></div>
  <div class="review-summary"><article><h3>Navigation</h3><p>Six task groups, visible desktop links and five quick actions in the mobile menu.</p></article><article><h3>Useful destinations</h3><p>First Visit, Coaching, tournament pathways, sponsor profiles and clearer policy links.</p></article><article><h3>Calendar</h3><p>Shareable filters, an upcoming agenda and program-specific Term 4 corrections.</p></article></div>
  <h2 id="implemented">Changes in this version</h2>
  <ol class="review-change-list">{notes.changes.map(change=><li><strong>{change.title}</strong><span>{change.detail}</span>{change.path&&<div><a href={siteUrl(change.path)}>Try this change →</a></div>}</li>)}</ol>
  <h2 id="links">Action links: before and after</h2>
- <div class="review-table" tabindex="0" role="region" aria-label="Scrollable link changes"><table><thead><tr><th scope="col">Action</th><th scope="col">Current version</th><th scope="col">V2 proposal</th></tr></thead><tbody>{notes.linkRepairs.map(row=><tr>{row.map(cell=><td>{cell}</td>)}</tr>)}</tbody></table></div>
+ <div class="review-table" tabindex="0" role="region" aria-label="Scrollable link changes"><table><thead><tr><th scope="col">Action</th><th scope="col">Before this review work</th><th scope="col">Destination in V2</th></tr></thead><tbody>{notes.linkRepairs.map(row=><tr>{row.map(cell=><td>{cell}</td>)}</tr>)}</tbody></table></div>
  <p class="review-note">The homepage Full Table still opens the Open standings. Pairings & Results opens the tournament directory so visitors can choose their competition. Tournament bookings, membership and member login continue to use the club’s existing services.</p>
  <h2 id="calendar-corrections">Calendar details to confirm</h2>
  <div class="review-table" tabindex="0" role="region" aria-label="Scrollable coaching date changes"><table><thead><tr><th scope="col">Term 4 coaching</th><th scope="col">Current imported date</th><th scope="col">V2 / booking-page date</th></tr></thead><tbody>
@@ -25,5 +26,5 @@ const currentUrl=new URL('../',new URL(siteUrl('/'),Astro.site)).href;
  <h2 id="review-checklist">Review checklist</h2>
  <p>These checkboxes are a guide for your current visit. They do not send or save a response.</p>
  <div class="review-checklist">{notes.checks.map(check=><label><input type="checkbox"/><span>{check}</span></label>)}</div>
- <div class="review-feedback"><h3>How to send feedback</h3><p>Reply to the person who shared this review link. Include the page URL, the device you used, what you expected and what you would change. Please distinguish content corrections from navigation or layout feedback.</p><p>The current rebuilt site remains available at the comparison link. The WordPress production domain is unchanged. Accepted changes can be promoted into Contentful after the club review.</p></div>
+ <div class="review-feedback"><h3>How to send feedback</h3><p>Reply to the person who shared this review link. Include the page URL, the device you used, what you expected and what you would change. Please distinguish content corrections from navigation or layout feedback.</p><p>The current rebuilt site remains available at the comparison link. The WordPress production domain is unchanged. The remaining accepted proposals can be promoted into Contentful after the club review.</p></div>
 </div></article>

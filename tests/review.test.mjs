@@ -12,6 +12,9 @@ const review=()=>normalizeContent(createReviewEntries(raw()));
 const page=(c,slug)=>c.pages.find(p=>p.slug===slug);
 const calendar=c=>page(c,'calendar').sections.find(s=>s.calendar).calendar.events;
 const hrefFor=(p,label)=>{
+ const visit=s=>[...s.actions,...s.cards.flatMap(c=>c.link?[c.link]:[]),...s.children.flatMap(visit)];
+ const action=p.sections.flatMap(visit).find(a=>a.label.toLowerCase()===label.toLowerCase());
+ if(action)return action.href;
  const $=load(p.sections.map(s=>s.bodyHtml).join(''));
  return $('a').toArray().find(a=>$(a).text().trim().toLowerCase()===label.toLowerCase())?.attribs.href;
 };

@@ -5,6 +5,7 @@ import ContentCard from './ContentCard.astro';
 import NewsCards from './NewsCards.astro';
 import ResultsEvents from './ResultsEvents.astro';
 import Calendar from './Calendar.astro';
+import PolicyList from './PolicyList.astro';
 import {siteUrl as safeUrl} from '../lib/site-url.mjs';
 import {approvedEmbed} from '../lib/render-rich-text.mjs';
 const {sections=[],settings,posts=[]}=Astro.props;
@@ -26,12 +27,13 @@ const {sections=[],settings,posts=[]}=Astro.props;
 ):section.kind==='cta'?(
  <section id={section.anchor} class="join-banner"><div class="container join-content"><div>{section.eyebrow&&<p class="eyebrow">{section.eyebrow}</p>}<h2>{section.title}</h2></div>{section.subtitle&&<CmsLink item={section.actions[1]} class="join-contact"><span>{section.subtitle}</span><div set:html={section.bodyHtml}/></CmsLink>}<CmsLink item={section.actions[0]} class="button button-dark"/></div></section>
 ):(
- <section id={section.anchor} class:list={['cms-section','section','cms-tone-'+(section.tone||'light')]}><div class="container">{section.title&&<h2>{section.title}</h2>}{section.subtitle&&<p class="section-introduction">{section.subtitle}</p>}{section.eyebrow&&<p class="eyebrow">{section.eyebrow}</p>}
+ <section id={section.anchor} class:list={['cms-section','section','cms-tone-'+(section.tone||'light'),'cms-layout-'+(section.layoutStyle||'default')]}><div class="container">{section.title&&<h2>{section.title}</h2>}{section.subtitle&&<p class="section-introduction">{section.subtitle}</p>}{section.eyebrow&&<p class="eyebrow">{section.eyebrow}</p>}
  {section.image&&<img class="cms-feature-image" src={safeUrl(section.image)} alt={section.imageAlt||''} loading="lazy"/>}
  <div class="cms-rich-text" set:html={section.bodyHtml}/>
  {section.kind==='columns'&&<div class="cms-columns">{section.children.map(child=><div><Astro.self sections={[child]} settings={settings} posts={posts}/></div>)}</div>}
  {(section.kind==='cards'||section.kind==='accordion')&&<div class:list={{'cms-card-grid':section.kind==='cards','cms-accordion':section.kind==='accordion'}}>{section.cards.map(card=><ContentCard card={card}/>)}</div>}
- {section.kind==='gallery'&&<div class="cms-gallery">{section.gallery.map(photo=><figure>{photo.link?<CmsLink item={photo.link}><img src={safeUrl(photo.image)} alt={photo.alt} loading="lazy"/></CmsLink>:<img src={safeUrl(photo.image)} alt={photo.alt} loading="lazy"/>}</figure>)}</div>}
+ {section.kind==='policies'&&<PolicyList policies={section.policies}/>}
+ {section.kind==='gallery'&&<div class="cms-gallery">{section.gallery.map(photo=><figure>{photo.link?<CmsLink item={photo.link}><img src={safeUrl(photo.image)} alt={photo.alt} loading="lazy"/></CmsLink>:<img src={safeUrl(photo.image)} alt={photo.alt} loading="lazy"/>}{section.layoutStyle==='affiliations'&&<figcaption>{photo.title}</figcaption>}</figure>)}</div>}
  {section.kind==='embed'&&approvedEmbed(section.embedUrl)&&<iframe class="club-embed" src={approvedEmbed(section.embedUrl)} title={section.title||section.internalName} loading="lazy"/>}
  {section.actions.length>0&&<div class="cms-actions">{section.actions.map(action=><CmsLink item={action} class="button button-gold"/>)}</div>}
  </div></section>

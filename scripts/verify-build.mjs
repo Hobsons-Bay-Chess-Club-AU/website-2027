@@ -38,7 +38,7 @@ async function checkUrl(value,file,context=fileUrl(file),currentLink=false){
  }
  try{
   await access(target);checked++;
-  if(review&&url.hash&&target.endsWith('.html')){
+  if(url.hash&&target.endsWith('.html')){
    const $=load(await readFile(target,'utf8')),id=decodeURIComponent(url.hash.slice(1));
    if(!$('[id]').toArray().some(el=>$(el).attr('id')===id))missing.push({file:path.relative(root,file),value,issue:'Missing section anchor'});
   }

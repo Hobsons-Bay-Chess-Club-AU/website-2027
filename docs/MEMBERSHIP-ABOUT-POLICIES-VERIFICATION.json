@@ -1,0 +1,94 @@
+{
+  "checkedAt": "2026-10-12T01:06:44.007Z",
+  "source": "Actual Contentful Management and Delivery APIs",
+  "space": "7r7s5slcmer0",
+  "environment": "master",
+  "contentTypes": 16,
+  "entries": 531,
+  "publishedEntries": 523,
+  "assets": 100,
+  "publishedAssets": 100,
+  "policies": [
+    {
+      "id": "hbcc-policy-coaching",
+      "status": 200,
+      "contentType": "application/pdf"
+    },
+    {
+      "id": "hbcc-policy-tournament",
+      "status": 200,
+      "contentType": "application/pdf"
+    },
+    {
+      "id": "hbcc-policy-etiquette",
+      "status": 200,
+      "contentType": "application/pdf"
+    },
+    {
+      "id": "hbcc-policy-privacy",
+      "status": 200,
+      "contentType": "application/pdf"
+    },
+    {
+      "id": "hbcc-policy-childsafe",
+      "status": 200,
+      "contentType": "application/pdf"
+    },
+    {
+      "id": "hbcc-policy-bylaw",
+      "status": 200,
+      "contentType": "application/pdf"
+    },
+    {
+      "id": "hbcc-policy-code",
+      "status": 200,
+      "contentType": "application/pdf"
+    }
+  ],
+  "scope": {
+    "newEntries": 84,
+    "updatedEntries": 33,
+    "publishedEntries": 117,
+    "newAssets": 1,
+    "unrelatedFieldChanges": [],
+    "retainedDrafts": [
+      {
+        "id": "calendar-2026-9b67f9cb36a8f77c",
+        "type": "calendarEvent"
+      },
+      {
+        "id": "calendar-2026-5d5e1f601bd54af6",
+        "type": "calendarEvent"
+      },
+      {
+        "id": "calendar-2026-0cd7d9ae1c8e7b10",
+        "type": "calendarEvent"
+      },
+      {
+        "id": "wp-post-1062",
+        "type": "post"
+      },
+      {
+        "id": "wp-post-1054",
+        "type": "post"
+      },
+      {
+        "id": "wp-post-1059",
+        "type": "post"
+      },
+      {
+        "id": "wp-post-1072",
+        "type": "post"
+      },
+      {
+        "id": "wp-post-1071",
+        "type": "post"
+      }
+    ]
+  },
+  "tests": {
+    "passed": 32,
+    "failed": 0
+  },
+  "domainCutover": false
+}

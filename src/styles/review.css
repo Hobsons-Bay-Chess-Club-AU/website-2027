@@ -6,9 +6,11 @@
 .review-site-header .brand,.review-site-header .brand img{width:64px;height:64px;flex-shrink:0}
 .desktop-navigation{display:flex;align-items:center;gap:20px;margin-left:auto}
 .desktop-nav-group{position:relative;display:flex;align-items:center}
-.desktop-nav-link{font-size:14px;font-weight:600;padding:12px 0;white-space:nowrap}
+.desktop-nav-link{font-size:14px;font-weight:600;padding:12px 0;white-space:nowrap;display:flex;align-items:center;min-height:44px;line-height:1.2}
 .desktop-nav-link:hover,.header-login:hover{color:var(--gold-light)}
-.desktop-dropdown-toggle{border:0;background:none;color:var(--gold);padding:8px 9px;min-height:44px;min-width:30px}
+.desktop-dropdown-toggle{border:0;background:none;color:var(--gold);padding:0;display:flex;align-items:center;justify-content:center;height:44px;width:30px;line-height:1;flex-shrink:0}
+.desktop-dropdown-toggle svg{display:block;transition:transform .15s}
+.desktop-dropdown-toggle[aria-expanded=true] svg{transform:rotate(180deg)}
 .desktop-dropdown-toggle[aria-expanded=true]{background:#bdb16b22}
 .desktop-dropdown{position:absolute;top:calc(100% + 8px);left:-18px;width:265px;padding:14px;background:#111b15;border:1px solid #bdb16b66;box-shadow:0 20px 40px #0005;border-radius:6px}
 .desktop-dropdown-wide{width:290px;left:auto;right:-45px}.desktop-dropdown a{display:block;font-size:13px;padding:9px 10px;border-radius:3px;line-height:1.4}

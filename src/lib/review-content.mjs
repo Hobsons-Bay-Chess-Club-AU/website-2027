@@ -92,7 +92,7 @@ export function createReviewEntries(publishedItems){
  get('home-view-calendar').page=ref('wp-page-5225');
  get('calendar-service-link').label='Tournament Calendar';
  const footerResults=get('footer-club-3');footerResults.label='Pairings & Results';footerResults.url=reviewSources.results;delete footerResults.tournamentFeed;delete footerResults.tournamentDestination;
- for(const id of ['footer-club-4','footer-legal-0'])get(id).page=ref('review-privacy-page');
+ for(const id of ['footer-club-4','footer-legal-0']){const link=get(id);link.page=ref('review-privacy-page');delete link.policy;delete link.url;}
  get('footer-legal-1').enabled=false;
  const footerQuick=get('hbcc-footer-quick');footerQuick.items.push(pageAction('Coaching','review-coaching-page'));
  for(const e of items){
@@ -175,12 +175,12 @@ export function createReviewEntries(publishedItems){
  anchor('wp-page-4382-section-7','become-a-sponsor');
  visit(get('wp-page-4382-section-4').body,n=>{if(n.nodeType==='text')n.value=n.value.replace('Member Offer?','Example member offer:').replace('We?d','We’d');});
 
- const policies=get('wp-page-5242-section-0');let privacyLink;
+ const policies=get('wp-page-5242-section-0'),typedPrivacy=items.find(e=>e.id==='hbcc-policy-privacy');let privacyLink;
  visit(policies.body,n=>{if(n.nodeType==='asset-hyperlink'&&linkLabel(n).includes('privacy'))privacyLink=structuredClone(n);});
- if(!privacyLink)throw new Error('V2 needs the existing privacy and photography policy.');
- const privacy=section('review-privacy-section','Privacy & Photography',{anchor:'privacy',body:{nodeType:'document',data:{},content:[paragraph('Read the club’s existing Privacy & Photography Policy. Contact the club with questions about this document.'),{nodeType:'paragraph',data:{},content:[privacyLink]}]},actions:[pageAction('All Club Policies','wp-page-5242')]});
+ if(!typedPrivacy&&!privacyLink)throw new Error('V2 needs the existing privacy and photography policy.');
+ const privacy=section('review-privacy-section','Privacy & Photography',{anchor:'privacy',...(typedPrivacy?{kind:'policies',policies:[ref(typedPrivacy.id)],body:document('Read the club’s existing Privacy & Photography Policy. Contact the club with questions about this document.')}:{body:{nodeType:'document',data:{},content:[paragraph('Read the club’s existing Privacy & Photography Policy. Contact the club with questions about this document.'),{nodeType:'paragraph',data:{},content:[privacyLink]}]}}),actions:[pageAction('All Club Policies','wp-page-5242')]});
  add('page','review-privacy-page',{title:'Privacy & Photography',slug:'privacy-policy',template:'content',description:'The club’s existing privacy and photography policy and contact details.',enabled:true,noindex:true,sections:[privacy]});
- get('wp-page-5242').sections.push(privacy);
+ if(!typedPrivacy)get('wp-page-5242').sections.push(privacy);
 
  // Program-specific schedule corrections, with the original imported text kept.
  for(let i=0;i<8;i++){

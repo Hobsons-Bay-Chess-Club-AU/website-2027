@@ -75,7 +75,8 @@ test('rich text renders editable tables, images and FAQs while escaping injected
  const doc={nodeType:'document',data:{},content:[{nodeType:'paragraph',data:{},content:[{nodeType:'text',value:'<script>alert(1)</script>',marks:[{type:'bold'}],data:{}}]},{nodeType:'hyperlink',data:{uri:'javascript:alert(1)'},content:[{nodeType:'text',value:'bad link',marks:[],data:{}}]}]};
  const html=renderRichText(doc);assert.match(html,/&lt;script&gt;/);assert.ok(!html.includes('<script'));assert.ok(!html.includes('javascript:'));
  const membership=referenceContent.pages.find(p=>p.slug==='membership');
- const body=membership.sections.flatMap(s=>[s.bodyHtml,...s.children.map(c=>c.bodyHtml)]).join('');
+ const faq=membership.sections.find(s=>s.kind==='accordion');
+ const body=renderRichText({nodeType:'document',data:{},content:faq.cards.map(c=>({nodeType:'embedded-entry-block',data:{target:entryLink(c.id)},content:[]}))},referenceContent.entries);
  assert.match(body,/<details class="club-faq">/);assert.match(body,/When is membership due/);
  const old=cleanHtml('<h1>Club</h1><img src="/safe.webp" onerror="bad()"><iframe src="https://evil.example/"></iframe>');
  assert.ok(!old.includes('onerror'));assert.ok(!old.includes('evil.example'));assert.match(old,/<h2>/);
@@ -103,8 +104,8 @@ test('tournament integration validates its URLs and keeps dated results during a
 });
 test('migration package uses native fields, valid references and existing media',async()=>{
  const schema=JSON.parse(await readFile('contentful/schema.json','utf8')),seed=JSON.parse(await readFile('contentful/seed.json','utf8')),assets=JSON.parse(await readFile('contentful/assets.json','utf8'));
- assert.equal(schema.contentTypes.length,15);assert.equal(seed.entries.length,447);
- assert.equal(validatePackage(schema,seed,assets).entries,447);
+ assert.equal(schema.contentTypes.length,16);assert.ok(schema.contentTypes.some(t=>t.sys.id==='policy'));
+ assert.equal(validatePackage(schema,seed,assets).entries,seed.entries.length);
  assert.ok(schema.contentTypes.every(t=>t.fields.every(f=>f.type!=='Object'&&f.id!=='bodyHtml')));
  for(const asset of assets)await access(asset.path);
  assert.ok(!JSON.stringify(fixture).includes('https://hobsonsbaychess.com/wp-content/'));

@@ -1,6 +1,7 @@
 import reference from '../data/cms.json' with {type:'json'};
 import {safeUrl} from './sanitize.mjs';
-import {renderRichText} from './render-rich-text.mjs';
+import {renderRichText,richTextPlainText} from './render-rich-text.mjs';
+import {policyHref} from './policies.mjs';
 import {normalizeCalendarEvents} from './calendar.mjs';
 import {createReviewEntries} from './review-content.mjs';
 
@@ -48,6 +49,7 @@ export function normalizeContent(items){
    href=feed[key];
   }
   if(entry.page){const page=get(entry.page);if(page.enabled===false)return null;href=(page.template==='home'?'/':`/${page.slug}/`)+navigationFragment(entry.fragment);}
+  if(entry.policy)href=policyHref(get(entry.policy,'policy'),byId);
   if(!entry.label||!href||safeUrl(href,'')==='')throw new Error(`Menu item ${entry.id} needs valid link text and a page or URL.`);
   return {...entry,href:safeUrl(href),children:refs(entry.children,'navigationItem').map(e=>navigation(e,[...trail,entry.id])).filter(Boolean)};
  };
@@ -55,12 +57,18 @@ export function normalizeContent(items){
  const action=ref=>ref?navigation(get(ref,'navigationItem')):null;
  const card=e=>({...e,link:action(e.link),bodyHtml:renderRichText(e.body,byId)});
  const gallery=e=>({...e,link:action(e.link)});
+ const policy=e=>{
+  policyHref(e,byId);
+  if(!e.title||(!e.document&&!richTextPlainText(e.body)))throw new Error('Published policy '+e.id+' needs a title and approved document or policy text.');
+  if(e.document&&safeUrl(e.document,'')==='')throw new Error('Policy '+e.id+' needs a valid document URL.');
+  return {...e,bodyHtml:renderRichText(e.body,byId)};
+ };
  const section=(e,trail=[])=>{
   if(trail.includes(e.id)||trail.length>12)throw new Error(`Circular section reference at ${e.internalName}.`);
   return {...e,bodyHtml:renderRichText(e.body,byId),actions:refs(e.actions,'navigationItem').map(n=>navigation(n)).filter(Boolean),
    children:refs(e.children,'section').map(n=>section(n,[...trail,e.id])),cards:refs(e.cards,'contentCard').map(card),statistics:refs(e.statistics,'statistic'),
    days:refs(e.days,'scheduleDay').map(day=>({...day,sessions:refs(day.sessions,'scheduleSession').map(s=>({...s,link:action(s.link)}))})),
-   sponsors:refs(e.sponsors,'sponsor'),posts:refs(e.posts,'post'),gallery:refs(e.gallery,'galleryImage').map(gallery),tournamentFeed:e.tournamentFeed?get(e.tournamentFeed,'tournamentFeed'):null,
+   sponsors:refs(e.sponsors,'sponsor'),policies:refs(e.policies,'policy').map(policy),posts:refs(e.posts,'post'),gallery:refs(e.gallery,'galleryImage').map(gallery),tournamentFeed:e.tournamentFeed?get(e.tournamentFeed,'tournamentFeed'):null,
    calendar:e.calendar?(()=>{const calendar=get(e.calendar,'calendarSchedule');return {...calendar,events:normalizeCalendarEvents(refs(calendar.events,'calendarEvent'))};})():null};
  };
  const home=get(raw.homePage,'page');
@@ -74,7 +82,7 @@ export function normalizeContent(items){
  const expandPage=p=>{
   const sections=refs(p.sections,'section').map(s=>section(s)),anchors=new Set();
   const check=s=>{
-   for(const value of [s.anchor,...(s.cards||[]).map(c=>c.anchor)].filter(Boolean)){
+   for(const value of [s.anchor,...(s.cards||[]).map(c=>c.anchor),...(s.policies||[]).map(policy=>policy.slug)].filter(Boolean)){
     navigationFragment(value);if(anchors.has(value))throw new Error('Duplicate section anchor '+value+' on '+p.slug);anchors.add(value);
    }
    for(const child of s.children||[])check(child);

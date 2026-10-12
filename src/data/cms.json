@@ -1,5 +1,5 @@
 {
-  "capturedAt": "2026-10-10T06:02:36.696Z",
+  "capturedAt": "2026-10-12T01:09:17.073Z",
   "items": [
     {
       "sys": {
@@ -790,15 +790,15 @@
       },
       "fields": {
         "label": "Privacy",
-        "page": {
+        "enabled": true,
+        "openInNewTab": false,
+        "policy": {
           "sys": {
             "type": "Link",
             "linkType": "Entry",
-            "id": "wp-page-5242"
+            "id": "hbcc-policy-privacy"
           }
-        },
-        "enabled": true,
-        "openInNewTab": false
+        }
       }
     },
     {
@@ -1110,15 +1110,15 @@
       },
       "fields": {
         "label": "Privacy Policy",
-        "page": {
+        "enabled": true,
+        "openInNewTab": false,
+        "policy": {
           "sys": {
             "type": "Link",
             "linkType": "Entry",
-            "id": "wp-page-5242"
+            "id": "hbcc-policy-privacy"
           }
-        },
-        "enabled": true,
-        "openInNewTab": false
+        }
       }
     },
     {
@@ -1142,7 +1142,7 @@
             "id": "wp-page-5242"
           }
         },
-        "enabled": true,
+        "enabled": false,
         "openInNewTab": false
       }
     },
@@ -2927,102 +2927,32 @@
       },
       "fields": {
         "internalName": "About Us — Section 1",
-        "kind": "richText",
+        "kind": "columns",
         "body": {
           "nodeType": "document",
           "data": {},
-          "content": [
-            {
-              "nodeType": "embedded-entry-block",
-              "data": {
-                "target": {
-                  "sys": {
-                    "type": "Link",
-                    "linkType": "Entry",
-                    "id": "wp-page-11-section-0-image-1"
-                  }
-                }
-              },
-              "content": []
-            },
-            {
-              "nodeType": "heading-2",
-              "data": {},
-              "content": [
-                {
-                  "nodeType": "text",
-                  "value": "WHo ",
-                  "marks": [],
-                  "data": {}
-                },
-                {
-                  "nodeType": "text",
-                  "value": "We Are",
-                  "marks": [
-                    {
-                      "type": "bold"
-                    }
-                  ],
-                  "data": {}
-                }
-              ]
-            },
-            {
-              "nodeType": "paragraph",
-              "data": {},
-              "content": [
-                {
-                  "nodeType": "entry-hyperlink",
-                  "data": {
-                    "target": {
-                      "sys": {
-                        "type": "Link",
-                        "linkType": "Entry",
-                        "id": "wp-page-13"
-                      }
-                    }
-                  },
-                  "content": [
-                    {
-                      "nodeType": "text",
-                      "value": "JOIN THE CLUB",
-                      "marks": [],
-                      "data": {}
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "nodeType": "paragraph",
-              "data": {},
-              "content": [
-                {
-                  "nodeType": "entry-hyperlink",
-                  "data": {
-                    "target": {
-                      "sys": {
-                        "type": "Link",
-                        "linkType": "Entry",
-                        "id": "wp-page-4424"
-                      }
-                    }
-                  },
-                  "content": [
-                    {
-                      "nodeType": "text",
-                      "value": "BECOME A MEMBER",
-                      "marks": [],
-                      "data": {}
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
+          "content": []
         },
         "tone": "light",
-        "enabled": true
+        "enabled": true,
+        "layoutStyle": "split",
+        "title": "",
+        "children": [
+          {
+            "sys": {
+              "type": "Link",
+              "linkType": "Entry",
+              "id": "about-introduction-image"
+            }
+          },
+          {
+            "sys": {
+              "type": "Link",
+              "linkType": "Entry",
+              "id": "about-introduction-copy"
+            }
+          }
+        ]
       }
     },
     {
@@ -3164,365 +3094,18 @@
       },
       "fields": {
         "internalName": "About Us — Section 2",
-        "kind": "richText",
+        "kind": "cards",
         "body": {
           "nodeType": "document",
           "data": {},
           "content": [
             {
-              "nodeType": "heading-3",
-              "data": {},
-              "content": [
-                {
-                  "nodeType": "text",
-                  "value": "Executive ",
-                  "marks": [],
-                  "data": {}
-                },
-                {
-                  "nodeType": "text",
-                  "value": "Committee",
-                  "marks": [
-                    {
-                      "type": "bold"
-                    }
-                  ],
-                  "data": {}
-                }
-              ]
-            },
-            {
               "nodeType": "paragraph",
               "data": {},
               "content": [
                 {
                   "nodeType": "text",
-                  "value": "HBCC is run by a volunteer committee elected annually",
-                  "marks": [],
-                  "data": {}
-                }
-              ]
-            },
-            {
-              "nodeType": "embedded-entry-block",
-              "data": {
-                "target": {
-                  "sys": {
-                    "type": "Link",
-                    "linkType": "Entry",
-                    "id": "wp-page-11-section-1-image-2"
-                  }
-                }
-              },
-              "content": []
-            },
-            {
-              "nodeType": "heading-2",
-              "data": {},
-              "content": [
-                {
-                  "nodeType": "text",
-                  "value": "Casey",
-                  "marks": [],
-                  "data": {}
-                },
-                {
-                  "nodeType": "text",
-                  "value": "\n",
-                  "marks": [],
-                  "data": {}
-                },
-                {
-                  "nodeType": "text",
-                  "value": "\n",
-                  "marks": [],
-                  "data": {}
-                },
-                {
-                  "nodeType": "text",
-                  "value": " ",
-                  "marks": [],
-                  "data": {}
-                },
-                {
-                  "nodeType": "text",
-                  "value": "Goh",
-                  "marks": [
-                    {
-                      "type": "bold"
-                    }
-                  ],
-                  "data": {}
-                }
-              ]
-            },
-            {
-              "nodeType": "paragraph",
-              "data": {},
-              "content": [
-                {
-                  "nodeType": "text",
-                  "value": "President",
-                  "marks": [],
-                  "data": {}
-                }
-              ]
-            },
-            {
-              "nodeType": "embedded-entry-block",
-              "data": {
-                "target": {
-                  "sys": {
-                    "type": "Link",
-                    "linkType": "Entry",
-                    "id": "wp-page-11-section-1-image-3"
-                  }
-                }
-              },
-              "content": []
-            },
-            {
-              "nodeType": "heading-2",
-              "data": {},
-              "content": [
-                {
-                  "nodeType": "text",
-                  "value": "Steven",
-                  "marks": [],
-                  "data": {}
-                },
-                {
-                  "nodeType": "text",
-                  "value": "\n",
-                  "marks": [],
-                  "data": {}
-                },
-                {
-                  "nodeType": "text",
-                  "value": "\n",
-                  "marks": [],
-                  "data": {}
-                },
-                {
-                  "nodeType": "text",
-                  "value": " ",
-                  "marks": [],
-                  "data": {}
-                },
-                {
-                  "nodeType": "text",
-                  "value": "hogan",
-                  "marks": [
-                    {
-                      "type": "bold"
-                    }
-                  ],
-                  "data": {}
-                }
-              ]
-            },
-            {
-              "nodeType": "paragraph",
-              "data": {},
-              "content": [
-                {
-                  "nodeType": "text",
-                  "value": "Treasurer & Director (Open Tournaments)",
-                  "marks": [],
-                  "data": {}
-                }
-              ]
-            },
-            {
-              "nodeType": "embedded-entry-block",
-              "data": {
-                "target": {
-                  "sys": {
-                    "type": "Link",
-                    "linkType": "Entry",
-                    "id": "wp-page-11-section-1-image-4"
-                  }
-                }
-              },
-              "content": []
-            },
-            {
-              "nodeType": "heading-2",
-              "data": {},
-              "content": [
-                {
-                  "nodeType": "text",
-                  "value": "Kuaynsh",
-                  "marks": [],
-                  "data": {}
-                },
-                {
-                  "nodeType": "text",
-                  "value": "\n",
-                  "marks": [],
-                  "data": {}
-                },
-                {
-                  "nodeType": "text",
-                  "value": "\n",
-                  "marks": [],
-                  "data": {}
-                },
-                {
-                  "nodeType": "text",
-                  "value": " ",
-                  "marks": [],
-                  "data": {}
-                },
-                {
-                  "nodeType": "text",
-                  "value": "Batyrbekov",
-                  "marks": [
-                    {
-                      "type": "bold"
-                    }
-                  ],
-                  "data": {}
-                }
-              ]
-            },
-            {
-              "nodeType": "paragraph",
-              "data": {},
-              "content": [
-                {
-                  "nodeType": "text",
-                  "value": "Director (Rookies Tournaments)",
-                  "marks": [],
-                  "data": {}
-                }
-              ]
-            },
-            {
-              "nodeType": "embedded-entry-block",
-              "data": {
-                "target": {
-                  "sys": {
-                    "type": "Link",
-                    "linkType": "Entry",
-                    "id": "wp-page-11-section-1-image-5"
-                  }
-                }
-              },
-              "content": []
-            },
-            {
-              "nodeType": "heading-2",
-              "data": {},
-              "content": [
-                {
-                  "nodeType": "text",
-                  "value": "Nikash",
-                  "marks": [],
-                  "data": {}
-                },
-                {
-                  "nodeType": "text",
-                  "value": "\n",
-                  "marks": [],
-                  "data": {}
-                },
-                {
-                  "nodeType": "text",
-                  "value": "\n",
-                  "marks": [],
-                  "data": {}
-                },
-                {
-                  "nodeType": "text",
-                  "value": " ",
-                  "marks": [],
-                  "data": {}
-                },
-                {
-                  "nodeType": "text",
-                  "value": "Paul",
-                  "marks": [
-                    {
-                      "type": "bold"
-                    }
-                  ],
-                  "data": {}
-                }
-              ]
-            },
-            {
-              "nodeType": "paragraph",
-              "data": {},
-              "content": [
-                {
-                  "nodeType": "text",
-                  "value": "Director (Brand, Marketing & Sponsorship)",
-                  "marks": [],
-                  "data": {}
-                }
-              ]
-            },
-            {
-              "nodeType": "embedded-entry-block",
-              "data": {
-                "target": {
-                  "sys": {
-                    "type": "Link",
-                    "linkType": "Entry",
-                    "id": "wp-page-11-section-1-image-6"
-                  }
-                }
-              },
-              "content": []
-            },
-            {
-              "nodeType": "heading-2",
-              "data": {},
-              "content": [
-                {
-                  "nodeType": "text",
-                  "value": "Michelle",
-                  "marks": [],
-                  "data": {}
-                },
-                {
-                  "nodeType": "text",
-                  "value": "\n",
-                  "marks": [],
-                  "data": {}
-                },
-                {
-                  "nodeType": "text",
-                  "value": "\n",
-                  "marks": [],
-                  "data": {}
-                },
-                {
-                  "nodeType": "text",
-                  "value": " ",
-                  "marks": [],
-                  "data": {}
-                },
-                {
-                  "nodeType": "text",
-                  "value": "Sia",
-                  "marks": [
-                    {
-                      "type": "bold"
-                    }
-                  ],
-                  "data": {}
-                }
-              ]
-            },
-            {
-              "nodeType": "paragraph",
-              "data": {},
-              "content": [
-                {
-                  "nodeType": "text",
-                  "value": "Secretary",
+                  "value": "HBCC is run by a volunteer committee elected annually.",
                   "marks": [],
                   "data": {}
                 }
@@ -3531,7 +3114,46 @@
           ]
         },
         "tone": "gold",
-        "enabled": true
+        "enabled": true,
+        "layoutStyle": "portraits",
+        "title": "Executive Committee",
+        "cards": [
+          {
+            "sys": {
+              "type": "Link",
+              "linkType": "Entry",
+              "id": "about-committee-0"
+            }
+          },
+          {
+            "sys": {
+              "type": "Link",
+              "linkType": "Entry",
+              "id": "about-committee-1"
+            }
+          },
+          {
+            "sys": {
+              "type": "Link",
+              "linkType": "Entry",
+              "id": "about-committee-2"
+            }
+          },
+          {
+            "sys": {
+              "type": "Link",
+              "linkType": "Entry",
+              "id": "about-committee-3"
+            }
+          },
+          {
+            "sys": {
+              "type": "Link",
+              "linkType": "Entry",
+              "id": "about-committee-4"
+            }
+          }
+        ]
       }
     },
     {
@@ -3573,71 +3195,18 @@
       },
       "fields": {
         "internalName": "About Us — Section 3",
-        "kind": "richText",
+        "kind": "columns",
         "body": {
           "nodeType": "document",
           "data": {},
           "content": [
-            {
-              "nodeType": "embedded-entry-block",
-              "data": {
-                "target": {
-                  "sys": {
-                    "type": "Link",
-                    "linkType": "Entry",
-                    "id": "wp-page-11-section-2-image-7"
-                  }
-                }
-              },
-              "content": []
-            },
-            {
-              "nodeType": "heading-3",
-              "data": {},
-              "content": [
-                {
-                  "nodeType": "text",
-                  "value": "Extended Committee ",
-                  "marks": [],
-                  "data": {}
-                },
-                {
-                  "nodeType": "text",
-                  "value": "& Key Volunteers",
-                  "marks": [
-                    {
-                      "type": "bold"
-                    }
-                  ],
-                  "data": {}
-                }
-              ]
-            },
             {
               "nodeType": "paragraph",
               "data": {},
               "content": [
                 {
                   "nodeType": "text",
-                  "value": "Many dedicated volunteers help run",
-                  "marks": [],
-                  "data": {}
-                },
-                {
-                  "nodeType": "text",
-                  "value": "\n",
-                  "marks": [],
-                  "data": {}
-                },
-                {
-                  "nodeType": "text",
-                  "value": "\n",
-                  "marks": [],
-                  "data": {}
-                },
-                {
-                  "nodeType": "text",
-                  "value": " tournaments, junior programs and club operations.",
+                  "value": "Many dedicated volunteers help run tournaments, junior programs and club operations.",
                   "marks": [],
                   "data": {}
                 }
@@ -3646,7 +3215,25 @@
           ]
         },
         "tone": "light",
-        "enabled": true
+        "enabled": true,
+        "layoutStyle": "split",
+        "title": "Extended Committee & Key Volunteers",
+        "children": [
+          {
+            "sys": {
+              "type": "Link",
+              "linkType": "Entry",
+              "id": "about-volunteer-image"
+            }
+          },
+          {
+            "sys": {
+              "type": "Link",
+              "linkType": "Entry",
+              "id": "about-volunteer-list"
+            }
+          }
+        ]
       }
     },
     {
@@ -3662,7 +3249,7 @@
         }
       },
       "fields": {
-        "label": "View image",
+        "label": "Australian Chess Federation",
         "url": "https://auschess.org.au/",
         "enabled": true,
         "openInNewTab": false
@@ -3681,7 +3268,7 @@
         }
       },
       "fields": {
-        "title": "wp-page-11-section-3: Chess at Hobsons Bay Chess Club",
+        "title": "Australian Chess Federation",
         "image": {
           "sys": {
             "type": "Link",
@@ -3689,7 +3276,7 @@
             "id": "wp-asset-4b68fa21b4bff0f1a4db"
           }
         },
-        "alt": "Chess at Hobsons Bay Chess Club",
+        "alt": "Australian Chess Federation",
         "link": {
           "sys": {
             "type": "Link",
@@ -3713,7 +3300,7 @@
         }
       },
       "fields": {
-        "label": "View image",
+        "label": "Chess Victoria",
         "url": "https://www.chessvictoria.org.au/",
         "enabled": true,
         "openInNewTab": false
@@ -3732,7 +3319,7 @@
         }
       },
       "fields": {
-        "title": "wp-page-11-section-3: Chess at Hobsons Bay Chess Club",
+        "title": "Chess Victoria",
         "image": {
           "sys": {
             "type": "Link",
@@ -3740,7 +3327,7 @@
             "id": "wp-asset-3d5768f816709b07b364"
           }
         },
-        "alt": "Chess at Hobsons Bay Chess Club",
+        "alt": "Chess Victoria",
         "link": {
           "sys": {
             "type": "Link",
@@ -3764,7 +3351,7 @@
         }
       },
       "fields": {
-        "label": "View image",
+        "label": "Oceania Chess",
         "url": "https://oceaniachess.com/",
         "enabled": true,
         "openInNewTab": false
@@ -3783,7 +3370,7 @@
         }
       },
       "fields": {
-        "title": "wp-page-11-section-3: Chess at Hobsons Bay Chess Club",
+        "title": "Oceania Chess",
         "image": {
           "sys": {
             "type": "Link",
@@ -3791,7 +3378,7 @@
             "id": "wp-asset-91f79fa6eda70f7a2418"
           }
         },
-        "alt": "Chess at Hobsons Bay Chess Club",
+        "alt": "Oceania Chess",
         "link": {
           "sys": {
             "type": "Link",
@@ -3816,88 +3403,52 @@
       },
       "fields": {
         "internalName": "About Us — Section 4",
-        "kind": "richText",
+        "kind": "gallery",
         "body": {
           "nodeType": "document",
           "data": {},
           "content": [
-            {
-              "nodeType": "heading-3",
-              "data": {},
-              "content": [
-                {
-                  "nodeType": "text",
-                  "value": "Affiliations ",
-                  "marks": [],
-                  "data": {}
-                },
-                {
-                  "nodeType": "text",
-                  "value": "& Recognition",
-                  "marks": [
-                    {
-                      "type": "bold"
-                    }
-                  ],
-                  "data": {}
-                }
-              ]
-            },
             {
               "nodeType": "paragraph",
               "data": {},
               "content": [
                 {
                   "nodeType": "text",
-                  "value": "HBCC is affiliated with Chess Victoria and participates in the broader Victorian and Australian chess community",
+                  "value": "HBCC is affiliated with Chess Victoria and participates in the broader Victorian and Australian chess community.",
                   "marks": [],
                   "data": {}
                 }
               ]
-            },
-            {
-              "nodeType": "embedded-entry-block",
-              "data": {
-                "target": {
-                  "sys": {
-                    "type": "Link",
-                    "linkType": "Entry",
-                    "id": "wp-page-11-section-3-image-8"
-                  }
-                }
-              },
-              "content": []
-            },
-            {
-              "nodeType": "embedded-entry-block",
-              "data": {
-                "target": {
-                  "sys": {
-                    "type": "Link",
-                    "linkType": "Entry",
-                    "id": "wp-page-11-section-3-image-9"
-                  }
-                }
-              },
-              "content": []
-            },
-            {
-              "nodeType": "embedded-entry-block",
-              "data": {
-                "target": {
-                  "sys": {
-                    "type": "Link",
-                    "linkType": "Entry",
-                    "id": "wp-page-11-section-3-image-10"
-                  }
-                }
-              },
-              "content": []
             }
           ]
         },
         "tone": "gold",
-        "enabled": true
+        "enabled": true,
+        "layoutStyle": "affiliations",
+        "title": "Affiliations & Recognition",
+        "gallery": [
+          {
+            "sys": {
+              "type": "Link",
+              "linkType": "Entry",
+              "id": "wp-page-11-section-3-image-8"
+            }
+          },
+          {
+            "sys": {
+              "type": "Link",
+              "linkType": "Entry",
+              "id": "wp-page-11-section-3-image-9"
+            }
+          },
+          {
+            "sys": {
+              "type": "Link",
+              "linkType": "Entry",
+              "id": "wp-page-11-section-3-image-10"
+            }
+          }
+        ]
       }
     },
     {
@@ -3914,33 +3465,11 @@
       },
       "fields": {
         "internalName": "About Us — Section 5",
-        "kind": "richText",
+        "kind": "cards",
         "body": {
           "nodeType": "document",
           "data": {},
           "content": [
-            {
-              "nodeType": "heading-3",
-              "data": {},
-              "content": [
-                {
-                  "nodeType": "text",
-                  "value": "Our ",
-                  "marks": [],
-                  "data": {}
-                },
-                {
-                  "nodeType": "text",
-                  "value": "Arbiters",
-                  "marks": [
-                    {
-                      "type": "bold"
-                    }
-                  ],
-                  "data": {}
-                }
-              ]
-            },
             {
               "nodeType": "paragraph",
               "data": {},
@@ -3956,7 +3485,123 @@
           ]
         },
         "tone": "light",
-        "enabled": true
+        "enabled": true,
+        "layoutStyle": "roster",
+        "title": "Our Arbiters",
+        "cards": [
+          {
+            "sys": {
+              "type": "Link",
+              "linkType": "Entry",
+              "id": "about-arbiter-0"
+            }
+          },
+          {
+            "sys": {
+              "type": "Link",
+              "linkType": "Entry",
+              "id": "about-arbiter-1"
+            }
+          },
+          {
+            "sys": {
+              "type": "Link",
+              "linkType": "Entry",
+              "id": "about-arbiter-2"
+            }
+          },
+          {
+            "sys": {
+              "type": "Link",
+              "linkType": "Entry",
+              "id": "about-arbiter-3"
+            }
+          },
+          {
+            "sys": {
+              "type": "Link",
+              "linkType": "Entry",
+              "id": "about-arbiter-4"
+            }
+          },
+          {
+            "sys": {
+              "type": "Link",
+              "linkType": "Entry",
+              "id": "about-arbiter-5"
+            }
+          },
+          {
+            "sys": {
+              "type": "Link",
+              "linkType": "Entry",
+              "id": "about-arbiter-6"
+            }
+          },
+          {
+            "sys": {
+              "type": "Link",
+              "linkType": "Entry",
+              "id": "about-arbiter-7"
+            }
+          },
+          {
+            "sys": {
+              "type": "Link",
+              "linkType": "Entry",
+              "id": "about-arbiter-8"
+            }
+          },
+          {
+            "sys": {
+              "type": "Link",
+              "linkType": "Entry",
+              "id": "about-arbiter-9"
+            }
+          },
+          {
+            "sys": {
+              "type": "Link",
+              "linkType": "Entry",
+              "id": "about-arbiter-10"
+            }
+          },
+          {
+            "sys": {
+              "type": "Link",
+              "linkType": "Entry",
+              "id": "about-arbiter-11"
+            }
+          },
+          {
+            "sys": {
+              "type": "Link",
+              "linkType": "Entry",
+              "id": "about-arbiter-12"
+            }
+          },
+          {
+            "sys": {
+              "type": "Link",
+              "linkType": "Entry",
+              "id": "about-arbiter-13"
+            }
+          },
+          {
+            "sys": {
+              "type": "Link",
+              "linkType": "Entry",
+              "id": "about-arbiter-14"
+            }
+          },
+          {
+            "sys": {
+              "type": "Link",
+              "linkType": "Entry",
+              "id": "about-arbiter-15"
+            }
+          }
+        ]
       }
     },
     {
@@ -3998,80 +3643,33 @@
       },
       "fields": {
         "internalName": "About Us — Section 6",
-        "kind": "richText",
+        "kind": "columns",
         "body": {
           "nodeType": "document",
           "data": {},
-          "content": [
-            {
-              "nodeType": "embedded-entry-block",
-              "data": {
-                "target": {
-                  "sys": {
-                    "type": "Link",
-                    "linkType": "Entry",
-                    "id": "wp-page-11-section-5-image-11"
-                  }
-                }
-              },
-              "content": []
-            },
-            {
-              "nodeType": "heading-2",
-              "data": {},
-              "content": [
-                {
-                  "nodeType": "text",
-                  "value": "Governance ",
-                  "marks": [],
-                  "data": {}
-                },
-                {
-                  "nodeType": "text",
-                  "value": "& Policies",
-                  "marks": [
-                    {
-                      "type": "bold"
-                    }
-                  ],
-                  "data": {}
-                }
-              ]
-            },
-            {
-              "nodeType": "paragraph",
-              "data": {},
-              "content": [
-                {
-                  "nodeType": "text",
-                  "value": "HBCC as an incorporated association run",
-                  "marks": [],
-                  "data": {}
-                },
-                {
-                  "nodeType": "text",
-                  "value": "\n",
-                  "marks": [],
-                  "data": {}
-                },
-                {
-                  "nodeType": "text",
-                  "value": "\n",
-                  "marks": [],
-                  "data": {}
-                },
-                {
-                  "nodeType": "text",
-                  "value": " by volunteers, with focus on fair play and junior safety.",
-                  "marks": [],
-                  "data": {}
-                }
-              ]
-            }
-          ]
+          "content": []
         },
         "tone": "gold",
-        "enabled": true
+        "enabled": true,
+        "actions": [],
+        "layoutStyle": "split",
+        "title": "",
+        "children": [
+          {
+            "sys": {
+              "type": "Link",
+              "linkType": "Entry",
+              "id": "about-governance-image"
+            }
+          },
+          {
+            "sys": {
+              "type": "Link",
+              "linkType": "Entry",
+              "id": "about-governance-copy"
+            }
+          }
+        ]
       }
     },
     {
@@ -4087,10 +3685,10 @@
         }
       },
       "fields": {
-        "internalName": "wp-page-11-section-6 embedded content",
+        "internalName": "Hobsons Bay Chess Club venue map",
         "kind": "embed",
         "embedUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3149.601359563159!2d144.831275!3d-37.869617!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad66323fe176941%3A0xcb9d5380881f5da0!2sHobsons%20Bay%20Chess%20Club!5e0!3m2!1sen!2sin!4v1766585828471!5m2!1sen!2sin",
-        "title": "Club information",
+        "title": "",
         "enabled": true
       }
     },
@@ -4108,152 +3706,32 @@
       },
       "fields": {
         "internalName": "About Us — Section 7",
-        "kind": "richText",
+        "kind": "columns",
         "body": {
           "nodeType": "document",
           "data": {},
-          "content": [
-            {
-              "nodeType": "embedded-entry-block",
-              "data": {
-                "target": {
-                  "sys": {
-                    "type": "Link",
-                    "linkType": "Entry",
-                    "id": "wp-page-11-section-6-embed-12"
-                  }
-                }
-              },
-              "content": []
-            },
-            {
-              "nodeType": "heading-2",
-              "data": {},
-              "content": [
-                {
-                  "nodeType": "text",
-                  "value": "Where",
-                  "marks": [
-                    {
-                      "type": "bold"
-                    }
-                  ],
-                  "data": {}
-                },
-                {
-                  "nodeType": "text",
-                  "value": "\n",
-                  "marks": [],
-                  "data": {}
-                },
-                {
-                  "nodeType": "text",
-                  "value": "\n",
-                  "marks": [],
-                  "data": {}
-                },
-                {
-                  "nodeType": "text",
-                  "value": " We Play",
-                  "marks": [],
-                  "data": {}
-                }
-              ]
-            },
-            {
-              "nodeType": "paragraph",
-              "data": {},
-              "content": [
-                {
-                  "nodeType": "text",
-                  "value": "Email us",
-                  "marks": [],
-                  "data": {}
-                }
-              ]
-            },
-            {
-              "nodeType": "paragraph",
-              "data": {},
-              "content": [
-                {
-                  "nodeType": "text",
-                  "value": "info@hobsonsbaychess.com",
-                  "marks": [],
-                  "data": {}
-                }
-              ]
-            },
-            {
-              "nodeType": "paragraph",
-              "data": {},
-              "content": [
-                {
-                  "nodeType": "text",
-                  "value": "OUR ADRESS",
-                  "marks": [],
-                  "data": {}
-                }
-              ]
-            },
-            {
-              "nodeType": "paragraph",
-              "data": {},
-              "content": [
-                {
-                  "nodeType": "text",
-                  "value": " ",
-                  "marks": [],
-                  "data": {}
-                },
-                {
-                  "nodeType": "text",
-                  "value": "108 Queen St, Altona VIC 3018, Australia",
-                  "marks": [],
-                  "data": {}
-                }
-              ]
-            },
-            {
-              "nodeType": "paragraph",
-              "data": {},
-              "content": [
-                {
-                  "nodeType": "text",
-                  "value": "OPENING HOURS",
-                  "marks": [],
-                  "data": {}
-                }
-              ]
-            },
-            {
-              "nodeType": "paragraph",
-              "data": {},
-              "content": [
-                {
-                  "nodeType": "text",
-                  "value": "Tuesdays: 7pm – 11:59pm",
-                  "marks": [],
-                  "data": {}
-                },
-                {
-                  "nodeType": "text",
-                  "value": "\n",
-                  "marks": [],
-                  "data": {}
-                },
-                {
-                  "nodeType": "text",
-                  "value": "Saturdays: 4pm – 11pm",
-                  "marks": [],
-                  "data": {}
-                }
-              ]
-            }
-          ]
+          "content": []
         },
         "tone": "light",
-        "enabled": true
+        "enabled": true,
+        "layoutStyle": "split",
+        "title": "Where We Play",
+        "children": [
+          {
+            "sys": {
+              "type": "Link",
+              "linkType": "Entry",
+              "id": "wp-page-11-section-6-embed-12"
+            }
+          },
+          {
+            "sys": {
+              "type": "Link",
+              "linkType": "Entry",
+              "id": "about-venue-copy"
+            }
+          }
+        ]
       }
     },
     {
@@ -4281,31 +3759,7 @@
               "content": [
                 {
                   "nodeType": "text",
-                  "value": "Want to Get Involved?",
-                  "marks": [],
-                  "data": {}
-                }
-              ]
-            },
-            {
-              "nodeType": "paragraph",
-              "data": {},
-              "content": [
-                {
-                  "nodeType": "text",
                   "value": "info@hobsonsbaychess.com",
-                  "marks": [],
-                  "data": {}
-                }
-              ]
-            },
-            {
-              "nodeType": "paragraph",
-              "data": {},
-              "content": [
-                {
-                  "nodeType": "text",
-                  "value": "Join HBCC Today",
                   "marks": [],
                   "data": {}
                 }
@@ -4314,7 +3768,24 @@
           ]
         },
         "tone": "gold",
-        "enabled": true
+        "enabled": true,
+        "title": "Want to Get Involved?",
+        "actions": [
+          {
+            "sys": {
+              "type": "Link",
+              "linkType": "Entry",
+              "id": "about-join"
+            }
+          },
+          {
+            "sys": {
+              "type": "Link",
+              "linkType": "Entry",
+              "id": "about-contact"
+            }
+          }
+        ]
       }
     },
     {
@@ -4401,7 +3872,9 @@
         ],
         "wordpressId": 11,
         "originalUrl": "https://hobsonsbaychess.com/about-us/",
-        "enabled": true
+        "enabled": true,
+        "heroTitle": "About Hobsons Bay Chess Club",
+        "heroDescription": "Bringing chess to Western Melbourne since 1974"
       }
     },
     {
@@ -9679,13 +9152,13 @@
               "data": {},
               "content": [
                 {
-                  "nodeType": "asset-hyperlink",
+                  "nodeType": "entry-hyperlink",
                   "data": {
                     "target": {
                       "sys": {
                         "type": "Link",
-                        "linkType": "Asset",
-                        "id": "wp-asset-895a7d58fa86e9cf4f97"
+                        "linkType": "Entry",
+                        "id": "hbcc-policy-coaching"
                       }
                     }
                   },
@@ -11394,13 +10867,13 @@
               "data": {},
               "content": [
                 {
-                  "nodeType": "asset-hyperlink",
+                  "nodeType": "entry-hyperlink",
                   "data": {
                     "target": {
                       "sys": {
                         "type": "Link",
-                        "linkType": "Asset",
-                        "id": "wp-asset-38bf2711205e93753164"
+                        "linkType": "Entry",
+                        "id": "hbcc-policy-tournament"
                       }
                     }
                   },
@@ -16575,33 +16048,11 @@
       },
       "fields": {
         "internalName": "Membership — Section 1",
-        "kind": "richText",
+        "kind": "cards",
         "body": {
           "nodeType": "document",
           "data": {},
           "content": [
-            {
-              "nodeType": "heading-3",
-              "data": {},
-              "content": [
-                {
-                  "nodeType": "text",
-                  "value": "Membership ",
-                  "marks": [],
-                  "data": {}
-                },
-                {
-                  "nodeType": "text",
-                  "value": "Fees",
-                  "marks": [
-                    {
-                      "type": "bold"
-                    }
-                  ],
-                  "data": {}
-                }
-              ]
-            },
             {
               "nodeType": "paragraph",
               "data": {},
@@ -16613,441 +16064,50 @@
                   "data": {}
                 }
               ]
-            },
-            {
-              "nodeType": "paragraph",
-              "data": {},
-              "content": [
-                {
-                  "nodeType": "text",
-                  "value": "Working full time",
-                  "marks": [],
-                  "data": {}
-                }
-              ]
-            },
-            {
-              "nodeType": "paragraph",
-              "data": {},
-              "content": [
-                {
-                  "nodeType": "text",
-                  "value": "Premium Adult Membership",
-                  "marks": [],
-                  "data": {}
-                }
-              ]
-            },
-            {
-              "nodeType": "paragraph",
-              "data": {},
-              "content": [
-                {
-                  "nodeType": "text",
-                  "value": " ",
-                  "marks": [],
-                  "data": {}
-                },
-                {
-                  "nodeType": "text",
-                  "value": "$",
-                  "marks": [],
-                  "data": {}
-                },
-                {
-                  "nodeType": "text",
-                  "value": " ",
-                  "marks": [],
-                  "data": {}
-                },
-                {
-                  "nodeType": "text",
-                  "value": " ",
-                  "marks": [],
-                  "data": {}
-                },
-                {
-                  "nodeType": "text",
-                  "value": "90",
-                  "marks": [],
-                  "data": {}
-                },
-                {
-                  "nodeType": "text",
-                  "value": " ",
-                  "marks": [],
-                  "data": {}
-                }
-              ]
-            },
-            {
-              "nodeType": "paragraph",
-              "data": {},
-              "content": [
-                {
-                  "nodeType": "hyperlink",
-                  "data": {
-                    "uri": "https://portal.hobsonsbaychess.com/public/membership_levels/46d2820f3535"
-                  },
-                  "content": [
-                    {
-                      "nodeType": "text",
-                      "value": "Enquire Now",
-                      "marks": [],
-                      "data": {}
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "nodeType": "paragraph",
-              "data": {},
-              "content": [
-                {
-                  "nodeType": "text",
-                  "value": "Working part time / casual",
-                  "marks": [],
-                  "data": {}
-                }
-              ]
-            },
-            {
-              "nodeType": "paragraph",
-              "data": {},
-              "content": [
-                {
-                  "nodeType": "text",
-                  "value": "Premium Adult Membership",
-                  "marks": [],
-                  "data": {}
-                }
-              ]
-            },
-            {
-              "nodeType": "paragraph",
-              "data": {},
-              "content": [
-                {
-                  "nodeType": "text",
-                  "value": " ",
-                  "marks": [],
-                  "data": {}
-                },
-                {
-                  "nodeType": "text",
-                  "value": "$",
-                  "marks": [],
-                  "data": {}
-                },
-                {
-                  "nodeType": "text",
-                  "value": " ",
-                  "marks": [],
-                  "data": {}
-                },
-                {
-                  "nodeType": "text",
-                  "value": " ",
-                  "marks": [],
-                  "data": {}
-                },
-                {
-                  "nodeType": "text",
-                  "value": "70",
-                  "marks": [],
-                  "data": {}
-                },
-                {
-                  "nodeType": "text",
-                  "value": " ",
-                  "marks": [],
-                  "data": {}
-                }
-              ]
-            },
-            {
-              "nodeType": "paragraph",
-              "data": {},
-              "content": [
-                {
-                  "nodeType": "hyperlink",
-                  "data": {
-                    "uri": "https://portal.hobsonsbaychess.com/public/membership_levels/052f06cb1406"
-                  },
-                  "content": [
-                    {
-                      "nodeType": "text",
-                      "value": "Enquire Now",
-                      "marks": [],
-                      "data": {}
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "nodeType": "paragraph",
-              "data": {},
-              "content": [
-                {
-                  "nodeType": "text",
-                  "value": "Non-working adult",
-                  "marks": [],
-                  "data": {}
-                }
-              ]
-            },
-            {
-              "nodeType": "paragraph",
-              "data": {},
-              "content": [
-                {
-                  "nodeType": "text",
-                  "value": "Premium Adult Membership",
-                  "marks": [],
-                  "data": {}
-                }
-              ]
-            },
-            {
-              "nodeType": "paragraph",
-              "data": {},
-              "content": [
-                {
-                  "nodeType": "text",
-                  "value": " ",
-                  "marks": [],
-                  "data": {}
-                },
-                {
-                  "nodeType": "text",
-                  "value": "$",
-                  "marks": [],
-                  "data": {}
-                },
-                {
-                  "nodeType": "text",
-                  "value": " ",
-                  "marks": [],
-                  "data": {}
-                },
-                {
-                  "nodeType": "text",
-                  "value": " ",
-                  "marks": [],
-                  "data": {}
-                },
-                {
-                  "nodeType": "text",
-                  "value": "50",
-                  "marks": [],
-                  "data": {}
-                },
-                {
-                  "nodeType": "text",
-                  "value": " ",
-                  "marks": [],
-                  "data": {}
-                }
-              ]
-            },
-            {
-              "nodeType": "paragraph",
-              "data": {},
-              "content": [
-                {
-                  "nodeType": "hyperlink",
-                  "data": {
-                    "uri": "https://portal.hobsonsbaychess.com/public/membership_levels/9be5b6fb308e"
-                  },
-                  "content": [
-                    {
-                      "nodeType": "text",
-                      "value": "Enquire Now",
-                      "marks": [],
-                      "data": {}
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "nodeType": "paragraph",
-              "data": {},
-              "content": [
-                {
-                  "nodeType": "text",
-                  "value": "Family Membership 1",
-                  "marks": [],
-                  "data": {}
-                }
-              ]
-            },
-            {
-              "nodeType": "paragraph",
-              "data": {},
-              "content": [
-                {
-                  "nodeType": "text",
-                  "value": "Playing Adult + U18 Juniors",
-                  "marks": [],
-                  "data": {}
-                }
-              ]
-            },
-            {
-              "nodeType": "paragraph",
-              "data": {},
-              "content": [
-                {
-                  "nodeType": "text",
-                  "value": " ",
-                  "marks": [],
-                  "data": {}
-                },
-                {
-                  "nodeType": "text",
-                  "value": "$",
-                  "marks": [],
-                  "data": {}
-                },
-                {
-                  "nodeType": "text",
-                  "value": " ",
-                  "marks": [],
-                  "data": {}
-                },
-                {
-                  "nodeType": "text",
-                  "value": " ",
-                  "marks": [],
-                  "data": {}
-                },
-                {
-                  "nodeType": "text",
-                  "value": "90+",
-                  "marks": [],
-                  "data": {}
-                },
-                {
-                  "nodeType": "text",
-                  "value": " ",
-                  "marks": [],
-                  "data": {}
-                }
-              ]
-            },
-            {
-              "nodeType": "paragraph",
-              "data": {},
-              "content": [
-                {
-                  "nodeType": "hyperlink",
-                  "data": {
-                    "uri": "https://hbcc.tidyhq.com/public/membership_levels/cf401505cc96"
-                  },
-                  "content": [
-                    {
-                      "nodeType": "text",
-                      "value": "Enquire Now",
-                      "marks": [],
-                      "data": {}
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "nodeType": "paragraph",
-              "data": {},
-              "content": [
-                {
-                  "nodeType": "text",
-                  "value": "Family Membership 2",
-                  "marks": [],
-                  "data": {}
-                }
-              ]
-            },
-            {
-              "nodeType": "paragraph",
-              "data": {},
-              "content": [
-                {
-                  "nodeType": "text",
-                  "value": "Non-playing Adult + U18 Juniors",
-                  "marks": [],
-                  "data": {}
-                }
-              ]
-            },
-            {
-              "nodeType": "paragraph",
-              "data": {},
-              "content": [
-                {
-                  "nodeType": "text",
-                  "value": " ",
-                  "marks": [],
-                  "data": {}
-                },
-                {
-                  "nodeType": "text",
-                  "value": "$",
-                  "marks": [],
-                  "data": {}
-                },
-                {
-                  "nodeType": "text",
-                  "value": " ",
-                  "marks": [],
-                  "data": {}
-                },
-                {
-                  "nodeType": "text",
-                  "value": " ",
-                  "marks": [],
-                  "data": {}
-                },
-                {
-                  "nodeType": "text",
-                  "value": "40+",
-                  "marks": [],
-                  "data": {}
-                },
-                {
-                  "nodeType": "text",
-                  "value": " ",
-                  "marks": [],
-                  "data": {}
-                }
-              ]
-            },
-            {
-              "nodeType": "paragraph",
-              "data": {},
-              "content": [
-                {
-                  "nodeType": "hyperlink",
-                  "data": {
-                    "uri": "https://hbcc.tidyhq.com/public/membership_levels/213e7cfdb5d9"
-                  },
-                  "content": [
-                    {
-                      "nodeType": "text",
-                      "value": "Enquire Now",
-                      "marks": [],
-                      "data": {}
-                    }
-                  ]
-                }
-              ]
             }
           ]
         },
         "tone": "light",
-        "enabled": true
+        "enabled": true,
+        "layoutStyle": "pricing",
+        "title": "Membership Fees",
+        "cards": [
+          {
+            "sys": {
+              "type": "Link",
+              "linkType": "Entry",
+              "id": "membership-fee-0"
+            }
+          },
+          {
+            "sys": {
+              "type": "Link",
+              "linkType": "Entry",
+              "id": "membership-fee-1"
+            }
+          },
+          {
+            "sys": {
+              "type": "Link",
+              "linkType": "Entry",
+              "id": "membership-fee-2"
+            }
+          },
+          {
+            "sys": {
+              "type": "Link",
+              "linkType": "Entry",
+              "id": "membership-fee-3"
+            }
+          },
+          {
+            "sys": {
+              "type": "Link",
+              "linkType": "Entry",
+              "id": "membership-fee-4"
+            }
+          }
+        ]
       }
     },
     {
@@ -17064,33 +16124,11 @@
       },
       "fields": {
         "internalName": "Membership — Section 2",
-        "kind": "richText",
+        "kind": "cards",
         "body": {
           "nodeType": "document",
           "data": {},
           "content": [
-            {
-              "nodeType": "heading-3",
-              "data": {},
-              "content": [
-                {
-                  "nodeType": "text",
-                  "value": "What You ",
-                  "marks": [],
-                  "data": {}
-                },
-                {
-                  "nodeType": "text",
-                  "value": "Get as a Member",
-                  "marks": [
-                    {
-                      "type": "bold"
-                    }
-                  ],
-                  "data": {}
-                }
-              ]
-            },
             {
               "nodeType": "paragraph",
               "data": {},
@@ -17102,183 +16140,43 @@
                   "data": {}
                 }
               ]
-            },
-            {
-              "nodeType": "heading-2",
-              "data": {},
-              "content": [
-                {
-                  "nodeType": "text",
-                  "value": "Access to",
-                  "marks": [],
-                  "data": {}
-                },
-                {
-                  "nodeType": "text",
-                  "value": "\n",
-                  "marks": [],
-                  "data": {}
-                },
-                {
-                  "nodeType": "text",
-                  "value": "\n",
-                  "marks": [],
-                  "data": {}
-                },
-                {
-                  "nodeType": "text",
-                  "value": " ",
-                  "marks": [],
-                  "data": {}
-                },
-                {
-                  "nodeType": "text",
-                  "value": "Coaching",
-                  "marks": [
-                    {
-                      "type": "bold"
-                    }
-                  ],
-                  "data": {}
-                }
-              ]
-            },
-            {
-              "nodeType": "paragraph",
-              "data": {},
-              "content": [
-                {
-                  "nodeType": "text",
-                  "value": "Join coaching sessions and structured development opportunities.",
-                  "marks": [],
-                  "data": {}
-                }
-              ]
-            },
-            {
-              "nodeType": "heading-2",
-              "data": {},
-              "content": [
-                {
-                  "nodeType": "text",
-                  "value": "Member Benefits ",
-                  "marks": [],
-                  "data": {}
-                },
-                {
-                  "nodeType": "text",
-                  "value": "from Sponsors",
-                  "marks": [
-                    {
-                      "type": "bold"
-                    }
-                  ],
-                  "data": {}
-                }
-              ]
-            },
-            {
-              "nodeType": "paragraph",
-              "data": {},
-              "content": [
-                {
-                  "nodeType": "text",
-                  "value": "Members can avail discounts and free services from our sponsors",
-                  "marks": [],
-                  "data": {}
-                }
-              ]
-            },
-            {
-              "nodeType": "heading-2",
-              "data": {},
-              "content": [
-                {
-                  "nodeType": "text",
-                  "value": "Discounted ",
-                  "marks": [],
-                  "data": {}
-                },
-                {
-                  "nodeType": "text",
-                  "value": "Classical Events",
-                  "marks": [
-                    {
-                      "type": "bold"
-                    }
-                  ],
-                  "data": {}
-                }
-              ]
-            },
-            {
-              "nodeType": "paragraph",
-              "data": {},
-              "content": [
-                {
-                  "nodeType": "text",
-                  "value": "Members receive discounted entry for long timeframe (5–7 week) tournaments.",
-                  "marks": [],
-                  "data": {}
-                }
-              ]
-            },
-            {
-              "nodeType": "heading-2",
-              "data": {},
-              "content": [
-                {
-                  "nodeType": "text",
-                  "value": "Exclusive",
-                  "marks": [],
-                  "data": {}
-                },
-                {
-                  "nodeType": "text",
-                  "value": "\n",
-                  "marks": [],
-                  "data": {}
-                },
-                {
-                  "nodeType": "text",
-                  "value": "\n",
-                  "marks": [],
-                  "data": {}
-                },
-                {
-                  "nodeType": "text",
-                  "value": " ",
-                  "marks": [],
-                  "data": {}
-                },
-                {
-                  "nodeType": "text",
-                  "value": "Events",
-                  "marks": [
-                    {
-                      "type": "bold"
-                    }
-                  ],
-                  "data": {}
-                }
-              ]
-            },
-            {
-              "nodeType": "paragraph",
-              "data": {},
-              "content": [
-                {
-                  "nodeType": "text",
-                  "value": "Members get priority or exclusive access to special club events.",
-                  "marks": [],
-                  "data": {}
-                }
-              ]
             }
           ]
         },
         "tone": "gold",
-        "enabled": true
+        "enabled": true,
+        "layoutStyle": "benefits",
+        "title": "What You Get as a Member",
+        "cards": [
+          {
+            "sys": {
+              "type": "Link",
+              "linkType": "Entry",
+              "id": "membership-benefit-0"
+            }
+          },
+          {
+            "sys": {
+              "type": "Link",
+              "linkType": "Entry",
+              "id": "membership-benefit-1"
+            }
+          },
+          {
+            "sys": {
+              "type": "Link",
+              "linkType": "Entry",
+              "id": "membership-benefit-2"
+            }
+          },
+          {
+            "sys": {
+              "type": "Link",
+              "linkType": "Entry",
+              "id": "membership-benefit-3"
+            }
+          }
+        ]
       }
     },
     {
@@ -17295,267 +16193,59 @@
       },
       "fields": {
         "internalName": "Membership — Section 3",
-        "kind": "richText",
+        "kind": "statistics",
         "body": {
           "nodeType": "document",
           "data": {},
-          "content": [
-            {
-              "nodeType": "paragraph",
-              "data": {},
-              "content": [
-                {
-                  "nodeType": "text",
-                  "value": " ",
-                  "marks": [],
-                  "data": {}
-                },
-                {
-                  "nodeType": "text",
-                  "value": "50+",
-                  "marks": [],
-                  "data": {}
-                },
-                {
-                  "nodeType": "text",
-                  "value": " ",
-                  "marks": [],
-                  "data": {}
-                },
-                {
-                  "nodeType": "text",
-                  "value": " ",
-                  "marks": [],
-                  "data": {}
-                },
-                {
-                  "nodeType": "text",
-                  "value": "Years Serving Community",
-                  "marks": [],
-                  "data": {}
-                },
-                {
-                  "nodeType": "text",
-                  "value": " ",
-                  "marks": [],
-                  "data": {}
-                }
-              ]
-            },
-            {
-              "nodeType": "paragraph",
-              "data": {},
-              "content": [
-                {
-                  "nodeType": "text",
-                  "value": " ",
-                  "marks": [],
-                  "data": {}
-                },
-                {
-                  "nodeType": "text",
-                  "value": "130+",
-                  "marks": [],
-                  "data": {}
-                },
-                {
-                  "nodeType": "text",
-                  "value": " ",
-                  "marks": [],
-                  "data": {}
-                },
-                {
-                  "nodeType": "text",
-                  "value": " ",
-                  "marks": [],
-                  "data": {}
-                },
-                {
-                  "nodeType": "text",
-                  "value": "Active Members",
-                  "marks": [],
-                  "data": {}
-                },
-                {
-                  "nodeType": "text",
-                  "value": " ",
-                  "marks": [],
-                  "data": {}
-                }
-              ]
-            },
-            {
-              "nodeType": "paragraph",
-              "data": {},
-              "content": [
-                {
-                  "nodeType": "text",
-                  "value": " ",
-                  "marks": [],
-                  "data": {}
-                },
-                {
-                  "nodeType": "text",
-                  "value": "99",
-                  "marks": [],
-                  "data": {}
-                },
-                {
-                  "nodeType": "text",
-                  "value": " ",
-                  "marks": [],
-                  "data": {}
-                },
-                {
-                  "nodeType": "text",
-                  "value": " ",
-                  "marks": [],
-                  "data": {}
-                },
-                {
-                  "nodeType": "text",
-                  "value": "Juniors in 2025",
-                  "marks": [],
-                  "data": {}
-                },
-                {
-                  "nodeType": "text",
-                  "value": " ",
-                  "marks": [],
-                  "data": {}
-                }
-              ]
-            },
-            {
-              "nodeType": "paragraph",
-              "data": {},
-              "content": [
-                {
-                  "nodeType": "text",
-                  "value": " ",
-                  "marks": [],
-                  "data": {}
-                },
-                {
-                  "nodeType": "text",
-                  "value": "80+",
-                  "marks": [],
-                  "data": {}
-                },
-                {
-                  "nodeType": "text",
-                  "value": " ",
-                  "marks": [],
-                  "data": {}
-                },
-                {
-                  "nodeType": "text",
-                  "value": " ",
-                  "marks": [],
-                  "data": {}
-                },
-                {
-                  "nodeType": "text",
-                  "value": "Yearly Club Nights",
-                  "marks": [],
-                  "data": {}
-                },
-                {
-                  "nodeType": "text",
-                  "value": " ",
-                  "marks": [],
-                  "data": {}
-                }
-              ]
-            },
-            {
-              "nodeType": "paragraph",
-              "data": {},
-              "content": [
-                {
-                  "nodeType": "text",
-                  "value": " ",
-                  "marks": [],
-                  "data": {}
-                },
-                {
-                  "nodeType": "text",
-                  "value": "30+",
-                  "marks": [],
-                  "data": {}
-                },
-                {
-                  "nodeType": "text",
-                  "value": " ",
-                  "marks": [],
-                  "data": {}
-                },
-                {
-                  "nodeType": "text",
-                  "value": " ",
-                  "marks": [],
-                  "data": {}
-                },
-                {
-                  "nodeType": "text",
-                  "value": "Events This Year",
-                  "marks": [],
-                  "data": {}
-                },
-                {
-                  "nodeType": "text",
-                  "value": " ",
-                  "marks": [],
-                  "data": {}
-                }
-              ]
-            },
-            {
-              "nodeType": "paragraph",
-              "data": {},
-              "content": [
-                {
-                  "nodeType": "text",
-                  "value": " ",
-                  "marks": [],
-                  "data": {}
-                },
-                {
-                  "nodeType": "text",
-                  "value": "100+",
-                  "marks": [],
-                  "data": {}
-                },
-                {
-                  "nodeType": "text",
-                  "value": " ",
-                  "marks": [],
-                  "data": {}
-                },
-                {
-                  "nodeType": "text",
-                  "value": " ",
-                  "marks": [],
-                  "data": {}
-                },
-                {
-                  "nodeType": "text",
-                  "value": "Weekly Attendance",
-                  "marks": [],
-                  "data": {}
-                },
-                {
-                  "nodeType": "text",
-                  "value": " ",
-                  "marks": [],
-                  "data": {}
-                }
-              ]
-            }
-          ]
+          "content": []
         },
         "tone": "light",
-        "enabled": true
+        "enabled": true,
+        "title": "The club in numbers",
+        "statistics": [
+          {
+            "sys": {
+              "type": "Link",
+              "linkType": "Entry",
+              "id": "club-stat-0"
+            }
+          },
+          {
+            "sys": {
+              "type": "Link",
+              "linkType": "Entry",
+              "id": "club-stat-1"
+            }
+          },
+          {
+            "sys": {
+              "type": "Link",
+              "linkType": "Entry",
+              "id": "club-stat-2"
+            }
+          },
+          {
+            "sys": {
+              "type": "Link",
+              "linkType": "Entry",
+              "id": "club-stat-3"
+            }
+          },
+          {
+            "sys": {
+              "type": "Link",
+              "linkType": "Entry",
+              "id": "club-stat-4"
+            }
+          },
+          {
+            "sys": {
+              "type": "Link",
+              "linkType": "Entry",
+              "id": "club-stat-5"
+            }
+          }
+        ]
       }
     },
     {
@@ -17597,262 +16287,32 @@
       },
       "fields": {
         "internalName": "Membership — Section 4",
-        "kind": "richText",
+        "kind": "columns",
         "body": {
           "nodeType": "document",
           "data": {},
-          "content": [
-            {
-              "nodeType": "heading-3",
-              "data": {},
-              "content": [
-                {
-                  "nodeType": "text",
-                  "value": "How to become a",
-                  "marks": [],
-                  "data": {}
-                },
-                {
-                  "nodeType": "text",
-                  "value": "\n",
-                  "marks": [],
-                  "data": {}
-                },
-                {
-                  "nodeType": "text",
-                  "value": "\n",
-                  "marks": [],
-                  "data": {}
-                },
-                {
-                  "nodeType": "text",
-                  "value": " ",
-                  "marks": [],
-                  "data": {}
-                },
-                {
-                  "nodeType": "text",
-                  "value": " Member",
-                  "marks": [
-                    {
-                      "type": "bold"
-                    }
-                  ],
-                  "data": {}
-                }
-              ]
-            },
-            {
-              "nodeType": "embedded-entry-block",
-              "data": {
-                "target": {
-                  "sys": {
-                    "type": "Link",
-                    "linkType": "Entry",
-                    "id": "wp-page-4424-section-3-image-101"
-                  }
-                }
-              },
-              "content": []
-            },
-            {
-              "nodeType": "paragraph",
-              "data": {},
-              "content": [
-                {
-                  "nodeType": "text",
-                  "value": "Step 1 – Choose Your Membership Type",
-                  "marks": [],
-                  "data": {}
-                }
-              ]
-            },
-            {
-              "nodeType": "paragraph",
-              "data": {},
-              "content": [
-                {
-                  "nodeType": "text",
-                  "value": "Select the option that best fits your situation (adult or junior).",
-                  "marks": [],
-                  "data": {}
-                },
-                {
-                  "nodeType": "text",
-                  "value": "\n",
-                  "marks": [],
-                  "data": {}
-                },
-                {
-                  "nodeType": "text",
-                  "value": "\n",
-                  "marks": [],
-                  "data": {}
-                },
-                {
-                  "nodeType": "text",
-                  "value": " ",
-                  "marks": [],
-                  "data": {}
-                }
-              ]
-            },
-            {
-              "nodeType": "paragraph",
-              "data": {},
-              "content": [
-                {
-                  "nodeType": "text",
-                  "value": "Step 2 - Pay Online (Recommended)",
-                  "marks": [],
-                  "data": {}
-                }
-              ]
-            },
-            {
-              "nodeType": "paragraph",
-              "data": {},
-              "content": [
-                {
-                  "nodeType": "text",
-                  "value": "Join or renew online using our members portal.",
-                  "marks": [],
-                  "data": {}
-                }
-              ]
-            },
-            {
-              "nodeType": "paragraph",
-              "data": {},
-              "content": [
-                {
-                  "nodeType": "text",
-                  "value": "Step 3 - Or Pay by EFT (Exceptions Only)",
-                  "marks": [],
-                  "data": {}
-                }
-              ]
-            },
-            {
-              "nodeType": "paragraph",
-              "data": {},
-              "content": [
-                {
-                  "nodeType": "text",
-                  "value": "If paying by bank transfer, use:",
-                  "marks": [],
-                  "data": {}
-                },
-                {
-                  "nodeType": "text",
-                  "value": "\n",
-                  "marks": [],
-                  "data": {}
-                },
-                {
-                  "nodeType": "text",
-                  "value": "\n",
-                  "marks": [],
-                  "data": {}
-                },
-                {
-                  "nodeType": "text",
-                  "value": " BSB: 633-000",
-                  "marks": [],
-                  "data": {}
-                },
-                {
-                  "nodeType": "text",
-                  "value": "\n",
-                  "marks": [],
-                  "data": {}
-                },
-                {
-                  "nodeType": "text",
-                  "value": "\n",
-                  "marks": [],
-                  "data": {}
-                },
-                {
-                  "nodeType": "text",
-                  "value": " Account: 151028586",
-                  "marks": [],
-                  "data": {}
-                },
-                {
-                  "nodeType": "text",
-                  "value": "\n",
-                  "marks": [],
-                  "data": {}
-                },
-                {
-                  "nodeType": "text",
-                  "value": "\n",
-                  "marks": [],
-                  "data": {}
-                },
-                {
-                  "nodeType": "text",
-                  "value": " Reference: Your surname",
-                  "marks": [],
-                  "data": {}
-                }
-              ]
-            },
-            {
-              "nodeType": "paragraph",
-              "data": {},
-              "content": [
-                {
-                  "nodeType": "text",
-                  "value": "Step 4 - Need Help?",
-                  "marks": [],
-                  "data": {}
-                }
-              ]
-            },
-            {
-              "nodeType": "paragraph",
-              "data": {},
-              "content": [
-                {
-                  "nodeType": "text",
-                  "value": "Contact our Treasurer or committee and we’ll assist.",
-                  "marks": [],
-                  "data": {}
-                }
-              ]
-            },
-            {
-              "nodeType": "paragraph",
-              "data": {},
-              "content": [
-                {
-                  "nodeType": "entry-hyperlink",
-                  "data": {
-                    "target": {
-                      "sys": {
-                        "type": "Link",
-                        "linkType": "Entry",
-                        "id": "hbcc-home-page"
-                      }
-                    }
-                  },
-                  "content": [
-                    {
-                      "nodeType": "text",
-                      "value": "Renew Now",
-                      "marks": [],
-                      "data": {}
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
+          "content": []
         },
         "tone": "gold",
-        "enabled": true
+        "enabled": true,
+        "layoutStyle": "split",
+        "title": "How to become a Member",
+        "children": [
+          {
+            "sys": {
+              "type": "Link",
+              "linkType": "Entry",
+              "id": "membership-join-image"
+            }
+          },
+          {
+            "sys": {
+              "type": "Link",
+              "linkType": "Entry",
+              "id": "membership-join-steps"
+            }
+          }
+        ]
       }
     },
     {
@@ -17894,62 +16354,31 @@
       },
       "fields": {
         "internalName": "Membership — Section 5",
-        "kind": "richText",
+        "kind": "columns",
         "body": {
           "nodeType": "document",
           "data": {},
-          "content": [
-            {
-              "nodeType": "embedded-entry-block",
-              "data": {
-                "target": {
-                  "sys": {
-                    "type": "Link",
-                    "linkType": "Entry",
-                    "id": "wp-page-4424-section-4-image-102"
-                  }
-                }
-              },
-              "content": []
-            },
-            {
-              "nodeType": "heading-3",
-              "data": {},
-              "content": [
-                {
-                  "nodeType": "text",
-                  "value": "Club Etiquette ",
-                  "marks": [],
-                  "data": {}
-                },
-                {
-                  "nodeType": "text",
-                  "value": "& Policies",
-                  "marks": [
-                    {
-                      "type": "bold"
-                    }
-                  ],
-                  "data": {}
-                }
-              ]
-            },
-            {
-              "nodeType": "paragraph",
-              "data": {},
-              "content": [
-                {
-                  "nodeType": "text",
-                  "value": "By becoming a member or entering our events, you agree to follow club etiquette and be aware of our privacy policy.",
-                  "marks": [],
-                  "data": {}
-                }
-              ]
-            }
-          ]
+          "content": []
         },
         "tone": "light",
-        "enabled": true
+        "enabled": true,
+        "layoutStyle": "split",
+        "children": [
+          {
+            "sys": {
+              "type": "Link",
+              "linkType": "Entry",
+              "id": "membership-policy-image"
+            }
+          },
+          {
+            "sys": {
+              "type": "Link",
+              "linkType": "Entry",
+              "id": "membership-policy-links"
+            }
+          }
+        ]
       }
     },
     {
@@ -17971,28 +16400,6 @@
           "nodeType": "document",
           "data": {},
           "content": [
-            {
-              "nodeType": "heading-3",
-              "data": {},
-              "content": [
-                {
-                  "nodeType": "text",
-                  "value": "Juniors & ",
-                  "marks": [],
-                  "data": {}
-                },
-                {
-                  "nodeType": "text",
-                  "value": "Families",
-                  "marks": [
-                    {
-                      "type": "bold"
-                    }
-                  ],
-                  "data": {}
-                }
-              ]
-            },
             {
               "nodeType": "paragraph",
               "data": {},
@@ -18052,37 +16459,21 @@
                   "data": {}
                 }
               ]
-            },
-            {
-              "nodeType": "paragraph",
-              "data": {},
-              "content": [
-                {
-                  "nodeType": "asset-hyperlink",
-                  "data": {
-                    "target": {
-                      "sys": {
-                        "type": "Link",
-                        "linkType": "Asset",
-                        "id": "wp-asset-aa94217db9232a93fb31"
-                      }
-                    }
-                  },
-                  "content": [
-                    {
-                      "nodeType": "text",
-                      "value": "View Juniors Program",
-                      "marks": [],
-                      "data": {}
-                    }
-                  ]
-                }
-              ]
             }
           ]
         },
         "tone": "gold",
-        "enabled": true
+        "enabled": true,
+        "title": "Juniors & Families",
+        "actions": [
+          {
+            "sys": {
+              "type": "Link",
+              "linkType": "Entry",
+              "id": "membership-junior-program"
+            }
+          }
+        ]
       }
     },
     {
@@ -18279,102 +16670,52 @@
       },
       "fields": {
         "internalName": "Membership — Section 7",
-        "kind": "richText",
+        "kind": "accordion",
         "body": {
           "nodeType": "document",
           "data": {},
-          "content": [
-            {
-              "nodeType": "heading-3",
-              "data": {},
-              "content": [
-                {
-                  "nodeType": "text",
-                  "value": "Frequently Asked ",
-                  "marks": [],
-                  "data": {}
-                },
-                {
-                  "nodeType": "text",
-                  "value": "Questions",
-                  "marks": [
-                    {
-                      "type": "bold"
-                    }
-                  ],
-                  "data": {}
-                }
-              ]
-            },
-            {
-              "nodeType": "embedded-entry-block",
-              "data": {
-                "target": {
-                  "sys": {
-                    "type": "Link",
-                    "linkType": "Entry",
-                    "id": "wp-page-4424-section-6-faq-103"
-                  }
-                }
-              },
-              "content": []
-            },
-            {
-              "nodeType": "embedded-entry-block",
-              "data": {
-                "target": {
-                  "sys": {
-                    "type": "Link",
-                    "linkType": "Entry",
-                    "id": "wp-page-4424-section-6-faq-104"
-                  }
-                }
-              },
-              "content": []
-            },
-            {
-              "nodeType": "embedded-entry-block",
-              "data": {
-                "target": {
-                  "sys": {
-                    "type": "Link",
-                    "linkType": "Entry",
-                    "id": "wp-page-4424-section-6-faq-105"
-                  }
-                }
-              },
-              "content": []
-            },
-            {
-              "nodeType": "embedded-entry-block",
-              "data": {
-                "target": {
-                  "sys": {
-                    "type": "Link",
-                    "linkType": "Entry",
-                    "id": "wp-page-4424-section-6-faq-106"
-                  }
-                }
-              },
-              "content": []
-            },
-            {
-              "nodeType": "embedded-entry-block",
-              "data": {
-                "target": {
-                  "sys": {
-                    "type": "Link",
-                    "linkType": "Entry",
-                    "id": "wp-page-4424-section-6-faq-107"
-                  }
-                }
-              },
-              "content": []
-            }
-          ]
+          "content": []
         },
         "tone": "light",
-        "enabled": true
+        "enabled": true,
+        "title": "Frequently Asked Questions",
+        "cards": [
+          {
+            "sys": {
+              "type": "Link",
+              "linkType": "Entry",
+              "id": "wp-page-4424-section-6-faq-103"
+            }
+          },
+          {
+            "sys": {
+              "type": "Link",
+              "linkType": "Entry",
+              "id": "wp-page-4424-section-6-faq-104"
+            }
+          },
+          {
+            "sys": {
+              "type": "Link",
+              "linkType": "Entry",
+              "id": "wp-page-4424-section-6-faq-105"
+            }
+          },
+          {
+            "sys": {
+              "type": "Link",
+              "linkType": "Entry",
+              "id": "wp-page-4424-section-6-faq-106"
+            }
+          },
+          {
+            "sys": {
+              "type": "Link",
+              "linkType": "Entry",
+              "id": "wp-page-4424-section-6-faq-107"
+            }
+          }
+        ]
       }
     },
     {
@@ -18396,28 +16737,6 @@
           "nodeType": "document",
           "data": {},
           "content": [
-            {
-              "nodeType": "heading-3",
-              "data": {},
-              "content": [
-                {
-                  "nodeType": "text",
-                  "value": "Join HBCC ",
-                  "marks": [],
-                  "data": {}
-                },
-                {
-                  "nodeType": "text",
-                  "value": "Today",
-                  "marks": [
-                    {
-                      "type": "bold"
-                    }
-                  ],
-                  "data": {}
-                }
-              ]
-            },
             {
               "nodeType": "paragraph",
               "data": {},
@@ -18447,37 +16766,28 @@
                   "data": {}
                 }
               ]
-            },
-            {
-              "nodeType": "paragraph",
-              "data": {},
-              "content": [
-                {
-                  "nodeType": "entry-hyperlink",
-                  "data": {
-                    "target": {
-                      "sys": {
-                        "type": "Link",
-                        "linkType": "Entry",
-                        "id": "wp-page-13"
-                      }
-                    }
-                  },
-                  "content": [
-                    {
-                      "nodeType": "text",
-                      "value": "View Calendar",
-                      "marks": [],
-                      "data": {}
-                    }
-                  ]
-                }
-              ]
             }
           ]
         },
         "tone": "gold",
-        "enabled": true
+        "enabled": true,
+        "title": "Join HBCC Today",
+        "actions": [
+          {
+            "sys": {
+              "type": "Link",
+              "linkType": "Entry",
+              "id": "membership-join"
+            }
+          },
+          {
+            "sys": {
+              "type": "Link",
+              "linkType": "Entry",
+              "id": "membership-calendar"
+            }
+          }
+        ]
       }
     },
     {
@@ -18564,7 +16874,16 @@
         ],
         "wordpressId": 4424,
         "originalUrl": "https://hobsonsbaychess.com/membership/",
-        "enabled": true
+        "enabled": true,
+        "heroActions": [
+          {
+            "sys": {
+              "type": "Link",
+              "linkType": "Entry",
+              "id": "membership-join"
+            }
+          }
+        ]
       }
     },
     {
@@ -18828,179 +17147,79 @@
       },
       "fields": {
         "internalName": "Policies — Section 1",
-        "kind": "richText",
+        "kind": "policies",
         "body": {
           "nodeType": "document",
           "data": {},
           "content": [
             {
-              "nodeType": "heading-4",
-              "data": {},
-              "content": [
-                {
-                  "nodeType": "text",
-                  "value": "Club Policies & Documents",
-                  "marks": [],
-                  "data": {}
-                }
-              ]
-            },
-            {
               "nodeType": "paragraph",
               "data": {},
               "content": [
                 {
-                  "nodeType": "asset-hyperlink",
-                  "data": {
-                    "target": {
-                      "sys": {
-                        "type": "Link",
-                        "linkType": "Asset",
-                        "id": "wp-asset-4192bee3bed057a55515"
-                      }
-                    }
-                  },
-                  "content": [
-                    {
-                      "nodeType": "text",
-                      "value": "\n",
-                      "marks": [],
-                      "data": {}
-                    },
-                    {
-                      "nodeType": "text",
-                      "value": "NDA & Code of Conduct",
-                      "marks": [],
-                      "data": {}
-                    },
-                    {
-                      "nodeType": "text",
-                      "value": "\n",
-                      "marks": [],
-                      "data": {}
-                    }
-                  ]
-                },
-                {
                   "nodeType": "text",
-                  "value": "\n",
+                  "value": "Read the club’s approved documents below. Each policy can be opened or downloaded.",
                   "marks": [],
                   "data": {}
-                },
-                {
-                  "nodeType": "asset-hyperlink",
-                  "data": {
-                    "target": {
-                      "sys": {
-                        "type": "Link",
-                        "linkType": "Asset",
-                        "id": "wp-asset-2de77e07c885d25b7951"
-                      }
-                    }
-                  },
-                  "content": [
-                    {
-                      "nodeType": "text",
-                      "value": "\n",
-                      "marks": [],
-                      "data": {}
-                    },
-                    {
-                      "nodeType": "text",
-                      "value": "HBCC By-Law",
-                      "marks": [],
-                      "data": {}
-                    },
-                    {
-                      "nodeType": "text",
-                      "value": "\n",
-                      "marks": [],
-                      "data": {}
-                    }
-                  ]
-                },
-                {
-                  "nodeType": "text",
-                  "value": "\n",
-                  "marks": [],
-                  "data": {}
-                },
-                {
-                  "nodeType": "asset-hyperlink",
-                  "data": {
-                    "target": {
-                      "sys": {
-                        "type": "Link",
-                        "linkType": "Asset",
-                        "id": "wp-asset-1e42d399ca5f8988e5fa"
-                      }
-                    }
-                  },
-                  "content": [
-                    {
-                      "nodeType": "text",
-                      "value": "\n",
-                      "marks": [],
-                      "data": {}
-                    },
-                    {
-                      "nodeType": "text",
-                      "value": "Child Safe Policy",
-                      "marks": [],
-                      "data": {}
-                    },
-                    {
-                      "nodeType": "text",
-                      "value": "\n",
-                      "marks": [],
-                      "data": {}
-                    }
-                  ]
-                },
-                {
-                  "nodeType": "text",
-                  "value": "\n",
-                  "marks": [],
-                  "data": {}
-                },
-                {
-                  "nodeType": "asset-hyperlink",
-                  "data": {
-                    "target": {
-                      "sys": {
-                        "type": "Link",
-                        "linkType": "Asset",
-                        "id": "wp-asset-fbffc8132b0d9cacd658"
-                      }
-                    }
-                  },
-                  "content": [
-                    {
-                      "nodeType": "text",
-                      "value": "\n",
-                      "marks": [],
-                      "data": {}
-                    },
-                    {
-                      "nodeType": "text",
-                      "value": "Privacy & Photography Policy",
-                      "marks": [],
-                      "data": {}
-                    },
-                    {
-                      "nodeType": "text",
-                      "value": "\n",
-                      "marks": [],
-                      "data": {}
-                    }
-                  ]
                 }
               ]
             }
           ]
         },
         "tone": "light",
-        "enabled": true
+        "enabled": true,
+        "title": "Club Policies & Documents",
+        "policies": [
+          {
+            "sys": {
+              "type": "Link",
+              "linkType": "Entry",
+              "id": "hbcc-policy-code"
+            }
+          },
+          {
+            "sys": {
+              "type": "Link",
+              "linkType": "Entry",
+              "id": "hbcc-policy-bylaw"
+            }
+          },
+          {
+            "sys": {
+              "type": "Link",
+              "linkType": "Entry",
+              "id": "hbcc-policy-childsafe"
+            }
+          },
+          {
+            "sys": {
+              "type": "Link",
+              "linkType": "Entry",
+              "id": "hbcc-policy-privacy"
+            }
+          },
+          {
+            "sys": {
+              "type": "Link",
+              "linkType": "Entry",
+              "id": "hbcc-policy-etiquette"
+            }
+          },
+          {
+            "sys": {
+              "type": "Link",
+              "linkType": "Entry",
+              "id": "hbcc-policy-tournament"
+            }
+          },
+          {
+            "sys": {
+              "type": "Link",
+              "linkType": "Entry",
+              "id": "hbcc-policy-coaching"
+            }
+          }
+        ]
       }
     },
     {
@@ -19019,7 +17238,7 @@
         "title": "Policies",
         "slug": "policies",
         "template": "content",
-        "description": "Explore policies at Hobsons Bay Chess Club.",
+        "description": "Club policies, member etiquette, child safety, privacy and tournament rules.",
         "heroImage": {
           "sys": {
             "type": "Link",
@@ -19590,7 +17809,14 @@
         "readMoreLabel": "Read more",
         "homeLabel": "Home",
         "newsLabel": "News",
-        "menuLabel": "HBCC"
+        "menuLabel": "HBCC",
+        "policyPage": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Entry",
+            "id": "wp-page-5242"
+          }
+        }
       }
     },
     {
@@ -25268,6 +23494,2291 @@
           }
         ]
       }
+    },
+    {
+      "sys": {
+        "id": "hbcc-policy-code",
+        "type": "Entry",
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "policy"
+          }
+        }
+      },
+      "fields": {
+        "title": "NDA & Code of Conduct",
+        "slug": "code-of-conduct",
+        "document": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Asset",
+            "id": "wp-asset-4192bee3bed057a55515"
+          }
+        },
+        "enabled": true
+      }
+    },
+    {
+      "sys": {
+        "id": "hbcc-policy-bylaw",
+        "type": "Entry",
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "policy"
+          }
+        }
+      },
+      "fields": {
+        "title": "HBCC By-Law",
+        "slug": "by-law",
+        "document": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Asset",
+            "id": "wp-asset-2de77e07c885d25b7951"
+          }
+        },
+        "enabled": true
+      }
+    },
+    {
+      "sys": {
+        "id": "hbcc-policy-childsafe",
+        "type": "Entry",
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "policy"
+          }
+        }
+      },
+      "fields": {
+        "title": "Child Safe Policy",
+        "slug": "child-safe",
+        "document": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Asset",
+            "id": "wp-asset-1e42d399ca5f8988e5fa"
+          }
+        },
+        "enabled": true
+      }
+    },
+    {
+      "sys": {
+        "id": "hbcc-policy-privacy",
+        "type": "Entry",
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "policy"
+          }
+        }
+      },
+      "fields": {
+        "title": "Privacy & Photography Policy",
+        "slug": "privacy-and-photography",
+        "document": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Asset",
+            "id": "wp-asset-fbffc8132b0d9cacd658"
+          }
+        },
+        "enabled": true
+      }
+    },
+    {
+      "sys": {
+        "id": "hbcc-policy-etiquette",
+        "type": "Entry",
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "policy"
+          }
+        }
+      },
+      "fields": {
+        "title": "Member Etiquette",
+        "slug": "member-etiquette",
+        "document": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Asset",
+            "id": "hbcc-policy-etiquette-pdf"
+          }
+        },
+        "enabled": true
+      }
+    },
+    {
+      "sys": {
+        "id": "hbcc-policy-tournament",
+        "type": "Entry",
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "policy"
+          }
+        }
+      },
+      "fields": {
+        "title": "Open Tournament Rules",
+        "slug": "open-tournament-rules",
+        "document": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Asset",
+            "id": "wp-asset-38bf2711205e93753164"
+          }
+        },
+        "enabled": true
+      }
+    },
+    {
+      "sys": {
+        "id": "hbcc-policy-coaching",
+        "type": "Entry",
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "policy"
+          }
+        }
+      },
+      "fields": {
+        "title": "Junior Coaching Policies",
+        "slug": "junior-coaching",
+        "document": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Asset",
+            "id": "wp-asset-895a7d58fa86e9cf4f97"
+          }
+        },
+        "enabled": true
+      }
+    },
+    {
+      "sys": {
+        "id": "membership-all-policies",
+        "type": "Entry",
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "navigationItem"
+          }
+        }
+      },
+      "fields": {
+        "label": "All Club Policies",
+        "enabled": true,
+        "openInNewTab": false,
+        "page": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Entry",
+            "id": "wp-page-5242"
+          }
+        }
+      }
+    },
+    {
+      "sys": {
+        "id": "membership-policy-etiquette",
+        "type": "Entry",
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "navigationItem"
+          }
+        }
+      },
+      "fields": {
+        "label": "Member Etiquette",
+        "enabled": true,
+        "openInNewTab": false,
+        "policy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Entry",
+            "id": "hbcc-policy-etiquette"
+          }
+        }
+      }
+    },
+    {
+      "sys": {
+        "id": "membership-policy-privacy",
+        "type": "Entry",
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "navigationItem"
+          }
+        }
+      },
+      "fields": {
+        "label": "Privacy Policy",
+        "enabled": true,
+        "openInNewTab": false,
+        "policy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Entry",
+            "id": "hbcc-policy-privacy"
+          }
+        }
+      }
+    },
+    {
+      "sys": {
+        "id": "membership-policy-venue",
+        "type": "Entry",
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "navigationItem"
+          }
+        }
+      },
+      "fields": {
+        "label": "Venue Rules (for tournaments)",
+        "enabled": true,
+        "openInNewTab": false,
+        "policy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Entry",
+            "id": "hbcc-policy-tournament"
+          }
+        }
+      }
+    },
+    {
+      "sys": {
+        "id": "membership-fee-link-0",
+        "type": "Entry",
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "navigationItem"
+          }
+        }
+      },
+      "fields": {
+        "label": "Enquire Now",
+        "enabled": true,
+        "openInNewTab": false,
+        "url": "https://portal.hobsonsbaychess.com/public/membership_levels/46d2820f3535"
+      }
+    },
+    {
+      "sys": {
+        "id": "membership-fee-0",
+        "type": "Entry",
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "contentCard"
+          }
+        }
+      },
+      "fields": {
+        "title": "Working full time",
+        "description": "Premium Adult Membership",
+        "price": "$90",
+        "presentation": "pricing",
+        "link": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Entry",
+            "id": "membership-fee-link-0"
+          }
+        },
+        "enabled": true
+      }
+    },
+    {
+      "sys": {
+        "id": "membership-fee-link-1",
+        "type": "Entry",
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "navigationItem"
+          }
+        }
+      },
+      "fields": {
+        "label": "Enquire Now",
+        "enabled": true,
+        "openInNewTab": false,
+        "url": "https://portal.hobsonsbaychess.com/public/membership_levels/052f06cb1406"
+      }
+    },
+    {
+      "sys": {
+        "id": "membership-fee-1",
+        "type": "Entry",
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "contentCard"
+          }
+        }
+      },
+      "fields": {
+        "title": "Working part time / casual",
+        "description": "Premium Adult Membership",
+        "price": "$70",
+        "presentation": "pricing",
+        "link": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Entry",
+            "id": "membership-fee-link-1"
+          }
+        },
+        "enabled": true
+      }
+    },
+    {
+      "sys": {
+        "id": "membership-fee-link-2",
+        "type": "Entry",
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "navigationItem"
+          }
+        }
+      },
+      "fields": {
+        "label": "Enquire Now",
+        "enabled": true,
+        "openInNewTab": false,
+        "url": "https://portal.hobsonsbaychess.com/public/membership_levels/9be5b6fb308e"
+      }
+    },
+    {
+      "sys": {
+        "id": "membership-fee-2",
+        "type": "Entry",
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "contentCard"
+          }
+        }
+      },
+      "fields": {
+        "title": "Non-working adult",
+        "description": "Premium Adult Membership",
+        "price": "$50",
+        "presentation": "pricing",
+        "link": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Entry",
+            "id": "membership-fee-link-2"
+          }
+        },
+        "enabled": true
+      }
+    },
+    {
+      "sys": {
+        "id": "membership-fee-link-3",
+        "type": "Entry",
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "navigationItem"
+          }
+        }
+      },
+      "fields": {
+        "label": "Enquire Now",
+        "enabled": true,
+        "openInNewTab": false,
+        "url": "https://hbcc.tidyhq.com/public/membership_levels/cf401505cc96"
+      }
+    },
+    {
+      "sys": {
+        "id": "membership-fee-3",
+        "type": "Entry",
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "contentCard"
+          }
+        }
+      },
+      "fields": {
+        "title": "Family Membership 1",
+        "description": "Playing Adult + U18 Juniors",
+        "price": "$90+",
+        "presentation": "pricing",
+        "link": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Entry",
+            "id": "membership-fee-link-3"
+          }
+        },
+        "enabled": true
+      }
+    },
+    {
+      "sys": {
+        "id": "membership-fee-link-4",
+        "type": "Entry",
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "navigationItem"
+          }
+        }
+      },
+      "fields": {
+        "label": "Enquire Now",
+        "enabled": true,
+        "openInNewTab": false,
+        "url": "https://hbcc.tidyhq.com/public/membership_levels/213e7cfdb5d9"
+      }
+    },
+    {
+      "sys": {
+        "id": "membership-fee-4",
+        "type": "Entry",
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "contentCard"
+          }
+        }
+      },
+      "fields": {
+        "title": "Family Membership 2",
+        "description": "Non-playing Adult + U18 Juniors",
+        "price": "$40+",
+        "presentation": "pricing",
+        "link": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Entry",
+            "id": "membership-fee-link-4"
+          }
+        },
+        "enabled": true
+      }
+    },
+    {
+      "sys": {
+        "id": "membership-benefit-0",
+        "type": "Entry",
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "contentCard"
+          }
+        }
+      },
+      "fields": {
+        "title": "Access to Coaching",
+        "description": "Join coaching sessions and structured development opportunities.",
+        "presentation": "card",
+        "icon": "chess",
+        "enabled": true
+      }
+    },
+    {
+      "sys": {
+        "id": "membership-benefit-1",
+        "type": "Entry",
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "contentCard"
+          }
+        }
+      },
+      "fields": {
+        "title": "Member Benefits from Sponsors",
+        "description": "Members can avail discounts and free services from our sponsors",
+        "presentation": "card",
+        "icon": "people",
+        "enabled": true
+      }
+    },
+    {
+      "sys": {
+        "id": "membership-benefit-2",
+        "type": "Entry",
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "contentCard"
+          }
+        }
+      },
+      "fields": {
+        "title": "Discounted Classical Events",
+        "description": "Members receive discounted entry for long timeframe (5–7 week) tournaments.",
+        "presentation": "card",
+        "icon": "events",
+        "enabled": true
+      }
+    },
+    {
+      "sys": {
+        "id": "membership-benefit-3",
+        "type": "Entry",
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "contentCard"
+          }
+        }
+      },
+      "fields": {
+        "title": "Exclusive Events",
+        "description": "Members get priority or exclusive access to special club events.",
+        "presentation": "card",
+        "icon": "calendar",
+        "enabled": true
+      }
+    },
+    {
+      "sys": {
+        "id": "membership-step-0",
+        "type": "Entry",
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "contentCard"
+          }
+        }
+      },
+      "fields": {
+        "title": "Choose Your Membership Type",
+        "eyebrow": "Step 1",
+        "presentation": "step",
+        "body": {
+          "nodeType": "document",
+          "data": {},
+          "content": [
+            {
+              "nodeType": "paragraph",
+              "data": {},
+              "content": [
+                {
+                  "nodeType": "text",
+                  "value": "Select the option that best fits your situation (adult or junior).",
+                  "marks": [],
+                  "data": {}
+                }
+              ]
+            }
+          ]
+        },
+        "enabled": true
+      }
+    },
+    {
+      "sys": {
+        "id": "membership-step-1",
+        "type": "Entry",
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "contentCard"
+          }
+        }
+      },
+      "fields": {
+        "title": "Pay Online (Recommended)",
+        "eyebrow": "Step 2",
+        "presentation": "step",
+        "body": {
+          "nodeType": "document",
+          "data": {},
+          "content": [
+            {
+              "nodeType": "paragraph",
+              "data": {},
+              "content": [
+                {
+                  "nodeType": "text",
+                  "value": "Join or renew online using our members portal.",
+                  "marks": [],
+                  "data": {}
+                }
+              ]
+            }
+          ]
+        },
+        "enabled": true
+      }
+    },
+    {
+      "sys": {
+        "id": "membership-step-2",
+        "type": "Entry",
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "contentCard"
+          }
+        }
+      },
+      "fields": {
+        "title": "Or Pay by EFT (Exceptions Only)",
+        "eyebrow": "Step 3",
+        "presentation": "step",
+        "body": {
+          "nodeType": "document",
+          "data": {},
+          "content": [
+            {
+              "nodeType": "paragraph",
+              "data": {},
+              "content": [
+                {
+                  "nodeType": "text",
+                  "value": "If paying by bank transfer, use:\n BSB: 633-000\n Account: 151028586\n Reference: Your surname",
+                  "marks": [],
+                  "data": {}
+                }
+              ]
+            }
+          ]
+        },
+        "enabled": true
+      }
+    },
+    {
+      "sys": {
+        "id": "membership-step-3",
+        "type": "Entry",
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "contentCard"
+          }
+        }
+      },
+      "fields": {
+        "title": "Need Help?",
+        "eyebrow": "Step 4",
+        "presentation": "step",
+        "body": {
+          "nodeType": "document",
+          "data": {},
+          "content": [
+            {
+              "nodeType": "paragraph",
+              "data": {},
+              "content": [
+                {
+                  "nodeType": "text",
+                  "value": "Contact our Treasurer or committee and we’ll assist.",
+                  "marks": [],
+                  "data": {}
+                }
+              ]
+            }
+          ]
+        },
+        "enabled": true
+      }
+    },
+    {
+      "sys": {
+        "id": "membership-renew",
+        "type": "Entry",
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "navigationItem"
+          }
+        }
+      },
+      "fields": {
+        "label": "Renew Now",
+        "enabled": true,
+        "openInNewTab": false,
+        "url": "https://portal.hobsonsbaychess.com/public/membership_levels"
+      }
+    },
+    {
+      "sys": {
+        "id": "membership-join-image",
+        "type": "Entry",
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "section"
+          }
+        }
+      },
+      "fields": {
+        "internalName": "Membership — joining image",
+        "kind": "richText",
+        "image": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Asset",
+            "id": "wp-asset-9e4aaba721b8df52d920"
+          }
+        },
+        "imageAlt": "Chess at Hobsons Bay Chess Club",
+        "body": {
+          "nodeType": "document",
+          "data": {},
+          "content": []
+        },
+        "enabled": true
+      }
+    },
+    {
+      "sys": {
+        "id": "membership-join-steps",
+        "type": "Entry",
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "section"
+          }
+        }
+      },
+      "fields": {
+        "internalName": "Membership — joining steps",
+        "kind": "cards",
+        "layoutStyle": "steps",
+        "body": {
+          "nodeType": "document",
+          "data": {},
+          "content": []
+        },
+        "cards": [
+          {
+            "sys": {
+              "type": "Link",
+              "linkType": "Entry",
+              "id": "membership-step-0"
+            }
+          },
+          {
+            "sys": {
+              "type": "Link",
+              "linkType": "Entry",
+              "id": "membership-step-1"
+            }
+          },
+          {
+            "sys": {
+              "type": "Link",
+              "linkType": "Entry",
+              "id": "membership-step-2"
+            }
+          },
+          {
+            "sys": {
+              "type": "Link",
+              "linkType": "Entry",
+              "id": "membership-step-3"
+            }
+          }
+        ],
+        "actions": [
+          {
+            "sys": {
+              "type": "Link",
+              "linkType": "Entry",
+              "id": "membership-renew"
+            }
+          }
+        ],
+        "enabled": true
+      }
+    },
+    {
+      "sys": {
+        "id": "membership-policy-image",
+        "type": "Entry",
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "section"
+          }
+        }
+      },
+      "fields": {
+        "internalName": "Membership — policy image",
+        "kind": "richText",
+        "image": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Asset",
+            "id": "wp-asset-9826c77a426bfa168dd0"
+          }
+        },
+        "imageAlt": "Chess at Hobsons Bay Chess Club",
+        "body": {
+          "nodeType": "document",
+          "data": {},
+          "content": []
+        },
+        "enabled": true
+      }
+    },
+    {
+      "sys": {
+        "id": "membership-policy-links",
+        "type": "Entry",
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "section"
+          }
+        }
+      },
+      "fields": {
+        "internalName": "Membership — etiquette and policy links",
+        "kind": "richText",
+        "title": "Club Etiquette & Policies",
+        "body": {
+          "nodeType": "document",
+          "data": {},
+          "content": [
+            {
+              "nodeType": "paragraph",
+              "data": {},
+              "content": [
+                {
+                  "nodeType": "text",
+                  "value": "By becoming a member or entering our events, you agree to follow club etiquette and be aware of our privacy policy.",
+                  "marks": [],
+                  "data": {}
+                }
+              ]
+            }
+          ]
+        },
+        "actions": [
+          {
+            "sys": {
+              "type": "Link",
+              "linkType": "Entry",
+              "id": "membership-policy-etiquette"
+            }
+          },
+          {
+            "sys": {
+              "type": "Link",
+              "linkType": "Entry",
+              "id": "membership-policy-privacy"
+            }
+          },
+          {
+            "sys": {
+              "type": "Link",
+              "linkType": "Entry",
+              "id": "membership-policy-venue"
+            }
+          },
+          {
+            "sys": {
+              "type": "Link",
+              "linkType": "Entry",
+              "id": "membership-all-policies"
+            }
+          }
+        ],
+        "enabled": true
+      }
+    },
+    {
+      "sys": {
+        "id": "membership-junior-program",
+        "type": "Entry",
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "navigationItem"
+          }
+        }
+      },
+      "fields": {
+        "label": "View Juniors Program",
+        "enabled": true,
+        "openInNewTab": false,
+        "page": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Entry",
+            "id": "wp-page-4332"
+          }
+        }
+      }
+    },
+    {
+      "sys": {
+        "id": "membership-join",
+        "type": "Entry",
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "navigationItem"
+          }
+        }
+      },
+      "fields": {
+        "label": "Join Now",
+        "enabled": true,
+        "openInNewTab": false,
+        "url": "https://portal.hobsonsbaychess.com/public/membership_levels"
+      }
+    },
+    {
+      "sys": {
+        "id": "membership-calendar",
+        "type": "Entry",
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "navigationItem"
+          }
+        }
+      },
+      "fields": {
+        "label": "View Calendar",
+        "enabled": true,
+        "openInNewTab": false,
+        "page": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Entry",
+            "id": "wp-page-5225"
+          }
+        }
+      }
+    },
+    {
+      "sys": {
+        "id": "about-membership",
+        "type": "Entry",
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "navigationItem"
+          }
+        }
+      },
+      "fields": {
+        "label": "Become a Member",
+        "enabled": true,
+        "openInNewTab": false,
+        "page": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Entry",
+            "id": "wp-page-4424"
+          }
+        }
+      }
+    },
+    {
+      "sys": {
+        "id": "about-contact",
+        "type": "Entry",
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "navigationItem"
+          }
+        }
+      },
+      "fields": {
+        "label": "Contact the Club",
+        "enabled": true,
+        "openInNewTab": false,
+        "page": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Entry",
+            "id": "wp-page-13"
+          }
+        }
+      }
+    },
+    {
+      "sys": {
+        "id": "about-introduction-image",
+        "type": "Entry",
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "section"
+          }
+        }
+      },
+      "fields": {
+        "internalName": "About — A club night at Hobsons Bay Chess Club",
+        "kind": "richText",
+        "image": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Asset",
+            "id": "wp-asset-d5c6c81c35fc0f336452"
+          }
+        },
+        "imageAlt": "A club night at Hobsons Bay Chess Club",
+        "body": {
+          "nodeType": "document",
+          "data": {},
+          "content": []
+        },
+        "enabled": true
+      }
+    },
+    {
+      "sys": {
+        "id": "about-introduction-copy",
+        "type": "Entry",
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "section"
+          }
+        }
+      },
+      "fields": {
+        "internalName": "About — introduction",
+        "kind": "richText",
+        "title": "Who We Are",
+        "body": {
+          "nodeType": "document",
+          "data": {},
+          "content": [
+            {
+              "nodeType": "paragraph",
+              "data": {},
+              "content": [
+                {
+                  "nodeType": "text",
+                  "value": "HBCC is a multicultural club in Melbourne's west with members from many cultural backgrounds and age groups, united by chess.",
+                  "marks": [],
+                  "data": {}
+                }
+              ]
+            },
+            {
+              "nodeType": "paragraph",
+              "data": {},
+              "content": [
+                {
+                  "nodeType": "text",
+                  "value": "Chess is a great equaliser - juniors play adults, girls play boys, and everyone meets across the same 64 squares.",
+                  "marks": [],
+                  "data": {}
+                }
+              ]
+            },
+            {
+              "nodeType": "paragraph",
+              "data": {},
+              "content": [
+                {
+                  "nodeType": "text",
+                  "value": "HBCC regularly participates in local festivals and community events to promote chess and discover new talent.",
+                  "marks": [],
+                  "data": {}
+                }
+              ]
+            }
+          ]
+        },
+        "actions": [
+          {
+            "sys": {
+              "type": "Link",
+              "linkType": "Entry",
+              "id": "about-membership"
+            }
+          },
+          {
+            "sys": {
+              "type": "Link",
+              "linkType": "Entry",
+              "id": "about-contact"
+            }
+          }
+        ],
+        "enabled": true
+      }
+    },
+    {
+      "sys": {
+        "id": "about-committee-0",
+        "type": "Entry",
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "contentCard"
+          }
+        }
+      },
+      "fields": {
+        "title": "Casey Goh",
+        "description": "President",
+        "presentation": "profile",
+        "image": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Asset",
+            "id": "wp-asset-1495070e39c81f6ac9c7"
+          }
+        },
+        "imageAlt": "Casey Goh",
+        "enabled": true
+      }
+    },
+    {
+      "sys": {
+        "id": "about-committee-1",
+        "type": "Entry",
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "contentCard"
+          }
+        }
+      },
+      "fields": {
+        "title": "Steven Hogan",
+        "description": "Treasurer & Director (Open Tournaments)",
+        "presentation": "profile",
+        "image": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Asset",
+            "id": "wp-asset-c60fd97923d92cbfcd38"
+          }
+        },
+        "imageAlt": "Steven Hogan",
+        "enabled": true
+      }
+    },
+    {
+      "sys": {
+        "id": "about-committee-2",
+        "type": "Entry",
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "contentCard"
+          }
+        }
+      },
+      "fields": {
+        "title": "Kuaynsh Batyrbekov",
+        "description": "Director (Rookies Tournaments)",
+        "presentation": "profile",
+        "image": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Asset",
+            "id": "wp-asset-f27acebc3d351c03c415"
+          }
+        },
+        "imageAlt": "Kuaynsh Batyrbekov",
+        "enabled": true
+      }
+    },
+    {
+      "sys": {
+        "id": "about-committee-3",
+        "type": "Entry",
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "contentCard"
+          }
+        }
+      },
+      "fields": {
+        "title": "Nikash Paul",
+        "description": "Director (Brand, Marketing & Sponsorship)",
+        "presentation": "profile",
+        "image": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Asset",
+            "id": "wp-asset-f7fab8541959d23f53c6"
+          }
+        },
+        "imageAlt": "Nikash Paul",
+        "enabled": true
+      }
+    },
+    {
+      "sys": {
+        "id": "about-committee-4",
+        "type": "Entry",
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "contentCard"
+          }
+        }
+      },
+      "fields": {
+        "title": "Michelle Sia",
+        "description": "Secretary",
+        "presentation": "profile",
+        "image": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Asset",
+            "id": "wp-asset-f604c6a1affbaee3ed58"
+          }
+        },
+        "imageAlt": "Michelle Sia",
+        "enabled": true
+      }
+    },
+    {
+      "sys": {
+        "id": "about-volunteer-0",
+        "type": "Entry",
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "contentCard"
+          }
+        }
+      },
+      "fields": {
+        "title": "Anirudh Krishnan",
+        "description": "Head Coach",
+        "presentation": "roster",
+        "enabled": true
+      }
+    },
+    {
+      "sys": {
+        "id": "about-volunteer-1",
+        "type": "Entry",
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "contentCard"
+          }
+        }
+      },
+      "fields": {
+        "title": "Tony Davis",
+        "description": "Coach",
+        "presentation": "roster",
+        "enabled": true
+      }
+    },
+    {
+      "sys": {
+        "id": "about-volunteer-2",
+        "type": "Entry",
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "contentCard"
+          }
+        }
+      },
+      "fields": {
+        "title": "FA Matthew Whitford",
+        "description": "Arbiter",
+        "presentation": "roster",
+        "enabled": true
+      }
+    },
+    {
+      "sys": {
+        "id": "about-volunteer-3",
+        "type": "Entry",
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "contentCard"
+          }
+        }
+      },
+      "fields": {
+        "title": "Lachlan Dwyer",
+        "description": "Arbiter",
+        "presentation": "roster",
+        "enabled": true
+      }
+    },
+    {
+      "sys": {
+        "id": "about-volunteer-4",
+        "type": "Entry",
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "contentCard"
+          }
+        }
+      },
+      "fields": {
+        "title": "Truong Nguyen",
+        "description": "IT Manager",
+        "presentation": "roster",
+        "enabled": true
+      }
+    },
+    {
+      "sys": {
+        "id": "about-volunteer-5",
+        "type": "Entry",
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "contentCard"
+          }
+        }
+      },
+      "fields": {
+        "title": "Dejan Matijas",
+        "description": "Asst. IT Manager",
+        "presentation": "roster",
+        "enabled": true
+      }
+    },
+    {
+      "sys": {
+        "id": "about-volunteer-6",
+        "type": "Entry",
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "contentCard"
+          }
+        }
+      },
+      "fields": {
+        "title": "Srikrishna Yendru",
+        "description": "Equipment Manager",
+        "presentation": "roster",
+        "enabled": true
+      }
+    },
+    {
+      "sys": {
+        "id": "about-volunteer-7",
+        "type": "Entry",
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "contentCard"
+          }
+        }
+      },
+      "fields": {
+        "title": "Uma Ramalingam",
+        "description": "Prizes & Trophy Coordinator",
+        "presentation": "roster",
+        "enabled": true
+      }
+    },
+    {
+      "sys": {
+        "id": "about-volunteer-8",
+        "type": "Entry",
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "contentCard"
+          }
+        }
+      },
+      "fields": {
+        "title": "Subhabroto Dhar",
+        "description": "Data Scientist",
+        "presentation": "roster",
+        "enabled": true
+      }
+    },
+    {
+      "sys": {
+        "id": "about-volunteer-9",
+        "type": "Entry",
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "contentCard"
+          }
+        }
+      },
+      "fields": {
+        "title": "Brett Parker",
+        "description": "General Committee",
+        "presentation": "roster",
+        "enabled": true
+      }
+    },
+    {
+      "sys": {
+        "id": "about-volunteer-image",
+        "type": "Entry",
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "section"
+          }
+        }
+      },
+      "fields": {
+        "internalName": "About — HBCC arbiters and volunteers",
+        "kind": "richText",
+        "image": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Asset",
+            "id": "wp-asset-c195a4f951a3ac293305"
+          }
+        },
+        "imageAlt": "HBCC arbiters and volunteers",
+        "body": {
+          "nodeType": "document",
+          "data": {},
+          "content": []
+        },
+        "enabled": true
+      }
+    },
+    {
+      "sys": {
+        "id": "about-volunteer-list",
+        "type": "Entry",
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "section"
+          }
+        }
+      },
+      "fields": {
+        "internalName": "About — volunteer roster",
+        "kind": "cards",
+        "layoutStyle": "roster",
+        "body": {
+          "nodeType": "document",
+          "data": {},
+          "content": []
+        },
+        "cards": [
+          {
+            "sys": {
+              "type": "Link",
+              "linkType": "Entry",
+              "id": "about-volunteer-0"
+            }
+          },
+          {
+            "sys": {
+              "type": "Link",
+              "linkType": "Entry",
+              "id": "about-volunteer-1"
+            }
+          },
+          {
+            "sys": {
+              "type": "Link",
+              "linkType": "Entry",
+              "id": "about-volunteer-2"
+            }
+          },
+          {
+            "sys": {
+              "type": "Link",
+              "linkType": "Entry",
+              "id": "about-volunteer-3"
+            }
+          },
+          {
+            "sys": {
+              "type": "Link",
+              "linkType": "Entry",
+              "id": "about-volunteer-4"
+            }
+          },
+          {
+            "sys": {
+              "type": "Link",
+              "linkType": "Entry",
+              "id": "about-volunteer-5"
+            }
+          },
+          {
+            "sys": {
+              "type": "Link",
+              "linkType": "Entry",
+              "id": "about-volunteer-6"
+            }
+          },
+          {
+            "sys": {
+              "type": "Link",
+              "linkType": "Entry",
+              "id": "about-volunteer-7"
+            }
+          },
+          {
+            "sys": {
+              "type": "Link",
+              "linkType": "Entry",
+              "id": "about-volunteer-8"
+            }
+          },
+          {
+            "sys": {
+              "type": "Link",
+              "linkType": "Entry",
+              "id": "about-volunteer-9"
+            }
+          }
+        ],
+        "enabled": true
+      }
+    },
+    {
+      "sys": {
+        "id": "about-arbiter-0",
+        "type": "Entry",
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "contentCard"
+          }
+        }
+      },
+      "fields": {
+        "title": "Casey Goh",
+        "eyebrow": "IA",
+        "presentation": "roster",
+        "enabled": true
+      }
+    },
+    {
+      "sys": {
+        "id": "about-arbiter-1",
+        "type": "Entry",
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "contentCard"
+          }
+        }
+      },
+      "fields": {
+        "title": "Matthew Whitford",
+        "eyebrow": "FA",
+        "presentation": "roster",
+        "enabled": true
+      }
+    },
+    {
+      "sys": {
+        "id": "about-arbiter-2",
+        "type": "Entry",
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "contentCard"
+          }
+        }
+      },
+      "fields": {
+        "title": "Lachlan Drywer",
+        "eyebrow": "FA",
+        "presentation": "roster",
+        "enabled": true
+      }
+    },
+    {
+      "sys": {
+        "id": "about-arbiter-3",
+        "type": "Entry",
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "contentCard"
+          }
+        }
+      },
+      "fields": {
+        "title": "Tony Davis",
+        "eyebrow": "FA",
+        "presentation": "roster",
+        "enabled": true
+      }
+    },
+    {
+      "sys": {
+        "id": "about-arbiter-4",
+        "type": "Entry",
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "contentCard"
+          }
+        }
+      },
+      "fields": {
+        "title": "Myiesha Maunders",
+        "eyebrow": "FA",
+        "presentation": "roster",
+        "enabled": true
+      }
+    },
+    {
+      "sys": {
+        "id": "about-arbiter-5",
+        "type": "Entry",
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "contentCard"
+          }
+        }
+      },
+      "fields": {
+        "title": "Kuaynsh Batyrbekov",
+        "eyebrow": "NA",
+        "presentation": "roster",
+        "enabled": true
+      }
+    },
+    {
+      "sys": {
+        "id": "about-arbiter-6",
+        "type": "Entry",
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "contentCard"
+          }
+        }
+      },
+      "fields": {
+        "title": "Steven Hogan",
+        "eyebrow": "NA",
+        "presentation": "roster",
+        "enabled": true
+      }
+    },
+    {
+      "sys": {
+        "id": "about-arbiter-7",
+        "type": "Entry",
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "contentCard"
+          }
+        }
+      },
+      "fields": {
+        "title": "Joemar Lacson",
+        "eyebrow": "NA",
+        "presentation": "roster",
+        "enabled": true
+      }
+    },
+    {
+      "sys": {
+        "id": "about-arbiter-8",
+        "type": "Entry",
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "contentCard"
+          }
+        }
+      },
+      "fields": {
+        "title": "Subhabroto Dhar",
+        "eyebrow": "NA",
+        "presentation": "roster",
+        "enabled": true
+      }
+    },
+    {
+      "sys": {
+        "id": "about-arbiter-9",
+        "type": "Entry",
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "contentCard"
+          }
+        }
+      },
+      "fields": {
+        "title": "Truong Nguyen",
+        "eyebrow": "NA",
+        "presentation": "roster",
+        "enabled": true
+      }
+    },
+    {
+      "sys": {
+        "id": "about-arbiter-10",
+        "type": "Entry",
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "contentCard"
+          }
+        }
+      },
+      "fields": {
+        "title": "Hari Srinivasan",
+        "eyebrow": "NA",
+        "presentation": "roster",
+        "enabled": true
+      }
+    },
+    {
+      "sys": {
+        "id": "about-arbiter-11",
+        "type": "Entry",
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "contentCard"
+          }
+        }
+      },
+      "fields": {
+        "title": "Sophie Davis",
+        "eyebrow": "NA",
+        "presentation": "roster",
+        "enabled": true
+      }
+    },
+    {
+      "sys": {
+        "id": "about-arbiter-12",
+        "type": "Entry",
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "contentCard"
+          }
+        }
+      },
+      "fields": {
+        "title": "Sri Krishna Yendru",
+        "presentation": "roster",
+        "enabled": true
+      }
+    },
+    {
+      "sys": {
+        "id": "about-arbiter-13",
+        "type": "Entry",
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "contentCard"
+          }
+        }
+      },
+      "fields": {
+        "title": "Venkat Ganesan",
+        "presentation": "roster",
+        "enabled": true
+      }
+    },
+    {
+      "sys": {
+        "id": "about-arbiter-14",
+        "type": "Entry",
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "contentCard"
+          }
+        }
+      },
+      "fields": {
+        "title": "Uma Ramalingam",
+        "presentation": "roster",
+        "enabled": true
+      }
+    },
+    {
+      "sys": {
+        "id": "about-arbiter-15",
+        "type": "Entry",
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "contentCard"
+          }
+        }
+      },
+      "fields": {
+        "title": "Krishna Bodke",
+        "presentation": "roster",
+        "enabled": true
+      }
+    },
+    {
+      "sys": {
+        "id": "about-governance-image",
+        "type": "Entry",
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "section"
+          }
+        }
+      },
+      "fields": {
+        "internalName": "About — Chess pieces on a board",
+        "kind": "richText",
+        "image": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Asset",
+            "id": "wp-asset-1b1354a9cdcf9e9d14b0"
+          }
+        },
+        "imageAlt": "Chess pieces on a board",
+        "body": {
+          "nodeType": "document",
+          "data": {},
+          "content": []
+        },
+        "enabled": true
+      }
+    },
+    {
+      "sys": {
+        "id": "about-policy-rules",
+        "type": "Entry",
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "navigationItem"
+          }
+        }
+      },
+      "fields": {
+        "label": "Club Rules (By-Law)",
+        "enabled": true,
+        "openInNewTab": false,
+        "policy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Entry",
+            "id": "hbcc-policy-bylaw"
+          }
+        }
+      }
+    },
+    {
+      "sys": {
+        "id": "about-policy-conduct",
+        "type": "Entry",
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "navigationItem"
+          }
+        }
+      },
+      "fields": {
+        "label": "Member Code of Conduct / Etiquette",
+        "enabled": true,
+        "openInNewTab": false,
+        "policy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Entry",
+            "id": "hbcc-policy-etiquette"
+          }
+        }
+      }
+    },
+    {
+      "sys": {
+        "id": "about-policy-childsafe",
+        "type": "Entry",
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "navigationItem"
+          }
+        }
+      },
+      "fields": {
+        "label": "Child Safe Policy",
+        "enabled": true,
+        "openInNewTab": false,
+        "policy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Entry",
+            "id": "hbcc-policy-childsafe"
+          }
+        }
+      }
+    },
+    {
+      "sys": {
+        "id": "about-policy-privacy",
+        "type": "Entry",
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "navigationItem"
+          }
+        }
+      },
+      "fields": {
+        "label": "Privacy & Photography Policy",
+        "enabled": true,
+        "openInNewTab": false,
+        "policy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Entry",
+            "id": "hbcc-policy-privacy"
+          }
+        }
+      }
+    },
+    {
+      "sys": {
+        "id": "about-governance-copy",
+        "type": "Entry",
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "section"
+          }
+        }
+      },
+      "fields": {
+        "internalName": "About — governance links",
+        "kind": "richText",
+        "title": "Governance & Policies",
+        "body": {
+          "nodeType": "document",
+          "data": {},
+          "content": [
+            {
+              "nodeType": "paragraph",
+              "data": {},
+              "content": [
+                {
+                  "nodeType": "text",
+                  "value": "HBCC is an incorporated association run by volunteers, with a focus on fair play and junior safety.",
+                  "marks": [],
+                  "data": {}
+                }
+              ]
+            }
+          ]
+        },
+        "actions": [
+          {
+            "sys": {
+              "type": "Link",
+              "linkType": "Entry",
+              "id": "about-policy-rules"
+            }
+          },
+          {
+            "sys": {
+              "type": "Link",
+              "linkType": "Entry",
+              "id": "about-policy-conduct"
+            }
+          },
+          {
+            "sys": {
+              "type": "Link",
+              "linkType": "Entry",
+              "id": "about-policy-childsafe"
+            }
+          },
+          {
+            "sys": {
+              "type": "Link",
+              "linkType": "Entry",
+              "id": "about-policy-privacy"
+            }
+          },
+          {
+            "sys": {
+              "type": "Link",
+              "linkType": "Entry",
+              "id": "membership-all-policies"
+            }
+          }
+        ],
+        "enabled": true
+      }
+    },
+    {
+      "sys": {
+        "id": "about-email",
+        "type": "Entry",
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "navigationItem"
+          }
+        }
+      },
+      "fields": {
+        "label": "info@hobsonsbaychess.com",
+        "enabled": true,
+        "openInNewTab": false,
+        "url": "mailto:info@hobsonsbaychess.com"
+      }
+    },
+    {
+      "sys": {
+        "id": "about-calendar",
+        "type": "Entry",
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "navigationItem"
+          }
+        }
+      },
+      "fields": {
+        "label": "View Calendar",
+        "enabled": true,
+        "openInNewTab": false,
+        "page": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Entry",
+            "id": "wp-page-5225"
+          }
+        }
+      }
+    },
+    {
+      "sys": {
+        "id": "about-venue-copy",
+        "type": "Entry",
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "section"
+          }
+        }
+      },
+      "fields": {
+        "internalName": "About — venue and opening hours",
+        "kind": "richText",
+        "body": {
+          "nodeType": "document",
+          "data": {},
+          "content": [
+            {
+              "nodeType": "heading-3",
+              "data": {},
+              "content": [
+                {
+                  "nodeType": "text",
+                  "value": "Our Address",
+                  "marks": [],
+                  "data": {}
+                }
+              ]
+            },
+            {
+              "nodeType": "paragraph",
+              "data": {},
+              "content": [
+                {
+                  "nodeType": "text",
+                  "value": "108 Queen St, Altona VIC 3018, Australia",
+                  "marks": [],
+                  "data": {}
+                }
+              ]
+            },
+            {
+              "nodeType": "heading-3",
+              "data": {},
+              "content": [
+                {
+                  "nodeType": "text",
+                  "value": "Opening Hours",
+                  "marks": [],
+                  "data": {}
+                }
+              ]
+            },
+            {
+              "nodeType": "paragraph",
+              "data": {},
+              "content": [
+                {
+                  "nodeType": "text",
+                  "value": "Tuesdays: 7pm – 11:59pm\nSaturdays: 4pm – 11pm",
+                  "marks": [],
+                  "data": {}
+                }
+              ]
+            }
+          ]
+        },
+        "actions": [
+          {
+            "sys": {
+              "type": "Link",
+              "linkType": "Entry",
+              "id": "about-email"
+            }
+          },
+          {
+            "sys": {
+              "type": "Link",
+              "linkType": "Entry",
+              "id": "about-calendar"
+            }
+          }
+        ],
+        "enabled": true
+      }
+    },
+    {
+      "sys": {
+        "id": "about-join",
+        "type": "Entry",
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "navigationItem"
+          }
+        }
+      },
+      "fields": {
+        "label": "Join HBCC Today",
+        "enabled": true,
+        "openInNewTab": false,
+        "page": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Entry",
+            "id": "wp-page-4424"
+          }
+        }
+      }
     }
   ],
   "assets": [
@@ -26555,6 +27066,19 @@
         "file": {
           "url": "/news-assets/womens-championship-presentation-2026.webp",
           "contentType": "image/jpg"
+        }
+      }
+    },
+    {
+      "sys": {
+        "id": "hbcc-policy-etiquette-pdf"
+      },
+      "fields": {
+        "title": "HBCC Chess Sportsmanship and Etiquette",
+        "description": "HBCC Chess Sportsmanship and Etiquette",
+        "file": {
+          "url": "/wp-assets/hbcc-Chess-Sportsmanship-and-Etiquette.pdf",
+          "contentType": "application/pdf"
         }
       }
     }

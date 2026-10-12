@@ -1,0 +1,54 @@
+{
+  "source": "https://hobsonsbaychess.com/about-us/",
+  "capturedAt": "2026-10-12",
+  "heroTitle": "About Hobsons Bay Chess Club",
+  "heroDescription": "Bringing chess to Western Melbourne since 1974",
+  "introduction": [
+    "HBCC is a multicultural club in Melbourne's west with members from many cultural backgrounds and age groups, united by chess.",
+    "Chess is a great equaliser - juniors play adults, girls play boys, and everyone meets across the same 64 squares.",
+    "HBCC regularly participates in local festivals and community events to promote chess and discover new talent."
+  ],
+  "committee": [
+    {"name":"Casey Goh","role":"President","imageEntry":"wp-page-11-section-1-image-2"},
+    {"name":"Steven Hogan","role":"Treasurer & Director (Open Tournaments)","imageEntry":"wp-page-11-section-1-image-3"},
+    {"name":"Kuaynsh Batyrbekov","role":"Director (Rookies Tournaments)","imageEntry":"wp-page-11-section-1-image-4"},
+    {"name":"Nikash Paul","role":"Director (Brand, Marketing & Sponsorship)","imageEntry":"wp-page-11-section-1-image-5"},
+    {"name":"Michelle Sia","role":"Secretary","imageEntry":"wp-page-11-section-1-image-6"}
+  ],
+  "volunteers": [
+    {"name":"Anirudh Krishnan","role":"Head Coach"},
+    {"name":"Tony Davis","role":"Coach"},
+    {"name":"FA Matthew Whitford","role":"Arbiter"},
+    {"name":"Lachlan Dwyer","role":"Arbiter"},
+    {"name":"Truong Nguyen","role":"IT Manager"},
+    {"name":"Dejan Matijas","role":"Asst. IT Manager"},
+    {"name":"Srikrishna Yendru","role":"Equipment Manager"},
+    {"name":"Uma Ramalingam","role":"Prizes & Trophy Coordinator"},
+    {"name":"Subhabroto Dhar","role":"Data Scientist"},
+    {"name":"Brett Parker","role":"General Committee"}
+  ],
+  "arbiters": [
+    {"name":"Casey Goh","title":"IA"},
+    {"name":"Matthew Whitford","title":"FA"},
+    {"name":"Lachlan Drywer","title":"FA"},
+    {"name":"Tony Davis","title":"FA"},
+    {"name":"Myiesha Maunders","title":"FA"},
+    {"name":"Kuaynsh Batyrbekov","title":"NA"},
+    {"name":"Steven Hogan","title":"NA"},
+    {"name":"Joemar Lacson","title":"NA"},
+    {"name":"Subhabroto Dhar","title":"NA"},
+    {"name":"Truong Nguyen","title":"NA"},
+    {"name":"Hari Srinivasan","title":"NA"},
+    {"name":"Sophie Davis","title":"NA"},
+    {"name":"Sri Krishna Yendru"},
+    {"name":"Venkat Ganesan"},
+    {"name":"Uma Ramalingam"},
+    {"name":"Krishna Bodke"}
+  ],
+  "reviewNotes": [
+    "Names, roles and arbiter titles are copied from the published WordPress page, not independently confirmed for a future committee year.",
+    "WordPress spells Lachlan's surname Dwyer in Volunteers and Drywer in Arbiters; preserved for club review.",
+    "WordPress uses Srikrishna Yendru in Volunteers and Sri Krishna Yendru in Arbiters; preserved for club review.",
+    "Capitalization is corrected for headings and names. No fees, names or credentials are inferred."
+  ]
+}

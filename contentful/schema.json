@@ -145,6 +145,21 @@
           ]
         },
         {
+          "id": "policyPage",
+          "name": "Policies hub",
+          "type": "Link",
+          "required": false,
+          "localized": false,
+          "linkType": "Entry",
+          "validations": [
+            {
+              "linkContentType": [
+                "page"
+              ]
+            }
+          ]
+        },
+        {
           "id": "email",
           "name": "Public contact email",
           "type": "Symbol",
@@ -452,7 +467,7 @@
         "id": "navigationItem"
       },
       "name": "Menu item / button / social link",
-      "description": "Select a page OR enter a URL. Link children to create submenus.",
+      "description": "Choose a page, policy, tournament destination or URL. Link children to create submenus.",
       "displayField": "label",
       "fields": [
         {
@@ -481,6 +496,21 @@
               "linkContentType": [
                 "page",
                 "post"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "policy",
+          "name": "Policy in the Policies hub",
+          "type": "Link",
+          "required": false,
+          "localized": false,
+          "linkType": "Entry",
+          "validations": [
+            {
+              "linkContentType": [
+                "policy"
               ]
             }
           ]
@@ -1209,7 +1239,8 @@
                 "news",
                 "quote",
                 "cta",
-                "calendar"
+                "calendar",
+                "policies"
               ]
             }
           ]
@@ -1223,6 +1254,27 @@
           "defaultValue": {
             "en-US": true
           }
+        },
+        {
+          "id": "layoutStyle",
+          "name": "Layout variation",
+          "type": "Symbol",
+          "required": false,
+          "localized": false,
+          "validations": [
+            {
+              "in": [
+                "default",
+                "pricing",
+                "benefits",
+                "steps",
+                "split",
+                "portraits",
+                "roster",
+                "affiliations"
+              ]
+            }
+          ]
         },
         {
           "id": "title",
@@ -1331,7 +1383,8 @@
                   {
                     "linkContentType": [
                       "page",
-                      "post"
+                      "post",
+                      "policy"
                     ]
                   }
                 ]
@@ -1519,6 +1572,31 @@
           ]
         },
         {
+          "id": "policies",
+          "name": "Policies in display order",
+          "type": "Array",
+          "required": false,
+          "localized": false,
+          "items": {
+            "type": "Link",
+            "linkType": "Entry",
+            "validations": [
+              {
+                "linkContentType": [
+                  "policy"
+                ]
+              }
+            ]
+          },
+          "validations": [
+            {
+              "size": {
+                "max": 200
+              }
+            }
+          ]
+        },
+        {
           "id": "posts",
           "name": "Featured news",
           "type": "Array",
@@ -1685,7 +1763,11 @@
               "in": [
                 "card",
                 "faq",
-                "timeline"
+                "timeline",
+                "pricing",
+                "step",
+                "profile",
+                "roster"
               ]
             }
           ]
@@ -1693,6 +1775,20 @@
         {
           "id": "eyebrow",
           "name": "Small heading / year",
+          "type": "Symbol",
+          "required": false,
+          "localized": false,
+          "validations": [
+            {
+              "size": {
+                "max": 256
+              }
+            }
+          ]
+        },
+        {
+          "id": "price",
+          "name": "Display price, e.g. $90+",
           "type": "Symbol",
           "required": false,
           "localized": false,
@@ -1762,7 +1858,8 @@
                   {
                     "linkContentType": [
                       "page",
-                      "post"
+                      "post",
+                      "policy"
                     ]
                   }
                 ]
@@ -2199,6 +2296,153 @@
               ]
             }
           ]
+        },
+        {
+          "id": "enabled",
+          "name": "Show on website",
+          "type": "Boolean",
+          "required": false,
+          "localized": false,
+          "defaultValue": {
+            "en-US": true
+          }
+        }
+      ]
+    },
+    {
+      "sys": {
+        "id": "policy"
+      },
+      "name": "Club policy",
+      "description": "Reusable club policies. Edit the title and summary, replace the approved document, or provide formatted policy text. Linked sections control display order.",
+      "displayField": "title",
+      "fields": [
+        {
+          "id": "title",
+          "name": "Policy title",
+          "type": "Symbol",
+          "required": true,
+          "localized": false,
+          "validations": [
+            {
+              "size": {
+                "max": 256
+              }
+            }
+          ]
+        },
+        {
+          "id": "slug",
+          "name": "Stable section link",
+          "type": "Symbol",
+          "required": true,
+          "localized": false,
+          "validations": [
+            {
+              "unique": true
+            },
+            {
+              "regexp": {
+                "pattern": "^[a-z][a-z0-9-]*$"
+              }
+            }
+          ]
+        },
+        {
+          "id": "summary",
+          "name": "Short description",
+          "type": "Text",
+          "required": false,
+          "localized": false
+        },
+        {
+          "id": "document",
+          "name": "Approved document (PDF)",
+          "type": "Link",
+          "required": false,
+          "localized": false,
+          "linkType": "Asset"
+        },
+        {
+          "id": "body",
+          "name": "Optional policy text",
+          "type": "RichText",
+          "required": false,
+          "localized": false,
+          "validations": [
+            {
+              "enabledMarks": [
+                "bold",
+                "italic",
+                "underline",
+                "code",
+                "superscript",
+                "subscript"
+              ]
+            },
+            {
+              "enabledNodeTypes": [
+                "heading-2",
+                "heading-3",
+                "heading-4",
+                "heading-5",
+                "heading-6",
+                "ordered-list",
+                "unordered-list",
+                "hr",
+                "blockquote",
+                "embedded-asset-block",
+                "embedded-entry-block",
+                "hyperlink",
+                "entry-hyperlink",
+                "asset-hyperlink",
+                "table"
+              ]
+            },
+            {
+              "nodes": {
+                "embedded-entry-block": [
+                  {
+                    "linkContentType": [
+                      "contentCard",
+                      "section",
+                      "galleryImage"
+                    ]
+                  }
+                ],
+                "entry-hyperlink": [
+                  {
+                    "linkContentType": [
+                      "page",
+                      "post",
+                      "policy"
+                    ]
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "version",
+          "name": "Document version, if supplied",
+          "type": "Symbol",
+          "required": false,
+          "localized": false,
+          "validations": [
+            {
+              "size": {
+                "max": 256
+              }
+            }
+          ]
+        },
+        {
+          "id": "effectiveDate",
+          "name": "Effective date, if supplied",
+          "type": "Date",
+          "required": false,
+          "localized": false
         },
         {
           "id": "enabled",

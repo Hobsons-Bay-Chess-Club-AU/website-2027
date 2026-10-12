@@ -12,11 +12,11 @@ The proposal implements the core navigation and visitor-journey work in [the nav
 
 ## Isolation and content
 
-The current version reads published Contentful entries without the proposal. V2 reads published Contentful entries and applies the explicitly versioned proposal in `src/lib/review-content.mjs` to a deep copy before normalization. No management API writes are performed. This allows both versions to use current club news and media while retaining separate menus, pages and reviewed calendar dates.
+The current version reads published Contentful entries without the proposal. V2 reads published Contentful entries and applies the explicitly versioned proposal in `src/lib/review-content.mjs` to a deep copy before normalization. That overlay performs no management API writes. Both versions now share the targeted Membership/About layout repairs and native policy model published in Contentful; they retain separate menus, additional pages and reviewed calendar dates.
 
 V2 has three additional pages: Coaching, Privacy & Photography and the team review. It also has its own calendar download. Internal links, redirects, fonts and build assets are scoped to `/website-2027/v2/`. The comparison links explicitly return to the current version. Existing tournament, registration, games, membership and login services retain their external destinations.
 
-Review pages are marked `noindex, nofollow`. This is a public review URL, not an authenticated preview. The WordPress production domain and the current published CMS content are unchanged.
+Review pages are marked `noindex, nofollow`. This is a public review URL, not an authenticated preview. The WordPress production domain is unchanged. The shared Membership/About/policy repairs are published CMS changes; the remaining navigation/calendar proposal stays isolated.
 
 The reviewed dates follow the publicly available term and junior championship listings checked on 12 October 2026. The original imported date text remains on each corrected entry. The team page highlights the dates and the club sign-off still required. It also records the coaching roster discrepancy, membership and sponsor checks, missing honour-board records, unresolved imported dates, newsletter editions and the subscription provider.
 
@@ -42,7 +42,7 @@ Open `http://127.0.0.1:4331/website-2027/v2/`. Set `CONTENT_SOURCE=contentful` t
 
 The meaningful new tests check proposal isolation, repaired link destinations, page references plus fragments, unique anchors, reuse of the published coach source, program-specific calendar corrections, safe URL state and an agenda spanning future months. Existing CMS, calendar, news, standings and deployment tests remain in place.
 
-The build verifier scans each version independently for missing local paths/assets, WordPress asset dependencies and leaked server credentials. In V2 it also checks section fragments and search-exclusion metadata. The deliberate current-version comparison links are checked against the parent build; other internal links must remain within the variant's base path.
+The build verifier scans each version independently for missing local paths/assets and section fragments, WordPress asset dependencies and leaked server credentials. It also checks search-exclusion metadata. The deliberate current-version comparison links are checked against the parent build; other internal links must remain within the variant's base path.
 
 ## After the team review
 

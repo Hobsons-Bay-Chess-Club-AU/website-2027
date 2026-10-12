@@ -1,6 +1,6 @@
 # HBCC Contentful editor guide
 
-The actual [Contentful space](https://app.contentful.com/spaces/7r7s5slcmer0/entries) contains **15 native content types, 447 entries and 99 processed assets**. There are 439 published entries and 99 published assets. Five disabled theme articles and three calendar events needing date confirmation remain drafts.
+The actual [Contentful space](https://app.contentful.com/spaces/7r7s5slcmer0/entries) contains **16 native content types, 531 entries and 100 processed assets**. There are 523 published entries and 100 published assets. Five disabled theme articles and three calendar events needing date confirmation remain drafts.
 
 Ordinary editing uses rich text, media pickers, dropdowns and ordered entry references. No HTML or JSON is required.
 
@@ -11,9 +11,10 @@ Ordinary editing uses rich text, media pickers, dropdowns and ordered entry refe
 | Website settings (`siteSettings`) | Branding, contact/address, homepage, menus, socials, join banner, footer gallery and news labels |
 | Website page (`page`) | Title, slug, SEO, hero, ordered sections, homepage partner/actions/features and visibility |
 | Menu (`navigationMenu`) | Main navigation or footer column, with items in display order |
-| Menu item / button / social link (`navigationItem`) | Label, page or URL, children, new-tab setting, icon and visibility |
+| Menu item / button / social link (`navigationItem`) | Label, page, policy, tournament destination or URL, children, new-tab setting, icon and visibility |
 | Page / homepage section (`section`) | Layout, heading, rich text, media, actions and linked collections/calendar |
-| Card / question / timeline item (`contentCard`) | Features, cards, FAQs and timeline items |
+| Card / question / timeline item (`contentCard`) | Features, FAQs, timelines, membership fees, steps, portraits and names/roles |
+| Club policy (`policy`) | Title, stable link, summary, approved document, optional text/version/effective date and visibility |
 | Club statistic (`statistic`) | Value, label, icon and visibility |
 | Weekly schedule day (`scheduleDay`) | Day, sessions and empty-day message |
 | Weekly session (`scheduleSession`) | Name, display time, venue and link |
@@ -24,7 +25,7 @@ Ordinary editing uses rich text, media pickers, dropdowns and ordered entry refe
 | Calendar event (`calendarEvent`) | Title, first/last dates, category, details, arbiter and visibility |
 | Tournament integration (`tournamentFeed`) | Year, existing service URLs, table/card counts and explanatory text |
 
-Sections support rich text, columns, cards, accordions, galleries, approved embeds, statistics, standings/events, feature banners, weekly schedules, sponsors, news, testimonials, join banners and calendars. Reuse linked sections across pages. The frontend controls typography and responsive layout; Contentful controls content and order.
+Sections support rich text, columns, cards, accordions, galleries, approved embeds, policies, statistics, standings/events, feature banners, weekly schedules, sponsors, news, testimonials, join banners and calendars. **Layout variation** controls fee cards, benefits, joining steps, image/text columns, portraits, compact rosters and affiliation logos. Reuse linked sections across pages. The frontend controls typography and responsive layout; Contentful controls content and order.
 
 ## Edit pages
 
@@ -43,11 +44,31 @@ The Home page has dedicated hero, partner, action and feature-card fields, plus 
 
 1. Open **Main navigation**, **Club**, **Quick Links** or **Legal links** under Menu.
 2. Drag items into order, or create a Menu item.
-3. Enter its label and select a page. Use URL for external destinations, `/news/`, email or anchors. Shared tournament links can reference Tournament service and its destination. Priority is page, tournament destination, then URL.
+3. Enter its label and select one destination: a page, a Club policy, a tournament service/destination, or a URL for external links, `/news/`, email or anchors. Policy references open the matching section in the Policies hub. Priority is policy, page, tournament destination, then URL; clear the other destination fields when switching.
 4. Reference child items for submenus. Tournaments retains Upcoming & Register and Champions nesting.
 5. Choose visibility/new-tab behavior, then publish the item and menu.
 
 Items can be reused as buttons or in other menus. Avoid linking an item into its own descendants. Missing published references, cycles and duplicate routes fail the build clearly.
+
+## Membership and About Us
+
+Open [Membership](https://app.contentful.com/spaces/7r7s5slcmer0/entries/wp-page-4424) to edit the hero and eight ordered sections. **Membership Fees** uses five linked Pricing cards: title, description, display price and portal action. **What You Get as a Member** uses four benefit cards. Statistics reuse the homepage values. The joining section has image and steps child sections; each step is a Card with editable formatted content. The policy section links native policy entries, and the FAQ section contains five FAQ cards.
+
+Open [About Us](https://app.contentful.com/spaces/7r7s5slcmer0/entries/wp-page-11) to edit the restored introduction, committee portraits, volunteers, affiliation logos, arbiters, governance, venue and joining sections. Committee cards have a name, role, image and alternative text. Volunteer and arbiter cards have a name, role/title and visibility. Drag their references to change order; hide or remove a reference to remove a person. Names/roles were copied from the existing WordPress page; the review list records spelling differences for committee confirmation.
+
+These shared fixes appear in both versions. The remaining V2 navigation/calendar proposals are still a versioned review overlay.
+
+## Manage policies
+
+1. Filter Content by **Club policy**, or open [Member Etiquette](https://app.contentful.com/spaces/7r7s5slcmer0/entries/hbcc-policy-etiquette).
+2. Edit the title/summary. Replace **Approved document (PDF)** using the media picker, or supply approved formatted policy text. An enabled policy needs a document or non-empty text. Optional version/effective-date fields are displayed only when supplied.
+3. Publish the policy and any uploaded media. A document change updates every native reference after the site rebuild.
+4. Open [Club Policies & Documents](https://app.contentful.com/spaces/7r7s5slcmer0/entries/wp-page-5242-section-0) and drag **Policies in display order** to reorder the hub. Add a new policy reference here before linking to it from another page/menu. Publish the section if its references changed.
+5. Use **Show on website → Hide** to hide a policy. Native links to hidden policies return to the hub. Keep **Stable section link** unchanged for external bookmarks; native links follow changes.
+
+Seven existing approved documents are published: NDA & Code of Conduct, By-Law, Child Safe, Privacy & Photography, Member Etiquette, Open Tournament Rules and Junior Coaching Policies. Membership links open the relevant hub section; About, Juniors, Tournaments and the footer also use native references. No new legal wording, dates or versions were invented. The misleading Cookie Policy link is hidden until an approved matching document exists.
+
+[Website settings](https://app.contentful.com/spaces/7r7s5slcmer0/entries/hbcc-site-settings) selects the **Policies hub** page, so policy links follow its page slug. The V2 privacy page reuses the same Privacy & Photography policy entry.
 
 ## Manage news
 
@@ -108,12 +129,14 @@ The initial importer activates models/editors, processes preserved media, detect
 
 `npm run contentful:update` validates the controlled migration update; `--apply --publish` applies it. This is a developer migration command: it rewrites a documented set of baseline entries. Routine editorial changes belong in Contentful, not another migration rerun.
 
+`node scripts/apply-membership-about-policies.mjs` previews the targeted one-time Membership/About/policy migration; `--apply` publishes that approved scope. It checks versions, refuses unpublished editorial conflicts, preserves other fields and eight unrelated drafts, and saves a private before-snapshot/report under ignored `reference/screenshots/`. It leaves subsequent card edits intact when the migration is already applied. Do not use a complete import to update edited CMS content.
+
 Strict production builds require complete published content and refuse Preview drafts. Local CMS preview reads saved drafts on reload. Ordinary local review uses port 4327; strict CMS preview uses 4328.
 
 ## Club review before domain launch
 
 Historical junior counts, membership fees, sponsor tiers, committee names, policies and downloads retain captured wording and need club acceptance. Contact uses email because Contact Form 7 is not a portable mail backend. Three spreadsheet date conflicts need club confirmation. The production domain remains on WordPress.
 
-See [HOMEPAGE-AUDIT.md](HOMEPAGE-AUDIT.md), [MIGRATION-PLAN.md](MIGRATION-PLAN.md) and the [live CMS verification](CMS-LIVE-VERIFICATION.json).
+See [HOMEPAGE-AUDIT.md](HOMEPAGE-AUDIT.md), [MIGRATION-PLAN.md](MIGRATION-PLAN.md), the [initial CMS verification](CMS-LIVE-VERIFICATION.json) and the [current Membership/About/policy verification](MEMBERSHIP-ABOUT-POLICIES-VERIFICATION.json).
 
 The model follows Contentful's [native editor interfaces](https://www.contentful.com/developers/docs/extensibility/app-framework/editor-interfaces/) and [rich text format](https://www.contentful.com/developers/docs/tutorials/general/getting-started-with-rich-text-field-type/).

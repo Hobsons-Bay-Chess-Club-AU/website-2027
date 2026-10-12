@@ -790,5 +790,14 @@
     "path": "reference/facebook/media/womens-championship-presentation-2026.jpg",
     "localUrl": "/news-assets/womens-championship-presentation-2026.webp",
     "sourceUrl": "https://www.facebook.com/photo/?fbid=1705974908202781&set=pcb.1705981161535489"
+  },
+  {
+    "id": "hbcc-policy-etiquette-pdf",
+    "title": "HBCC Chess Sportsmanship and Etiquette",
+    "fileName": "HBCC-Chess-Sportsmanship-and-Etiquette.pdf",
+    "localUrl": "/wp-assets/hbcc-Chess-Sportsmanship-and-Etiquette.pdf",
+    "path": "public/wp-assets/hbcc-Chess-Sportsmanship-and-Etiquette.pdf",
+    "contentType": "application/pdf",
+    "originalUrl": "https://hobsonsbaychess.com/wp-content/uploads/2026/01/HBCC-Chess-Sportsmanship-and-Etiquette.pdf"
   }
 ]

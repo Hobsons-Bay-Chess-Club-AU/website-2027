@@ -1,5 +1,6 @@
 import {safeUrl} from './sanitize.mjs';
 import {siteUrl} from './site-url.mjs';
+import {policyHref} from './policies.mjs';
 export const escapeHtml=value=>String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 export const assetUrl=value=>safeUrl(typeof value==='string'?value:value?.url,'');
 export const approvedEmbed=value=>{
@@ -27,7 +28,8 @@ export function renderRichText(document,entries={},trail=[]){
   const page=entries[item.page?.sys?.id],feed=entries[item.tournamentFeed?.sys?.id];
   const key={leaderboard:'leaderboardUrl',upcoming:'upcomingUrl',calendar:'calendarUrl'}[item.tournamentDestination];
   const fragment=item.fragment&&/^[a-z][a-z0-9-]*$/.test(item.fragment)?'#'+item.fragment:'';
-  return {label:item.label,url:page?(page.template==='home'?'/':'/'+page.slug+'/')+fragment:feed&&key?feed[key]:item.url,newTab:item.openInNewTab};
+  const policy=entries[item.policy?.sys?.id];
+  return {label:item.label,url:policy?policyHref(policy,entries):page?(page.template==='home'?'/':'/'+page.slug+'/')+fragment:feed&&key?feed[key]:item.url,newTab:item.openInNewTab};
  };
  const linked=(html,ref)=>{
   const item=linkTarget(ref);if(!item)return html;
@@ -48,7 +50,7 @@ export function renderRichText(document,entries={},trail=[]){
   if(n.nodeType==='table')return `<div class="table-scroll" tabindex="0" role="region" aria-label="Scrollable club table"><table><tbody>${inner()}</tbody></table></div>`;
   if(['hyperlink','entry-hyperlink','asset-hyperlink'].includes(n.nodeType)){
    let url=n.data?.uri;
-   if(n.nodeType==='entry-hyperlink'){const target=get(n.data?.target);if(target.enabled===false)return inner();url=target.template==='home'?'/':`/${target.slug}/`;}
+   if(n.nodeType==='entry-hyperlink'){const target=get(n.data?.target);if(target.type==='policy')url=policyHref(target,entries);else{if(target.enabled===false)return inner();url=target.template==='home'?'/':`/${target.slug}/`;}}
    if(n.nodeType==='asset-hyperlink')url=assetUrl(n.data?.target);
    return `<a href="${escapeHtml(siteUrl(url))}">${inner()}</a>`;
   }

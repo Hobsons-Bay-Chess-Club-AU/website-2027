@@ -76,6 +76,14 @@
           }
         },
         {
+          "fieldId": "policyPage",
+          "widgetNamespace": "builtin",
+          "widgetId": "entryLinkEditor",
+          "settings": {
+            "helpText": "Choose the page containing the Policies layout. Native policy links follow this page and each policy’s stable section link."
+          }
+        },
+        {
           "fieldId": "email",
           "widgetNamespace": "builtin",
           "widgetId": "singleLine",
@@ -254,6 +262,14 @@
           }
         },
         {
+          "fieldId": "policy",
+          "widgetNamespace": "builtin",
+          "widgetId": "entryLinkEditor",
+          "settings": {
+            "helpText": "Select a Club policy to link to its section in the Policies hub. Its stable link follows the policy entry; a hidden policy returns visitors to the hub."
+          }
+        },
+        {
           "fieldId": "tournamentFeed",
           "widgetNamespace": "builtin",
           "widgetId": "entryLinkEditor",
@@ -274,7 +290,7 @@
           "widgetNamespace": "builtin",
           "widgetId": "singleLine",
           "settings": {
-            "helpText": "Use https://, /path/, mailto: or #anchor. A selected page takes priority, followed by a selected tournament destination."
+            "helpText": "Use https://, /path/, mailto: or #anchor. Select one destination. A selected policy takes priority, then a page, tournament destination or URL."
           }
         },
         {
@@ -671,6 +687,14 @@
           }
         },
         {
+          "fieldId": "layoutStyle",
+          "widgetNamespace": "builtin",
+          "widgetId": "dropdown",
+          "settings": {
+            "helpText": "Pricing: fee cards. Benefits: four panels. Steps: numbered joining steps. Split: image/text columns. Portraits: committee photos. Roster: compact names and roles. Affiliations: contained linked logos."
+          }
+        },
+        {
           "fieldId": "title",
           "widgetNamespace": "builtin",
           "widgetId": "singleLine",
@@ -775,6 +799,14 @@
           }
         },
         {
+          "fieldId": "policies",
+          "widgetNamespace": "builtin",
+          "widgetId": "entryLinksEditor",
+          "settings": {
+            "helpText": "Select the Policies layout and drag policy references into the order visitors should see them. Publish each policy and its document."
+          }
+        },
+        {
           "fieldId": "posts",
           "widgetNamespace": "builtin",
           "widgetId": "entryLinksEditor",
@@ -865,6 +897,14 @@
           "widgetId": "singleLine",
           "settings": {
             "helpText": ""
+          }
+        },
+        {
+          "fieldId": "price",
+          "widgetNamespace": "builtin",
+          "widgetId": "singleLine",
+          "settings": {
+            "helpText": "Display value from the approved membership schedule. Pricing cards show this prominently; do not infer new fees."
           }
         },
         {
@@ -1110,6 +1150,77 @@
           "fieldId": "link",
           "widgetNamespace": "builtin",
           "widgetId": "entryLinkEditor",
+          "settings": {
+            "helpText": ""
+          }
+        },
+        {
+          "fieldId": "enabled",
+          "widgetNamespace": "builtin",
+          "widgetId": "boolean",
+          "settings": {
+            "helpText": "",
+            "trueLabel": "Show",
+            "falseLabel": "Hide"
+          }
+        }
+      ]
+    },
+    {
+      "contentTypeId": "policy",
+      "controls": [
+        {
+          "fieldId": "title",
+          "widgetNamespace": "builtin",
+          "widgetId": "singleLine",
+          "settings": {
+            "helpText": ""
+          }
+        },
+        {
+          "fieldId": "slug",
+          "widgetNamespace": "builtin",
+          "widgetId": "slugEditor",
+          "settings": {
+            "helpText": "Lowercase letters and hyphens. This is a section anchor in /policies/; native policy links follow changes automatically."
+          }
+        },
+        {
+          "fieldId": "summary",
+          "widgetNamespace": "builtin",
+          "widgetId": "multipleLine",
+          "settings": {
+            "helpText": ""
+          }
+        },
+        {
+          "fieldId": "document",
+          "widgetNamespace": "builtin",
+          "widgetId": "assetLinkEditor",
+          "settings": {
+            "helpText": "Upload or choose the club-approved policy PDF. Replacing this reference updates every use of this policy after publication and rebuild."
+          }
+        },
+        {
+          "fieldId": "body",
+          "widgetNamespace": "builtin",
+          "widgetId": "richTextEditor",
+          "settings": {
+            "helpText": "Optional approved text. Supply a document or non-empty policy text before publishing. Do not duplicate a PDF here unless the club wants an HTML version."
+          }
+        },
+        {
+          "fieldId": "version",
+          "widgetNamespace": "builtin",
+          "widgetId": "singleLine",
+          "settings": {
+            "helpText": ""
+          }
+        },
+        {
+          "fieldId": "effectiveDate",
+          "widgetNamespace": "builtin",
+          "widgetId": "datePicker",
           "settings": {
             "helpText": ""
           }

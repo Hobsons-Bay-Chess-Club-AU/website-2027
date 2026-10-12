@@ -14,7 +14,7 @@
     "contentful:check": "node scripts/check-contentful.mjs",
     "contentful:verify": "node scripts/verify-contentful.mjs",
     "contentful:import": "node scripts/import-contentful.mjs",
-    "contentful:prepare": "node scripts/prepare-content.mjs && node scripts/prepare-model.mjs && node scripts/prepare-cms-content.mjs && node scripts/prepare-cms-model.mjs && node scripts/prepare-club-news.mjs && node scripts/prepare-calendar.mjs && node scripts/refresh-cms-fixture.mjs",
+    "contentful:prepare": "node scripts/prepare-content.mjs && node scripts/prepare-model.mjs && node scripts/prepare-cms-content.mjs && node scripts/prepare-cms-model.mjs && node scripts/prepare-club-news.mjs && node scripts/prepare-calendar.mjs && node scripts/prepare-membership-policies.mjs && node scripts/refresh-cms-fixture.mjs",
     "contentful:update": "node scripts/apply-site-update.mjs",
     "news:scrape": "node scripts/sync-facebook-news.mjs",
     "cms:preview": "node scripts/run-astro.mjs cms-preview",

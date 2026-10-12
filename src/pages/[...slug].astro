@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import Sections from '../components/Sections.astro';
 import ReviewNotes from '../components/ReviewNotes.astro';
+import CmsLink from '../components/CmsLink.astro';
 import {getContent} from '../lib/content.mjs';
 import {siteUrl as safeUrl} from '../lib/site-url.mjs';
 export async function getStaticPaths(){
@@ -13,6 +14,6 @@ const {settings,posts}=await getContent();
 const hero=page.heroImage||page.image||settings.heroImage;
 ---
 <Layout title={page.title} seoTitle={page.seoTitle} description={page.description||page.excerpt} image={hero} noindex={page.noindex}>
- <section class="page-hero" style={"--page-image:url('"+safeUrl(hero)+"')"}><div class="container"><a class="breadcrumb" href={safeUrl(isPost?'/news/':'/')}>{isPost?settings.newsLabel:settings.homeLabel} <span aria-hidden="true">/</span></a><h1>{page.heroTitle||page.title}</h1>{(page.heroDescription||page.description)&&<p>{page.heroDescription||page.description}</p>}{isPost&&<p><time datetime={page.publishedAt}>{new Intl.DateTimeFormat('en-AU',{day:'numeric',month:'long',year:'numeric',timeZone:'Australia/Melbourne'}).format(new Date(page.publishedAt))}</time>{page.author&&<span> · {page.author}</span>}</p>}</div></section>
+ <section class="page-hero" style={"--page-image:url('"+safeUrl(hero)+"')"}><div class="container"><a class="breadcrumb" href={safeUrl(isPost?'/news/':'/')}>{isPost?settings.newsLabel:settings.homeLabel} <span aria-hidden="true">/</span></a><h1>{page.heroTitle||page.title}</h1>{(page.heroDescription||page.description)&&<p>{page.heroDescription||page.description}</p>}{isPost&&<p><time datetime={page.publishedAt}>{new Intl.DateTimeFormat('en-AU',{day:'numeric',month:'long',year:'numeric',timeZone:'Australia/Melbourne'}).format(new Date(page.publishedAt))}</time>{page.author&&<span> · {page.author}</span>}</p>}{page.heroActions?.length>0&&<div class="cms-actions page-hero-actions">{page.heroActions.map(action=><CmsLink item={action} class="button button-gold"/>)}</div>}</div></section>
  {page.id==='review-team-review'?<ReviewNotes/>:isPost?<article class="cms-section post-content cms-tone-light" aria-label={page.title}><div class="cms-rich-text" set:html={page.bodyHtml}/></article>:<div class="cms-page-content"><Sections sections={page.sections} settings={settings} posts={posts}/></div>}
 </Layout>

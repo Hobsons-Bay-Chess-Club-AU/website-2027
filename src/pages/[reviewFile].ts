@@ -11,11 +11,11 @@ export async function GET({site}){
  const url=path=>new URL(siteUrl(path),site).href;
  const body=[`# HBCC V2 — Team Review`, `Prepared ${notes.date}`,`Review website: ${url('/')}`,`Changes and checklist: ${url('/review/')}`,
   '## Changes in this version',...notes.changes.map((c,i)=>`${i+1}. **${c.title}** — ${c.detail}${c.path?'\n   '+url(c.path):''}`),
-  '## Action links: before and after',['| Action | Current version | V2 proposal |','| --- | --- | --- |',...notes.linkRepairs.map(row=>'| '+row.join(' | ')+' |')].join('\n'),
+  '## Action links: before and after',['| Action | Before this review work | Destination in V2 |','| --- | --- | --- |',...notes.linkRepairs.map(row=>'| '+row.join(' | ')+' |')].join('\n'),
   '## Club input still needed',...notes.pending.map(p=>`- **${p.title}** (${p.owner}): ${p.detail}`),
   '## Review checklist',...notes.checks.map(c=>'- [ ] '+c),
   '## Feedback','Reply to the person who shared the link. Include the page URL, device, expected behaviour and suggested change. Checkboxes on the website do not submit feedback.',
-  'The current published CMS content and WordPress production domain are unchanged. Accepted changes can be promoted into Contentful after club review.',
+  'Membership, About Us and policy repairs are published shared CMS fixes shown in both rebuilt versions. The remaining navigation/calendar proposals can be promoted after club review. The WordPress production domain is unchanged.',
  ].join('\n\n')+'\n';
  return new Response(body,{headers:{'Content-Type':'text/markdown; charset=utf-8'}});
 }

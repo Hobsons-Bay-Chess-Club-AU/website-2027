@@ -1,0 +1,68 @@
+/* Native CMS layouts shared by the original rebuild and the V2 review. */
+.page-hero-actions { margin-top: 26px; }
+.cms-layout-pricing .cms-card-grid { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+.cms-layout-pricing .cms-pricing-card { grid-column: span 2; }
+.cms-layout-pricing .cms-pricing-card:nth-child(n + 4) { grid-column: span 3; }
+.cms-pricing-card { display: flex; flex-direction: column; align-items: flex-start; padding: 32px; background: #fff; }
+.cms-pricing-card h3 { line-height: 1.2; margin-bottom: 12px; }
+.cms-pricing-card > p:not(.cms-price) { color: #606b59; }
+.cms-pricing-card .cms-price { font-family: var(--heading); font-size: 54px; line-height: 1.1; color: #796b2b; margin: auto 0 22px; padding-top: 16px; }
+.cms-layout-benefits .cms-card-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.cms-layout-benefits .cms-card { background: #fff; border-color: #d7d4c2; padding: 26px; }
+.cms-layout-benefits .cms-card h3 { font-size: 25px; line-height: 1.25; }
+.cms-layout-benefits .cms-card p { font-size: 14px; margin-bottom: 0; }
+.cms-layout-split > .container > .cms-columns { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); align-items: center; gap: 50px; }
+.cms-layout-split .cms-feature-image { display: block; width: 100%; max-height: 510px; object-fit: contain; border-radius: 8px; }
+.cms-layout-split > .container > .cms-rich-text:not(:empty) { max-width: 780px; margin-bottom: 30px; }
+.cms-layout-steps .cms-card-grid { display: grid; grid-template-columns: 1fr; gap: 0; }
+.cms-step-card { padding: 20px 0; border: 0; border-bottom: 1px solid #ceccba; border-radius: 0; background: transparent; }
+.cms-step-card:first-child { padding-top: 0; }
+.cms-step-card h3 { font-size: 24px; line-height: 1.25; margin-bottom: 8px; }
+.cms-step-card .eyebrow { margin-bottom: 6px; color: #796b2b; }
+.cms-step-card .cms-rich-text p:last-child { margin-bottom: 0; }
+.cms-layout-portraits .cms-card-grid { grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 20px; }
+.cms-profile-card { padding: 0 0 22px; overflow: hidden; background: #fff; text-align: center; }
+.cms-profile-card > img { display: block; width: 100%; aspect-ratio: 2 / 3; max-height: none; object-fit: cover; object-position: center top; margin: 0 0 20px; }
+.cms-profile-card > h3 { font-size: 25px; line-height: 1.2; padding: 0 12px; margin-bottom: 10px; }
+.cms-profile-card > p { font-size: 13px; line-height: 1.6; padding: 0 12px; margin: 0; }
+.cms-layout-roster .cms-card-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
+.cms-columns .cms-layout-roster .cms-card-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.cms-roster-card { padding: 18px 20px; background: #f7f6ef; border-color: #d9d8cc; }
+.cms-roster-card > h3 { font-size: 23px; line-height: 1.25; margin-bottom: 4px; }
+.cms-roster-card > p { font-size: 13px; line-height: 1.5; margin: 0; }
+.cms-roster-card > .eyebrow { color: #796b2b; font-size: 11px; margin-bottom: 7px; }
+.cms-layout-affiliations .cms-gallery { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 30px; }
+.cms-layout-affiliations .cms-gallery figure { text-align: center; padding: 28px; border-radius: 8px; background: #fff; }
+.cms-layout-affiliations .cms-gallery img { height: 150px; width: 100%; object-fit: contain; }
+.cms-layout-affiliations figcaption { font-size: 14px; font-weight: 600; margin-top: 18px; }
+.cms-layout-split .club-embed { min-height: 390px; height: 390px; border-radius: 8px; }
+.policy-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
+.policy-card { padding: 30px; background: #f7f6ef; border: 1px solid #d9d8cc; border-radius: 8px; display: flex; flex-direction: column; align-items: flex-start; scroll-margin-top: 145px; }
+.policy-card h3 { line-height: 1.25; margin-bottom: 20px; }
+.policy-card .button { margin-top: auto; }
+.policy-metadata { display: flex; flex-wrap: wrap; gap: 14px; font-size: 13px; color: #606b59; }
+@media (max-width: 1000px) {
+ .cms-layout-benefits .cms-card-grid, .cms-layout-roster .cms-card-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+ .cms-layout-portraits .cms-card-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+ .cms-layout-split > .container > .cms-columns { gap: 30px; }
+}
+@media (max-width: 800px) {
+ .cms-layout-split > .container > .cms-columns { grid-template-columns: 1fr; }
+ .cms-layout-split .cms-feature-image { max-height: 380px; }
+ .cms-layout-pricing .cms-card-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+ .cms-layout-pricing .cms-pricing-card, .cms-layout-pricing .cms-pricing-card:nth-child(n + 4) { grid-column: auto; }
+ .cms-layout-pricing .cms-pricing-card:last-child { grid-column: 1 / -1; }
+ .cms-layout-affiliations .cms-gallery { gap: 16px; }
+ .cms-layout-affiliations .cms-gallery figure { padding: 20px 14px; }
+}
+@media (max-width: 520px) {
+ .cms-layout-pricing .cms-card-grid, .cms-layout-benefits .cms-card-grid, .cms-layout-affiliations .cms-gallery, .policy-grid { grid-template-columns: 1fr; }
+ .cms-layout-portraits .cms-card-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+ .cms-profile-card > h3 { font-size: 22px; }
+ .cms-profile-card > p { font-size: 12px; }
+ .cms-layout-roster .cms-card-grid, .cms-columns .cms-layout-roster .cms-card-grid { grid-template-columns: 1fr; }
+ .cms-profile-card { padding-bottom: 18px; }
+ .cms-pricing-card, .policy-card { padding: 24px; }
+ .cms-layout-affiliations .cms-gallery img { height: 125px; }
+ .cms-layout-split .club-embed { min-height: 300px; height: 300px; }
+}
