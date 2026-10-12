@@ -39,6 +39,7 @@ export function createReviewEntries(publishedItems){
  });for(const child of get(id).children||[])repairLinks(child.sys.id,rules);};
  const anchor=(id,value)=>{get(id).anchor=value;};
  const settings=get('hbcc-site-settings');settings.reviewVersion='v2';settings.reviewDate=reviewDate;
+ settings.reviewCurrentPaths=publishedItems.filter(e=>['page','post'].includes(e.type)&&e.enabled!==false&&e.template!=='home').map(e=>`/${e.slug}/`);
  let annualNode;
  const findAnnual=id=>{visit(get(id).body,n=>{if(n.nodeType==='asset-hyperlink')annualNode=n;});for(const child of get(id).children||[])findAnnual(child.sys.id);};
  findAnnual('wp-page-4272-section-1');

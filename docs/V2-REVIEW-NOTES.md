@@ -10,61 +10,67 @@ Changes and checklist: https://hobsons-bay-chess-club-au.github.io/website-2027/
 
 1. **Visible desktop navigation** — Six clear groups — Play, Calendar, Tournaments, Coaching, Club and News — replace the desktop-only hamburger journey. Group names open their overview pages; separate controls open the dropdowns. The arrows now align with the menu labels.
 
-2. **Membership layout restored in both versions** — Five fee cards, four benefits, shared club statistics, joining steps, etiquette/policy links, junior information and five expandable FAQs replace the flattened text. Existing fee amounts and public payment instructions are retained. Fees, cards, steps and actions are native Contentful entries.
+2. **More balanced homepage spacing** — The V2 title, partner artwork and four activity cards move slightly lower as one group. Responsive spacing moves them 40?64 pixels on desktop, 24 pixels on tablets and 16 pixels on phones, with matching space removed below so the hero section keeps its height.
+   https://hobsons-bay-chess-club-au.github.io/website-2027/v2/
+
+3. **Compare versions from either header** — Both GitHub review versions now show a labelled banner with Changes & checklist and a version switch. Published pages and news articles switch to the matching page; V2-only pages return to the current homepage. The banner is excluded from the production version.
    https://hobsons-bay-chess-club-au.github.io/website-2027/v2/membership/
 
-3. **About Us content and layout restored in both versions** — The original introduction, five committee portraits, ten volunteers, three affiliation logos, sixteen arbiter names, governance links, venue map, opening hours and joining actions are restored. Names and roles are editable cards in Contentful; the existing source’s spelling differences still need club confirmation.
+4. **Membership layout restored in both versions** — Five fee cards, four benefits, shared club statistics, joining steps, etiquette/policy links, junior information and five expandable FAQs replace the flattened text. Existing fee amounts and public payment instructions are retained. Fees, cards, steps and actions are native Contentful entries.
+   https://hobsons-bay-chess-club-au.github.io/website-2027/v2/membership/
+
+5. **About Us content and layout restored in both versions** — The original introduction, five committee portraits, ten volunteers, three affiliation logos, sixteen arbiter names, governance links, venue map, opening hours and joining actions are restored. Names and roles are editable cards in Contentful; the existing source’s spelling differences still need club confirmation.
    https://hobsons-bay-chess-club-au.github.io/website-2027/v2/about-us/
 
-4. **Policies managed as a Contentful type** — Seven existing approved club documents are published as reusable Club policy entries. Membership etiquette, privacy and tournament-rule links open the relevant section of the Policies hub. About, Juniors and Tournaments also use these references. Editors can replace documents, change titles, reorder policies or hide an entry without changing code.
+6. **Policies managed as a Contentful type** — Seven existing approved club documents are published as reusable Club policy entries. Membership etiquette, privacy and tournament-rule links open the relevant section of the Policies hub. About, Juniors and Tournaments also use these references. Editors can replace documents, change titles, reorder policies or hide an entry without changing code.
    https://hobsons-bay-chess-club-au.github.io/website-2027/v2/policies/
 
-5. **Join, login and quick tasks** — Join / Renew and Member Login sit in the desktop header. What's On, Register for an Event and Pairings & Results sit below it. All five tasks are near the top of the mobile menu.
+7. **Join, login and quick tasks** — Join / Renew and Member Login sit in the desktop header. What's On, Register for an Event and Pairings & Results sit below it. All five tasks are near the top of the mobile menu.
 
-6. **Simpler navigation groups** — Junior Chess is under Play. Coaching has its own group. History, champions, Peter Caissa, committee, arbiters, sponsors, membership, policies and contact are grouped under Club. Finished 2026 event bookings are removed from the upcoming menu; their historical pages remain.
+8. **Simpler navigation groups** — Junior Chess is under Play. Coaching has its own group. History, champions, Peter Caissa, committee, arbiters, sponsors, membership, policies and contact are grouped under Club. Finished 2026 event bookings are removed from the upcoming menu; their historical pages remain.
 
-7. **A First Visit section** — Play now opens with choosing an activity, arriving early, equipment and venue guidance. It includes the existing weekly session times and direct links to the club calendar, junior chess and enquiries.
+9. **A First Visit section** — Play now opens with choosing an activity, arriving early, equipment and venue guidance. It includes the existing weekly session times and direct links to the club calendar, junior chess and enquiries.
    https://hobsons-bay-chess-club-au.github.io/website-2027/v2/play-chess/#first-visit
 
-8. **A dedicated Coaching page** — Programs and levels, the existing four named coaches, Term 4 dates, parent policies, private coaching and an enquiry/term-details gateway are collected in one place. Juniors and Coaching use the same program and coach cards.
+10. **A dedicated Coaching page** — Programs and levels, the existing four named coaches, Term 4 dates, parent policies, private coaching and an enquiry/term-details gateway are collected in one place. Juniors and Coaching use the same program and coach cards.
    https://hobsons-bay-chess-club-au.github.io/website-2027/v2/coaching/
 
-9. **Accurate coaching availability wording** — The review says current group ticket sales have ended and one-on-one tickets are sold out. New families can enquire and follow the existing registration/orientation process. Actual class times depend on the group and coach.
+11. **Accurate coaching availability wording** — The review says current group ticket sales have ended and one-on-one tickets are sold out. New families can enquire and follow the existing registration/orientation process. Actual class times depend on the group and coach.
 
-10. **A Tournaments routing hub** — One section connects upcoming competitions, event registration, pairings/results, live boards, games/PGNs and Oceania Youth 2027. Recurring flagship events now have readable names and cards. The inherited, unsupported Grandmaster description of Igor Koshnitsky is omitted.
+12. **A Tournaments routing hub** — One section connects upcoming competitions, event registration, pairings/results, live boards, games/PGNs and Oceania Youth 2027. Recurring flagship events now have readable names and cards. The inherited, unsupported Grandmaster description of Igor Koshnitsky is omitted.
    https://hobsons-bay-chess-club-au.github.io/website-2027/v2/tournaments/
 
-11. **Calendar links you can share** — Senior, junior, coaching and social filters open directly from navigation and page links. The chosen category, view and month stay in the URL, survive reload, and follow browser Back/Forward.
+13. **Calendar links you can share** — Senior, junior, coaching and social filters open directly from navigation and page links. The chosen category, view and month stay in the URL, survive reload, and follow browser Back/Forward.
    https://hobsons-bay-chess-club-au.github.io/website-2027/v2/calendar/?category=coaching
 
-12. **An upcoming agenda** — What's On shows remaining dates across future months rather than only the current month. Month and monthly agenda views are retained, together with an iCalendar download.
+14. **An upcoming agenda** — What's On shows remaining dates across future months rather than only the current month. Month and monthly agenda views are retained, together with an iCalendar download.
    https://hobsons-bay-chess-club-au.github.io/website-2027/v2/calendar/?view=upcoming
 
-13. **Term 4 calendar corrections** — Coaching sessions 4–8 move to 7, 14, 21 and 28 November and 5 December, following the current booking page. A clearly named coaching break appears on 31 October. The junior championship round on 31 October remains, and 28 November is labelled as a junior tournament break rather than a whole-club closure.
+15. **Term 4 calendar corrections** — Coaching sessions 4–8 move to 7, 14, 21 and 28 November and 5 December, following the current booking page. A clearly named coaching break appears on 31 October. The junior championship round on 31 October remains, and 28 November is labelled as a junior tournament break rather than a whole-club closure.
 
-14. **Clear calendar sources and next steps** — Affected coaching and junior championship dates link to their event details. The original annual PDF is available as a secondary download and is labelled as an older source with later corrections in the review calendar.
+16. **Clear calendar sources and next steps** — Affected coaching and junior championship dates link to their event details. The original annual PDF is available as a secondary download and is labelled as an older source with later corrections in the review calendar.
 
-15. **Seven aligned sponsor profiles** — The full audit restored Bacchus Marsh Grammar, which was present on WordPress but absent from the six homepage-derived profiles. Seven native sponsor entries now use consistent logo areas, heading positions and card heights. Benefits, statistics, package headings, inclusion lists, activations, process steps, FAQs and enquiry actions have proper layouts. The GS Chess destination is restored. V2 retains enquiries for current prices and availability.
+17. **Seven aligned sponsor profiles** — The full audit restored Bacchus Marsh Grammar, which was present on WordPress but absent from the six homepage-derived profiles. Seven native sponsor entries now use consistent logo areas, heading positions and card heights. Benefits, statistics, package headings, inclusion lists, activations, process steps, FAQs and enquiry actions have proper layouts. The GS Chess destination is restored. V2 retains enquiries for current prices and availability.
    https://hobsons-bay-chess-club-au.github.io/website-2027/v2/sponsors/
 
-16. **Champions newest first, including 2025** — Julian McIntyre is added as the 2025 club champion with 5 points, verified against final round-seven standings. Twelve Club champion records are native Contentful entries, automatically ordered newest first. The latest winner links to the final results; original gaps are retained for club confirmation.
+18. **Champions newest first, including 2025** — Julian McIntyre is added as the 2025 club champion with 5 points, verified against final round-seven standings. Twelve Club champion records are native Contentful entries, automatically ordered newest first. The latest winner links to the final results; original gaps are retained for club confirmation.
    https://hobsons-bay-chess-club-au.github.io/website-2027/v2/champions/
 
-17. **Missing Play, Junior and Tournament content restored** — Fresh WordPress comparison found eight missing Play points, four parent-information points and seven tournament/rules points. All nineteen are restored. Native cards, image/text sections, steps, original introductions, FAQs and hero actions replace flattened content. Programs and coaches remain shared between Juniors and Coaching.
+19. **Missing Play, Junior and Tournament content restored** — Fresh WordPress comparison found eight missing Play points, four parent-information points and seven tournament/rules points. All nineteen are restored. Native cards, image/text sections, steps, original introductions, FAQs and hero actions replace flattened content. Programs and coaches remain shared between Juniors and Coaching.
    https://hobsons-bay-chess-club-au.github.io/website-2027/v2/play-chess/
 
-18. **Contact page rebuilt with the omitted visitor information** — The map, session guidance, address/directions, visitor advice, arrival and forfeit information, etiquette policy and useful enquiry/event/membership actions are restored. Email is the working contact destination. Duplicate source text and placeholder shop/buttons are removed; coaching times point to the current term/group listing.
+20. **Contact page rebuilt with the omitted visitor information** — The map, session guidance, address/directions, visitor advice, arrival and forfeit information, etiquette policy and useful enquiry/event/membership actions are restored. Email is the working contact destination. Duplicate source text and placeholder shop/buttons are removed; coaching times point to the current term/group listing.
    https://hobsons-bay-chess-club-au.github.io/website-2027/v2/contact/
 
-19. **Every migrated page reviewed** — All fourteen core pages were compared with fresh WordPress content, including photos, tables, links, lists and maps. History, Best in the West and Peter Caissa retain their original material and now lose leaked shortcodes in both versions. The full audit records intentional differences and outstanding club decisions; download it above.
+21. **Every migrated page reviewed** — All fourteen core pages were compared with fresh WordPress content, including photos, tables, links, lists and maps. History, Best in the West and Peter Caissa retain their original material and now lose leaked shortcodes in both versions. The full audit records intentional differences and outstanding club decisions; download it above.
 
-20. **Useful privacy and policy destinations** — A Privacy & Photography page links to the existing approved document. Footer privacy links open it. The misleading Cookie Policy link is removed; the Policies hub retains its documents.
+22. **Useful privacy and policy destinations** — A Privacy & Photography page links to the existing approved document. Footer privacy links open it. The misleading Cookie Policy link is removed; the Policies hub retains its documents.
    https://hobsons-bay-chess-club-au.github.io/website-2027/v2/privacy-policy/
 
-21. **Inherited content cleanup** — Exposed WordPress timeline shortcodes are removed from History, Champions, Best in the West and Peter Caissa. The junior age placeholder is replaced with an enquiry. Obvious capitalisation/address-label errors are corrected. Ended live broadcasts are clearly labelled Broadcast Archive.
+23. **Inherited content cleanup** — Exposed WordPress timeline shortcodes are removed from History, Champions, Best in the West and Peter Caissa. The junior age placeholder is replaced with an enquiry. Obvious capitalisation/address-label errors are corrected. Ended live broadcasts are clearly labelled Broadcast Archive.
    https://hobsons-bay-chess-club-au.github.io/website-2027/v2/dgt-link/
 
-22. **A separate review version** — Navigation and calendar proposals stay inside /v2/. Membership, About Us, policies and full page-audit repairs are shared fixes published in Contentful and shown in both rebuilt versions. Every review page has a banner linking to this change list and is excluded from search indexing. The original WordPress domain remains unchanged.
+24. **A separate review version** — Navigation and calendar proposals stay inside /v2/. Membership, About Us, policies and full page-audit repairs are shared fixes published in Contentful and shown in both rebuilt versions. Both GitHub review versions have a banner linking to this change list and the other version and is excluded from search indexing. The original WordPress domain remains unchanged.
 
 ## Action links: before and after
 
@@ -110,6 +116,8 @@ Changes and checklist: https://hobsons-bay-chess-club-au.github.io/website-2027/
 - **CMS promotion and domain launch** (Website maintainer): After review, apply the accepted navigation/date changes as targeted Contentful updates, including the optional action-menu and calendar-source fields. Section anchors, Membership, About Us, policies and the full page-audit repairs are already native shared CMS updates. V2 remains an overlay on that content; the production WordPress domain is unchanged.
 
 ## Review checklist
+
+- [ ] Compare the homepage spacing on desktop and a phone. Use each banner to switch versions on Membership and a news article, then check that Coaching returns to the current homepage.
 
 - [ ] On desktop, open each navigation group using the separate arrow; check that its label also opens the overview page.
 

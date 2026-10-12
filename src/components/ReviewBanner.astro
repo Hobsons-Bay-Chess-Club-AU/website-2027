@@ -1,0 +1,7 @@
+---
+const {review,navigation}=Astro.props;
+---
+<aside class="review-banner" aria-label="Website version comparison">
+ <div><strong>{review?'V2 · Team review':'Current · Team review'}</strong><span>{review?'Proposed website changes':'Current rebuilt website'}</span></div>
+ <div><a href={navigation.changesHref} data-review-target={review?undefined:'v2'}>Changes &amp; checklist</a><a href={navigation.switchHref} data-review-target={navigation.otherVersion}>{review?'Current version ↗':'View V2 ↗'}</a></div>
+</aside>

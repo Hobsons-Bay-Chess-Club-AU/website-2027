@@ -16,7 +16,9 @@ The proposal implements the core navigation and visitor-journey work in [the nav
 
 The current version reads published Contentful entries without the proposal. V2 reads published Contentful entries and applies the explicitly versioned proposal in `src/lib/review-content.mjs` to a deep copy before normalization. That overlay performs no management API writes. Both versions now share Membership/About/policy repairs and the [full page-audit restoration](ALL-PAGES-AUDIT.md): Play/Juniors/Tournaments/Contact content, seven aligned sponsors, shortcode cleanup and a native Champions honour board including 2025, newest first. They retain separate menus, additional pages and reviewed calendar dates.
 
-V2 has three additional pages: Coaching, Privacy & Photography and the team review. It also has its own calendar download. Internal links, redirects, fonts and build assets are scoped to `/website-2027/v2/`. The comparison links explicitly return to the current version. Existing tournament, registration, games, membership and login services retain their external destinations.
+V2 has three additional pages: Coaching, Privacy & Photography and the team review. It also has its own calendar download. Internal links, redirects, fonts and build assets are scoped to `/website-2027/v2/`. Both GitHub review versions have a shared banner with a change-list link and a version switch. The switch retains the page for published CMS pages and news articles; V2-only pages return to the current homepage. The current version's overlaid header starts below the banner. The comparison banner is omitted from the current production build when `SITE_STAGING` is not `true`. Existing tournament, registration, games, membership and login services retain their external destinations.
+
+The V2 homepage title, partner artwork and cards move down together by 40–64 pixels on desktop, 24 pixels on tablets and 16 pixels on phones. The same amount is removed from the bottom padding, retaining the section height and the spacing within the group.
 
 Review pages are marked `noindex, nofollow`. This is a public review URL, not an authenticated preview. The WordPress production domain is unchanged. The shared Membership/About/policy repairs are published CMS changes; the remaining navigation/calendar proposal stays isolated.
 
@@ -24,7 +26,7 @@ The reviewed dates follow the publicly available term and junior championship li
 
 ## Builds and local review
 
-`npm run build:pages` builds and verifies the current version first, then builds V2 into `dist/v2/` and verifies it separately. GitHub Actions uploads the combined `dist/` artifact. Both versions are rebuilt for pushes, published-content dispatches and the existing hourly schedule. The two versions have separate Astro build processes so URL prefixing and rich-text rendering use the correct base path.
+`npm run build:pages` builds the current version, then builds V2 into `dist/v2/`. It verifies both after their outputs exist, including comparison links in both directions. GitHub Actions uploads the combined `dist/` artifact. Both versions are rebuilt for pushes, published-content dispatches and the existing hourly schedule. The two versions have separate Astro build processes so URL prefixing and rich-text rendering use the correct base path.
 
 For a local fixture build on PowerShell:
 
@@ -44,7 +46,7 @@ Open `http://127.0.0.1:4331/website-2027/v2/`. Set `CONTENT_SOURCE=contentful` t
 
 The meaningful new tests check proposal isolation, repaired link destinations, page references plus fragments, unique anchors, reuse of the published coach source, program-specific calendar corrections, safe URL state and an agenda spanning future months. Existing CMS, calendar, news, standings and deployment tests remain in place.
 
-The build verifier scans each version independently for missing local paths/assets and section fragments, WordPress asset dependencies and leaked server credentials. It also checks search-exclusion metadata. The deliberate current-version comparison links are checked against the parent build; other internal links must remain within the variant's base path.
+The build verifier scans each version independently for missing local paths/assets and section fragments, WordPress asset dependencies and leaked server credentials. It also checks search-exclusion metadata. Explicitly marked version-comparison links are checked against the other build, including the target file and any fragment; other internal links must remain within the variant's base path. Navigation tests cover both directions, root/nested repository paths, CMS slug changes, news articles and V2-only fallbacks.
 
 ## After the team review
 

@@ -6,6 +6,16 @@
       "detail": "Six clear groups — Play, Calendar, Tournaments, Coaching, Club and News — replace the desktop-only hamburger journey. Group names open their overview pages; separate controls open the dropdowns. The arrows now align with the menu labels."
     },
     {
+      "title": "More balanced homepage spacing",
+      "detail": "The V2 title, partner artwork and four activity cards move slightly lower as one group. Responsive spacing moves them 40?64 pixels on desktop, 24 pixels on tablets and 16 pixels on phones, with matching space removed below so the hero section keeps its height.",
+      "path": "/"
+    },
+    {
+      "title": "Compare versions from either header",
+      "detail": "Both GitHub review versions now show a labelled banner with Changes & checklist and a version switch. Published pages and news articles switch to the matching page; V2-only pages return to the current homepage. The banner is excluded from the production version.",
+      "path": "/membership/"
+    },
+    {
       "title": "Membership layout restored in both versions",
       "detail": "Five fee cards, four benefits, shared club statistics, joining steps, etiquette/policy links, junior information and five expandable FAQs replace the flattened text. Existing fee amounts and public payment instructions are retained. Fees, cards, steps and actions are native Contentful entries.",
       "path": "/membership/"
@@ -101,7 +111,7 @@
     },
     {
       "title": "A separate review version",
-      "detail": "Navigation and calendar proposals stay inside /v2/. Membership, About Us, policies and full page-audit repairs are shared fixes published in Contentful and shown in both rebuilt versions. Every review page has a banner linking to this change list and is excluded from search indexing. The original WordPress domain remains unchanged."
+      "detail": "Navigation and calendar proposals stay inside /v2/. Membership, About Us, policies and full page-audit repairs are shared fixes published in Contentful and shown in both rebuilt versions. Both GitHub review versions have a banner linking to this change list and the other version and is excluded from search indexing. The original WordPress domain remains unchanged."
     }
   ],
   "linkRepairs": [
@@ -234,6 +244,7 @@
     }
   ],
   "checks": [
+    "Compare the homepage spacing on desktop and a phone. Use each banner to switch versions on Membership and a news article, then check that Coaching returns to the current homepage.",
     "On desktop, open each navigation group using the separate arrow; check that its label also opens the overview page.",
     "As a first-time adult visitor, find session times, equipment guidance, the venue and a suitable activity from Play.",
     "As a parent, reach programs, term dates, coach information, policies and the enquiry/registration guidance from Juniors.",

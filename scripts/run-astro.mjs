@@ -10,7 +10,7 @@ const executable=fileURLToPath(new URL(typeof pkg.bin==='string'?pkg.bin:pkg.bin
 const mode=process.argv[2];
 const env={...process.env};
 let args;
-if(mode==='production'){env.CONTENT_SOURCE='contentful';env.SITE_VARIANT='current';args=['build'];}
+if(mode==='production'){env.CONTENT_SOURCE='contentful';env.SITE_VARIANT='current';env.SITE_STAGING='false';args=['build'];}
 else if(mode==='pages'){
  const source=env.CONTENT_SOURCE||'contentful';
  if(!['contentful','reference'].includes(source))throw new Error('Pages builds must explicitly use contentful or reference.');
@@ -42,11 +42,10 @@ function run(script,arguments_,environment){
 let code=await run(executable,args,env);
 if(code===0&&mode==='pages'){
  const verifier=fileURLToPath(new URL('./verify-build.mjs',import.meta.url));
- code=await run(verifier,[],env);
- if(code===0){
-  const reviewEnv={...env,SITE_VARIANT:'v2',SITE_STAGING:'true',SITE_CURRENT_BASE_PATH:env.SITE_BASE_PATH,SITE_BASE_PATH:withBase('/v2/',env.SITE_BASE_PATH)};
-  code=await run(executable,['build'],reviewEnv);
-  if(code===0)code=await run(verifier,[],reviewEnv);
- }
+ const reviewEnv={...env,SITE_VARIANT:'v2',SITE_STAGING:'true',SITE_CURRENT_BASE_PATH:env.SITE_BASE_PATH,SITE_BASE_PATH:withBase('/v2/',env.SITE_BASE_PATH)};
+ // Both outputs must exist before checking comparison links in either direction.
+ code=await run(executable,['build'],reviewEnv);
+ if(code===0)code=await run(verifier,[],env);
+ if(code===0)code=await run(verifier,[],reviewEnv);
 }
 process.exitCode=code;

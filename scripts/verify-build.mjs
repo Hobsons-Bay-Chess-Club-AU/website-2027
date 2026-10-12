@@ -19,20 +19,25 @@ for(const file of textFiles){const text=await readFile(file,'utf8');if(secrets.s
 let checked=0;
 let redirects=0;
 const fileUrl=file=>new URL(withBase('/'+path.relative(root,file).replaceAll('\\','/'),base),site);
-async function checkUrl(value,file,context=fileUrl(file),currentLink=false){
+async function checkUrl(value,file,context=fileUrl(file),comparison=null){
  if(!value||/^(?:data:|mailto:|tel:)/.test(value))return;
  let url;try{url=new URL(value,context);}catch{unsafe.push({file:path.relative(root,file),issue:'Invalid resource URL'});return;}
  if(url.origin!==site.origin)return;
- if(currentLink&&review&&url.pathname===normalizeBase(process.env.SITE_CURRENT_BASE_PATH)&&!url.search&&!url.hash){
-  await access(path.resolve('dist/index.html'));checked++;return;
+ let targetBase=base,targetRoot=root;
+ if(comparison){
+  if(comparison!==(review?'current':'v2')){
+   unsafe.push({file:path.relative(root,file),value,issue:'Invalid version comparison destination'});return;
+  }
+  targetBase=review?normalizeBase(process.env.SITE_CURRENT_BASE_PATH):withBase('/v2/',base);
+  targetRoot=path.resolve(review?'dist':'dist/v2');
  }
- if(base!=='/'&&!url.pathname.startsWith(base)){
+ if(!url.pathname.startsWith(targetBase)){
   unsafe.push({file:path.relative(root,file),value,issue:'Local URL is outside the configured repository path'});return;
  }
- const pathname=decodeURIComponent(url.pathname.slice(base.length-1));
- let target=path.resolve(root,'.'+pathname);
+ const pathname=decodeURIComponent(url.pathname.slice(targetBase.length-1));
+ let target=path.resolve(targetRoot,'.'+pathname);
  if(pathname.endsWith('/'))target=path.join(target,'index.html');
- const relative=path.relative(root,target);
+ const relative=path.relative(targetRoot,target);
  if(relative.startsWith('..')||path.isAbsolute(relative)){
   unsafe.push({file:path.relative(root,file),issue:'Resource URL leaves the build directory'});return;
  }
@@ -58,7 +63,7 @@ for(const file of htmlFiles){
  for(const el of $('a[href],img[src],link[href],iframe[src],script[src]').toArray()){
   const tag=el.tagName,attr=['img','iframe','script'].includes(tag)?'src':'href',value=$(el).attr(attr);
   if(/^https:\/\/hobsonsbaychess\.com\/wp-content\//.test(value))wordpressAssets.push({file:path.relative(root,file),value});
-  await checkUrl(value,file,fileUrl(file),$(el).attr('data-current-version')!==undefined);
+  await checkUrl(value,file,fileUrl(file),$(el).attr('data-review-target')||($(el).attr('data-current-version')!==undefined?'current':null));
  }
  for(const el of $('[style]').toArray())for(const match of $(el).attr('style').matchAll(/url\(\s*['"]?([^'"\s)]+)/g))await checkUrl(match[1],file);
  if(/javascript\s*:/i.test(html))unsafe.push({file:path.relative(root,file),issue:'javascript URL detected'});
