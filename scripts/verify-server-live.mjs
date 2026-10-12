@@ -17,6 +17,7 @@ for(const path of ['/','/news/',...content.pages.map(page=>`/${page.slug}/`),...
  if(response.headers.get('content-type')?.includes('text/html')){
   assert.equal($('link[rel=canonical]').attr('href'),new URL(path,origin).href);
   assert.equal($('.review-banner').length,0,'Launch pages have no review banner');
+  assert.match($('meta[name=robots]').attr('content')||'',/noindex/,'Temporary Vercel domain stays out of search');
  }
  report.pages.push({path,status:response.status,cache:response.headers.get('x-vercel-cache')});
 }

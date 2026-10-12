@@ -1,9 +1,11 @@
 import {spawn} from 'node:child_process';
-import {mkdir,writeFile} from 'node:fs/promises';
+import {mkdir,readFile,writeFile} from 'node:fs/promises';
 import {dirname,join} from 'node:path';
 import {loadEnv} from './env.mjs';
 
 loadEnv();
+const configuration=JSON.parse(await readFile('vercel.json','utf8'));
+if(configuration.buildCommand!=='npm run build:vercel'||configuration.outputDirectory)throw new Error('Vercel must use the approved V2 server build with adapter-managed output.');
 const token=process.env.VERCEL_API_KEY;
 if(!token||!process.env.VERCEL_PROJECT_ID||!process.env.VERCEL_ORG_ID)throw new Error('Set VERCEL_API_KEY, VERCEL_PROJECT_ID and VERCEL_ORG_ID in .env or the deployment environment.');
 await mkdir('.vercel',{recursive:true});

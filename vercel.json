@@ -1,7 +1,8 @@
 {
   "framework": "astro",
-  "buildCommand": "npm run build:production",
-  "outputDirectory": "dist",
+  "buildCommand": "npm run build:vercel",
+  "installCommand": "npm ci",
+  "regions": ["syd1"],
   "redirects": [
     {"source":"/blog/:path*","destination":"/news/","permanent":true},
     {"source":"/author/boldthemes/:path*","destination":"/news/","permanent":true},
